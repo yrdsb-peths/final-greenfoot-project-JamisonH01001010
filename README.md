@@ -3,6 +3,10 @@ This is the README.md file.
 
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
+Sources:
+Achievement Background - https://drunkenzebrastudio.wordpress.com/2011/12/11/belated-environments/ 
+
+
 Ideas:
 RPG game:
 Story:
@@ -13,7 +17,8 @@ Ideal User Experiece Pathway:
 - Difficulty level between each stage should be overcome by 1-2 repeats of prev. stage, even with most optimal user play?
    - Ex. Stage 1-2 [2 upgrades], Stage 2-3 [3 upgrades], Stage 3-4 [4 upgrades], Stage 4-5 [5+ upgrades, ideally more due to "boss" difficulty]
 - User can grind for higher stats by repeating stages for tokens
-- Upon game completion: End screen (TBD)
+- Upon game completion: End screen (TBD, something like an animation of getting the sword back after defeating the final boss)
+- Make game replayable and let user have the retrieved sword to use as gameplay, also if they want to try and find hidden achievements
 
 Worlds:
 - Title screen:
