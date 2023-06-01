@@ -1,5 +1,6 @@
 #Greenfoot project file
 class.Achievements.image=background1.png
+class.TitleScreen.image=dungeon.jpg
 editor.fx.0.height=735
 editor.fx.0.width=813
 editor.fx.0.x=581
@@ -51,6 +52,6 @@ target4.x=0
 target4.y=0
 version=3.0.0
 width=1381
-world.lastInstantiated=Achievements
+world.lastInstantiated=TitleScreen
 xPosition=0
 yPosition=0
