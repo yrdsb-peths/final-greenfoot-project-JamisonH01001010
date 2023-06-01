@@ -31,11 +31,16 @@ public class GameFont extends Actor
             greenfoot.Font DungeonFont = new greenfoot.Font(dynamicFont32.getName(), dynamicFont32.getStyle() % 2 == 1, dynamicFont32.getStyle() / 2 == 1, dynamicFont32.getSize());
             in.close();
             
-            //new code
-            setFont(DungeonFont);
-            GreenfootImage i = new GreenfootImage("Lost Sword", 100, Color.WHITE, new Color(0, 0, 0, 0));
-            setImage(i);
+            //new code;
+            GreenfootImage img = new GreenfootImage(200, 200);
+            img.setColor(Color.WHITE);
+            img.setFont(DungeonFont);
+            img.drawString("Lost Sword", 100, 100);
+            setImage(img);
             
+            
+            
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
