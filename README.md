@@ -6,6 +6,8 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 Sources:
 Achievement Background - https://drunkenzebrastudio.wordpress.com/2011/12/11/belated-environments/ 
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
+Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais
+Title Screen Menu - https://mounirtohami.itch.io/pixel-art-gui-elements
 
 
 Ideas:
