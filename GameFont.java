@@ -41,7 +41,7 @@ public class GameFont extends Actor
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
             img.drawString(text, size, size);
-            img.scale(2000, 2000);
+            img.scale(scale, scale);
             setImage(img);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
