@@ -13,12 +13,17 @@ import java.io.IOException;
  */
 public class GameFont extends Actor
 {
-    /**
-     * Act - do whatever the GameFont wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public GameFont()
+    private String text;
+    private int size;
+    private int scale;
+    
+    public GameFont(String text, int size, int scale)
     {
+        this.text = text;
+        this.size = size;
+        this.scale = scale;
+        
+        // Copied Code - https://www.greenfoot.org/topics/65058/0
         File f = new File("DungeonFont.ttf");
         try {
             FileInputStream in = new FileInputStream(f);
@@ -31,16 +36,13 @@ public class GameFont extends Actor
             greenfoot.Font DungeonFont = new greenfoot.Font(dynamicFont32.getName(), dynamicFont32.getStyle() % 2 == 1, dynamicFont32.getStyle() / 2 == 1, dynamicFont32.getSize());
             in.close();
             
-            //new code;
-            GreenfootImage img = new GreenfootImage(200, 200);
+            //new code
+            GreenfootImage img = new GreenfootImage(size*2, size*2);
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
-            img.drawString("Lost Sword", 100, 100);
+            img.drawString(text, size, size);
+            img.scale(2000, 2000);
             setImage(img);
-            
-            
-            
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -25,8 +25,8 @@ public class TitleScreen extends World
         
         addObject(m, 400, 300);
         
-        GameFont g = new GameFont();
-        addObject(g, 400, 100);
+        GameFont g = new GameFont("Lost Sword", 400, 2000);
+        addObject(g, 230, 150);
         
         
     }
