@@ -35,7 +35,7 @@ public class Achievements extends World
     GameFont ach1 = new GameFont("Sweet Sweet Revenge", 1000);
     GameFont ach2 = new GameFont("Saving for a Rainy Day", 1000);
     GameFont ach3 = new GameFont("1 in 100 chance", 1000);
-    GameFont ach4 = new GameFont("Effective Use of Time", 1000);
+    GameFont ach4 = new GameFont("Bullying the Weak", 1000);
     GameFont ach5 = new GameFont("???", 1000);
     public Achievements()
     {    
@@ -75,5 +75,44 @@ public class Achievements extends World
             TitleScreen titleWorld = new TitleScreen();
             Greenfoot.setWorld(titleWorld);
         }
+    }
+    
+    private void completeAchievements(){
+        if(finalBoss1){
+            //remove blank medal
+            //add gold medal
+        }
+        if(hoarder2){
+            //remove blank medal
+            //add gold medal
+        }
+        if(luckySlime3){
+            //remove blank medal
+            //add gold medal
+        }
+        if(bully4){
+            //remove blank medal
+            //add gold medal
+        }
+        if(chest5){
+            //remove blank medal
+            //add gold medal
+        }
+    }
+    
+    public void completeAch1(){
+        finalBoss1 = true;
+    }
+    public void completeAch2(){
+        hoarder2 = true;
+    }
+    public void completeAch3(){
+        luckySlime3 = true;
+    }
+    public void completeAch4(){
+        bully4 = true;
+    }
+    public void completeAch5(){
+        chest5 = true;
     }
 }
