@@ -8,6 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Achievements extends World
 {
+    // Setting Achievement completion
+    private boolean finalBoss1 = false; // Hidden: Defeat Final Boss
+    private boolean hoarder2 = false; // Hidden: Store 100 tokens at once
+    private boolean luckySlime3 = false; // Hidden: Encounter a golden slime
+    private boolean bully4 = false; // Hidden: Defeat Stage 1-1 10 times
+    private boolean chest5 = false; // Hidden: Click on the background chest in the Achievements page
     // Achievement Background
     GreenfootImage achBG = new GreenfootImage("621708.jpg");
     // Background Music
@@ -26,7 +32,11 @@ public class Achievements extends World
     GoldMedal gm4 = new GoldMedal();
     GoldMedal gm5 = new GoldMedal();
     // Font
-    
+    GameFont ach1 = new GameFont("Sweet Sweet Revenge", 1000);
+    GameFont ach2 = new GameFont("Saving for a Rainy Day", 1000);
+    GameFont ach3 = new GameFont("1 in 100 chance", 1000);
+    GameFont ach4 = new GameFont("Effective Use of Time", 1000);
+    GameFont ach5 = new GameFont("???", 1000);
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -51,6 +61,13 @@ public class Achievements extends World
         addObject(bm3, 190, 305);
         addObject(bm4, 190, 395);
         addObject(bm5, 190, 485);
+        
+        // Text
+        addObject(ach1, 230, 140);
+        addObject(ach2, 230, 230);
+        addObject(ach3, 230, 320);
+        addObject(ach4, 230, 410);
+        addObject(ach5, 230, 500);
     }
     
     public void act(){
