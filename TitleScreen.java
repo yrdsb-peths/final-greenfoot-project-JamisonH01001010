@@ -10,7 +10,7 @@ public class TitleScreen extends World
     // Dungeon Background
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
     // Title Screen Background Music
-    GreenfootSound titleBGM = new GreenfootSound("sounds/october-rose-27659.mp3");
+    GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu 
     Menu m = new Menu(300, 300);
@@ -27,7 +27,7 @@ public class TitleScreen extends World
         super(800, 600, 1); 
         
         // Repeat TitleScreen BGM 
-        // titleBGM.playLoop();
+        // BGM.playLoop();
         
         // Set dungeon background
         dungeonBG.scale(800, 600);
