@@ -18,6 +18,8 @@ public class TitleScreen extends World
     MenuIcons MI = new MenuIcons();
     // Text
     GameFont title = new GameFont("Lost Sword", 2000);
+    GameFont stages = new GameFont("Stages", 1000);
+    GameFont options = new GameFont("Options", 1000);
     GameFont achievements = new GameFont("Achievements", 700);
     public TitleScreen()
     {    
@@ -40,6 +42,8 @@ public class TitleScreen extends World
         // Text
         addObject(title, 230, 125);
         addObject(achievements, 323, 380);
+        addObject(stages, 353, 250);
+        addObject(options, 345, 320);
         
     }
     
@@ -47,6 +51,14 @@ public class TitleScreen extends World
         if(Greenfoot.mouseClicked(achievements)){
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
+        }
+        if(Greenfoot.mouseClicked(stages)){
+            StageSelect stageWorld = new StageSelect();
+            Greenfoot.setWorld(stageWorld);
+        }
+        if(Greenfoot.mouseClicked(options)){
+            Options optionWorld = new Options();
+            Greenfoot.setWorld(optionWorld);
         }
     }
     
