@@ -4,10 +4,11 @@ This is the README.md file.
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
 Sources:
-Achievement Background - https://drunkenzebrastudio.wordpress.com/2011/12/11/belated-environments/ 
+Achievement Background - https://wall.alphacoders.com/big.php?i=621708
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
 Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais
-Title Screen Menu - https://mounirtohami.itch.io/pixel-art-gui-elements
+Title Screen Menu, Icons - https://mounirtohami.itch.io/pixel-art-gui-elements
+Font - https://vrtxrry.itch.io/dungeonfont
 
 
 Ideas:
@@ -38,6 +39,7 @@ Worlds:
    - Hidden achievements
       - Hinted by achievement name
       - Ex. Win battle without using shield
+      - Clicking on chest in achievements page?
 - Stage selection:
    - 5 Stages, each with their own world
    - Mapped around a background map
