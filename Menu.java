@@ -8,9 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends Actor
 {
-    public Menu(){
+    private int scaleW;
+    private int scaleH;
+    public Menu(int scaleW, int scaleH){
+        this.scaleW = scaleW;
+        this.scaleH = scaleH;
         GreenfootImage menu = new GreenfootImage("images/menu.png");
-        menu.scale(300, 300);
+        menu.scale(scaleW, scaleH);
         setImage(menu);
     }
     public void act()

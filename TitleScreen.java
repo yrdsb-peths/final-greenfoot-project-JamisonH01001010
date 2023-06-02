@@ -13,7 +13,7 @@ public class TitleScreen extends World
     GreenfootSound titleBGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu 
-    Menu m = new Menu();
+    Menu m = new Menu(300, 300);
     // MenuIcons
     MenuIcons MI = new MenuIcons();
     // Text
@@ -48,6 +48,7 @@ public class TitleScreen extends World
     }
     
     public void act(){
+        
         if(Greenfoot.mouseClicked(achievements)){
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
