@@ -7,11 +7,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+    // Dungeon Background
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
+    // Title Screen Background Music
     GreenfootSound titleBGM = new GreenfootSound("sounds/october-rose-27659.mp3");
-
+    // Object instantiations
+    // Menu 
     Menu m = new Menu();
+    // MenuIcons
     MenuIcons MI = new MenuIcons();
+    // Text
+    GameFont title = new GameFont("Lost Sword", 2000);
+    GameFont achievements = new GameFont("Achievements", 700);
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -31,13 +38,16 @@ public class TitleScreen extends World
         addObject(MI, 400, 300);
         
         // Text
-        GameFont title = new GameFont("Lost Sword", 400, 2000);
-        addObject(title, 230, 150);
+        addObject(title, 230, 125);
+        addObject(achievements, 323, 380);
         
-        GameFont achievements = new GameFont("Achievements", 400, 700);
-        addObject(achievements, 150, 350);
-        
-        
+    }
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(achievements)){
+            Achievements achWorld = new Achievements();
+            Greenfoot.setWorld(achWorld);
+        }
     }
     
     

@@ -14,13 +14,11 @@ import java.io.IOException;
 public class GameFont extends Actor
 {
     private String text;
-    private int size;
     private int scale;
     
-    public GameFont(String text, int size, int scale)
+    public GameFont(String text, int scale)
     {
         this.text = text;
-        this.size = size;
         this.scale = scale;
         
         // Copied Code - https://www.greenfoot.org/topics/65058/0
@@ -37,10 +35,10 @@ public class GameFont extends Actor
             in.close();
             
             //new code
-            GreenfootImage img = new GreenfootImage(size*2, size*2);
+            GreenfootImage img = new GreenfootImage(400*2, 400*2);
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
-            img.drawString(text, size, size);
+            img.drawString(text, 400, 400);
             img.scale(scale, scale);
             setImage(img);
         } catch (FileNotFoundException e) {
