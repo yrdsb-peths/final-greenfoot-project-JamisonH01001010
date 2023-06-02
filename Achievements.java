@@ -20,6 +20,11 @@ public class Achievements extends World
     BlankMedal bm3 = new BlankMedal();
     BlankMedal bm4 = new BlankMedal();
     BlankMedal bm5 = new BlankMedal();
+    GoldMedal gm1 = new GoldMedal();
+    GoldMedal gm2 = new GoldMedal();
+    GoldMedal gm3 = new GoldMedal();
+    GoldMedal gm4 = new GoldMedal();
+    GoldMedal gm5 = new GoldMedal();
     // Font
     
     public Achievements()
@@ -40,8 +45,12 @@ public class Achievements extends World
         // Add HomeButton
         addObject(h, 620, 120);
         
-        // Add BlankMedal
-        addObject(bm1, 200, 120);
+        // Add BlankMedals
+        addObject(bm1, 190, 125);
+        addObject(bm2, 190, 215);
+        addObject(bm3, 190, 305);
+        addObject(bm4, 190, 395);
+        addObject(bm5, 190, 485);
     }
     
     public void act(){

@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GoldMedal extends Actor
 {
-    Greenfoot
+    GreenfootImage goldM = new GreenfootImage("goldmedal.png");
     public void act()
     {
-        // Add your action code here.
+        goldM.scale(50, 50);
+        setImage(goldM);
     }
 }
