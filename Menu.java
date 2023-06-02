@@ -10,7 +10,7 @@ public class Menu extends Actor
 {
     public Menu(){
         GreenfootImage menu = new GreenfootImage("images/menu.png");
-        menu.scale(200, 200);
+        menu.scale(300, 300);
         setImage(menu);
     }
     public void act()
