@@ -15,6 +15,11 @@ public class Achievements extends World
     // Object instantiations
     Menu m = new Menu(700, 600);
     HomeButton h = new HomeButton();
+    BlankMedal bm1 = new BlankMedal();
+    BlankMedal bm2 = new BlankMedal();
+    BlankMedal bm3 = new BlankMedal();
+    BlankMedal bm4 = new BlankMedal();
+    BlankMedal bm5 = new BlankMedal();
     // Font
     
     public Achievements()
@@ -29,14 +34,20 @@ public class Achievements extends World
         achBG.scale(800, 600);
         setBackground(achBG);
         
-        // Add menu
+        // Add Menu
         addObject(m, 400, 300);
         
         // Add HomeButton
         addObject(h, 620, 120);
+        
+        // Add BlankMedal
+        addObject(bm1, 200, 120);
     }
     
     public void act(){
-        if(Greenfo
+        if(Greenfoot.mouseClicked(h)){
+            TitleScreen titleWorld = new TitleScreen();
+            Greenfoot.setWorld(titleWorld);
+        }
     }
 }
