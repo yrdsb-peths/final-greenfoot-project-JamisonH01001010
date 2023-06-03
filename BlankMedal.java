@@ -10,7 +10,7 @@ public class BlankMedal extends Actor
 {
     GreenfootImage blankM = new GreenfootImage("blankmedal.png");
     public BlankMedal(){
-        blankM.scale(50, 50);
+        blankM.scale(40, 40);
         setImage(blankM);
     }
 }

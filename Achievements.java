@@ -32,11 +32,12 @@ public class Achievements extends World
     GoldMedal gm4 = new GoldMedal();
     GoldMedal gm5 = new GoldMedal();
     // Font
-    GameFont ach1 = new GameFont("Sweet Sweet Revenge", 1000);
-    GameFont ach2 = new GameFont("Saving for a Rainy Day", 1000);
-    GameFont ach3 = new GameFont("1 in 100 chance", 1000);
-    GameFont ach4 = new GameFont("Bullying the Weak", 1000);
-    GameFont ach5 = new GameFont("???", 1000);
+    GameFont ach1 = new GameFont("Sweet Sweet Revenge", 800);
+    GameFont ach2 = new GameFont("Saving for a Rainy Day", 800);
+    GameFont ach3 = new GameFont("1 in 100 chance", 800);
+    GameFont ach4 = new GameFont("Bullying the Weak", 800);
+    GameFont ach5 = new GameFont("???", 800);
+    GameFont achText = new GameFont("Achievements", 1300);
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -56,18 +57,19 @@ public class Achievements extends World
         addObject(h, 620, 120);
         
         // Add BlankMedals
-        addObject(bm1, 190, 125);
-        addObject(bm2, 190, 215);
-        addObject(bm3, 190, 305);
-        addObject(bm4, 190, 395);
-        addObject(bm5, 190, 485);
+        addObject(bm1, 190, 190);
+        addObject(bm2, 190, 260);
+        addObject(bm3, 190, 330);
+        addObject(bm4, 190, 400);
+        addObject(bm5, 190, 470);
         
         // Text
-        addObject(ach1, 230, 140);
-        addObject(ach2, 230, 230);
-        addObject(ach3, 230, 320);
+        addObject(ach1, 230, 200);
+        addObject(ach2, 230, 270);
+        addObject(ach3, 230, 340);
         addObject(ach4, 230, 410);
-        addObject(ach5, 230, 500);
+        addObject(ach5, 230, 480);
+        addObject(achText, 260, 140);
     }
     
     public void act(){
@@ -75,28 +77,31 @@ public class Achievements extends World
             TitleScreen titleWorld = new TitleScreen();
             Greenfoot.setWorld(titleWorld);
         }
+        
+        completeAchievements();
     }
     
     private void completeAchievements(){
+        Achievements achWorld = new Achievements();
         if(finalBoss1){
-            //remove blank medal
-            //add gold medal
+            achWorld.removeObject(bm1);
+            addObject(gm1, 190, 190);
         }
         if(hoarder2){
-            //remove blank medal
-            //add gold medal
+            achWorld.removeObject(bm2);
+            addObject(gm2, 190, 260);
         }
         if(luckySlime3){
-            //remove blank medal
-            //add gold medal
+            achWorld.removeObject(bm3);
+            addObject(gm3, 190, 330);
         }
         if(bully4){
-            //remove blank medal
-            //add gold medal
+            achWorld.removeObject(bm4);
+            addObject(gm4, 190, 400);
         }
         if(chest5){
-            //remove blank medal
-            //add gold medal
+            achWorld.removeObject(bm5);
+            addObject(gm5, 190, 470);
         }
     }
     

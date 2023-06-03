@@ -11,7 +11,7 @@ public class GoldMedal extends Actor
     GreenfootImage goldM = new GreenfootImage("goldmedal.png");
     public void act()
     {
-        goldM.scale(50, 50);
+        goldM.scale(40, 40);
         setImage(goldM);
     }
 }
