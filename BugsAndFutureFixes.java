@@ -1,12 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * ALL OF THE CURRENT BUGS TO BE FIXED LATER
+ * ALL OF THE CURRENT BUGS/FIXES TO BE FIXED LATER
  * 
- * title screen -> achievement world white screen
- * achievement home button not working
  * adding ways to complete achievements (all)
  * options menu
+ * 
+ * Q's:
+ * title screen -> achievement world white screen
+ * achievement home button not working
+ * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
  */
 public class BugsAndFutureFixes extends Actor
 {
