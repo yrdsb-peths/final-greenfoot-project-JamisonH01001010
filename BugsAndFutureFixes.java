@@ -5,6 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * adding ways to complete achievements (all)
  * options menu - SFX option on to the setMUSICANDSFX method
+ * gamefont too big covering everything?
  * 
  * Q's:
  * title screen -> achievement world white screen

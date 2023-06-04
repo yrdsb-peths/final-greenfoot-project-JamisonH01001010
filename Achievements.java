@@ -16,8 +16,6 @@ public class Achievements extends World
     private boolean chest5 = false; // Hidden: Click on the background chest in the Achievements page
     // Achievement Background
     GreenfootImage achBG = new GreenfootImage("621708.jpg");
-    // Background Music
-    GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu
     Menu m = new Menu(700, 600);
@@ -47,9 +45,6 @@ public class Achievements extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         
-        // Repeat TitleScreen BGM 
-        // BGM.playLoop();
-        
         // Set Achievement background
         achBG.scale(800, 600);
         setBackground(achBG);
@@ -68,12 +63,12 @@ public class Achievements extends World
         addObject(bm5, 190, 470);
         
         // Text
-        addObject(ach1, 230, 200);
-        addObject(ach2, 230, 270);
-        addObject(ach3, 230, 340);
-        addObject(ach4, 230, 410);
-        addObject(ach5, 230, 480);
-        addObject(achText, 260, 140);
+        //addObject(ach1, 230, 200);
+        //addObject(ach2, 230, 270);
+        //addObject(ach3, 230, 340);
+        //addObject(ach4, 230, 410);
+        //addObject(ach5, 230, 480);
+        //addObject(achText, 260, 140);
     }
     
     public void act(){
@@ -81,7 +76,7 @@ public class Achievements extends World
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
-        
+        h.isClicked();
         completeAchievements();
     }
     

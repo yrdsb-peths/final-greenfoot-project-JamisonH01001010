@@ -10,8 +10,6 @@ public class StageSelect extends World
 {
     // StageSelect Background
     GreenfootImage stagesBG = new GreenfootImage("map_54x53.png");
-    // Background Music
-    GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Home Button
     HomeButton h = new HomeButton();
@@ -25,9 +23,6 @@ public class StageSelect extends World
         // Set StageSelect Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
-        
-        // Repeat BGM 
-        // BGM.playLoop();
         
         // Add HomeButton
         addObject(h, 35, 40);

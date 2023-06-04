@@ -39,8 +39,8 @@ public class TitleScreen extends World
         // Text
         addObject(title, 230, 125);
         addObject(achievements, 323, 380);
-        addObject(stages, 353, 250);
-        addObject(options, 345, 320);
+        //addObject(stages, 353, 250);
+        //addObject(options, 345, 320);
         
     }
     
@@ -57,8 +57,17 @@ public class TitleScreen extends World
             Options optionWorld = new Options();
             Greenfoot.setWorld(optionWorld);
         }
-        
-        
+
+        setMusicAndSFX();
+    }
+    
+    public void setMusicAndSFX(){
+        Options o = new Options();
+        if(o.musicCount % 2 == 0){
+            BGM.playLoop();
+        } else {
+            BGM.stop();
+        }
     }
     
     

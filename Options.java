@@ -9,19 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Options extends World
 {
-    private int musicCount = 0;
+    public int musicCount = 0;
     private int SFXCount = 0;
-    private boolean musicON = true;
-    private boolean SFXON = true;
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
-    // Background Music
-    GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu 
     Menu m = new Menu(500, 500);
     // HomeButton
-    HomeButton h = new HomeButton();
+    HomeButton h1 = new HomeButton();
     // BlackSquare
     BlackSquare b1 = new BlackSquare();
     BlackSquare b2 = new BlackSquare();
@@ -40,19 +36,15 @@ public class Options extends World
         optionsBG.scale(800, 600);
         setBackground(optionsBG);
         
-        // Repeat BGM 
-        // BGM.playLoop();
-        
         // Add Menu
         addObject(m, 400, 300);
         // Add HomeButtion
-        addObject(h, 545, 155);
+        addObject(h1, 545, 155);
         // Add BlackSquare
         addObject(b1, 270, 250);
         addObject(b2, 270, 400);
         // Add Checkmark
-        addObject(c1, 270, 250);
-        addObject(c2, 270, 400);
+        //addObject(c2, 270, 400);
         // Text
         addObject(options, 300, 190);
         addObject(music, 310, 270);
@@ -60,41 +52,17 @@ public class Options extends World
     }
     
     public void act(){
-        if(Greenfoot.mouseClicked(h)){
+        if(Greenfoot.mouseClicked(h1)){
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
-        if(Greenfoot.mouseClicked(b1)){
+        if(Greenfoot.mouseClicked(b1) || Greenfoot.mouseClicked(c1)){
             musicCount++;
         }
-        if(Greenfoot.mouseClicked(b2)){
-            SFXCount++;
-        }
         if(musicCount % 2 == 0){
-            musicON = true;
+            addObject(c1, 270, 250);
         } else {
-            musicON = false;
-        }
-        if(SFXCount % 2 == 0){
-            SFXON = true;
-        } else {
-            SFXON = false;
-        }
-    }
-    
-    public boolean getMusicON(){
-        return musicON;
-    }
-    
-    public boolean getSFXON(){
-        return SFXON;
-    }
-    
-    public void setMusicAndSFX(){
-        if(musicON){
-            BGM.playLoop();
-        } else {
-            BGM.stop();
+            removeObject(c1);
         }
     }
 }

@@ -14,4 +14,11 @@ public class HomeButton extends Actor
         homeButton.scale(80, 80);
         setImage(homeButton);
     }
+    
+    public void isClicked(){
+        if(Greenfoot.mouseClicked(this)){
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
+        }
+    }
 }
