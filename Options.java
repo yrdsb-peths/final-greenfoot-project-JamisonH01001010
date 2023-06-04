@@ -12,6 +12,7 @@ public class Options extends World
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
     
     Menu m = new Menu(500, 500);
+    HomeButton h = new HomeButton();
     
     GameFont options = new GameFont("Options", 1800);
     public Options()
@@ -23,7 +24,15 @@ public class Options extends World
         setBackground(optionsBG);
         
         addObject(m, 400, 300);
+        addObject(h, 545, 155);
         
         addObject(options, 300, 190);
+    }
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(h)){
+            TitleScreen achWorld = new TitleScreen();
+            Greenfoot.setWorld(achWorld);
+        }
     }
 }
