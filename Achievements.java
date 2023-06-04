@@ -19,19 +19,23 @@ public class Achievements extends World
     // Background Music
     GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
+    // Menu
     Menu m = new Menu(700, 600);
+    // HomeButton
     HomeButton h = new HomeButton();
+    // BlankMedal
     BlankMedal bm1 = new BlankMedal();
     BlankMedal bm2 = new BlankMedal();
     BlankMedal bm3 = new BlankMedal();
     BlankMedal bm4 = new BlankMedal();
     BlankMedal bm5 = new BlankMedal();
+    // GoldMedal
     GoldMedal gm1 = new GoldMedal();
     GoldMedal gm2 = new GoldMedal();
     GoldMedal gm3 = new GoldMedal();
     GoldMedal gm4 = new GoldMedal();
     GoldMedal gm5 = new GoldMedal();
-    // Font
+    // Text
     GameFont ach1 = new GameFont("Sweet Sweet Revenge", 800);
     GameFont ach2 = new GameFont("Saving for a Rainy Day", 800);
     GameFont ach3 = new GameFont("1 in 100 chance", 800);
@@ -74,9 +78,11 @@ public class Achievements extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(h)){
-            TitleScreen titleWorld = new TitleScreen();
-            Greenfoot.setWorld(titleWorld);
+            TitleScreen achWorld = new TitleScreen();
+            Greenfoot.setWorld(achWorld);
         }
+        
+        h.returnHome();
         
         completeAchievements();
     }

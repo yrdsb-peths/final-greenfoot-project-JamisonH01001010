@@ -48,7 +48,6 @@ public class TitleScreen extends World
     }
     
     public void act(){
-        // blank screen
         if(Greenfoot.mouseClicked(achievements)){
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
