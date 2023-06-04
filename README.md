@@ -4,11 +4,18 @@ This is the README.md file.
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
 Sources:
-Achievement Background - https://wall.alphacoders.com/big.php?i=621708
-Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
+Font - https://vrtxrry.itch.io/dungeonfont
+Title Screen, Achievements, Stage Select Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
+Achievements Background - https://wall.alphacoders.com/big.php?i=621708
+Achievements Blank Medal Icon - 
+Achievements Gold Medal Icon - 
 Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais
 Title Screen Menu, Icons - https://mounirtohami.itch.io/pixel-art-gui-elements
-Font - https://vrtxrry.itch.io/dungeonfont
+Stage Select Background - Self made using https://app.dungeonscrawl.com/
+Stage Select Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets
+Options Background - https://www.freepik.com/free-vector/medieval-castle-dungeon-wall-game-cartoon-vector_44156844.htm#query=dungeon%20background&position=3&from_view=keyword&track=ais
+Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394
+Options Checkmark - https://www.pngarts.com/explore/221110
 
 
 Ideas:
