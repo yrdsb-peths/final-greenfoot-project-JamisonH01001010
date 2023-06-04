@@ -34,16 +34,16 @@ public class Achievements extends World
     GoldMedal gm4 = new GoldMedal();
     GoldMedal gm5 = new GoldMedal();
     // Text
-    GameFont ach1 = new GameFont("Sweet Sweet Revenge", 800);
-    GameFont ach2 = new GameFont("Saving for a Rainy Day", 800);
-    GameFont ach3 = new GameFont("1 in 100 chance", 800);
-    GameFont ach4 = new GameFont("Bullying the Weak", 800);
-    GameFont ach5 = new GameFont("???", 800);
-    GameFont achText = new GameFont("Achievements", 1300);
+    GameFont ach1 = new GameFont("Sweet Sweet Revenge", 450);
+    GameFont ach2 = new GameFont("Saving for a Rainy Day", 450);
+    GameFont ach3 = new GameFont("1 in 100 chance", 450);
+    GameFont ach4 = new GameFont("Bullying the Weak", 450);
+    GameFont ach5 = new GameFont("???", 450);
+    GameFont achText = new GameFont("Achievements", 700);
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1, false); // if true then unable to place text > dimensions
         
         // Set Achievement background
         achBG.scale(800, 600);
@@ -60,12 +60,12 @@ public class Achievements extends World
         addObject(bm5, 190, 470);
         
         // Text
-        addObject(ach1, 230, 200);
-        addObject(ach2, 230, 270);
-        addObject(ach3, 230, 340);
-        addObject(ach4, 230, 410);
-        addObject(ach5, 230, 480);
-        addObject(achText, 260, 140);
+        addObject(ach1, 390, 370); 
+        addObject(ach2, 390, 440);
+        addObject(ach3, 390, 510);
+        addObject(ach4, 390, 580);
+        addObject(ach5, 390, 650);
+        addObject(achText, 470, 400);
         
         // Add HomeButton
         addObject(h, 620, 120);

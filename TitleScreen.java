@@ -17,7 +17,7 @@ public class TitleScreen extends World
     // MenuIcons
     MenuIcons MI = new MenuIcons();
     // Text
-    GameFont title = new GameFont("Lost Sword", 2000);
+    GameFont title = new GameFont("Lost Sword", 1000);
     GameFont stages = new GameFont("Stages", 300);
     GameFont options = new GameFont("Options", 300);
     GameFont achievements = new GameFont("Achievements", 300);
@@ -37,7 +37,7 @@ public class TitleScreen extends World
         addObject(MI, 400, 300);
         
         // Text
-        addObject(title, 230, 125);
+        addObject(title, 560, 490);
         addObject(stages, 473, 350);
         addObject(options, 470, 420);
         addObject(achievements, 433, 485);

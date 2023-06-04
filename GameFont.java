@@ -34,7 +34,7 @@ public class GameFont extends Actor
             greenfoot.Font DungeonFont = new greenfoot.Font(dynamicFont32.getName(), dynamicFont32.getStyle() % 2 == 1, dynamicFont32.getStyle() / 2 == 1, dynamicFont32.getSize());
             in.close();
             
-            //new code
+            //new code (Location is scuffed, due to font scaling, drawing text, blank image creation)
             GreenfootImage img = new GreenfootImage(350, 350);
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
