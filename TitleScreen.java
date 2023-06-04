@@ -9,7 +9,7 @@ public class TitleScreen extends World
 {
     // Dungeon Background
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
-    // Title Screen Background Music
+    // Background Music
     GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu 
@@ -25,9 +25,6 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
-        // Repeat TitleScreen BGM 
-        // BGM.playLoop();
         
         // Set dungeon background
         dungeonBG.scale(800, 600);
@@ -60,6 +57,8 @@ public class TitleScreen extends World
             Options optionWorld = new Options();
             Greenfoot.setWorld(optionWorld);
         }
+        
+        
     }
     
     
