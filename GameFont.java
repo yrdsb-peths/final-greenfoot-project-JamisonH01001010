@@ -35,10 +35,10 @@ public class GameFont extends Actor
             in.close();
             
             //new code
-            GreenfootImage img = new GreenfootImage(500, 500);
+            GreenfootImage img = new GreenfootImage(350, 350);
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
-            img.drawString(text, 300, 200);
+            img.drawString(text, 50, 50);
             img.scale(scale, scale);
             setImage(img);
         } catch (FileNotFoundException e) {

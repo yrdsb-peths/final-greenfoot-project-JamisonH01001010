@@ -52,9 +52,6 @@ public class Achievements extends World
         // Add Menu
         addObject(m, 400, 300);
         
-        // Add HomeButton
-        addObject(h, 620, 120);
-        
         // Add BlankMedals
         addObject(bm1, 190, 190);
         addObject(bm2, 190, 260);
@@ -63,12 +60,15 @@ public class Achievements extends World
         addObject(bm5, 190, 470);
         
         // Text
-        //addObject(ach1, 230, 200);
-        //addObject(ach2, 230, 270);
-        //addObject(ach3, 230, 340);
-        //addObject(ach4, 230, 410);
-        //addObject(ach5, 230, 480);
-        //addObject(achText, 260, 140);
+        addObject(ach1, 230, 200);
+        addObject(ach2, 230, 270);
+        addObject(ach3, 230, 340);
+        addObject(ach4, 230, 410);
+        addObject(ach5, 230, 480);
+        addObject(achText, 260, 140);
+        
+        // Add HomeButton
+        addObject(h, 620, 120);
     }
     
     public void act(){
