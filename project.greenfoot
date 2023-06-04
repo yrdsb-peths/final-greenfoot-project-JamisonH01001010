@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Achievements.image=621708.jpg
-class.Options.image=background1.png
+class.Options.image=Wall.jpg
 class.StageSelect.image=map_54x53.png
 class.TitleScreen.image=dungeon.jpg
 dependency1.from=TitleScreen
@@ -169,6 +169,6 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1550
-world.lastInstantiated=StageSelect
+world.lastInstantiated=Options
 xPosition=0
 yPosition=0

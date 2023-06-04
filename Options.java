@@ -9,14 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Options extends World
 {
-
-    /**
-     * Constructor for objects of class Options.
-     * 
-     */
+    GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
+    
+    Menu m = new Menu(500, 500);
+    
+    GameFont options = new GameFont("Options", 1800);
     public Options()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        
+        optionsBG.scale(800, 600);
+        setBackground(optionsBG);
+        
+        addObject(m, 400, 300);
+        
+        addObject(options, 300, 190);
     }
 }

@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Q's:
  * title screen -> achievement world white screen
  * achievement home button not working
+ * stage select home button not working
  * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
  */
 public class BugsAndFutureFixes extends Actor
