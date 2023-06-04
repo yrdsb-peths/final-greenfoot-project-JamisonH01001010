@@ -11,7 +11,7 @@ public class BlackSquare extends Actor
     GreenfootImage blackSquare = new GreenfootImage("rounded-square.png");
     
     public BlackSquare(){
-        blackSquare.scale(80, 80);
+        blackSquare.scale(60, 60);
         setImage(blackSquare);
     }
 }

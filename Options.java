@@ -24,6 +24,8 @@ public class Options extends World
     Checkmark c2 = new Checkmark();
     // Text
     GameFont options = new GameFont("Options", 1800);
+    GameFont music = new GameFont("Music", 1200);
+    GameFont soundEffects = new GameFont("Sound Effects", 1200);
     public Options()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -36,13 +38,15 @@ public class Options extends World
         // Add HomeButtion
         addObject(h, 545, 155);
         // Add BlackSqaure
-        addObject(b1, 200, 200);
-        addObject(b2, 200, 300);
+        addObject(b1, 270, 250);
+        addObject(b2, 270, 400);
         // Add Checkmark
-        addObject(c1, 200, 200);
-        addObject(c2,  200, 300);
+        addObject(c1, 270, 250);
+        addObject(c2, 270, 400);
         // Text
         addObject(options, 300, 190);
+        addObject(music, 310, 270);
+        addObject(soundEffects, 320, 420);
     }
     
     public void act(){
