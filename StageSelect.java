@@ -14,7 +14,7 @@ public class StageSelect extends World
     // Home Button
     HomeButton h = new HomeButton();
     // Text
-    GameFont stageSelect = new GameFont("Stage Select", 1200);
+    GameFont stageSelect = new GameFont("Stage Select", 500);
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -28,7 +28,7 @@ public class StageSelect extends World
         addObject(h, 35, 40);
         
         // Text
-        addObject(stageSelect, 300, 60);
+        addObject(stageSelect, 485, 380);
         
     }
     
