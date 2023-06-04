@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HomeButton extends Actor
 {
-    GreenfootImage homeButton = new GreenfootImage("homebutton.png");
+    GreenfootImage homeButton = new GreenfootImage("home-button.png");
     
     public HomeButton(){
         homeButton.scale(80, 80);

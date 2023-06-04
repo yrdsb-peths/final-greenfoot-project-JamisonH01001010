@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuIcons extends Actor
 {
     public MenuIcons(){
-        GreenfootImage menuI = new GreenfootImage("images/menuicons.png");
+        GreenfootImage menuI = new GreenfootImage("menu-icons.png");
         menuI.scale(200, 200);
         setImage(menuI);
     }

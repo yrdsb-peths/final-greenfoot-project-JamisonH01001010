@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BlankMedal extends Actor
 {
-    GreenfootImage blankM = new GreenfootImage("blankmedal.png");
+    GreenfootImage blankM = new GreenfootImage("blank-medal.png");
     public BlankMedal(){
         blankM.scale(40, 40);
         setImage(blankM);
