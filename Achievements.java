@@ -82,8 +82,6 @@ public class Achievements extends World
             Greenfoot.setWorld(achWorld);
         }
         
-        h.returnHome();
-        
         completeAchievements();
     }
     

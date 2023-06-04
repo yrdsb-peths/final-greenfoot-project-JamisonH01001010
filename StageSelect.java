@@ -11,6 +11,8 @@ public class StageSelect extends World
     // StageSelect Background
     GreenfootImage stagesBG = new GreenfootImage("map_54x53.png");
     // Object instantiations
+    // Home Button
+    HomeButton h = new HomeButton();
     // Text
     GameFont stageSelect = new GameFont("Stage Select", 1200);
     public StageSelect()
@@ -22,8 +24,18 @@ public class StageSelect extends World
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
-        // Text
-        addObject(stageSelect, 300, 200);
+        // Add HomeButton
+        addObject(h, 35, 40);
         
+        // Text
+        addObject(stageSelect, 300, 60);
+        
+    }
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(h)){
+            TitleScreen achWorld = new TitleScreen();
+            Greenfoot.setWorld(achWorld);
+        }
     }
 }
