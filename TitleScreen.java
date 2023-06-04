@@ -18,9 +18,9 @@ public class TitleScreen extends World
     MenuIcons MI = new MenuIcons();
     // Text
     GameFont title = new GameFont("Lost Sword", 2000);
-    GameFont stages = new GameFont("Stages", 1000);
-    GameFont options = new GameFont("Options", 1000);
-    GameFont achievements = new GameFont("Achievements", 700);
+    GameFont stages = new GameFont("Stages", 300);
+    GameFont options = new GameFont("Options", 300);
+    GameFont achievements = new GameFont("Achievements", 300);
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,9 +38,9 @@ public class TitleScreen extends World
         
         // Text
         addObject(title, 230, 125);
-        addObject(stages, 353, 250);
-        addObject(options, 345, 320);
-        addObject(achievements, 323, 380);
+        addObject(stages, 473, 350);
+        addObject(options, 470, 420);
+        addObject(achievements, 433, 485);
         
     }
     

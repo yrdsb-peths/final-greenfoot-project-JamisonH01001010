@@ -22,9 +22,9 @@ public class TestWorld extends World
         super(600, 400, 1); 
         
        
-        addObject(stages, 300, 250);
-        addObject(options, 300, 310);
-        addObject(achievements, 300, 370);
+        addObject(stages, 300, 280);
+        addObject(options, 300, 350);
+        addObject(achievements, 310, 420);
         
     }
     
