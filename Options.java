@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Options extends World
 {
+    // Count to determine "button" state of options
     public int musicCount = 0;
     private int SFXCount = 0;
     // Options Background
@@ -25,13 +26,13 @@ public class Options extends World
     Checkmark c1 = new Checkmark();
     Checkmark c2 = new Checkmark();
     // Text
-    GameFont options = new GameFont("Options", 1800);
-    GameFont music = new GameFont("Music", 1200);
-    GameFont soundEffects = new GameFont("Sound Effects", 1200);
+    GameFont options = new GameFont("Options", 500, 1);
+    GameFont music = new GameFont("Music", 300, 1);
+    GameFont soundEffects = new GameFont("Sound Effects", 300, 1);
     public Options()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1, false); 
         // Set Options Background
         optionsBG.scale(800, 600);
         setBackground(optionsBG);
@@ -46,9 +47,9 @@ public class Options extends World
         // Add Checkmark
         //addObject(c2, 270, 400);
         // Text
-        addObject(options, 300, 190);
-        addObject(music, 310, 270);
-        addObject(soundEffects, 310, 420);
+        addObject(options, 560, 430);
+        addObject(music, 400, 400);
+        addObject(soundEffects, 400, 550);
     }
     
     public void act(){
