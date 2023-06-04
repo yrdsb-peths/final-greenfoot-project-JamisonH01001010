@@ -13,6 +13,8 @@ public class Options extends World
     
     Menu m = new Menu(500, 500);
     HomeButton h = new HomeButton();
+    BlackSquare b1 = new BlackSquare();
+    
     
     GameFont options = new GameFont("Options", 1800);
     public Options()
