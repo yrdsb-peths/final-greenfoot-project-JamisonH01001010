@@ -69,7 +69,7 @@ public class TitleScreen extends World
             Greenfoot.setWorld(SMworld);
         }
 
-        setMusicAndSFX();
+        //setMusicAndSFX();
     }
     
     public void setMusicAndSFX(){
