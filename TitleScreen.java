@@ -58,12 +58,11 @@ public class TitleScreen extends World
             Greenfoot.setWorld(optionWorld);
         }
 
-        //setMusicAndSFX();
+        setMusicAndSFX();
     }
     
     public void setMusicAndSFX(){
-        Options o = new Options();
-        if(o.musicCount % 2 == 0){
+        if(Options.getMusicCount() % 2 == 0){
             BGM.playLoop();
         } else {
             BGM.stop();

@@ -10,8 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Options extends World
 {
     // Count to determine "button" state of options
-    public int musicCount = 0;
-    private int SFXCount = 0;
+    public static int musicCount = 0;
+    public static int SFXCount = 0;
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
     // Object instantiations
@@ -26,9 +26,9 @@ public class Options extends World
     Checkmark c1 = new Checkmark();
     Checkmark c2 = new Checkmark();
     // Text
-    GameFont options = new GameFont("Options", 500, 1);
-    GameFont music = new GameFont("Music", 300, 1);
-    GameFont soundEffects = new GameFont("Sound Effects", 300, 1);
+    GameFont options = new GameFont("Options", 500, 250);
+    GameFont music = new GameFont("Music", 300, 250);
+    GameFont soundEffects = new GameFont("Sound Effects", 300, 250);
     public Options()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -40,7 +40,7 @@ public class Options extends World
         // Add Menu
         addObject(m, 400, 300);
         // Text
-        addObject(options, 450, 330);
+        addObject(options, 460, 330);
         addObject(music, 400, 360);
         addObject(soundEffects, 400, 510);
         // Add BlackSquare
@@ -63,5 +63,9 @@ public class Options extends World
         } else {
             removeObject(c1);
         }
+    }
+    
+    public static int getMusicCount(){
+        return musicCount;
     }
 }

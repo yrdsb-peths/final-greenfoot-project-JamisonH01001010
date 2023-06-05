@@ -15,6 +15,7 @@ public class GameFont extends Actor
 {
     private String text;
     private int scale;
+    private int imageNum;
     
     public GameFont(String text, int scale)
     {
@@ -50,7 +51,7 @@ public class GameFont extends Actor
         }
     }
     // For more specific text problems
-    public GameFont(String text, int scale, int a){
+    public GameFont(String text, int scale, int imageNum){
         this.text = text;
         this.scale = scale;
         
@@ -68,7 +69,7 @@ public class GameFont extends Actor
             in.close();
             
             //new code (Location is scuffed, due to font scaling, drawing text, blank image creation)
-            GreenfootImage img = new GreenfootImage(250, 250);
+            GreenfootImage img = new GreenfootImage(imageNum, imageNum);
             img.setColor(Color.WHITE);
             img.setFont(DungeonFont);
             img.drawString(text, 50, 50);
