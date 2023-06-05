@@ -39,17 +39,15 @@ public class Options extends World
         
         // Add Menu
         addObject(m, 400, 300);
-        // Add HomeButtion
-        addObject(h1, 545, 155);
+        // Text
+        addObject(options, 450, 330);
+        addObject(music, 400, 360);
+        addObject(soundEffects, 400, 510);
         // Add BlackSquare
         addObject(b1, 270, 250);
         addObject(b2, 270, 400);
-        // Add Checkmark
-        //addObject(c2, 270, 400);
-        // Text
-        addObject(options, 560, 430);
-        addObject(music, 400, 400);
-        addObject(soundEffects, 400, 550);
+        // Add HomeButtion
+        addObject(h1, 545, 155);
     }
     
     public void act(){
