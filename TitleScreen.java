@@ -16,15 +16,18 @@ public class TitleScreen extends World
     Menu m = new Menu(300, 300);
     // MenuIcons
     MenuIcons MI = new MenuIcons();
+    //MenuIconsTwo
+    MenuIconsTwo MI2 = new MenuIconsTwo();
     // Text
     GameFont title = new GameFont("Lost Sword", 1000);
     GameFont stages = new GameFont("Stages", 300);
     GameFont options = new GameFont("Options", 300);
     GameFont achievements = new GameFont("Achievements", 300);
+    GameFont skillMenu = new GameFont("Skill Menu", 500);
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1, false); 
         
         // Set dungeon background
         dungeonBG.scale(800, 600);
@@ -36,11 +39,15 @@ public class TitleScreen extends World
         // Add MenuIcons
         addObject(MI, 400, 300);
         
+        // Add MenuIconsTwo
+        addObject(MI2, 400, 500);
+        
         // Text
         addObject(title, 560, 490);
         addObject(stages, 473, 350);
         addObject(options, 470, 420);
         addObject(achievements, 433, 485);
+        addObject(skillMenu, 483, 700);
         
     }
     

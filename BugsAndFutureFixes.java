@@ -6,6 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * adding ways to complete achievements (all)
  * options menu - SFX option on to the setMUSICANDSFX method (fix when doing gameplay)
+ * opening cutscene
+ * short tutorial after that
  * 
  * Q's:
  * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
