@@ -15,6 +15,7 @@ public class SkillMenu extends World
     
     // Text
     GameFont skillMenu = new GameFont("Skill Menu", 900);
+    
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,9 +23,9 @@ public class SkillMenu extends World
         
         addObject(m, 400, 300); 
         
-        addObject(c, 700, 100);
+        addObject(c, 650, 90);
         
         // Text
-        addObject(skillMenu, 500, 600);
+        addObject(skillMenu, 525, 450);
     }
 }
