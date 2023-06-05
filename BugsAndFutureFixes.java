@@ -12,7 +12,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * BGM.stop not working (options & title screen)
  */
 /**
- * ORDER MATTERS??
+ * Order matters
  * Ex.
  * addObject(a);
  * addObject(b);
@@ -20,6 +20,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * so object b masks the position of object a
  * thus object a gets hidden behind object b
  * unable to access object a
+ * Solve: switch order of addition/ if next to each other & is a text & image, reduce text clickable box/image
  */ 
 public class BugsAndFutureFixes extends Actor
 {
