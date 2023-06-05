@@ -5,6 +5,7 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 Sources:
 Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2
+Main Character - https://rvros.itch.io/animated-pixel-hero
 Font - https://vrtxrry.itch.io/dungeonfont
 Title Screen, Achievements, Stage Select Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
 Achievements Background - https://wall.alphacoders.com/big.php?i=621708
@@ -16,6 +17,9 @@ Stage Select Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets
 Options Background - https://www.freepik.com/free-vector/medieval-castle-dungeon-wall-game-cartoon-vector_44156844.htm#query=dungeon%20background&position=3&from_view=keyword&track=ais
 Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394
 Options Checkmark - https://www.pngarts.com/explore/221110
+
+
+
 
 
 Ideas:
