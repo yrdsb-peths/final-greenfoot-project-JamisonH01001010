@@ -64,6 +64,10 @@ public class TitleScreen extends World
             Options optionWorld = new Options();
             Greenfoot.setWorld(optionWorld);
         }
+        if(Greenfoot.mouseClicked(skillMenu)){
+            SkillMenu SMworld = new SkillMenu();
+            Greenfoot.setWorld(SMworld);
+        }
 
         setMusicAndSFX();
     }
