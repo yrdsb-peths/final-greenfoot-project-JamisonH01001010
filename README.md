@@ -19,7 +19,8 @@ Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-squa
 Options Checkmark - https://www.pngarts.com/explore/221110
 Skill Menu Health - https://www.pngwing.com/en/free-png-invqg
 Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/
-
+Skill - Blade Slash - https://lionildio.itch.io/wood-sword
+Skill  - Barrier - https://www.pngwing.com/en/free-png-aoxqi
 
 
 
