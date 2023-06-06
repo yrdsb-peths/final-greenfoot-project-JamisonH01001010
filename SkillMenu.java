@@ -20,7 +20,9 @@ public class SkillMenu extends World
     // Attack
     Attack attack = new Attack();
     // BladeSlash
-    BladeSlash b = new BladeSlash();
+    BladeSlash bs = new BladeSlash();
+    // Barrier
+    Barrier b = new Barrier();
     // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
@@ -30,8 +32,11 @@ public class SkillMenu extends World
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
-    GameFont skill1 = new GameFont("Blade Slash", 250, 200);
-    GameFont skill1p2 = new GameFont("Deal 100% of ATK damage", 300, 400);
+    GameFont bs1 = new GameFont("Blade Slash", 250, 200);
+    GameFont bs2 = new GameFont("Deal 100% of ATK damage", 300, 400);
+    GameFont b1 = new GameFont("Barrier", 250, 200);
+    GameFont b2 = new GameFont("Create shield randomly", 300, 400);
+    GameFont b3 = new GameFont("between 30% - 50% of HP", 300, 400);
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -45,15 +50,17 @@ public class SkillMenu extends World
         // Add Attack
         addObject(attack, 300, 400);
         // Add BladeSlash
-        addObject(b, 450, 200);
+        addObject(bs, 450, 200);
+        // Add Barrier
+        addObject(b, 450, 330);
         // Text
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
         addObject(stats, 200, 310);
         addObject(HP, 165, 415);
         addObject(ATK, 165, 495);
-        addObject(skill1, 550, 250);
-        addObject(skill1p2, 600, 350);
+        addObject(bs1, 550, 250);
+        addObject(bs2, 600, 350);
         // Add Increasers
         addObject(i1, 350, 318); 
         addObject(i2, 350, 400);
