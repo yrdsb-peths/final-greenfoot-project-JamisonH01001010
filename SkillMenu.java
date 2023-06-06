@@ -22,8 +22,8 @@ public class SkillMenu extends World
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
     // Text
-    GameFont skillMenu = new GameFont("Skill Menu", 900);
-    GameFont numCoins = new GameFont(cCount.toString(), 400);
+    GameFont skillMenu = new GameFont("Skill Menu", 500, 200);
+    GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
     GameFont stats = new GameFont("[Stats]", 600);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 500);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 500);
@@ -43,8 +43,8 @@ public class SkillMenu extends World
         addObject(i1, 650, 400); //(348, 268)
         addObject(i2, 348, 350);
         // Text
-        addObject(skillMenu, 525, 450);
-        addObject(numCoins, 760, 252);
+        addObject(skillMenu, 350, 250);
+        addObject(numCoins, 620, 105);
         addObject(stats, 380, 420);
         addObject(HP, 280, 470);
         addObject(ATK, 280, 550);
@@ -52,11 +52,9 @@ public class SkillMenu extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
-            //Health.increaseHealth();
-            removeObject(HP);
-            //HP = new GameFont("HP:    " + 25, 500);//Health.getHealthCount(), 500);
-            //addObject(HP, 280, 470);
-            //addObject(health, 400, 400);
+            Health.increaseHealth();
+            HP = new GameFont("HP:    " + 25, 500);//Health.getHealthCount(), 500);
+            addObject(HP, 280, 470);
         }
         if(Greenfoot.mouseClicked(i2)){
             Attack.increaseAtk();
