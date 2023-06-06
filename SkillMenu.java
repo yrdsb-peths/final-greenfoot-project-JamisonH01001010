@@ -23,6 +23,8 @@ public class SkillMenu extends World
     BladeSlash bs = new BladeSlash();
     // Barrier
     Barrier b = new Barrier();
+    // StunSmash
+    StunSmash h = new StunSmash();
     // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
@@ -53,6 +55,8 @@ public class SkillMenu extends World
         addObject(bs, 450, 200);
         // Add Barrier
         addObject(b, 450, 330);
+        // Add StunSmash
+        addObject(h, 450, 460);
         // Text
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
