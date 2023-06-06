@@ -16,13 +16,14 @@ public class SkillMenu extends World
     Integer cCount = CoinTracker.getCoinCount();
     // Health
     Health health = new Health();
+    Integer hCount = Health.getHealthCount();
     // Attack
     Attack attack = new Attack();
     // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
     // Text
-    GameFont skillMenu = new GameFont("Skill Menu", 500, 200);
+    GameFont skillMenu = new GameFont("Skill Menu", 400, 190);
     GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
@@ -40,30 +41,34 @@ public class SkillMenu extends World
         // Add Attack
         addObject(attack, 310, 350);
         // Add Increasers
-        addObject(i1, 348, 268); //(348, 268)
+        addObject(i1, 348, 268); 
         addObject(i2, 348, 350);
         // Text
-        //addObject(skillMenu, 350, 250);
+        //addObject(skillMenu, 350, 215);
         addObject(numCoins, 608, 105);
-        //addObject(stats, 200, 260);
-        //addObject(HP, 175, 365);
-        //addObject(ATK, 175, 445);
+        addObject(stats, 200, 260);
+        addObject(HP, 175, 365);
+        addObject(ATK, 175, 445);
     }
     
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
             Health.increaseHealth();
             removeObject(HP);
-            HP = new GameFont("HP:    " + 25, 500);//Health.getHealthCount(), 500);
-            addObject(HP, 280, 470);
+            HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
+            addObject(HP, 175, 365);
             removeObject(numCoins);
-            numCoins = new GameFont("cCount.toString()", 100, 100);
+            numCoins = new GameFont(" " + CoinTracker.getCoinCount(), 100, 100);
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(i2)){
             Attack.increaseAtk();
-            ATK = new GameFont("ATK: " + Attack.getAtkCount(), 500);
-            addObject(ATK, 280, 550);
+            removeObject(ATK);
+            ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
+            addObject(ATK, 175, 445);
+            removeObject(numCoins);
+            numCoins = new GameFont(" " + CoinTracker.getCoinCount(), 100, 100);
+            addObject(numCoins, 608, 105);
         }
     }
 }
