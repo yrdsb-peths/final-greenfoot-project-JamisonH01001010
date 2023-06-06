@@ -16,7 +16,7 @@ public class TitleScreen extends World
     Menu m = new Menu(300, 300);
     // MenuIcons
     MenuIcons MI = new MenuIcons();
-    //MenuIconsTwo
+    // MenuIconsTwo
     MenuIconsTwo MI2 = new MenuIconsTwo();
     // Text
     GameFont title = new GameFont("Lost Sword", 1000);

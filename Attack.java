@@ -8,18 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Attack extends Actor
 {
-    private static int atkCount = 999;
+    private static int atkCount = 5;
     GreenfootImage atk = new GreenfootImage("attack.png");
     public Attack(){
         atk.scale(40, 40);
         setImage(atk);
     }
     
-    public static int getAtkCount(){
-        return atkCount;
+    public static void increaseAtk(){
+        // Cap 999 ATK
+        if(atkCount < 999 && CoinTracker.getCoinCount() >= 5){
+            atkCount += 3;
+            CoinTracker.setCoinCount(-5);
+        }
     }
     
-    public static void increaseAtk(){
-        atkCount += 3;
+    public static int getAtkCount(){
+        return atkCount;
     }
 }

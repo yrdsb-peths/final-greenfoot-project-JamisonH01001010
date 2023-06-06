@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Health extends Actor
 {
-    private static int healthCount = 999;
+    private static int healthCount = 20;
     GreenfootImage hp = new GreenfootImage("health.png");
     public Health(){
         hp.scale(50, 50);
@@ -16,7 +16,11 @@ public class Health extends Actor
     }
     
     public static void increaseHealth(){
-        healthCount += 5;
+        // Cap 999 HP
+        if(healthCount < 999 && CoinTracker.getCoinCount() >= 5){
+           healthCount += 5; 
+           CoinTracker.setCoinCount(-5);
+        }
     }
     
     public static int getHealthCount(){
