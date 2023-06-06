@@ -15,7 +15,6 @@ public class GameFont extends Actor
 {
     private String text;
     private int scale;
-    private int imageNum;
     
     public GameFont(String text, int scale)
     {

@@ -23,7 +23,7 @@ public class SkillMenu extends World
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
     // Text
-    GameFont skillMenu = new GameFont("Skill Menu", 400, 190);
+    GameFont skillMenu = new GameFont("Skills", 300, 120);
     GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
@@ -37,18 +37,18 @@ public class SkillMenu extends World
         // Add CoinTracker
         addObject(c, 650, 88);
         // Add Health
-        addObject(health, 310, 268); 
+        addObject(health, 300, 318); 
         // Add Attack
-        addObject(attack, 310, 350);
+        addObject(attack, 300, 400);
         // Add Increasers
-        addObject(i1, 348, 268); 
-        addObject(i2, 348, 350);
+        addObject(i1, 350, 318); 
+        addObject(i2, 350, 400);
         // Text
-        //addObject(skillMenu, 350, 215);
+        addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
-        addObject(stats, 200, 260);
-        addObject(HP, 175, 365);
-        addObject(ATK, 175, 445);
+        addObject(stats, 200, 310);
+        addObject(HP, 165, 415);
+        addObject(ATK, 165, 495);
     }
     
     public void act(){
@@ -56,7 +56,7 @@ public class SkillMenu extends World
             Health.increaseHealth();
             removeObject(HP);
             HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
-            addObject(HP, 175, 365);
+            addObject(HP, 165, 415);
             removeObject(numCoins);
             numCoins = new GameFont(" " + CoinTracker.getCoinCount(), 100, 100);
             addObject(numCoins, 608, 105);
@@ -65,7 +65,7 @@ public class SkillMenu extends World
             Attack.increaseAtk();
             removeObject(ATK);
             ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
-            addObject(ATK, 175, 445);
+            addObject(ATK, 165, 495);
             removeObject(numCoins);
             numCoins = new GameFont(" " + CoinTracker.getCoinCount(), 100, 100);
             addObject(numCoins, 608, 105);
