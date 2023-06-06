@@ -24,7 +24,7 @@ public class SkillMenu extends World
     // Barrier
     Barrier b = new Barrier();
     // StunSmash
-    StunSmash h = new StunSmash();
+    StunSmash s = new StunSmash();
     // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
@@ -34,15 +34,18 @@ public class SkillMenu extends World
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
-    GameFont bs1 = new GameFont("Blade Slash", 250, 200);
+    GameFont bs1 = new GameFont("Blade Slash [1]", 300, 250);
     GameFont bs2 = new GameFont("Deal 100% of ATK damage", 300, 400);
-    GameFont b1 = new GameFont("Barrier", 250, 200);
+    GameFont b1 = new GameFont("Barrier [2]", 250, 200);
     GameFont b2 = new GameFont("Create shield randomly", 300, 400);
-    GameFont b3 = new GameFont("between 30% - 50% of HP", 300, 400);
+    GameFont b3 = new GameFont("between 25% - 50% of HP", 300, 400);
+    GameFont s1 = new GameFont("Stun Smash [3]", 300, 250);
+    GameFont s2 = new GameFont("Deal 20% of ATK with 50%", 300, 400);
+    GameFont s3 = new GameFont("chance to stun for one turn", 300, 400);
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1);
+        super(800, 600, 1, false);
         // Add Menu
         addObject(m, 400, 300); 
         // Add CoinTracker
@@ -52,22 +55,25 @@ public class SkillMenu extends World
         // Add Attack
         addObject(attack, 300, 400);
         // Add BladeSlash
-        addObject(bs, 450, 200);
+        addObject(bs, 440, 200);
         // Add Barrier
-        addObject(b, 450, 330);
+        addObject(b, 440, 330);
         // Add StunSmash
-        addObject(h, 450, 460);
+        addObject(s, 440, 460);
         // Text
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
         addObject(stats, 200, 310);
         addObject(HP, 165, 415);
         addObject(ATK, 165, 495);
-        addObject(bs1, 550, 250);
-        addObject(bs2, 600, 350);
-        addObject(b1, 550, 390);
-        addObject(b2, 600, 480);
-        addObject(b3, 600, 500);
+        addObject(bs1, 565, 270);
+        addObject(bs2, 590, 350);
+        addObject(b1, 540, 380);
+        addObject(b2, 590, 480);
+        addObject(b3, 590, 500);
+        addObject(s1, 565, 545);
+        addObject(s2, 590, 620);
+        addObject(s3, 590, 640);
         // Add Increasers
         addObject(i1, 350, 318); 
         addObject(i2, 350, 400);

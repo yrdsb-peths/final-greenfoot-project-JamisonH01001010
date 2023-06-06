@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CoinTracker extends Actor
 {
-    private static int coinCount = 100;
+    private static int coinCount = 0;
     GreenfootImage coins = new GreenfootImage("coins.png");
     public CoinTracker(){
         coins.scale(150, 50);
