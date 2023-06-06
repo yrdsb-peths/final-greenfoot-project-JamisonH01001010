@@ -15,6 +15,8 @@ public class SkillMenu extends World
     
     Health health = new Health();
     
+    Increaser i = new Increaser();
+    
     // Text
     GameFont skillMenu = new GameFont("Skill Menu", 900);
     GameFont numCoins = new GameFont(cCount.toString(), 400);
@@ -29,7 +31,9 @@ public class SkillMenu extends World
         
         addObject(c, 650, 90);
         
-        addObject(health, 280, 268);
+        addObject(health, 280, 268); 
+        
+        addObject(i, 330, 268);
         // Text
         addObject(skillMenu, 525, 450);
         addObject(numCoins, 760, 252);
