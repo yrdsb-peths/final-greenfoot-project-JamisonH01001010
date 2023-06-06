@@ -24,9 +24,9 @@ public class SkillMenu extends World
     // Text
     GameFont skillMenu = new GameFont("Skill Menu", 500, 200);
     GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
-    GameFont stats = new GameFont("[Stats]", 600);
-    GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 500);
-    GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 500);
+    GameFont stats = new GameFont("[Stats]", 300, 150);
+    GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
+    GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,27 +34,31 @@ public class SkillMenu extends World
         // Add Menu
         addObject(m, 400, 300); 
         // Add CoinTracker
-        addObject(c, 650, 90);
+        addObject(c, 650, 88);
         // Add Health
         addObject(health, 310, 268); 
         // Add Attack
         addObject(attack, 310, 350);
         // Add Increasers
-        addObject(i1, 650, 400); //(348, 268)
+        addObject(i1, 348, 268); //(348, 268)
         addObject(i2, 348, 350);
         // Text
-        addObject(skillMenu, 350, 250);
-        addObject(numCoins, 620, 105);
-        addObject(stats, 380, 420);
-        addObject(HP, 280, 470);
-        addObject(ATK, 280, 550);
+        //addObject(skillMenu, 350, 250);
+        addObject(numCoins, 608, 105);
+        //addObject(stats, 200, 260);
+        //addObject(HP, 175, 365);
+        //addObject(ATK, 175, 445);
     }
     
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
             Health.increaseHealth();
+            removeObject(HP);
             HP = new GameFont("HP:    " + 25, 500);//Health.getHealthCount(), 500);
             addObject(HP, 280, 470);
+            removeObject(numCoins);
+            numCoins = new GameFont("cCount.toString()", 100, 100);
+            addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(i2)){
             Attack.increaseAtk();

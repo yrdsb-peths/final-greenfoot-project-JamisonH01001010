@@ -24,6 +24,8 @@ public class TestWorld extends World
         if(Greenfoot.mouseClicked(i)){
             addObject(h, 100, 100);
             removeObject(a);
+            a = new GameFont("test done", 100, 200);
+            addObject(a, 300, 300);
         }
     }
 }
