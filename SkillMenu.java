@@ -28,6 +28,8 @@ public class SkillMenu extends World
     // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
+    // HomeButton
+    HomeButton h = new HomeButton();
     // Text
     GameFont skillMenu = new GameFont("Skills", 300, 120);
     GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
@@ -77,6 +79,8 @@ public class SkillMenu extends World
         // Add Increasers
         addObject(i1, 350, 318); 
         addObject(i2, 350, 400);
+        // Add HomeButton
+        addObject(h, 120, 85);
     }
     
     public void act(){
@@ -97,6 +101,10 @@ public class SkillMenu extends World
             removeObject(numCoins);
             numCoins = new GameFont(" " + CoinTracker.getCoinCount(), 100, 100);
             addObject(numCoins, 608, 105);
+        }
+        if(Greenfoot.mouseClicked(h)){
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
         }
     }
 }

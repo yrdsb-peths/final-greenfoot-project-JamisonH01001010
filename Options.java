@@ -52,8 +52,8 @@ public class Options extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(h1)){
-            TitleScreen achWorld = new TitleScreen();
-            Greenfoot.setWorld(achWorld);
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
         }
         if(Greenfoot.mouseClicked(b1) || Greenfoot.mouseClicked(c1)){
             musicCount++;
