@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * options menu - SFX option on to the setMUSICANDSFX method (fix when doing gameplay)
  * opening cutscene
  * short tutorial after that
+ * before getting lost sword - attack icon is wooden
+ * After - attack icon is colorful (better sword)
  * 
  * Q's:
  * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
