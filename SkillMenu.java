@@ -40,7 +40,7 @@ public class SkillMenu extends World
         // Add Attack
         addObject(attack, 310, 350);
         // Add Increasers
-        addObject(i1, 348, 268);
+        addObject(i1, 650, 400); //(348, 268)
         addObject(i2, 348, 350);
         // Text
         addObject(skillMenu, 525, 450);
@@ -52,9 +52,11 @@ public class SkillMenu extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
-            Health.increaseHealth();
-            HP = new GameFont("HP:    " + Health.getHealthCount(), 500);
-            addObject(HP, 280, 470);
+            //Health.increaseHealth();
+            removeObject(HP);
+            //HP = new GameFont("HP:    " + 25, 500);//Health.getHealthCount(), 500);
+            //addObject(HP, 280, 470);
+            //addObject(health, 400, 400);
         }
         if(Greenfoot.mouseClicked(i2)){
             Attack.increaseAtk();

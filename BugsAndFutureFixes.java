@@ -12,6 +12,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Q's:
  * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
  * BGM.stop not working (options & title screen)
+ * Currency
  */
 /**
  * Order matters
