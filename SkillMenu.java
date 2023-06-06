@@ -61,6 +61,9 @@ public class SkillMenu extends World
         addObject(ATK, 165, 495);
         addObject(bs1, 550, 250);
         addObject(bs2, 600, 350);
+        addObject(b1, 550, 390);
+        addObject(b2, 600, 480);
+        addObject(b3, 600, 500);
         // Add Increasers
         addObject(i1, 350, 318); 
         addObject(i2, 350, 400);
