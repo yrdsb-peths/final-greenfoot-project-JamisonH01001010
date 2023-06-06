@@ -30,7 +30,8 @@ public class SkillMenu extends World
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
-    GameFont skill1 = new GameFont("Deal 100% of ATK damage", 300, 200);
+    GameFont skill1 = new GameFont("Blade Slash", 250, 200);
+    GameFont skill1p2 = new GameFont("Deal 100% of ATK damage", 300, 400);
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -44,17 +45,18 @@ public class SkillMenu extends World
         // Add Attack
         addObject(attack, 300, 400);
         // Add BladeSlash
-        addObject(b, 600, 300);
-        // Add Increasers
-        addObject(i1, 350, 318); 
-        addObject(i2, 350, 400);
+        addObject(b, 450, 200);
         // Text
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
         addObject(stats, 200, 310);
         addObject(HP, 165, 415);
         addObject(ATK, 165, 495);
-        addObject(
+        addObject(skill1, 550, 250);
+        addObject(skill1p2, 600, 350);
+        // Add Increasers
+        addObject(i1, 350, 318); 
+        addObject(i2, 350, 400);
     }
     
     public void act(){
