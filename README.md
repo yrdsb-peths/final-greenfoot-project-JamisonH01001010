@@ -7,6 +7,7 @@ Sources:
 Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon
 Main Character - https://rvros.itch.io/animated-pixel-hero
 Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx
+Boss - https://darkpixel-kronovi.itch.io/undead-executioner
 Font - https://vrtxrry.itch.io/dungeonfont
 Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
