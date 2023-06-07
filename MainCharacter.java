@@ -36,7 +36,7 @@ public class MainCharacter extends Actor
     }
     
     public void idleAnimation(){
-        // 0.2s delay
+        // 0.15s delay
         if(animationTimerI.millisElapsed() < 150){
             return;
         }
