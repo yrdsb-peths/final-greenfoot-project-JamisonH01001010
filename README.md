@@ -7,6 +7,7 @@ Sources:
 Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton
 Main Character - https://rvros.itch.io/animated-pixel-hero
 Font - https://vrtxrry.itch.io/dungeonfont
+Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
 Achievements Background - https://wall.alphacoders.com/big.php?i=621708
 Achievements Blank Medal Icon - https://www.pngitem.com/middle/bmmxxT_achievement-icon-transparent-hd-png-download/
@@ -38,32 +39,25 @@ Ideal User Experiece Pathway:
 - Upon game completion: End screen (TBD, something like an animation of getting the sword back after defeating the final boss)
 - Make game replayable and let user have the retrieved sword to use as gameplay, also if they want to try and find hidden achievements
 
-Worlds:
-- Title screen:
-   - Background
-   - Game name
-   - Start button
-   - Left arrow
-      - Skill Description Menu
-   - Right arrow
-      - Stage selection (World)
-   - Button for Achievements
-- Achievements:
-   - Completion of each stage
-   - Hidden achievements
-      - Hinted by achievement name
-      - Ex. Win battle without using shield
-      - Clicking on chest in achievements page?
+Intro: [add different music at different timing, also sfx]
+- User walking in the forest, then boss comes out to the screen (If suitable boss animation) 
+- Something about admiring the user's sword (animation of sword is movement up and down timed along with user no sword animation);
+- User senses hostile intention, attacks boss
+- Boss defends and attacks user, making him drop the sword on the ground
+- Boss grabs the sword (animation of sword going towards boss, add boss animation if possible?)
+- Boss says something about visiting the boss at his dungeon and coming to retrieve the sword
+- User says something about him going to use his spare sword (one included in animation)
+- Intro [END], Goes into tutorial screen
+
 - Stage selection:
    - 5 Stages, each with their own world
    - Mapped around a background map
 
 Note: When user loses, no constellation rewards
+
 - Stage 1:
    - Player vs. (TBD)
    - Reward: 10 Tokens
-   - Hidden Achievement: Bully
-      - Defeat Stage 1 opponent 10 times 
 - Stage 2:
    - Player vs. (TBD)
    - Reward: 15 Tokens
