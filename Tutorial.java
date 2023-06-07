@@ -12,6 +12,9 @@ public class Tutorial extends World
     // Menu
     Menu m = new Menu(900, 700);
     
+    // Continue
+    Continue c = new Continue();
+    
     // Text
     GameFont tutorial = new GameFont("Tutorial", 300, 160);
     GameFont description1 = new GameFont("Lost Sword is a turn-based RPG: You go first, then the enemy.", 600, 800);
@@ -35,13 +38,23 @@ public class Tutorial extends World
         
         // Text
         addObject(tutorial, 370, 170);
-        addObject(description1, 385, 450);
-        addObject(description2, 390, 520);
-        addObject(description3, 405, 560);
-        addObject(description4, 405, 640);
-        addObject(description5, 400, 525);
-        addObject(description6, 395, 695);
-        addObject(description7, 485, 855);
+        addObject(description1, 385, 430);
+        addObject(description2, 390, 500);
+        addObject(description3, 405, 540);
+        addObject(description4, 405, 620);
+        addObject(description5, 400, 505);
+        addObject(description6, 395, 675);
+        addObject(description7, 485, 835);
         addObject(description8, 395, 720);
+        
+        // Add Continue
+        addObject(c, 410, 493);
+    }
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(c)){
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
+        }
     }
 }
