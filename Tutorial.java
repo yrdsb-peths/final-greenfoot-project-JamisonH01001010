@@ -8,12 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tutorial extends World
 {
+    // Check whether user has opened tutorial before
+    private static boolean firstTutorial = true;
     // Object instantiations
     // Menu
     Menu m = new Menu(900, 700);
     
     // Continue
     Continue c = new Continue();
+    
+    // HomeButton
+    HomeButton h = new HomeButton();
     
     // Text
     GameFont tutorial = new GameFont("Tutorial", 300, 160);
@@ -52,9 +57,15 @@ public class Tutorial extends World
     }
     
     public void act(){
-        if(Greenfoot.mouseClicked(c)){
+        if(Greenfoot.mouseClicked(c) || Greenfoot.mouseClicked(h)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
+            firstTutorial = false;
+        }
+        if(!firstTutorial){
+            removeObject(description8);
+            removeObject(c);
+            addObject(h, 410, 493);
         }
     }
 }

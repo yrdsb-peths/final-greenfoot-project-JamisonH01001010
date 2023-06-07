@@ -24,6 +24,10 @@ public class TitleScreen extends World
     GameFont options = new GameFont("Options", 300);
     GameFont achievements = new GameFont("Achievements", 300);
     GameFont skillMenu = new GameFont("Skill Menu", 500);
+    // MiniIcon
+    MiniIcon mini = new MiniIcon();
+    // Help
+    Help h = new Help();
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -49,6 +53,12 @@ public class TitleScreen extends World
         addObject(achievements, 433, 485);
         addObject(skillMenu, 483, 700);
         
+        // Add MiniIcon
+        addObject(mini, 750, 50);
+        
+        // Add Help
+        addObject(h, 748, 50);
+        
     }
     
     public void act(){
@@ -67,6 +77,10 @@ public class TitleScreen extends World
         if(Greenfoot.mouseClicked(skillMenu)){
             SkillMenu SMworld = new SkillMenu();
             Greenfoot.setWorld(SMworld);
+        }
+        if(Greenfoot.mouseClicked(h)){
+            Tutorial t = new Tutorial();
+            Greenfoot.setWorld(t);
         }
 
         //setMusicAndSFX();

@@ -8,12 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Help extends Actor
 {
-    /**
-     * Act - do whatever the Help wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    GreenfootImage help = new GreenfootImage("question-mark.png");
+    public Help(){
+        help.scale(70, 70);
+        setImage(help);
     }
 }
