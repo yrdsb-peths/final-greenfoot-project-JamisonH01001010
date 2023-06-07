@@ -20,7 +20,7 @@ public class MainCharacter extends Actor
     public MainCharacter(){
         // Loop through idle images
         for(int i = 0; i < idle.length; i++){
-            idle[i] = new GreenfootImage("idle/adventurer-idle-2-0" + i + ".png");
+            idle[i] = new GreenfootImage("idle/adventurer-idle-0" + i + ".png");
             idle[i].scale(100, 100);
         }
         
