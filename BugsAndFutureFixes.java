@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
+ * Intro:
+ * 
  * 
  * ALL OF THE CURRENT BUGS/FIXES TO BE FIXED LATER
  * 

@@ -23,6 +23,6 @@ public class Intro extends World
         setBackground(introBG);
         
         // Add MainCharacter
-        addObject(m, 100, 500);
+        addObject(m, 200, 500);
     }
 }

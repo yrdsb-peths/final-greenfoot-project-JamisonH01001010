@@ -21,7 +21,7 @@ public class MainCharacter extends Actor
         // Loop through idle images
         for(int i = 0; i < idle.length; i++){
             idle[i] = new GreenfootImage("idle/adventurer-idle-2-0" + i + ".png");
-            idle[i].scale(70, 70);
+            idle[i].scale(100, 100);
         }
         
         // Mark start of animation
@@ -36,8 +36,8 @@ public class MainCharacter extends Actor
     }
     
     public void idleAnimation(){
-        // 0.1s delay
-        if(animationTimerI.millisElapsed() < 100){
+        // 0.2s delay
+        if(animationTimerI.millisElapsed() < 150){
             return;
         }
         
