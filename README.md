@@ -4,8 +4,9 @@ This is the README.md file.
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
 Sources:
-Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton
+Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon
 Main Character - https://rvros.itch.io/animated-pixel-hero
+Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx
 Font - https://vrtxrry.itch.io/dungeonfont
 Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
@@ -23,7 +24,6 @@ Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-tr
 Skill - Blade Slash - https://lionildio.itch.io/wood-sword
 Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi
 Skill - Stun Smash - (Add Source on other PC)
-
 
 
 Ideas:
