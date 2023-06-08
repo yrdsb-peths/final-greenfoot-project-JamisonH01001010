@@ -26,17 +26,17 @@ public class MCLostSword extends Actor
     }
     
     public void animation(){
-        if(animTimer.millisElapsed() < 600){
+        if(animTimer.millisElapsed() < 300){
             return;
         }
         
         animTimer.mark();
         
         if(count){
-            setLocation(getX(), getY() - 3); 
+            setLocation(getX(), getY() - 2); 
             count = false;
         } else {
-            setLocation(getX(), getY() + 3);
+            setLocation(getX(), getY() + 2);
             count = true;
         }
     }

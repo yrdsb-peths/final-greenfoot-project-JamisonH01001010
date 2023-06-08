@@ -16,6 +16,8 @@ public class Intro extends World
     MCLostSword ls = new MCLostSword();
     // MainCharacter
     MainCharacter m = new MainCharacter();
+    // Boss
+    Boss b = new Boss();
     public Intro()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,5 +32,8 @@ public class Intro extends World
         
         // Add MainCharacter
         addObject(m, 200, 500);
+        
+        // Add Boss
+        addObject(b, 500, 500);
     }
 }
