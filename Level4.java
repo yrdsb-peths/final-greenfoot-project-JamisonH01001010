@@ -24,7 +24,9 @@ public class Level4 extends Actor
             setImage(pass);
         }
     }
-    
+    public static boolean getPassed(){
+        return passed;
+    }
     public static void setPassed(boolean a){
         passed = a;
     }

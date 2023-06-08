@@ -41,13 +41,33 @@ public class StageSelect extends World
         addObject(l2, 175, 115);
         addObject(l3, 675, 125);
         addObject(l4, 685, 510);
-        addObject(l5, 390, 340);
+        addObject(l5, 395, 340);
     }
     
     public void act(){
         if(Greenfoot.mouseClicked(h)){
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
+        }
+        if(Greenfoot.mouseClicked(l1)){
+            Stage1 s1 = new Stage1();
+            Greenfoot.setWorld(s1);
+        }
+        if(Greenfoot.mouseClicked(l2) && Level2.getPassed()){
+            Stage2 s2 = new Stage2();
+            Greenfoot.setWorld(s2);
+        }
+        if(Greenfoot.mouseClicked(l3) && Level3.getPassed()){
+            Stage3 s3 = new Stage3();
+            Greenfoot.setWorld(s3);
+        }
+        if(Greenfoot.mouseClicked(l4) && Level4.getPassed()){
+            Stage4 s4 = new Stage4();
+            Greenfoot.setWorld(s4);
+        }
+        if(Greenfoot.mouseClicked(l5) && Level5.getPassed()){
+            Stage5 s5 = new Stage5();
+            Greenfoot.setWorld(s5);
         }
     }
 }
