@@ -21,7 +21,7 @@ public class Boss extends Actor
     private int idleIndex = 0;
     
     public static boolean attack = false;
-    public static boolean idle = true;
+    public static boolean idle = false;
     
     public Boss(){
         for(int i = 0; i < bossAppear.length; i++){
@@ -44,8 +44,15 @@ public class Boss extends Actor
             bossAttack[i].scale(200, 200);
         }
         
+        for(int i = 0; i < bossIdle.length; i++){
+            bossIdle[i] = new GreenfootImage("boss-idle/boss_idle_" + i + ".png");
+            bossIdle[i].mirrorHorizontally();
+            bossIdle[i].scale(200, 200);
+        }
+        
         appearTimer.mark();
         attackTimer.mark();
+        idleTimer.mark();
             
         setImage(bossAppear[0]);
     }
@@ -57,6 +64,9 @@ public class Boss extends Actor
         }
         if(attack){
             attackAnimation();
+        }
+        if(idle){
+            idleAnimation();
         }
     }
     
@@ -88,7 +98,23 @@ public class Boss extends Actor
         attackIndex++;
     }
     
+    public void idleAnimation(){
+        if(idleTimer.millisElapsed() < 200){
+            return;
+        }
+        
+        idleTimer.mark();
+        
+        setImage(bossIdle[idleIndex]);
+        
+        idleIndex = (idleIndex + 1) % bossIdle.length;
+    }
+    
     public static void setAttack(boolean a){
         attack = a;
+    }
+    
+    public static void setIdle(boolean a){
+        idle = a;
     }
 }

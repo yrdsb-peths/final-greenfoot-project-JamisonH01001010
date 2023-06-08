@@ -76,6 +76,7 @@ public class Intro extends World
             removeObject(c2);
             addObject(g3, 600, 290);
             addObject(c3, 760, 190);
+            Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c3)){
             removeObject(g3);
@@ -84,6 +85,7 @@ public class Intro extends World
             addObject(g4, 210, 150);
             addObject(e, 200, 500);
             addObject(c4, 760, 190);
+            Boss.setIdle(false);
             Boss.setAttack(true);
         }
         if(Greenfoot.mouseClicked(c4)){
@@ -91,6 +93,8 @@ public class Intro extends World
             removeObject(c4);
             addObject(g5, 590, 515);
             addObject(c5, 760, 190);
+            Boss.setAttack(false);
+            Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c5)){
             removeObject(g5);
@@ -99,6 +103,7 @@ public class Intro extends World
             addObject(c6, 760, 190);
         }
         if(Greenfoot.mouseClicked(c6)){
+            Boss.setIdle(false);
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);
         }
