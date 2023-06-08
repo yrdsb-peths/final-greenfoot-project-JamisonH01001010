@@ -13,8 +13,8 @@ public class Level2 extends Actor
     
     private static boolean passed = false;
     public Level2(){
-        noPass.scale(50, 50);
-        pass.scale(50, 50);
+        noPass.scale(70, 70);
+        pass.scale(70, 70);
         
         setImage(noPass);
     }

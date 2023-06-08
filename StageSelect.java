@@ -18,9 +18,9 @@ public class StageSelect extends World
     // Levels
     Level1 l1 = new Level1();
     Level2 l2 = new Level2();
-    Level3 l3 = new Level2();
-    Level4 l4 = new Level2();
-    Level5 l5 = new Level2();
+    Level3 l3 = new Level3();
+    Level4 l4 = new Level4();
+    Level5 l5 = new Level5();
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,7 +38,10 @@ public class StageSelect extends World
         
         // Add Levels
         addObject(l1, 110, 510);
-        
+        addObject(l2, 175, 115);
+        addObject(l3, 675, 125);
+        addObject(l4, 685, 510);
+        addObject(l5, 390, 340);
     }
     
     public void act(){
