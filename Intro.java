@@ -18,6 +18,8 @@ public class Intro extends World
     MainCharacter m = new MainCharacter();
     // Boss
     Boss b = new Boss();
+    // Explosion
+    Explosion e = new Explosion();
     // Text
     GameFont g1 = new GameFont("What a great day today!", 500, 500);
     GameFont g2 = new GameFont(". . .", 170, 100); 
@@ -65,18 +67,28 @@ public class Intro extends World
         if(Greenfoot.mouseClicked(c1)){
             removeObject(g1);
             removeObject(c1);
-            addObject(c2, 760, 190);
             addObject(g2, 170, 90);
             addObject(b, 600, 490);
+            addObject(c2, 760, 190);
         }
         if(Greenfoot.mouseClicked(c2)){
             removeObject(g2);
             removeObject(c2);
-            addObject(c3, 760, 190);
             addObject(g3, 600, 290);
+            addObject(c3, 760, 190);
         }
         if(Greenfoot.mouseClicked(c3)){
-            
+            removeObject(g3);
+            removeObject(c3);
+            removeObject(ls);
+            addObject(g4, 210, 150);
+            addObject(e, 200, 500);
+            addObject(c4, 760, 190);
+            Boss.setAttack(true);
+        }
+        if(Greenfoot.mouseClicked(c4)){
+            removeObject(g4);
+            remove
         }
     }
 }

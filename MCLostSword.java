@@ -32,6 +32,7 @@ public class MCLostSword extends Actor
         
         animTimer.mark();
         
+        // Idle Animation - Go up and down alternating
         if(count){
             setLocation(getX(), getY() - 2); 
             count = false;

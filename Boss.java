@@ -9,10 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Boss extends Actor
 {
     GreenfootImage[] bossAppear = new GreenfootImage[18];
+    GreenfootImage[] bossAttack = new GreenfootImage[13];
     
     SimpleTimer appearTimer = new SimpleTimer();
+    SimpleTimer attackTimer = new SimpleTimer();
     
     private int appearIndex = 17;
+    private int attackIndex = 0;
+    
+    public static boolean attack = false;
     
     public Boss(){
         for(int i = 0; i < bossAppear.length; i++){
@@ -25,7 +30,18 @@ public class Boss extends Actor
             bossAppear[i].scale(200, 200);
         }
         
+        for(int i = 0; i < bossAttack.length; i++){
+            if(i >= 10){
+                bossAttack[i] = new GreenfootImage("attacking/boss_attack_" + i + ".png");
+            } else {
+                bossAttack[i] = new GreenfootImage("attacking/boss_attack_0" + i + ".png");
+            }
+            bossAttack[i].mirrorHorizontally();
+            bossAttack[i].scale(200, 200);
+        }
+        
         appearTimer.mark();
+        attackTimer.mark();
             
         setImage(bossAppear[0]);
     }
@@ -33,6 +49,9 @@ public class Boss extends Actor
     {
         if(true){
             appearAnimation();
+        }
+        if(attack){
+            attackAnimation();
         }
     }
     
@@ -47,6 +66,24 @@ public class Boss extends Actor
             setImage(bossAppear[appearIndex]);
         }
         
-        appearIndex = (appearIndex - 1); 
+        appearIndex--; 
+    }
+    
+    public void attackAnimation(){
+        if(attackTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        attackTimer.mark();
+        
+        if(attackIndex <= 12){
+            setImage(bossAttack[attackIndex]);
+        }
+        
+        attackIndex++;
+    }
+    
+    public static void setAttack(boolean a){
+        attack = a;
     }
 }
