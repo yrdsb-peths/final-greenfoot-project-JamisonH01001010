@@ -17,6 +17,10 @@ public class StageSelect extends World
     HomeButton h = new HomeButton();
     // Levels
     Level1 l1 = new Level1();
+    Level2 l2 = new Level2();
+    Level3 l3 = new Level2();
+    Level4 l4 = new Level2();
+    Level5 l5 = new Level2();
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
