@@ -18,9 +18,6 @@ public class GameFont extends Actor
     
     public GameFont(String text, int scale)
     {
-        this.text = text;
-        this.scale = scale;
-        
         // Copied Code - https://www.greenfoot.org/topics/65058/0
         File f = new File("DungeonFont.ttf");
         try {
@@ -51,9 +48,6 @@ public class GameFont extends Actor
     }
     // For more specific text problems
     public GameFont(String text, int scale, int imageNum){
-        this.text = text;
-        this.scale = scale;
-        
         // Copied Code - https://www.greenfoot.org/topics/65058/0
         File f = new File("DungeonFont.ttf");
         try {

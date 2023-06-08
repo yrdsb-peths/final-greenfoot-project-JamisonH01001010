@@ -43,11 +43,10 @@ public class Boss extends Actor
         
         appearTimer.mark();
         
-        setImage(bossAppear[appearIndex]);
-        if(appearIndex < 0){
-            appearIndex = 17;
-        } else {
-           appearIndex = (appearIndex - 1); 
+        if(appearIndex >= 0){
+            setImage(bossAppear[appearIndex]);
         }
+        
+        appearIndex = (appearIndex - 1); 
     }
 }

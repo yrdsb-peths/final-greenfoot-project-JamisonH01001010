@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Continue extends Actor
 {
     GreenfootImage c = new GreenfootImage("continue.png");
-    public Continue(){
-        c.scale(100, 100);
+    public Continue(int scale){
+        c.scale(scale, scale);
         setImage(c);
     }
 }

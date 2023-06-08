@@ -15,7 +15,7 @@ public class Tutorial extends World
     Menu m = new Menu(900, 700);
     
     // Continue
-    Continue c = new Continue();
+    Continue c = new Continue(100);
     
     // HomeButton
     HomeButton h = new HomeButton();
