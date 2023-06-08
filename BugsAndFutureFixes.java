@@ -9,10 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * adding ways to complete achievements (all)
  * options menu - SFX option on to the setMUSICANDSFX method (fix when doing gameplay)
  * intro - sfx and music
- * 
- * Q's:
- * multiple level icons, possible in one actor subclass or must be in seperate subclasses?
  * BGM.stop not working (options & title screen)
+ * pause menu in stages
+ * stageselect allowing user to enter levels
  */
 public class BugsAndFutureFixes extends Actor
 {

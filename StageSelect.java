@@ -21,6 +21,9 @@ public class StageSelect extends World
     Level3 l3 = new Level3();
     Level4 l4 = new Level4();
     Level5 l5 = new Level5();
+    // Stages
+    NormalStages ns = new NormalStages();
+    FinalStage fs = new FinalStage();
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -50,24 +53,19 @@ public class StageSelect extends World
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(l1)){
-            Stage1 s1 = new Stage1();
-            Greenfoot.setWorld(s1);
+            Greenfoot.setWorld(ns);
         }
         if(Greenfoot.mouseClicked(l2) && Level2.getPassed()){
-            Stage2 s2 = new Stage2();
-            Greenfoot.setWorld(s2);
+            Greenfoot.setWorld(ns);
         }
         if(Greenfoot.mouseClicked(l3) && Level3.getPassed()){
-            Stage3 s3 = new Stage3();
-            Greenfoot.setWorld(s3);
+            Greenfoot.setWorld(ns);
         }
         if(Greenfoot.mouseClicked(l4) && Level4.getPassed()){
-            Stage4 s4 = new Stage4();
-            Greenfoot.setWorld(s4);
+            Greenfoot.setWorld(ns);
         }
         if(Greenfoot.mouseClicked(l5) && Level5.getPassed()){
-            Stage5 s5 = new Stage5();
-            Greenfoot.setWorld(s5);
+            Greenfoot.setWorld(fs);
         }
     }
 }
