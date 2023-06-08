@@ -88,7 +88,19 @@ public class Intro extends World
         }
         if(Greenfoot.mouseClicked(c4)){
             removeObject(g4);
-            remove
+            removeObject(c4);
+            addObject(g5, 590, 515);
+            addObject(c5, 760, 190);
+        }
+        if(Greenfoot.mouseClicked(c5)){
+            removeObject(g5);
+            removeObject(c5);
+            addObject(g6, 470, 515);
+            addObject(c6, 760, 190);
+        }
+        if(Greenfoot.mouseClicked(c6)){
+            Tutorial t = new Tutorial();
+            Greenfoot.setWorld(t);
         }
     }
 }

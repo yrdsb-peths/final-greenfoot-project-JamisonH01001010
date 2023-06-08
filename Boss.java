@@ -10,14 +10,18 @@ public class Boss extends Actor
 {
     GreenfootImage[] bossAppear = new GreenfootImage[18];
     GreenfootImage[] bossAttack = new GreenfootImage[13];
+    GreenfootImage[] bossIdle = new GreenfootImage[8];
     
     SimpleTimer appearTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
+    SimpleTimer idleTimer = new SimpleTimer();
     
     private int appearIndex = 17;
     private int attackIndex = 0;
+    private int idleIndex = 0;
     
     public static boolean attack = false;
+    public static boolean idle = true;
     
     public Boss(){
         for(int i = 0; i < bossAppear.length; i++){
@@ -47,6 +51,7 @@ public class Boss extends Actor
     }
     public void act()
     {
+        // Always appear animation when summoned
         if(true){
             appearAnimation();
         }
