@@ -52,11 +52,6 @@ public class Intro extends World
         
         // Text
         addObject(g1, 250, 290);
-        //addObject(g2, 170, 90);
-        //addObject(g3, 600, 290);
-        //addObject(g4, 210, 150);
-        //addObject(g5, 590, 515);
-        //addObject(g6, 470, 515);
         
         // Continue 
         addObject(c1, 760, 190);
@@ -64,6 +59,9 @@ public class Intro extends World
     }
     
     public void act(){
+        // After each press of the continue button a new "part" of the intro starts
+        // Boss.set methods are for setting the bosses multiple animations
+        // Continue objects must be readded due to new text overlapping its "clickbox"
         if(Greenfoot.mouseClicked(c1)){
             removeObject(g1);
             removeObject(c1);

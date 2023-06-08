@@ -11,10 +11,12 @@ public class StageSelect extends World
     // StageSelect Background
     GreenfootImage stagesBG = new GreenfootImage("map_54x53.png");
     // Object instantiations
-    // Home Button
-    HomeButton h = new HomeButton();
     // Text
     GameFont stageSelect = new GameFont("Stage Select", 500);
+    // Home Button
+    HomeButton h = new HomeButton();
+    // Levels
+    Level1 l1 = new Level1();
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,11 +26,14 @@ public class StageSelect extends World
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
+        // Text
+        addObject(stageSelect, 485, 380);
+        
         // Add HomeButton
         addObject(h, 35, 40);
         
-        // Text
-        addObject(stageSelect, 485, 380);
+        // Add Levels
+        addObject(l1, 110, 510);
         
     }
     
