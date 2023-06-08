@@ -26,7 +26,13 @@ public class Intro extends World
     GameFont g5 = new GameFont("Come visit my dungeon if you want your sword back.", 950, 1000);
     GameFont g6 = new GameFont("Time to get revenge with my spare sword. . .", 950, 1000);
     // Continue 
-    Continue c = new Continue(50);
+    Continue c1 = new Continue(50);
+    Continue c2 = new Continue(50);
+    Continue c3 = new Continue(50);
+    Continue c4 = new Continue(50);
+    Continue c5 = new Continue(50);
+    Continue c6 = new Continue(50);
+    Continue c7 = new Continue(50);
     public Intro()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -43,7 +49,7 @@ public class Intro extends World
         addObject(m, 200, 500);
         
         // Text
-        //addObject(g1, 250, 290);
+        addObject(g1, 250, 290);
         //addObject(g2, 170, 90);
         //addObject(g3, 600, 290);
         //addObject(g4, 210, 150);
@@ -51,14 +57,26 @@ public class Intro extends World
         //addObject(g6, 470, 515);
         
         // Continue 
-        addObject(c, 760, 190);
+        addObject(c1, 760, 190);
     
     }
     
     public void act(){
-        if(Greenfoot.mouseClicked(c)){
+        if(Greenfoot.mouseClicked(c1)){
             removeObject(g1);
-            addObject(b, 500, 500);
+            removeObject(c1);
+            addObject(c2, 760, 190);
+            addObject(g2, 170, 90);
+            addObject(b, 600, 490);
+        }
+        if(Greenfoot.mouseClicked(c2)){
+            removeObject(g2);
+            removeObject(c2);
+            addObject(c3, 760, 190);
+            addObject(g3, 600, 290);
+        }
+        if(Greenfoot.mouseClicked(c3)){
+            
         }
     }
 }
