@@ -10,7 +10,7 @@ public class Intro extends World
 {
     // Intro Background
     GreenfootImage introBG = new GreenfootImage("intro.png");
-    
+    public static boolean onIntro = true;
     // Object instantiations
     // MCLostSword 
     MCLostSword ls = new MCLostSword();
@@ -102,8 +102,13 @@ public class Intro extends World
         }
         if(Greenfoot.mouseClicked(c6)){
             Boss.setIdle(false);
+            onIntro = false;
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);
         }
+    }
+    
+    public static boolean getOnIntro(){
+        return onIntro;
     }
 }
