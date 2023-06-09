@@ -47,7 +47,11 @@ public class NormalStages extends World
         turn = a;
     }
     
-    public HealthBar getHealthBar(){
+    public HealthBar getSkeletonHealthBar(){
         return skeletonHP;
+    }
+    
+    public HealthBar getMCHealthBar(){
+        return mcHP;
     }
 }
