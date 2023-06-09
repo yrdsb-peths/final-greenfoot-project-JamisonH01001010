@@ -15,6 +15,8 @@ public class NormalStages extends World
     MainCharacter mc = new MainCharacter();
     // Stage 1
     Skeleton s = new Skeleton();
+    // HealthBar
+    HealthBar h = new HealthBar(20);
     public NormalStages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -29,5 +31,8 @@ public class NormalStages extends World
         
         // Add MainCharacter
         addObject(mc, 200, 350);
+        
+        // Add HealthBar
+        addObject(h, 200, 200);
     }
 }
