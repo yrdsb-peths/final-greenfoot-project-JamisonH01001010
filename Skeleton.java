@@ -9,25 +9,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Skeleton extends Actor
 {
     GreenfootImage[] idle = new GreenfootImage[4];
+    GreenfootImage[] attack = new GreenfootImage[15];
     
     SimpleTimer idleTimer = new SimpleTimer();
+    SimpleTimer attackTimer = new SimpleTimer();
     
     private int idleIndex = 0;
+    private int attackIndex = 0;
     
+    boolean i = true;
     public Skeleton(){
         for(int i = 0; i < idle.length; i++){
             idle[i] = new GreenfootImage("skeleton-idle/skeleton_idle_" + i + ".png");
             idle[i].mirrorHorizontally();
             idle[i].scale(300, 300);
         }
+        for(int i = 0; i < attack.length; i++){
+            attack[i] = new GreenfootImage("skeleton-attack/skeleton_attack_" + i + ".png");
+            attack[i].mirrorHorizontally();
+            attack[i].scale(300, 300);
+        }
         
         idleTimer.mark();
+        attackTimer.mark();
         
         setImage(idle[0]);
     }
     
     public void act(){
-        idleAnimation();
+        if(i){
+           idleAnimation(); 
+        }
+        if(!NormalStages.getTurn()){
+            action();
+        }
     }
     
     public void idleAnimation(){
@@ -40,5 +55,39 @@ public class Skeleton extends Actor
         setImage(idle[idleIndex]);
         
         idleIndex = (idleIndex + 1) % idle.length;
+    }
+    
+    public void attackAnimation(){
+        if(attackTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        attackTimer.mark();
+        
+        if(attackIndex <= 14){
+            setImage(attack[attackIndex]);
+        }
+        
+        attackIndex++;
+    }
+    // 0 = attack, 1 = shield
+    public void action(){
+        int action = Greenfoot.getRandomNumber(2);
+        if(action == 0){
+            attack();
+        } else {
+            shield();
+        }
+    }
+    
+    // Deal 100% of ATK damage
+    public void attack(){
+        i = false;
+        attackAnimation();
+        NormalStages.setTurn(true);
+    }
+    // Take 25% less damage for 2 turns
+    public void shield(){
+        
     }
 }

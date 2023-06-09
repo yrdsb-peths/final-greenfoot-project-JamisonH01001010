@@ -29,6 +29,9 @@ public class HealthBar extends Actor
         // For red insides
         img.setColor(Color.RED);
         img.fillRect(1, 1, HP * pixelsPerHP, HPBarHeight);
- 
+    }
+    
+    public void loseHealth(int a){
+        HP = HP - a;
     }
 }
