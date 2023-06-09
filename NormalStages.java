@@ -17,7 +17,8 @@ public class NormalStages extends World
     // Stage 1
     Skeleton s = new Skeleton();
     // HealthBar
-    HealthBar h = new HealthBar(20);
+    HealthBar mcHP = new HealthBar(20);
+    HealthBar skeletonHP = new HealthBar(20);
     public NormalStages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,7 +35,8 @@ public class NormalStages extends World
         addObject(mc, 200, 350);
         
         // Add HealthBar
-        addObject(h, 200, 200);
+        addObject(mcHP, 200, 200);
+        addObject(skeletonHP, 600, 200);
     }
     
     public static boolean getTurn(){
@@ -43,5 +45,9 @@ public class NormalStages extends World
     
     public static void setTurn(boolean a){
         turn = a;
+    }
+    
+    public HealthBar getHealthBar(){
+        return skeletonHP;
     }
 }

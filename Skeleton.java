@@ -41,7 +41,7 @@ public class Skeleton extends Actor
            idleAnimation(); 
         }
         if(!NormalStages.getTurn()){
-            action();
+            attackAnimation(); // only one action, attacking 
         }
     }
     
@@ -66,28 +66,10 @@ public class Skeleton extends Actor
         
         if(attackIndex <= 14){
             setImage(attack[attackIndex]);
+        } else {
+            NormalStages.setTurn(true);
         }
         
         attackIndex++;
-    }
-    // 0 = attack, 1 = shield
-    public void action(){
-        int action = Greenfoot.getRandomNumber(2);
-        if(action == 0){
-            attack();
-        } else {
-            shield();
-        }
-    }
-    
-    // Deal 100% of ATK damage
-    public void attack(){
-        i = false;
-        attackAnimation();
-        NormalStages.setTurn(true);
-    }
-    // Take 25% less damage for 2 turns
-    public void shield(){
-        
     }
 }
