@@ -11,10 +11,12 @@ public class Skeleton extends Actor
     // HP: 20
     // ATK: 4
     // Skills: Attack (100% of ATK)
-    
-    World myWorld = getWorld();
-    NormalStages ns = (NormalStages) myWorld;
-    HealthBar selfHP = ns.getSkeletonHealthBar();
+    // Get self HP bar
+    // MC reduces skeleton hp
+    // That hp gets transferred to skeletonHP bar
+    HealthBar skeletonHP = new HealthBar(20);
+    public int HP = 0;
+    public int ATK = 4;
     
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[15];
@@ -41,7 +43,7 @@ public class Skeleton extends Actor
             attack[i].scale(300, 300);
         }
         for(int i = 0; i < death.length; i++){
-            death[i] = new GreenfootImage("skeleton/skeleton_death_" + i + ".png");
+            death[i] = new GreenfootImage("skeleton/skeleton_death" + i + ".png");
             death[i].mirrorHorizontally();
             death[i].scale(300, 300);
         }
@@ -54,16 +56,14 @@ public class Skeleton extends Actor
     }
     
     public void act(){
-        selfHP.updateHP();
+        //selfHP.updateHP();
         if(i){
            idleAnimation(); 
         }
         if(!NormalStages.getTurn()){
             attackAnimation(); // only one action, attacking 
-            HealthBar mcHP = ns.getMCHealthBar();
-            mcHP.loseHealth(4); // Deal 100% of attack as damage
         }
-        if(selfHP.HP == 0){
+        if(HP >= 0){
             i = false;
             deathAnimation();
         }
@@ -98,7 +98,7 @@ public class Skeleton extends Actor
     }
     
     public void deathAnimation(){
-        if(deathTimer.millisElapsed() < 500){
+        if(deathTimer.millisElapsed() < 300){
             return;
         }
         
@@ -109,5 +109,9 @@ public class Skeleton extends Actor
         } 
         
         deathIndex++;
+    }
+    
+    public void loseHP(int a){
+        HP = HP - a;
     }
 }

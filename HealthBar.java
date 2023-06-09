@@ -31,7 +31,7 @@ public class HealthBar extends Actor
         img.fillRect(1, 1, HP * pixelsPerHP, HPBarHeight);
     }
     
-    public void loseHealth(int a){
-        HP = HP - a;
+    public void setHealth(int a){
+        HP = a;
     }
 }

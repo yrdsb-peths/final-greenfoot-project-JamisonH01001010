@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NormalStages extends World
 {
-    public static boolean turn = false; // true = player turn, false = computer turn
+    public static boolean turn = true; // true = player turn, false = computer turn
     // NormalStages Background
     GreenfootImage normalBG = new GreenfootImage("normal-stage.png");
     // Object instantiations
