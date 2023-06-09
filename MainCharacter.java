@@ -12,16 +12,19 @@ public class MainCharacter extends Actor
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] swordIdle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[5];
+    GreenfootImage[] stun = new GreenfootImage[10];
     
     // Idle Animation Timer
     SimpleTimer idleTimer = new SimpleTimer();
     SimpleTimer swordIdleTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
+    SimpleTimer stunTimer = new SimpleTimer();
     
     // Track idle image index
     private int idleIndex = 0;
     private int swordIdleIndex = 0;
     private int attackIndex = 0;
+    private int stunIndex = 0;
     
     public MainCharacter(){
         // Loop through idle images
@@ -36,6 +39,17 @@ public class MainCharacter extends Actor
         for(int i = 0; i < attack.length; i++){
             attack[i] = new GreenfootImage("mc/adventurer-attack1-0" + i + ".png");
             attack[i].scale(100, 100);
+        }
+        for(int i = 0; i < stun.length; i++){
+            if(i <= 3){
+                stun[i] = new GreenfootImage("mc/adventurer-air-attack1-0" + i + ".png");
+                stun[i].scale(100, 100);
+            } else if (i <= 6){
+                stun[i] = new GreenfootImage("mc/adventurer-air-attack2-0" + (i - 4) + ".png");
+                stun[i] .scale(100, 100);
+            } else {
+                stun[i] = new GreenfootImage("mc/adventurer-air
+            }
         }
         
         // Mark start of animation
@@ -96,6 +110,12 @@ public class MainCharacter extends Actor
         }
         
         attackIndex++;
+    }
+    
+    public void shield(int a){
+        // add shield image next to HP bar
+        // no animation
+        // add amount of shield in text
     }
     
     
