@@ -10,6 +10,8 @@ public class NormalStages extends World
 {
     public static boolean turn = true; // true = player turn, false = computer turn
     public static boolean onS1 = true;
+    public static boolean skeletonAttack = false;
+    public int pause = 100;
     // NormalStages Background
     GreenfootImage normalBG = new GreenfootImage("normal-stage.png");
     // Object instantiations
@@ -41,7 +43,25 @@ public class NormalStages extends World
     }
     
     public void act(){
-        
+        if(turn && pause == 0){
+            if(Greenfoot.isKeyDown("1")){
+                MainCharacter.setIdleControl(false);
+                mc.attackAnimation();
+            } else if (Greenfoot.isKeyDown("2")){
+                MainCharacter.setIdleControl(false);
+                mc.attackAnimation();
+            } else if(Greenfoot.isKeyDown("3")){
+                MainCharacter.setIdleControl(false);
+                mc.stunAnimation();
+            }
+            pause = 100;
+        }
+        if(pause > 0){
+            pause--;
+        } 
+        if(!turn && pause == 0){
+            MainCharacter.setIdleControl(true);
+        }
     }
     
     public static boolean getTurn(){

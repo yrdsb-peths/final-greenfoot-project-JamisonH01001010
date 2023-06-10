@@ -10,7 +10,7 @@ public class Intro extends World
 {
     // Intro Background
     GreenfootImage introBG = new GreenfootImage("intro.png");
-    public static boolean onIntro = true;
+    public static boolean onIntro = false;
     // Object instantiations
     // MCLostSword 
     MCLostSword ls = new MCLostSword();
@@ -55,6 +55,9 @@ public class Intro extends World
         
         // Continue 
         addObject(c1, 760, 190);
+        
+        // Set onIntro
+        onIntro = true;
     
     }
     

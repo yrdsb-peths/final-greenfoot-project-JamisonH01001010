@@ -15,7 +15,7 @@ public class Skeleton extends Actor
     // MC reduces skeleton hp
     // That hp gets transferred to skeletonHP bar
     HealthBar skeletonHP = new HealthBar(20);
-    public int HP = 0;
+    public int HP = 20;
     public int ATK = 4;
     
     GreenfootImage[] idle = new GreenfootImage[4];
@@ -63,7 +63,7 @@ public class Skeleton extends Actor
         if(!NormalStages.getTurn()){
             attackAnimation(); // only one action, attacking 
         }
-        if(HP >= 0){
+        if(HP <= 0){
             i = false;
             deathAnimation();
         }

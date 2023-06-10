@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainCharacter extends Actor
 {
+    public static boolean idleControl = true;
+    
     // Idle animation
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] swordIdle = new GreenfootImage[4];
@@ -66,10 +68,10 @@ public class MainCharacter extends Actor
     {
         if(Intro.getOnIntro()){
             idleAnimation();
-        } else {
-            //swordIdleAnimation(); 
+        } 
+        if(idleControl){
+            swordIdleAnimation(); 
         }
-        stunAnimation();
     }
     
     public void idleAnimation(){
@@ -134,6 +136,10 @@ public class MainCharacter extends Actor
         }
         
         stunIndex++;
+    }
+    
+    public static void setIdleControl(boolean a){
+        idleControl = a;
     }
     
 }
