@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class NormalStages extends World
 {
     public static boolean turn = true; // true = player turn, false = computer turn
+    public static boolean onS1 = true;
     // NormalStages Background
     GreenfootImage normalBG = new GreenfootImage("normal-stage.png");
     // Object instantiations
@@ -37,6 +38,10 @@ public class NormalStages extends World
         // Add HealthBar
         addObject(mcHP, 200, 200);
         addObject(skeletonHP, 600, 200);
+    }
+    
+    public void act(){
+        
     }
     
     public static boolean getTurn(){

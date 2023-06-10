@@ -46,9 +46,10 @@ public class MainCharacter extends Actor
                 stun[i].scale(100, 100);
             } else if (i <= 6){
                 stun[i] = new GreenfootImage("mc/adventurer-air-attack2-0" + (i - 4) + ".png");
-                stun[i] .scale(100, 100);
+                stun[i].scale(100, 100);
             } else {
-                stun[i] = new GreenfootImage("mc/adventurer-air
+                stun[i] = new GreenfootImage("mc/adventurer-air-attack-3-end-0" + (i - 7) + ".png");
+                stun[i].scale(100, 100);
             }
         }
         
@@ -56,6 +57,7 @@ public class MainCharacter extends Actor
         idleTimer.mark();
         swordIdleTimer.mark();
         attackTimer.mark();
+        stunTimer.mark();
         
         // Set inital MC image
         setImage(idle[0]);
@@ -67,7 +69,7 @@ public class MainCharacter extends Actor
         } else {
             //swordIdleAnimation(); 
         }
-        attackAnimation();
+        stunAnimation();
     }
     
     public void idleAnimation(){
@@ -112,11 +114,26 @@ public class MainCharacter extends Actor
         attackIndex++;
     }
     
-    public void shield(int a){
+    public void shield(){
         // add shield image next to HP bar
         // no animation
         // add amount of shield in text
     }
     
+    public void stunAnimation(){
+        if(stunTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        stunTimer.mark();
+        
+        if(stunIndex <= 9){
+            setImage(stun[stunIndex]);
+        } else {
+            setImage(swordIdle[0]);
+        }
+        
+        stunIndex++;
+    }
     
 }
