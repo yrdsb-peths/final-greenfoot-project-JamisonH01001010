@@ -42,8 +42,8 @@ public class SkillMenu extends World
     GameFont b2 = new GameFont("Create shield randomly", 300, 400);
     GameFont b3 = new GameFont("between 25% - 50% of HP", 300, 400);
     GameFont s1 = new GameFont("Stun Smash [3]", 300, 250);
-    GameFont s2 = new GameFont("Deal 20% of ATK with 25%", 300, 400);
-    GameFont s3 = new GameFont("chance to stun for two turns", 300, 400);
+    GameFont s2 = new GameFont("Deal 20% of ATK with 50%", 300, 400);
+    GameFont s3 = new GameFont("chance to stun for one turn", 300, 400);
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

@@ -82,14 +82,13 @@ public class TestWorld extends World
                         hs.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
-                            applyStun(2);
+                            applyStun();
                         }
                         switchTurn();
                         pause = 100;
                     }
                 }
-            }
-            if(!turn){
+            } else {
                 if(pause > 0){
                     pause--;
                 }
@@ -110,13 +109,10 @@ public class TestWorld extends World
     
     private void switchTurn() {
         turn = !turn;
-        if (stunTurns > 0) {
-            stunTurns--;
-        }
     }
 
-    public void applyStun(int duration) {
-        stunTurns = duration;
+    public void applyStun() {
+        stunTurns = 1;
         addObject(ss, 500, 500);
     }
 }
