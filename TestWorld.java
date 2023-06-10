@@ -20,7 +20,7 @@ public class TestWorld extends World
     
     Skeleton s2 = new Skeleton();
     
-    int shieldAmount = 1;
+    int shieldAmount = 0;
     boolean turn = true;
     boolean stun = false;
     int stunTurns = 0;
@@ -100,7 +100,13 @@ public class TestWorld extends World
                     Skeleton.setIdleControl(false);
                     Skeleton.setAttackControl(true);
                     removeObject(ss);
-                    h.loseHP(4);
+                    if(shieldAmount != 0){
+                        h.loseHP((int)(4 * (shieldAmount/ (double) 100)));
+                        removeObject(b2);
+                    } else {
+                        h.loseHP(4);
+                    }
+                    shieldAmount = 0;
                     switchTurn();
                     pause = 100;
                 }
