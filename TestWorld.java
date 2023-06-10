@@ -48,7 +48,6 @@ public class TestWorld extends World
             if(stunTurns == 0) {
                 // Stun duration is over, switch to the next turn and remove the stun indicator
                 switchTurn();
-                removeObject(ss);
             }
         } else { //if no stuns
             if(turn){
@@ -99,6 +98,7 @@ public class TestWorld extends World
                     MainCharacter.setStunControl(false);
                     Skeleton.setIdleControl(false);
                     Skeleton.setAttackControl(true);
+                    removeObject(ss);
                     h.loseHP(4);
                     switchTurn();
                     pause = 100;
