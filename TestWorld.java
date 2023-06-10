@@ -13,6 +13,7 @@ public class TestWorld extends World
     Barrier b = new Barrier();
     StunSmash s = new StunSmash();
     Attack a2 = new Attack();
+    HealthBar h = new HealthBar(20);
     
     boolean turn = true;
     int pause = 100;
@@ -25,6 +26,7 @@ public class TestWorld extends World
         addObject(a, 100, 100);
         addObject(b, 100, 200);
         addObject(s, 100, 300);
+        addObject(h, 300, 150);
     }
     
     public void act(){
@@ -32,13 +34,19 @@ public class TestWorld extends World
             if(Greenfoot.mouseClicked(a)){
                 MainCharacter.setIdleControl(false);
                 MainCharacter.setAttackControl(true);
+                h.loseHealth(5);
+                h.updateHP();
                 turn = false;
             }
             if(Greenfoot.mouseClicked(b)){
-                mc.shield();
+                MainCharacter.setIdleControl(false);
+                MainCharacter.setShieldControl(true);
+                turn = false;
             }
             if(Greenfoot.mouseClicked(s)){
-                mc.stunAnimation();
+                MainCharacter.setIdleControl(false);
+                MainCharacter.setStunControl(true);
+                turn = false;
             }
         }
         if(!turn){

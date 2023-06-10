@@ -8,7 +8,7 @@ import java.awt.Font;
  */
 public class HealthBar extends Actor
 {
-    int HP = 4; // can't be zero, causes dividing by zero error
+    int HP = 1; // can't be zero, causes dividing by zero error
     int HPBarWidth = 80;
     int HPBarHeight = 15;
     int pixelsPerHP = (int) HPBarWidth/HP; // when losing HP, # of pixels to lose

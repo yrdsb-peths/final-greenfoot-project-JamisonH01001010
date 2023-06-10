@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainCharacter extends Actor
 {
-    public static boolean idleControl = true;
-    public static boolean attackControl = false;
+    static boolean idleControl = true;
+    static boolean attackControl = false;
+    static boolean shieldControl = false;
+    static boolean stunControl = false;
     
     // Idle animation
     GreenfootImage[] idle = new GreenfootImage[4];
@@ -75,6 +77,12 @@ public class MainCharacter extends Actor
         }
         if(attackControl){
             attackAnimation();
+        }
+        if(shieldControl){
+            shield();
+        }
+        if(stunControl){
+            stunAnimation();
         }
     }
     
@@ -148,6 +156,14 @@ public class MainCharacter extends Actor
     
     public static void setAttackControl(boolean a){
         attackControl = a;
+    }
+    
+    public static void setShieldControl(boolean a){
+        shieldControl = a;
+    }
+    
+    public static void setStunControl(boolean a ){
+        stunControl = a;
     }
     
 }
