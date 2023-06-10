@@ -12,6 +12,7 @@ public class TestWorld extends World
     Attack a = new Attack();
     Barrier b = new Barrier();
     StunSmash s = new StunSmash();
+    StunSmash ss = new StunSmash();
     Attack a2 = new Attack();
     HealthBar h = new HealthBar(Health.getHealthCount());
     HealthBar hs = new HealthBar(20);
@@ -19,7 +20,10 @@ public class TestWorld extends World
     Skeleton s2 = new Skeleton();
     
     boolean turn = true;
+    boolean stun = false;
+    int stunTurns = 0;
     int pause = 100;
+    int randomStun = 0;
     public TestWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,52 +36,87 @@ public class TestWorld extends World
         addObject(h, 300, 150);
         addObject(s2, 500, 200);
         addObject(hs, 500, 120);
+        
+        turn = true;
+        stun = false;
+        stunTurns = 0;
     }
     
     public void act(){
-        if(turn){
-            if(pause > 0){
-                pause--;
+        if (stunTurns > 0) {
+            stunTurns--;
+            if (stunTurns == 0) {
+                // Stun is over, switch to the next turn
+                removeObject(ss);
+                switchTurn();
             }
-            if(pause == 0){
-                Skeleton.setIdleControl(true);
-                Skeleton.setAttackControl(false);
-                if(Greenfoot.mouseClicked(a)){
-                    MainCharacter.setIdleControl(false);
-                    MainCharacter.setAttackControl(true);
-                    hs.loseHP(Attack.getAtkCount());
-                    turn = false;
-                    pause = 100;
+        } else {
+            if(turn){
+                if(pause > 0){
+                    pause--;
                 }
-                if(Greenfoot.mouseClicked(b)){
-                    MainCharacter.setIdleControl(false);
-                    MainCharacter.setShieldControl(true);
-                    turn = false;
-                    pause = 100;
+                if(pause == 0){
+                    Skeleton.setIdleControl(true);
+                    Skeleton.setAttackControl(false);
+                    // Repeat setting if there is stun and skeleton can't act
+                    MainCharacter.setIdleControl(true);
+                    MainCharacter.setAttackControl(false);
+                    MainCharacter.setShieldControl(false);
+                    MainCharacter.setStunControl(false);
+                    if(Greenfoot.mouseClicked(a)){
+                        MainCharacter.setIdleControl(false);
+                        MainCharacter.setAttackControl(true);
+                        hs.loseHP(Attack.getAtkCount());
+                        switchTurn();
+                        pause = 100;
+                    }
+                    if(Greenfoot.mouseClicked(b)){
+                        MainCharacter.setIdleControl(false);
+                        MainCharacter.setShieldControl(true);
+                        switchTurn();
+                        pause = 100;
+                    }
+                    if(Greenfoot.mouseClicked(s)){
+                        MainCharacter.setIdleControl(false);
+                        MainCharacter.setStunControl(true);
+                        hs.loseHP((int) (Attack.getAtkCount() * 0.2));
+                        randomStun = Greenfoot.getRandomNumber(2);
+                        if(randomStun == 1){
+                            applyStun(2 + 1);
+                            addObject(ss, 500, 500);
+                        }
+                        switchTurn();
+                        pause = 100;
+                    }
                 }
-                if(Greenfoot.mouseClicked(s)){
-                    MainCharacter.setIdleControl(false);
-                    MainCharacter.setStunControl(true);
-                    turn = false;
+            }
+            if(!turn){
+                if(pause > 0){
+                    pause--;
+                }
+                if(pause == 0){
+                    MainCharacter.setIdleControl(true);
+                    MainCharacter.setAttackControl(false);
+                    MainCharacter.setShieldControl(false);
+                    MainCharacter.setStunControl(false);
+                    Skeleton.setIdleControl(false);
+                    Skeleton.setAttackControl(true);
+                    h.loseHP(4);
+                    switchTurn();
                     pause = 100;
                 }
             }
         }
-        if(!turn){
-            if(pause > 0){
-                pause--;
-            }
-            if(pause == 0){
-                MainCharacter.setIdleControl(true);
-                MainCharacter.setAttackControl(false);
-                MainCharacter.setShieldControl(false);
-                MainCharacter.setStunControl(false);
-                Skeleton.setIdleControl(false);
-                Skeleton.setAttackControl(true);
-                h.loseHP(4);
-                turn = true;
-                pause = 100;
-            }
+    }
+    
+    private void switchTurn() {
+        turn = !turn;
+        if (stunTurns > 0) {
+            stunTurns--;
         }
+    }
+
+    public void applyStun(int duration) {
+        stunTurns = duration;
     }
 }
