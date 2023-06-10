@@ -14,6 +14,9 @@ public class TestWorld extends World
     StunSmash s = new StunSmash();
     Attack a2 = new Attack();
     HealthBar h = new HealthBar(Health.getHealthCount());
+    HealthBar hs = new HealthBar(20);
+    
+    Skeleton s2 = new Skeleton();
     
     boolean turn = true;
     int pause = 100;
@@ -27,6 +30,8 @@ public class TestWorld extends World
         addObject(b, 100, 200);
         addObject(s, 100, 300);
         addObject(h, 300, 150);
+        addObject(s2, 500, 200);
+        addObject(hs, 500, 120);
     }
     
     public void act(){
@@ -35,11 +40,12 @@ public class TestWorld extends World
                 pause--;
             }
             if(pause == 0){
+                Skeleton.setIdleControl(true);
+                Skeleton.setAttackControl(false);
                 if(Greenfoot.mouseClicked(a)){
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setAttackControl(true);
-                    h.loseHP(Attack.getAtkCount());
-                    h.updateHealthBar();
+                    hs.loseHP(Attack.getAtkCount());
                     turn = false;
                     pause = 100;
                 }
@@ -66,7 +72,10 @@ public class TestWorld extends World
                 MainCharacter.setAttackControl(false);
                 MainCharacter.setShieldControl(false);
                 MainCharacter.setStunControl(false);
-                addObject(a2, 400, 100);
+                Skeleton.setIdleControl(false);
+                Skeleton.setAttackControl(true);
+                h.loseHP(4);
+                turn = true;
                 pause = 100;
             }
         }

@@ -30,7 +30,9 @@ public class Skeleton extends Actor
     private int attackIndex = 0;
     private int deathIndex = 0;
     
-    boolean i = true;
+    static boolean idleControl = true;
+    static boolean attackControl = false;
+    static boolean deathControl = false;
     public Skeleton(){
         for(int i = 0; i < idle.length; i++){
             idle[i] = new GreenfootImage("skeleton/skeleton_idle_" + i + ".png");
@@ -56,15 +58,13 @@ public class Skeleton extends Actor
     }
     
     public void act(){
-        //selfHP.updateHP();
-        if(i){
-           idleAnimation(); 
+        if(idleControl){
+            idleAnimation(); 
         }
-        if(!NormalStages.getTurn()){
-            attackAnimation(); // only one action, attacking 
+        if(attackControl){
+            attackAnimation();
         }
-        if(HP <= 0){
-            i = false;
+        if(deathControl){
             deathAnimation();
         }
     }
@@ -82,7 +82,7 @@ public class Skeleton extends Actor
     }
     
     public void attackAnimation(){
-        if(attackTimer.millisElapsed() < 150){
+        if(attackTimer.millisElapsed() < 100){
             return;
         }
         
@@ -111,7 +111,15 @@ public class Skeleton extends Actor
         deathIndex++;
     }
     
-    public void loseHP(int a){
-        HP = HP - a;
+    public static void setIdleControl(boolean a){
+        idleControl = a;
+    }
+    
+    public static void setAttackControl(boolean a){
+        attackControl = a;
+    }
+    
+    public static void setDeathControl(boolean a){
+        deathControl = a;
     }
 }
