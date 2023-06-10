@@ -22,6 +22,9 @@ public class NormalStages extends World
     // HealthBar
     HealthBar mcHP = new HealthBar(20);
     HealthBar skeletonHP = new HealthBar(20);
+    Attack a = new Attack();
+    Health h = new Health();
+    Barrier b = new Barrier();
     public NormalStages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

@@ -66,9 +66,9 @@ public class MainCharacter extends Actor
     }
     public void act()
     {
-        if(Intro.getOnIntro()){
-            idleAnimation();
-        } 
+        //if(Intro.getOnIntro()){
+            //idleAnimation();
+        //} 
         if(idleControl){
             swordIdleAnimation(); 
         }

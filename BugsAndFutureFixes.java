@@ -11,7 +11,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * intro - sfx and music
  * BGM.stop not working (options & title screen)
  * pause menu in stages
- * stageselect allowing user to enter levels
+ * stageselect allowing user to enter levels (locking levels)
+ * changing tutorial to press icons to do an action
  */
 public class BugsAndFutureFixes extends Actor
 {
