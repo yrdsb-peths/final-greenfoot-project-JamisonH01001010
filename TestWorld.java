@@ -12,6 +12,10 @@ public class TestWorld extends World
     Attack a = new Attack();
     Barrier b = new Barrier();
     StunSmash s = new StunSmash();
+    Attack a2 = new Attack();
+    
+    boolean turn = true;
+    int pause = 100;
     public TestWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,15 +28,26 @@ public class TestWorld extends World
     }
     
     public void act(){
-        if(Greenfoot.mouseClicked(a)){
-            MainCharacter.setIdleControl(true);
-            mc.attackAnimation();
+        if(turn){
+            if(Greenfoot.mouseClicked(a)){
+                MainCharacter.setIdleControl(false);
+                MainCharacter.setAttackControl(true);
+                turn = false;
+            }
+            if(Greenfoot.mouseClicked(b)){
+                mc.shield();
+            }
+            if(Greenfoot.mouseClicked(s)){
+                mc.stunAnimation();
+            }
         }
-        if(Greenfoot.mouseClicked(b)){
-            mc.shield();
-        }
-        if(Greenfoot.mouseClicked(s)){
-            mc.stunAnimation();
+        if(!turn){
+            if(pause > 0){
+                pause--;
+            }
+            if(pause == 0){
+                addObject(a2, 400, 100);
+            }
         }
     }
 }

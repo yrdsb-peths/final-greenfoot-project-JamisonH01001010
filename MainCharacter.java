@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MainCharacter extends Actor
 {
     public static boolean idleControl = true;
+    public static boolean attackControl = false;
     
     // Idle animation
     GreenfootImage[] idle = new GreenfootImage[4];
@@ -71,6 +72,9 @@ public class MainCharacter extends Actor
         //} 
         if(idleControl){
             swordIdleAnimation(); 
+        }
+        if(attackControl){
+            attackAnimation();
         }
     }
     
@@ -140,6 +144,10 @@ public class MainCharacter extends Actor
     
     public static void setIdleControl(boolean a){
         idleControl = a;
+    }
+    
+    public static void setAttackControl(boolean a){
+        attackControl = a;
     }
     
 }
