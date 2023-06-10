@@ -43,14 +43,14 @@ public class TestWorld extends World
     }
     
     public void act(){
-        if (stunTurns > 0) {
+        if(stunTurns > 0) {
             stunTurns--;
-            if (stunTurns == 0) {
-                // Stun is over, switch to the next turn
-                removeObject(ss);
+            if(stunTurns == 0) {
+                // Stun duration is over, switch to the next turn and remove the stun indicator
                 switchTurn();
+                removeObject(ss);
             }
-        } else {
+        } else { //if no stuns
             if(turn){
                 if(pause > 0){
                     pause--;
@@ -82,8 +82,7 @@ public class TestWorld extends World
                         hs.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
-                            applyStun(2 + 1);
-                            addObject(ss, 500, 500);
+                            applyStun(2);
                         }
                         switchTurn();
                         pause = 100;
@@ -118,5 +117,6 @@ public class TestWorld extends World
 
     public void applyStun(int duration) {
         stunTurns = duration;
+        addObject(ss, 500, 500);
     }
 }
