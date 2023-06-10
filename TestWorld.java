@@ -41,16 +41,19 @@ public class TestWorld extends World
                     h.loseHP(Attack.getAtkCount());
                     h.updateHealthBar();
                     turn = false;
+                    pause = 100;
                 }
                 if(Greenfoot.mouseClicked(b)){
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setShieldControl(true);
                     turn = false;
+                    pause = 100;
                 }
                 if(Greenfoot.mouseClicked(s)){
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setStunControl(true);
                     turn = false;
+                    pause = 100;
                 }
             }
         }
@@ -64,6 +67,7 @@ public class TestWorld extends World
                 MainCharacter.setShieldControl(false);
                 MainCharacter.setStunControl(false);
                 addObject(a2, 400, 100);
+                pause = 100;
             }
         }
     }
