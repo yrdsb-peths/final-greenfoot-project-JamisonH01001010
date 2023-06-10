@@ -20,6 +20,8 @@ public class TestWorld extends World
     
     Skeleton s2 = new Skeleton();
     
+    GameFont sA = new GameFont("temp", 300, 100);
+    
     int shieldAmount = 0;
     boolean turn = true;
     boolean stun = false;
@@ -38,6 +40,8 @@ public class TestWorld extends World
         addObject(h, 300, 150);
         addObject(s2, 500, 200);
         addObject(hs, 500, 120);
+        //SA = new GameFont("25", 100, 50);
+        addObject(sA, 300, 200);
         
         turn = true;
         stun = false;
@@ -74,6 +78,9 @@ public class TestWorld extends World
                         MainCharacter.setIdleControl(false);
                         shieldAmount = mc.shield();
                         addObject(b2, 200, 300);
+                        Integer shieldAmountv2 = shieldAmount;
+                        //SA = new GameFont(shieldAmountv2.toString(), 100, 50);
+                        //addObject(SA, 300, 300);
                         switchTurn();
                         pause = 100;
                     }
@@ -102,6 +109,7 @@ public class TestWorld extends World
                     removeObject(ss);
                     if(shieldAmount != 0){
                         h.loseHP((int)(4 * (shieldAmount/ (double) 100)));
+                        //removeObject(SA);
                         removeObject(b2);
                     } else {
                         h.loseHP(4);
