@@ -125,6 +125,7 @@ public class MainCharacter extends Actor
             setImage(attack[attackIndex]);
         } else {
             setImage(swordIdle[0]);
+            attackIndex = 0;
         }
         
         attackIndex++;
@@ -147,6 +148,7 @@ public class MainCharacter extends Actor
             setImage(stun[stunIndex]);
         } else {
             setImage(swordIdle[0]);
+            stunIndex = 0;
         }
         
         stunIndex++;

@@ -91,7 +91,7 @@ public class Skeleton extends Actor
         if(attackIndex <= 14){
             setImage(attack[attackIndex]);
         } else { // once full animation is over
-            NormalStages.setTurn(true);
+            attackIndex = 0;
         }
         
         attackIndex++;
@@ -106,7 +106,9 @@ public class Skeleton extends Actor
         
         if(deathIndex <= 3){
             setImage(death[deathIndex]);
-        } 
+        } else {
+            deathIndex = 0;
+        }
         
         deathIndex++;
     }
