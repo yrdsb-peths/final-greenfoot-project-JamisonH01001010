@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainCharacter extends Actor
 {
+    int shieldAmount = 0;
     
     static boolean idleControl = true;
     static boolean attackControl = false;
@@ -79,9 +80,6 @@ public class MainCharacter extends Actor
         if(attackControl){
             attackAnimation();
         }
-        if(shieldControl){
-            shield();
-        }
         if(stunControl){
             stunAnimation();
         }
@@ -130,10 +128,13 @@ public class MainCharacter extends Actor
         attackIndex++;
     }
     
-    public void shield(){
-        // add shield image next to HP bar
-        // no animation
-        // add amount of shield in text
+    public int shield(){
+        shieldAmount = Greenfoot.getRandomNumber(2);
+        if(shieldAmount == 0){
+            return 25;
+        } else {
+            return 50;
+        }
     }
     
     public void stunAnimation(){

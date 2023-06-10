@@ -11,6 +11,7 @@ public class TestWorld extends World
     MainCharacter mc = new MainCharacter();
     Attack a = new Attack();
     Barrier b = new Barrier();
+    Barrier b2 = new Barrier();
     StunSmash s = new StunSmash();
     StunSmash ss = new StunSmash();
     Attack a2 = new Attack();
@@ -19,6 +20,7 @@ public class TestWorld extends World
     
     Skeleton s2 = new Skeleton();
     
+    int shieldAmount = 1;
     boolean turn = true;
     boolean stun = false;
     int stunTurns = 0;
@@ -60,7 +62,6 @@ public class TestWorld extends World
                     // Repeat setting if there is stun and skeleton can't act
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
-                    MainCharacter.setShieldControl(false);
                     MainCharacter.setStunControl(false);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
@@ -71,7 +72,8 @@ public class TestWorld extends World
                     }
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
-                        MainCharacter.setShieldControl(true);
+                        shieldAmount = mc.shield();
+                        addObject(b2, 200, 300);
                         switchTurn();
                         pause = 100;
                     }
@@ -94,7 +96,6 @@ public class TestWorld extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
-                    MainCharacter.setShieldControl(false);
                     MainCharacter.setStunControl(false);
                     Skeleton.setIdleControl(false);
                     Skeleton.setAttackControl(true);
