@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainCharacter extends Actor
 {
+    
+    
     static boolean idleControl = true;
     static boolean attackControl = false;
     static boolean shieldControl = false;

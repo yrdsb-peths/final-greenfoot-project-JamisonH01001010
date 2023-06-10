@@ -13,7 +13,7 @@ public class TestWorld extends World
     Barrier b = new Barrier();
     StunSmash s = new StunSmash();
     Attack a2 = new Attack();
-    HealthBar h = new HealthBar(20);
+    HealthBar h = new HealthBar(Health.getHealthCount());
     
     boolean turn = true;
     int pause = 100;
@@ -31,22 +31,27 @@ public class TestWorld extends World
     
     public void act(){
         if(turn){
-            if(Greenfoot.mouseClicked(a)){
-                MainCharacter.setIdleControl(false);
-                MainCharacter.setAttackControl(true);
-                h.loseHealth(5);
-                h.updateHP();
-                turn = false;
+            if(pause > 0){
+                pause--;
             }
-            if(Greenfoot.mouseClicked(b)){
-                MainCharacter.setIdleControl(false);
-                MainCharacter.setShieldControl(true);
-                turn = false;
-            }
-            if(Greenfoot.mouseClicked(s)){
-                MainCharacter.setIdleControl(false);
-                MainCharacter.setStunControl(true);
-                turn = false;
+            if(pause == 0){
+                if(Greenfoot.mouseClicked(a)){
+                    MainCharacter.setIdleControl(false);
+                    MainCharacter.setAttackControl(true);
+                    h.loseHP(Attack.getAtkCount());
+                    h.updateHealthBar();
+                    turn = false;
+                }
+                if(Greenfoot.mouseClicked(b)){
+                    MainCharacter.setIdleControl(false);
+                    MainCharacter.setShieldControl(true);
+                    turn = false;
+                }
+                if(Greenfoot.mouseClicked(s)){
+                    MainCharacter.setIdleControl(false);
+                    MainCharacter.setStunControl(true);
+                    turn = false;
+                }
             }
         }
         if(!turn){
@@ -54,6 +59,10 @@ public class TestWorld extends World
                 pause--;
             }
             if(pause == 0){
+                MainCharacter.setIdleControl(true);
+                MainCharacter.setAttackControl(false);
+                MainCharacter.setShieldControl(false);
+                MainCharacter.setStunControl(false);
                 addObject(a2, 400, 100);
             }
         }

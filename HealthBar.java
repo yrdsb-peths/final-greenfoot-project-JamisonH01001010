@@ -1,37 +1,51 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.awt.Font;
+import greenfoot.*;
+
 /**
  * Write a description of class HealthBar here.
  * 
- * @author https://www.youtube.com/watch?v=oJHP18bhLT0 (Copied froJim Stewart)
+ * @author https://www.youtube.com/watch?v=oJHP18bhLT0 (Inspired from Jim Stewart)
  * @version (a version number or a date)
  */
-public class HealthBar extends Actor
-{
-    int HP = 1; // can't be zero, causes dividing by zero error
-    int HPBarWidth = 80;
-    int HPBarHeight = 15;
-    int pixelsPerHP = (int) HPBarWidth/HP; // when losing HP, # of pixels to lose
-    public HealthBar(int HP){
-        this.HP = HP;
-        updateHP();
+
+public class HealthBar extends Actor {
+    private int maxHP;
+    private int currentHP;
+    private int barWidth;
+    private int barHeight;
+    private GreenfootImage img;
+
+    public HealthBar(int maxHP) {
+        this.maxHP = maxHP;
+        currentHP = maxHP;
+        barWidth = 100;
+        barHeight = 10;
+        img = new GreenfootImage(barWidth, barHeight);
+
+        updateHealthBar();
     }
-    public void act()
-    {
-        updateHP();
-    }
-    public void updateHP(){
-        // For white border
-        setImage(new GreenfootImage(HPBarWidth + 2, HPBarHeight + 2));
-        GreenfootImage img = getImage();
-        img.setColor(Color.WHITE);
-        img.drawRect(0, 0, HPBarWidth + 1, HPBarHeight + 1);
-        // For red insides
+
+    public void updateHealthBar() {
+        img.clear();
+
+        // Draw the background rectangle
+        img.setColor(Color.BLACK);
+        img.fillRect(0, 0, barWidth, barHeight);
+
+        // Calculate the width of the filled portion
+        int filledWidth = (int) ((double) currentHP / maxHP * barWidth);
+
+        // Draw the filled portion
         img.setColor(Color.RED);
-        img.fillRect(1, 1, HP * pixelsPerHP, HPBarHeight);
+        img.fillRect(0, 0, filledWidth, barHeight);
+
+        setImage(img);
     }
-    
-    public void loseHealth(int a){
-        HP = HP - a;
+
+    public void loseHP(int a) {
+        currentHP -= a;
+        if (currentHP < 0) {
+            currentHP = 0;
+        }
+        updateHealthBar();
     }
 }
