@@ -12,6 +12,7 @@ public class MainCharacter extends Actor
     int shieldAmount = 0;
     
     // Animation Control
+    static boolean noSwordControl = false;
     static boolean idleControl = true;
     static boolean attackControl = false;
     static boolean shieldControl = false;
@@ -82,9 +83,9 @@ public class MainCharacter extends Actor
     }
     public void act()
     {
-        //if(Intro.getOnIntro()){
-            //idleAnimation();
-        //} 
+        if(noSwordControl){
+            idleAnimation();
+        } 
         if(idleControl){
             swordIdleAnimation(); 
         }
@@ -182,6 +183,10 @@ public class MainCharacter extends Actor
         }
         
         deathIndex++;
+    }
+    
+    public static void setNoSwordControl(boolean a){
+        noSwordControl = a;
     }
     
     public static void setIdleControl(boolean a){

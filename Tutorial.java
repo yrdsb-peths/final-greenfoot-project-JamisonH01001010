@@ -24,7 +24,7 @@ public class Tutorial extends World
     GameFont tutorial = new GameFont("Tutorial", 300, 160);
     GameFont description1 = new GameFont("Lost Sword is a turn-based RPG: You go first, then the enemy.", 600, 800);
     GameFont description2 = new GameFont("Each turn you will have 3 skills to choose from, detailed in the Skill Menu.", 650, 970);
-    GameFont description3 = new GameFont("Press numbers 1, 2, or 3 on your keyboard to use a skill in battle.", 650, 900);
+    GameFont description3 = new GameFont("Click on the skill icons to use a skill in battle.", 650, 900);
     GameFont description4 = new GameFont("Skill power scales off HP and ATK, upgradeable in the Skill Menu using tokens.", 720, 1100);
     GameFont description5 = new GameFont("Tokens are obtained through winning battles.", 400, 600);
     GameFont description6 = new GameFont("All achievements are hidden, decipher the requirements through their name.", 650, 1000); 
@@ -45,7 +45,7 @@ public class Tutorial extends World
         addObject(tutorial, 370, 170);
         addObject(description1, 385, 430);
         addObject(description2, 390, 500);
-        addObject(description3, 405, 540);
+        addObject(description3, 485, 540);
         addObject(description4, 405, 620);
         addObject(description5, 400, 505);
         addObject(description6, 395, 675);
