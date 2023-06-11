@@ -19,7 +19,7 @@ public class Attack extends Actor
         // Cap 999 ATK
         if(atkCount < 999 && CoinTracker.getCoinCount() >= 5){
             atkCount += 3;
-            CoinTracker.setCoinCount(-5);
+            CoinTracker.addCoinCount(-5);
         }
     }
     

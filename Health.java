@@ -19,7 +19,7 @@ public class Health extends Actor
         // Cap 999 HP
         if(healthCount < 999 && CoinTracker.getCoinCount() >= 5){
            healthCount += 5; 
-           CoinTracker.setCoinCount(-5);
+           CoinTracker.addCoinCount(-5);
         }
     }
     

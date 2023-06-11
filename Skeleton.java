@@ -8,15 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Skeleton extends Actor
 {
-    // HP: 20
-    // ATK: 4
-    // Skills: Attack (100% of ATK)
-    // Get self HP bar
-    // MC reduces skeleton hp
-    // That hp gets transferred to skeletonHP bar
-    HealthBar skeletonHP = new HealthBar(20);
-    public int HP = 20;
-    public int ATK = 4;
+    //public int HP = 20;
+    //public int ATK = 4;
     
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[15];

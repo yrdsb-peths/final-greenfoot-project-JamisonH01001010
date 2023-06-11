@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainCharacter extends Actor
 {
+    // Shield
     int shieldAmount = 0;
     
+    // Animation Control
     static boolean idleControl = true;
     static boolean attackControl = false;
     static boolean shieldControl = false;
@@ -194,8 +196,12 @@ public class MainCharacter extends Actor
         shieldControl = a;
     }
     
-    public static void setStunControl(boolean a ){
+    public static void setStunControl(boolean a){
         stunControl = a;
+    }
+    
+    public static void setDeathControl(boolean a){
+        deathControl = a;
     }
     
 }

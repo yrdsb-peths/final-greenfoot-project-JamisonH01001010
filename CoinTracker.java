@@ -19,7 +19,7 @@ public class CoinTracker extends Actor
         return coinCount;
     }
     
-    public static void setCoinCount(int a){
+    public static void addCoinCount(int a){
         coinCount += a;
     }
 }

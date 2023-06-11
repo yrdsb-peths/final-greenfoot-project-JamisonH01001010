@@ -8,27 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NormalStages extends World
 {
+    // Background
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
+    // Object instantiations
     MainCharacter mc = new MainCharacter();
+    Skeleton s = new Skeleton();
     Attack a = new Attack();
     Barrier b = new Barrier();
     Barrier b2 = new Barrier();
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash();
-    Attack a2 = new Attack();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar skeletonHP = new HealthBar(20);
-    Skeleton s = new Skeleton();
+    Menu m = new Menu(500, 500);
     
+    // Text
+    GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
+    // Text for S1 Clear
+    GameFont s1Clear1 = new GameFont("Stage 1 CLEAR!", 200, 500);
+    GameFont s1Clear2 = new GameFont("Tokens +10", 200, 500);
+    
+    // Game Variables
     int shieldAmount = 0;
-    GameFont SA = new GameFont("temp", 100, 100);
-    
+    int pause = 100;
     boolean turn = true;
     boolean stun = false;
     int stunTurns = 0;
-    int pause = 100;
     int randomStun = 0;
+    
+    // Stage Variables
+    boolean s1Over = false;
     public NormalStages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -102,6 +112,11 @@ public class NormalStages extends World
                         switchTurn();
                         pause = 100;
                     }
+                    if(skeletonHP.getCurrentHP() == 0){
+                        Skeleton.setIdleControl(false);
+                        Skeleton.setDeathControl(true);
+                        s1GameOver();
+                    }
                 }
             } else {
                 if(pause > 0){
@@ -125,6 +140,11 @@ public class NormalStages extends World
                     switchTurn();
                     pause = 100;
                 }
+                if(mcHP.getCurrentHP() == 0){
+                    MainCharacter.setIdleControl(false);
+                    MainCharacter.setDeathControl(true);
+                    s1GameOver();
+                }
             }
         }
     }
@@ -136,5 +156,16 @@ public class NormalStages extends World
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
+    }
+    
+    public void s1GameOver(){
+        s1Over = true;
+        addObject(m, 400, 300);
+        CoinTracker.addCoinCount(10);
+        if(Greenfoot.mouseClicked(m)){
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
+        }
+        // home button
     }
 }

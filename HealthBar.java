@@ -48,4 +48,8 @@ public class HealthBar extends Actor {
         }
         updateHealthBar();
     }
+    
+    public int getCurrentHP(){
+        return currentHP;
+    }
 }
