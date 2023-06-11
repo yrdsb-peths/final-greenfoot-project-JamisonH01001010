@@ -36,12 +36,12 @@ public class SkillMenu extends World
     GameFont stats = new GameFont("[Stats]", 300, 150);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
-    GameFont bs1 = new GameFont("Blade Slash [1]", 300, 250);
+    GameFont bs1 = new GameFont("Blade Slash", 300, 250);
     GameFont bs2 = new GameFont("Deal 100% of ATK damage", 300, 400);
-    GameFont b1 = new GameFont("Barrier [2]", 250, 200);
+    GameFont b1 = new GameFont("Barrier", 250, 200);
     GameFont b2 = new GameFont("Make shield to absorb 25% or", 300, 400);
     GameFont b3 = new GameFont("50% of next incoming attack", 300, 400);
-    GameFont s1 = new GameFont("Stun Smash [3]", 300, 250);
+    GameFont s1 = new GameFont("Stun Smash", 300, 250);
     GameFont s2 = new GameFont("Deal 20% of ATK with 50%", 300, 400);
     GameFont s3 = new GameFont("chance to stun for one turn", 300, 400);
     public SkillMenu()

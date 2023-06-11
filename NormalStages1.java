@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class NormalStages extends World
+public class NormalStages1 extends World
 {
     // Background
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
@@ -40,10 +40,11 @@ public class NormalStages extends World
     int randomStun = 0;
     
     // Stage Variables
+    static boolean s1Passed = false;
     boolean s1Over = false;
     boolean s1Clear = false;
     boolean s1Fail = false;
-    public NormalStages()
+    public NormalStages1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
@@ -86,11 +87,12 @@ public class NormalStages extends World
     public void act(){
         if(!s1Over){
             s1();
-        } else {
+        } else { // Level Finished
             if(pause > 0){
                 pause--;
             }
             if(pause == 0){
+                s1Passed = true;
                 if(s1Clear){
                     addObject(m, 400, 300);
                     addObject(s1Clear1, 610, 580);
@@ -213,5 +215,9 @@ public class NormalStages extends World
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
+    }
+    
+    public static boolean getS1Passed(){
+        return s1Passed;
     }
 }

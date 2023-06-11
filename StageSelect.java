@@ -22,7 +22,10 @@ public class StageSelect extends World
     Level4 l4 = new Level4();
     Level5 l5 = new Level5();
     // Stages
-    NormalStages ns = new NormalStages();
+    NormalStages1 ns1 = new NormalStages1();
+    NormalStages2 ns2 = new NormalStages2();
+    NormalStages3 ns3 = new NormalStages3();
+    NormalStages4 ns4 = new NormalStages4();
     FinalStage fs = new FinalStage();
     public StageSelect()
     {    
@@ -53,18 +56,18 @@ public class StageSelect extends World
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(l1)){
-            Greenfoot.setWorld(ns);
+            Greenfoot.setWorld(ns1);
         }
-        if(Greenfoot.mouseClicked(l2) && Level2.getPassed()){
-            Greenfoot.setWorld(ns);
+        if(Greenfoot.mouseClicked(l2) && NormalStages1.getS1Passed()){
+            Greenfoot.setWorld(ns2);
         }
-        if(Greenfoot.mouseClicked(l3) && Level3.getPassed()){
-            Greenfoot.setWorld(ns);
+        if(Greenfoot.mouseClicked(l3)){
+            Greenfoot.setWorld(ns3);
         }
-        if(Greenfoot.mouseClicked(l4) && Level4.getPassed()){
-            Greenfoot.setWorld(ns);
+        if(Greenfoot.mouseClicked(l4)){
+            Greenfoot.setWorld(ns4);
         }
-        if(Greenfoot.mouseClicked(l5) && Level5.getPassed()){
+        if(Greenfoot.mouseClicked(l5)){
             Greenfoot.setWorld(fs);
         }
     }
