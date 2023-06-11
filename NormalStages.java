@@ -28,7 +28,8 @@ public class NormalStages extends World
     GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
     GameFont s1Clear1 = new GameFont("Stage 1 CLEAR!", 1000, 500);
     GameFont s1Clear2 = new GameFont("Tokens + 10", 500, 500);
-    GameFont s1Fail = new GameFont("Stage 1 Fail. Try Again", 1000, 700);;
+    GameFont s1Fail1 = new GameFont("Stage 1 Fail | Try Again", 1000, 700);
+    GameFont s1Fail2 = new GameFont("Tokens + 0", 500, 500);
     
     // Game Variables
     int shieldAmount = 0;
@@ -70,10 +71,6 @@ public class NormalStages extends World
         if(!s1Over){
             //s1();
         }
-        addObject(m, 400, 300);
-        addObject(s1Clear1, 610, 580);
-        addObject(s1Clear2, 530, 650);
-        addObject(returnHome, 570, 680);
     }
     
     public void s1(){
@@ -127,6 +124,10 @@ public class NormalStages extends World
                         Skeleton.setIdleControl(false);
                         Skeleton.setDeathControl(true);
                         s1Over = true;
+                        addObject(m, 400, 300);
+                        addObject(s1Clear1, 610, 580);
+                        addObject(s1Clear2, 530, 650);
+                        addObject(returnHome, 565, 680);
                         CoinTracker.addCoinCount(10);
                         if(Greenfoot.mouseClicked(returnHome)){
                             TitleScreen t = new TitleScreen();
@@ -161,8 +162,9 @@ public class NormalStages extends World
                     MainCharacter.setDeathControl(true);
                     s1Over = true;
                     addObject(m, 400, 300);
-                    addObject(s1Fail, 400, 200);
-                    addObject(returnHome, 400, 300);
+                    addObject(s1Fail1, 622, 580);
+                    addObject(s1Fail2, 540, 650);
+                    addObject(returnHome, 565, 680);    
                     if(Greenfoot.mouseClicked(returnHome)){
                         TitleScreen t = new TitleScreen();
                         Greenfoot.setWorld(t);
