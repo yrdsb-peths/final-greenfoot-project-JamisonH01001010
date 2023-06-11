@@ -11,7 +11,7 @@ public class Goblin extends Actor
     // Stats: HP = 50, ATK = 8 (Tanky)
     
     GreenfootImage[] idle = new GreenfootImage[4];
-    GreenfootImage[] attack = new GreenfootImage[8];
+    GreenfootImage[] attack = new GreenfootImage[15];
     GreenfootImage[] death = new GreenfootImage[4];
     
     SimpleTimer idleTimer = new SimpleTimer();

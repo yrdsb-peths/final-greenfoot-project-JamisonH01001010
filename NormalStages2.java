@@ -176,8 +176,8 @@ public class NormalStages2 extends World
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
-                    Skeleton.setIdleControl(false);
-                    Skeleton.setAttackControl(true);
+                    Goblin.setIdleControl(false);
+                    Goblin.setAttackControl(true);
                     removeObject(ss2);
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
