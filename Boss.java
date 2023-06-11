@@ -26,9 +26,9 @@ public class Boss extends Actor
     public Boss(){
         for(int i = 0; i < bossAppear.length; i++){
             if(i >= 10){
-                bossAppear[i] = new GreenfootImage("boss-death/boss_death_" + i + ".png");
+                bossAppear[i] = new GreenfootImage("boss/boss_death_" + i + ".png");
             } else {
-                bossAppear[i] = new GreenfootImage("boss-death/boss_death_0" + i + ".png");
+                bossAppear[i] = new GreenfootImage("boss/boss_death_0" + i + ".png");
             }
             bossAppear[i].mirrorHorizontally();
             bossAppear[i].scale(200, 200);
@@ -36,16 +36,16 @@ public class Boss extends Actor
         
         for(int i = 0; i < bossAttack.length; i++){
             if(i >= 10){
-                bossAttack[i] = new GreenfootImage("attacking/boss_attack_" + i + ".png");
+                bossAttack[i] = new GreenfootImage("boss/boss_attack_" + i + ".png");
             } else {
-                bossAttack[i] = new GreenfootImage("attacking/boss_attack_0" + i + ".png");
+                bossAttack[i] = new GreenfootImage("boss/boss_attack_0" + i + ".png");
             }
             bossAttack[i].mirrorHorizontally();
             bossAttack[i].scale(200, 200);
         }
         
         for(int i = 0; i < bossIdle.length; i++){
-            bossIdle[i] = new GreenfootImage("boss-idle/boss_idle_" + i + ".png");
+            bossIdle[i] = new GreenfootImage("boss/boss_idle_" + i + ".png");
             bossIdle[i].mirrorHorizontally();
             bossIdle[i].scale(200, 200);
         }

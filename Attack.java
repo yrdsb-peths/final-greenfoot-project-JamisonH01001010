@@ -17,9 +17,9 @@ public class Attack extends Actor
     
     public static void increaseAtk(){
         // Cap 999 ATK
-        if(atkCount < 999 && CoinTracker.getCoinCount() >= 5){
+        if(atkCount < 999 && CoinTracker.getCoinCount() >= 10){
             atkCount += 3;
-            CoinTracker.addCoinCount(-5);
+            CoinTracker.addCoinCount(-10);
         }
     }
     

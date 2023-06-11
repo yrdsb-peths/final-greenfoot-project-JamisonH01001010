@@ -17,9 +17,9 @@ public class Health extends Actor
     
     public static void increaseHealth(){
         // Cap 999 HP
-        if(healthCount < 999 && CoinTracker.getCoinCount() >= 5){
+        if(healthCount < 999 && CoinTracker.getCoinCount() >= 10){
            healthCount += 5; 
-           CoinTracker.addCoinCount(-5);
+           CoinTracker.addCoinCount(-10);
         }
     }
     

@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Skeleton extends Actor
 {
-    //public int HP = 20;
-    //public int ATK = 4;
+    // Stats: HP = 20, ATK = 4
     
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[15];
