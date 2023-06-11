@@ -42,20 +42,6 @@ Ideal User Experiece Pathway:
 - Upon game completion: End screen (TBD, something like an animation of getting the sword back after defeating the final boss)
 - Make game replayable and let user have the retrieved sword to use as gameplay, also if they want to try and find hidden achievements
 
-Intro: [add different music at different timing, also sfx]
-- User walking in the forest, then boss comes out to the screen (If suitable boss animation) 
-- Something about admiring the user's sword (animation of sword is movement up and down timed along with user no sword animation);
-- User senses hostile intention, attacks boss
-- Boss defends and attacks user, making him drop the sword on the ground
-- Boss grabs the sword (animation of sword going towards boss, add boss animation if possible?)
-- Boss says something about visiting the boss at his dungeon and coming to retrieve the sword
-- User says something about him going to use his spare sword (one included in animation)
-- Intro [END], Goes into tutorial screen
-
-- Stage selection:
-   - 5 Stages, each with their own world
-   - Mapped around a background map
-
 Note: When user loses, no constellation rewards
 
 - Stage 1:
