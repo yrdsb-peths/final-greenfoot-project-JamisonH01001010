@@ -25,8 +25,8 @@ public class NormalStages extends World
     
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
-    GameFont returnHome = new GameFont("RETURN HOME", 500, 500);
-    GameFont s1Clear1 = new GameFont("Stage 1 CLEAR!", 500, 500);
+    GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
+    GameFont s1Clear1 = new GameFont("Stage 1 CLEAR!", 1000, 500);
     GameFont s1Clear2 = new GameFont("Tokens + 10", 500, 500);
     GameFont s1Fail = new GameFont("Stage 1 Fail. Try Again", 1000, 700);;
     
@@ -71,9 +71,9 @@ public class NormalStages extends World
             //s1();
         }
         addObject(m, 400, 300);
-        addObject(s1Clear1, 400, 500);
-        addObject(s1Clear2, 400, 600);
-        addObject(returnHome, 400, 300);
+        addObject(s1Clear1, 610, 580);
+        addObject(s1Clear2, 530, 650);
+        addObject(returnHome, 570, 680);
     }
     
     public void s1(){
