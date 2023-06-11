@@ -20,7 +20,7 @@ public class NormalStages1 extends World
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar skeletonHP = new HealthBar(20);
+    HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
     Menu m = new Menu(580, 580);
     
     // Text
@@ -184,7 +184,7 @@ public class NormalStages1 extends World
                         removeObject(SA);
                         removeObject(b2);
                     } else {
-                        mcHP.loseHP(4);
+                        mcHP.loseHP(4); // SkeletonATK = 4
                     }
                     shieldAmount = 0;
                     switchTurn();

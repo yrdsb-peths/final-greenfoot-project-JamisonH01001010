@@ -13,17 +13,18 @@ public class NormalStages2 extends World
     
     // Object instantiations
     MainCharacter mc = new MainCharacter();
+    Goblin g = new Goblin();
     Attack a = new Attack();
     Barrier b = new Barrier();
     Barrier b2 = new Barrier();
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-
+    HealthBar goblinHP = new HealthBar(50); // GoblinHP = 50;
     Menu m = new Menu(580, 580);
     
     // Text
-    GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
+    GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to mc.shield value
     GameFont s2Clear1 = new GameFont("Stage 2 CLEAR!", 1000, 500);
     GameFont s2Clear2 = new GameFont("Tokens + 15", 500, 500);
     GameFont s2Fail1 = new GameFont("Stage 2 Fail | Try Again", 1000, 700);
@@ -53,9 +54,11 @@ public class NormalStages2 extends World
         
         // Characters
         addObject(mc, 250, 350);
+        addObject(g, 600, 350);
         
         // HealthBar
         addObject(mcHP, 250, 300);
+        addObject(goblinHP, 590, 300);
         
         // Icons
         addObject(a, 120, 250);
@@ -68,6 +71,9 @@ public class NormalStages2 extends World
         MainCharacter.setShieldControl(false);
         MainCharacter.setStunControl(false);
         MainCharacter.setDeathControl(false);
+        Goblin.setIdleControl(true);
+        Goblin.setAttackControl(false);
+        Goblin.setDeathControl(false);
         
         // Stage Variables
         turn = true;
@@ -119,7 +125,8 @@ public class NormalStages2 extends World
                     pause--;
                 }
                 if(pause == 0){
-
+                    Goblin.setIdleControl(true);
+                    Goblin.setAttackControl(false);
                     // Repeat setting if there is stun and () can't act
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
@@ -127,7 +134,7 @@ public class NormalStages2 extends World
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
- 
+                        goblinHP.loseHP(Attack.getAtkCount());
                         switchTurn();
                         pause = 100;
                     }
@@ -144,7 +151,7 @@ public class NormalStages2 extends World
                     if(Greenfoot.mouseClicked(ss1)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
-                        
+                        goblinHP.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
                             applyStun();
@@ -152,8 +159,9 @@ public class NormalStages2 extends World
                         switchTurn();
                         pause = 100;
                     }
-                    if(true){ // change
-
+                    if(goblinHP.getCurrentHP() == 0){ // change
+                        Goblin.setIdleControl(false);
+                        Goblin.setDeathControl(true);
                         s2Over = true;
                         s2Clear = true;
                         CoinTracker.addCoinCount(15);
@@ -168,14 +176,15 @@ public class NormalStages2 extends World
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
-
+                    Skeleton.setIdleControl(false);
+                    Skeleton.setAttackControl(true);
                     removeObject(ss2);
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
                         removeObject(SA);
                         removeObject(b2);
                     } else {
-                        mcHP.loseHP(4);
+                        mcHP.loseHP(8); // GoblinATK = 8
                     }
                     shieldAmount = 0;
                     switchTurn();
