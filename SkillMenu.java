@@ -34,6 +34,7 @@ public class SkillMenu extends World
     GameFont skillMenu = new GameFont("Skills", 300, 120);
     GameFont numCoins = new GameFont(cCount.toString(), 100, 100);
     GameFont stats = new GameFont("[Stats]", 300, 150);
+    GameFont price = new GameFont("[10 tokens per Upgrade]", 350, 400);
     GameFont HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
     GameFont ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
     GameFont bs1 = new GameFont("Blade Slash", 300, 250);
@@ -66,6 +67,7 @@ public class SkillMenu extends World
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
         addObject(stats, 200, 310);
+        addObject(price, 230, 620);
         addObject(HP, 165, 415);
         addObject(ATK, 165, 495);
         addObject(bs1, 565, 270);

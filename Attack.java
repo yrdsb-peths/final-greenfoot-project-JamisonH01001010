@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Attack extends Actor
 {
-    private static int atkCount = 5;
+    private static int atkCount = 50;
     GreenfootImage atk = new GreenfootImage("attack.png");
     public Attack(){
         atk.scale(40, 40);

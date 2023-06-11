@@ -93,6 +93,9 @@ public class NormalStages2 extends World
             }
             if(pause == 0){
                 s2Passed = true;
+                removeObject(a);
+                removeObject(b);
+                removeObject(ss1);
                 if(s2Clear){
                     addObject(m, 400, 300);
                     addObject(s2Clear1, 610, 580);
@@ -101,6 +104,7 @@ public class NormalStages2 extends World
                     returnHome();
                 }
                 if(s2Fail){
+                    Goblin.setAttackControl(false); // attack shows through menu
                     addObject(m, 400, 300);
                     addObject(s2Fail1, 622, 580);
                     addObject(s2Fail2, 540, 650);

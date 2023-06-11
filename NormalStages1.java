@@ -16,9 +16,9 @@ public class NormalStages1 extends World
     Skeleton s = new Skeleton();
     Attack a = new Attack();
     Barrier b = new Barrier();
-    Barrier b2 = new Barrier();
+    Barrier b2 = new Barrier(); // shield indicator
     StunSmash ss1 = new StunSmash();
-    StunSmash ss2 = new StunSmash();
+    StunSmash ss2 = new StunSmash(); // stun indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
     Menu m = new Menu(580, 580);
@@ -93,6 +93,9 @@ public class NormalStages1 extends World
             }
             if(pause == 0){
                 s1Passed = true;
+                removeObject(a);
+                removeObject(b);
+                removeObject(ss1);
                 if(s1Clear){
                     addObject(m, 400, 300);
                     addObject(s1Clear1, 610, 580);
