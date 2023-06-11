@@ -20,9 +20,9 @@ public class TestWorld extends World
     
     Skeleton s2 = new Skeleton();
     
-    GameFont sA = new GameFont("temp", 300, 100);
-    
     int shieldAmount = 0;
+    GameFont SA = new GameFont("temp", 100, 100);
+    
     boolean turn = true;
     boolean stun = false;
     int stunTurns = 0;
@@ -31,7 +31,7 @@ public class TestWorld extends World
     public TestWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         
         addObject(mc, 300, 200);
         addObject(a, 100, 100);
@@ -40,8 +40,6 @@ public class TestWorld extends World
         addObject(h, 300, 150);
         addObject(s2, 500, 200);
         addObject(hs, 500, 120);
-        //SA = new GameFont("25", 100, 50);
-        addObject(sA, 300, 200);
         
         turn = true;
         stun = false;
@@ -76,11 +74,11 @@ public class TestWorld extends World
                     }
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
-                        shieldAmount = mc.shield();
                         addObject(b2, 200, 300);
+                        shieldAmount = mc.shield();
                         Integer shieldAmountv2 = shieldAmount;
-                        //SA = new GameFont(shieldAmountv2.toString(), 100, 50);
-                        //addObject(SA, 300, 300);
+                        SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
+                        addObject(SA, 300, 200);
                         switchTurn();
                         pause = 100;
                     }
@@ -109,7 +107,7 @@ public class TestWorld extends World
                     removeObject(ss);
                     if(shieldAmount != 0){
                         h.loseHP((int)(4 * (shieldAmount/ (double) 100)));
-                        //removeObject(SA);
+                        removeObject(SA);
                         removeObject(b2);
                     } else {
                         h.loseHP(4);
