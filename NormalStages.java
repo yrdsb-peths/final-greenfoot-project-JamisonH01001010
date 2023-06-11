@@ -86,18 +86,11 @@ public class NormalStages extends World
     public void act(){
         if(!s1Over){
             s1();
-        }
-    }
-    
-    public void s1(){
-        if(stunTurns > 0) {
-            stunTurns--;
-            if(stunTurns == 0) {
-                // Stun duration is over, switch to the next turn and remove the stun indicator
-                switchTurn();
+        } else {
+            if(pause > 0){
+                pause--;
             }
-        } else { //if no stuns
-            if(s1Over){
+            if(pause == 0){
                 if(s1Clear){
                     addObject(m, 400, 300);
                     addObject(s1Clear1, 610, 580);
@@ -112,7 +105,20 @@ public class NormalStages extends World
                     addObject(returnHome, 565, 680);   
                     returnHome();
                 }
-            } else if(turn){
+            }
+        }
+        
+    }
+    
+    public void s1(){
+        if(stunTurns > 0) {
+            stunTurns--;
+            if(stunTurns == 0) {
+                // Stun duration is over, switch to the next turn and remove the stun indicator
+                switchTurn();
+            }
+        } else { //if no stuns
+            if(turn){
                 if(pause > 0){
                     pause--;
                 }
@@ -157,6 +163,7 @@ public class NormalStages extends World
                         s1Over = true;
                         s1Clear = true;
                         CoinTracker.addCoinCount(10);
+                        pause = 100;
                     }
                 }
             } else if(!turn) {
@@ -186,6 +193,7 @@ public class NormalStages extends World
                     MainCharacter.setDeathControl(true);
                     s1Over = true;
                     s1Fail = true;
+                    pause = 100;
                 }
             }
         }
