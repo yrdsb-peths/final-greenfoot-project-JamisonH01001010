@@ -14,24 +14,28 @@ public class MainCharacter extends Actor
     static boolean attackControl = false;
     static boolean shieldControl = false;
     static boolean stunControl = false;
+    static boolean deathControl = false;
     
     // Idle animation
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] swordIdle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[5];
     GreenfootImage[] stun = new GreenfootImage[10];
+    GreenfootImage[] death = new GreenfootImage[7];
     
     // Idle Animation Timer
     SimpleTimer idleTimer = new SimpleTimer();
     SimpleTimer swordIdleTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
     SimpleTimer stunTimer = new SimpleTimer();
+    SimpleTimer deathTimer = new SimpleTimer();
     
     // Track idle image index
     private int idleIndex = 0;
     private int swordIdleIndex = 0;
     private int attackIndex = 0;
     private int stunIndex = 0;
+    private int deathIndex = 0;
     
     public MainCharacter(){
         // Loop through idle images
@@ -59,12 +63,17 @@ public class MainCharacter extends Actor
                 stun[i].scale(100, 100);
             }
         }
+        for(int i = 0; i < death.length; i++){
+            death[i] = new GreenfootImage("mc/adventurer-die-0" + i + ".png");
+            death[i].scale(100, 100);
+        }
         
         // Mark start of animation
         idleTimer.mark();
         swordIdleTimer.mark();
         attackTimer.mark();
         stunTimer.mark();
+        deathTimer.mark();
         
         // Set inital MC image
         setImage(idle[0]);
@@ -82,6 +91,9 @@ public class MainCharacter extends Actor
         }
         if(stunControl){
             stunAnimation();
+        }
+        if(deathControl){
+            deathAnimation();
         }
     }
     
@@ -152,6 +164,22 @@ public class MainCharacter extends Actor
         }
         
         stunIndex++;
+    }
+    
+    public void deathAnimation(){
+        if(deathTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        deathTimer.mark();
+        
+        if(deathIndex <= 6){
+            setImage(death[deathIndex]);
+        } else {
+            deathIndex = 0;
+        }
+        
+        deathIndex++;
     }
     
     public static void setIdleControl(boolean a){
