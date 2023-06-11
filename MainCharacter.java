@@ -143,9 +143,9 @@ public class MainCharacter extends Actor
     public int shield(){
         shieldAmount = Greenfoot.getRandomNumber(2);
         if(shieldAmount == 0){
-            return 25;
+            return 25; // 25% blocked, 75% damage
         } else {
-            return 50;
+            return 50; // 50% blocked, 50% damage
         }
     }
     
