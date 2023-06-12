@@ -165,6 +165,7 @@ public class MainCharacter extends Actor
             setImage(stun[stunIndex]);
         } else {
             stunIndex = 0;
+            setStunControl(false);
         }
         
         stunIndex++;
@@ -181,6 +182,7 @@ public class MainCharacter extends Actor
             setImage(death[deathIndex]);
         } else {
             deathIndex = 0;
+            setDeathControl(false);
         }
         
         deathIndex++;

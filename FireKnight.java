@@ -108,6 +108,7 @@ public class FireKnight extends Actor
             setImage(attack1[attack1Index]);
         } else { // once full animation is over
             attack1Index = 0;
+            setAttack1Control(false);
         }
         
         attack1Index++;
@@ -124,6 +125,7 @@ public class FireKnight extends Actor
             setImage(attack2[attack2Index]);
         } else {
             attack2Index = 0;
+            setAttack2Control(false);
         }
         
         attack2Index++;
@@ -141,6 +143,7 @@ public class FireKnight extends Actor
             setImage(defend[defendIndex]);
         } else {
             defendIndex = 0;
+            setDefendControl(false);
         }
         
         defendIndex++;
@@ -157,6 +160,7 @@ public class FireKnight extends Actor
             setImage(death[deathIndex]);
         } else {
             deathIndex = 0;
+            setDeathControl(false);
         }
         
         deathIndex++;

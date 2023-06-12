@@ -84,6 +84,7 @@ public class Skeleton extends Actor
             setImage(attack[attackIndex]);
         } else { // once full animation is over
             attackIndex = 0;
+            setAttackControl(false);
         }
         
         attackIndex++;
@@ -100,6 +101,7 @@ public class Skeleton extends Actor
             setImage(death[deathIndex]);
         } else {
             deathIndex = 0;
+            setDeathControl(false);
         }
         
         deathIndex++;

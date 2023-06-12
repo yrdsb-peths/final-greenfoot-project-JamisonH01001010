@@ -16,7 +16,7 @@ public class Boss extends Actor
     SimpleTimer attackTimer = new SimpleTimer();
     SimpleTimer idleTimer = new SimpleTimer();
     
-    private int appearIndex = 17;
+    private int appearIndex = 17; // animation needs to be done in reverse (death in reverse = appear)
     private int attackIndex = 0;
     private int idleIndex = 0;
     
@@ -93,6 +93,9 @@ public class Boss extends Actor
         
         if(attackIndex <= 12){
             setImage(bossAttack[attackIndex]);
+        } else {
+            attackIndex = 0;
+            setAttack(false);
         }
         
         attackIndex++;
