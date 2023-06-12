@@ -11,7 +11,7 @@ Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy
 Fire Knight - https://chierit.itch.io/elementals-fire-knight
 Wizard - https://luizmelo.itch.io/evil-wizard-2
 Boss - https://darkpixel-kronovi.itch.io/undead-executioner
-Boss Attack Effect - https://codemanu.itch.io/vfx-free-pack
+Explosion - https://codemanu.itch.io/vfx-free-pack
 Font - https://vrtxrry.itch.io/dungeonfont
 Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
 Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
@@ -28,7 +28,7 @@ Skill Menu Health - https://www.pngwing.com/en/free-png-invqg
 Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/
 Skill - Blade Slash - https://lionildio.itch.io/wood-sword
 Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi
-Skill - Stun Smash - (Add Source on other PC)
+Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game
 
 
 Ideas:
