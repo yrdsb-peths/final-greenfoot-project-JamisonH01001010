@@ -97,6 +97,7 @@ public class Wizard extends Actor
             setImage(attack1[attack1Index]);
         } else { // once full animation is over
             attack1Index = 0;
+            setAttack1Control(false);
         }
         
         attack1Index++;
@@ -113,6 +114,7 @@ public class Wizard extends Actor
             setImage(attack2[attack2Index]);
         } else { // once full animation is over
             attack2Index = 0;
+            setAttack2Control(false);
         }
         
         attack2Index++;
@@ -129,6 +131,7 @@ public class Wizard extends Actor
             setImage(death[deathIndex]);
         } else {
             deathIndex = 0;
+            setDeathControl(false);
         }
         
         deathIndex++;

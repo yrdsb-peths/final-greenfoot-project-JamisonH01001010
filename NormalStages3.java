@@ -76,14 +76,7 @@ public class NormalStages3 extends World
         
         // Animations
         MainCharacter.setIdleControl(true);
-        MainCharacter.setAttackControl(false);
-        MainCharacter.setShieldControl(false);
-        MainCharacter.setStunControl(false);
-        MainCharacter.setDeathControl(false);
         Wizard.setIdleControl(true);
-        Wizard.setAttack1Control(false);
-        Wizard.setAttack2Control(false);
-        Wizard.setDeathControl(false);
         
         // Stage Variables
         turn = true;
@@ -155,12 +148,8 @@ public class NormalStages3 extends World
                 }
                 if(pause == 0){
                     Wizard.setIdleControl(true);
-                    Wizard.setAttack1Control(false);
-                    Wizard.setAttack2Control(false);
                     // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
@@ -207,8 +196,6 @@ public class NormalStages3 extends World
                 }
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     Wizard.setIdleControl(false);
                     wizardAction = Greenfoot.getRandomNumber(2);
                     // Roll 0 = attack 1: Deal 100% of ATK dmg

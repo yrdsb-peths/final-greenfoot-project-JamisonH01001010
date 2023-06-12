@@ -72,13 +72,7 @@ public class NormalStages2 extends World
         
         // Animations
         MainCharacter.setIdleControl(true);
-        MainCharacter.setAttackControl(false);
-        MainCharacter.setShieldControl(false);
-        MainCharacter.setStunControl(false);
-        MainCharacter.setDeathControl(false);
         Goblin.setIdleControl(true);
-        Goblin.setAttackControl(false);
-        Goblin.setDeathControl(false);
         
         // Stage Variables
         turn = true;
@@ -124,7 +118,6 @@ public class NormalStages2 extends World
                     returnHome();
                 }
                 if(s2Fail){
-                    Goblin.setAttackControl(false); // attack shows through menu
                     addObject(m1, 400, 300);
                     addObject(s2Fail1, 622, 580);
                     addObject(s2Fail2, 540, 650);
@@ -150,11 +143,8 @@ public class NormalStages2 extends World
                 }
                 if(pause == 0){
                     Goblin.setIdleControl(true);
-                    Goblin.setAttackControl(false);
                     // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
@@ -198,10 +188,7 @@ public class NormalStages2 extends World
                 }
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     Goblin.setIdleControl(false);
-                    Goblin.setAttackControl(true);
                     removeObject(ss2);
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
