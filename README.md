@@ -7,7 +7,9 @@ Sources:
 Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon
 Main Character - https://rvros.itch.io/animated-pixel-hero
 Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx
-Skeleton, Goblin, Bat - https://luizmelo.itch.io/monsters-creatures-fantasy
+Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy
+Fire Knight - https://chierit.itch.io/elementals-fire-knight
+Wizard - https://luizmelo.itch.io/evil-wizard-2
 Boss - https://darkpixel-kronovi.itch.io/undead-executioner
 Boss Attack Effect - https://codemanu.itch.io/vfx-free-pack
 Font - https://vrtxrry.itch.io/dungeonfont
