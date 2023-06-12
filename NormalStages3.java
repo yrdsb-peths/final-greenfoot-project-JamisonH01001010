@@ -73,7 +73,6 @@ public class NormalStages3 extends World
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
         addObject(p1, 400, 100);
-        addObject(m,
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -90,6 +89,7 @@ public class NormalStages3 extends World
         turn = true;
         stun = false;
         stunTurns = 0;
+        DOTTurns = 0;
         s3Over = false;
         s3Clear = false;
         s3Fail = false;
@@ -156,10 +156,17 @@ public class NormalStages3 extends World
                 if(pause == 0){
                     Wizard.setIdleControl(true);
                     Wizard.setAttack1Control(false);
+                    Wizard.setAttack2Control(false);
                     // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
+                    if(DOTTurns != 0){
+                        mcHP.loseHP(8);
+                        DOTTurns--;
+                    } else {
+                        removeObject(m);
+                    }
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
@@ -208,7 +215,7 @@ public class NormalStages3 extends World
                     Wizard.setIdleControl(false);
                     wizardAction = Greenfoot.getRandomNumber(2);
                     // Roll 0 = attack 1: Deal 100% of ATK dmg
-                    // Roll 1 = attack 2: Deal 75% of ATK dmg + 75% chance add DOT of 50% ATK per turn for 2 turns
+                    // Roll 1 = attack 2: Deal 75% of ATK dmg + 75% chance add DOT of 40% ATK per turn for 2 turns
                     // DOT = Damage Over Time, bypasses shield
                     if(wizardAction == 0){
                         Wizard.setAttack1Control(true);
@@ -234,9 +241,8 @@ public class NormalStages3 extends World
                         DOTAction = Greenfoot.getRandomNumber(4);
                         if(DOTAction != 0){
                             DOTTurns = 2;
-                            
+                            addObject(m, 250, 250);
                         }
-                        
                     }
                     shieldAmount = 0;
                     switchTurn();
