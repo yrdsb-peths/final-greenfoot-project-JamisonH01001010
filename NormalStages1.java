@@ -21,7 +21,10 @@ public class NormalStages1 extends World
     StunSmash ss2 = new StunSmash(); // stun indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
-    Menu m = new Menu(580, 580);
+    Menu m1 = new Menu(580, 580);
+    Menu m2 = new Menu(100, 100);
+    Pause p = new Pause();
+    HomeButton h = new HomeButton();
     
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
@@ -64,6 +67,7 @@ public class NormalStages1 extends World
         addObject(a, 120, 250);
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
+        addObject(p, 400, 100);
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -87,6 +91,10 @@ public class NormalStages1 extends World
     public void act(){
         if(!s1Over){
             s1();
+            if(Greenfoot.mouseClicked(p)){
+                addObject(m2, 400, 300);
+                addObject(h, 350,
+            }
         } else { // Level Finished
             if(pause > 0){
                 pause--;
@@ -97,14 +105,14 @@ public class NormalStages1 extends World
                 removeObject(b);
                 removeObject(ss1);
                 if(s1Clear){
-                    addObject(m, 400, 300);
+                    addObject(m1, 400, 300);
                     addObject(s1Clear1, 610, 580);
                     addObject(s1Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
                     returnHome();
                 }
                 if(s1Fail){
-                    addObject(m, 400, 300);
+                    addObject(m1, 400, 300);
                     addObject(s1Fail1, 622, 580);
                     addObject(s1Fail2, 540, 650);
                     addObject(returnHome, 565, 680);   
