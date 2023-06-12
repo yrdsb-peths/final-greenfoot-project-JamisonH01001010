@@ -21,7 +21,11 @@ public class NormalStages2 extends World
     StunSmash ss2 = new StunSmash();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar goblinHP = new HealthBar(50); // GoblinHP = 50;
-    Menu m = new Menu(580, 580);
+    Menu m1 = new Menu(580, 580);
+    Menu m2 = new Menu(300, 300);
+    Pause p1 = new Pause();
+    Pause p2 = new Pause();
+    HomeButton h = new HomeButton();
     
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to mc.shield value
@@ -64,6 +68,7 @@ public class NormalStages2 extends World
         addObject(a, 120, 250);
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
+        addObject(p1, 400, 100);
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -87,6 +92,20 @@ public class NormalStages2 extends World
     public void act(){
         if(!s2Over){
             s2();
+            if(Greenfoot.mouseClicked(p1)){
+                addObject(m2, 400, 300);
+                addObject(h, 350, 300);
+                addObject(p2, 450, 300);
+            }
+            if(Greenfoot.mouseClicked(p2)){
+                removeObject(m2);
+                removeObject(h);
+                removeObject(p2);
+            }
+            if(Greenfoot.mouseClicked(h)){
+                TitleScreen t = new TitleScreen();
+                Greenfoot.setWorld(t);
+            }
         } else { // Level Finished
             if(pause > 0){
                 pause--;
@@ -97,7 +116,7 @@ public class NormalStages2 extends World
                 removeObject(b);
                 removeObject(ss1);
                 if(s2Clear){
-                    addObject(m, 400, 300);
+                    addObject(m1, 400, 300);
                     addObject(s2Clear1, 610, 580);
                     addObject(s2Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
@@ -105,7 +124,7 @@ public class NormalStages2 extends World
                 }
                 if(s2Fail){
                     Goblin.setAttackControl(false); // attack shows through menu
-                    addObject(m, 400, 300);
+                    addObject(m1, 400, 300);
                     addObject(s2Fail1, 622, 580);
                     addObject(s2Fail2, 540, 650);
                     addObject(returnHome, 565, 680);   
