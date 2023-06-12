@@ -14,6 +14,7 @@ public class NormalStages4 extends World
     // Object instantiations
     MainCharacter mc = new MainCharacter();
     FireKnight f = new FireKnight();
+    FireShield fs = new FireShield();
     Attack a = new Attack();
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
@@ -43,6 +44,7 @@ public class NormalStages4 extends World
     int stunTurns = 0;
     int randomStun = 0;
     int fireKnightAction = 0;
+    boolean fireKnightDefend = false;
     
     // Stage Variables
     static boolean s4Passed = false;
@@ -79,6 +81,7 @@ public class NormalStages4 extends World
         turn = true;
         stun = false;
         stunTurns = 0;
+        fireKnightDefend = false;
         s4Over = false;
         s4Clear = false;
         s4Fail = false;
@@ -211,10 +214,11 @@ public class NormalStages4 extends World
                             removeObject(SA);
                             removeObject(b2);
                         } else {
-                            mcHP.loseHP(50); // FireKnightATK = 30
+                            mcHP.loseHP(50); // FireKnightATK = 30 * 166.66%
                         }
                     } else {
-                        
+                        FireKnight.setDefendControl(true);
+                        fireKnight
                     }
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));

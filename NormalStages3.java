@@ -219,7 +219,7 @@ public class NormalStages3 extends World
                             removeObject(SA);
                             removeObject(b2);
                         } else {
-                            mcHP.loseHP(15); // WizardATK = 20
+                            mcHP.loseHP(15); // WizardATK = 20 * 75%
                         }
 
                         DOTAction = Greenfoot.getRandomNumber(4);
@@ -255,7 +255,7 @@ public class NormalStages3 extends World
     
     public void applyDOT(){
         if(DOTTurns != 0){
-            mcHP.loseHP(8);
+            mcHP.loseHP(8); // WizardATK = 20 * 40%
             DOTTurns--;
         } else {
             removeObject(m);
