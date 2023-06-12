@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FireKnight extends Actor
 {
+    // Stats: HP = 120, ATK = 30;
+    
     GreenfootImage[] idle = new GreenfootImage[8];
     GreenfootImage[] attack1 = new GreenfootImage[11];
     GreenfootImage[] attack2 = new GreenfootImage[18];

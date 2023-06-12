@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Goblin extends Actor
 {
-    // Stats: HP = 50, ATK = 8 (Tanky)
+    // Stats: HP = 50, ATK = 8 
     
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[15];
