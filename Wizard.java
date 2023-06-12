@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Wizard extends Actor
 {
-    // Stats: HP = 80, ATK = 15;
+    // Stats: HP = 70, ATK = 20;
     
     GreenfootImage[] idle = new GreenfootImage[8];
     GreenfootImage[] attack1 = new GreenfootImage[8];

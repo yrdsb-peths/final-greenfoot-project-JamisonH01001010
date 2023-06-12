@@ -42,6 +42,9 @@ public class NormalStages3 extends World
     boolean stun = false;
     int stunTurns = 0;
     int randomStun = 0;
+    int wizardAction = 0;
+    int DOTAction = 0;
+    int DOTTurns = 0;
     
     // Stage Variables
     static boolean s3Passed = false;
@@ -151,7 +154,6 @@ public class NormalStages3 extends World
                 if(pause == 0){
                     Wizard.setIdleControl(true);
                     Wizard.setAttack1Control(false);
-                    Wizard.setAttack1Control(false);
                     // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
@@ -201,16 +203,37 @@ public class NormalStages3 extends World
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
-                    // Randomize this part
-                    Skeleton.setIdleControl(false);
-                    Skeleton.setAttackControl(true);
-                    removeObject(ss2);
-                    if(shieldAmount != 0){
-                        mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
-                        removeObject(SA);
-                        removeObject(b2);
-                    } else {
-                        mcHP.loseHP(4); // SkeletonATK = 4
+                    Wizard.setIdleControl(false);
+                    wizardAction = Greenfoot.getRandomNumber(2);
+                    // Roll 0 = attack 1: Deal 100% of ATK dmg
+                    // Roll 1 = attack 2: Deal 75% of ATK dmg + 75% chance add DOT of 50% ATK per turn for 2 turns
+                    // DOT = Damage Over Time, bypasses shield
+                    if(wizardAction == 0){
+                        Wizard.setAttack1Control(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(20 * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(20); // WizardATK = 20
+                        }
+                    }
+                    if(wizardAction == 1){
+                        Wizard.setAttack2Control(true);
+                        // 75% ATK dmg 
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(15 * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(15); // WizardATK = 20
+                        }
+                        // 75% chance add DOT effect
+                        DOTAction = Greenfoot.getRandomNumber(4);
+                        if(DOTAction != 0){
+                            DOTTurns = 2;
+                        }
+                        
                     }
                     shieldAmount = 0;
                     switchTurn();
