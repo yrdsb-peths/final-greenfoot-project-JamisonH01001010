@@ -17,6 +17,6 @@ public class NormalStages3 extends World
     }
     
     public void act(){
-        FireKnight.setDeathControl(true);
+        FireKnight.setDefendControl(true);
     }
 }
