@@ -42,6 +42,7 @@ public class NormalStages4 extends World
     boolean stun = false;
     int stunTurns = 0;
     int randomStun = 0;
+    int fireKnightAction = 0;
     
     // Stage Variables
     static boolean s4Passed = false;
@@ -58,11 +59,11 @@ public class NormalStages4 extends World
         
         // Characters
         addObject(mc, 250, 350);
-        addObject(f, 600, 350);
+        addObject(f, 600, 250);
         
         // HealthBar
         addObject(mcHP, 250, 300);
-        addObject(fireKnightHP, 590, 280);
+        addObject(fireKnightHP, 600, 275);
         
         // Icons
         addObject(a, 120, 250);
@@ -189,9 +190,32 @@ public class NormalStages4 extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     FireKnight.setIdleControl(false);
-                    // Randomize
-                    Skeleton.setAttackControl(true);
                     removeObject(ss2);
+                    fireKnightAction = Greenfoot.getRandomNumber(100);
+                    // Roll 0-49 [50% chance] = attack 1: Deal 100% ATK dmg
+                    // Roll 50-74 [25% chance] = attack 2: Deal 166.66...% ATK dmg
+                    // Roll 75-99 [25% chance] = defend: Take 50% of incoming dmg, Reflect 50% of incoming dmg
+                    if(fireKnightAction <= 49){
+                        FireKnight.setAttack1Control(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(30 * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(30); // FireKnightATK = 30
+                        }
+                    } else if (fireKnightAction <= 74){
+                        FireKnight.setAttack2Control(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(50); // FireKnightATK = 30
+                        }
+                    } else {
+                        
+                    }
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
                         removeObject(SA);

@@ -197,9 +197,10 @@ public class NormalStages3 extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Wizard.setIdleControl(false);
+                    removeObject(ss2);
                     wizardAction = Greenfoot.getRandomNumber(2);
-                    // Roll 0 = attack 1: Deal 100% of ATK dmg
-                    // Roll 1 = attack 2: Deal 75% of ATK dmg + 75% chance add DOT of 40% ATK per turn for 2 turns
+                    // Roll 0 [50% chance] = attack 1: Deal 100% of ATK dmg
+                    // Roll 1 [50% chance] = attack 2: Deal 75% of ATK dmg + 75% chance add DOT of 40% ATK per turn for 2 turns
                     // DOT = Damage Over Time, bypasses shield
                     if(wizardAction == 0){
                         Wizard.setAttack1Control(true);
@@ -210,8 +211,7 @@ public class NormalStages3 extends World
                         } else {
                             mcHP.loseHP(20); // WizardATK = 20
                         }
-                    }
-                    if(wizardAction == 1){
+                    } else {
                         Wizard.setAttack2Control(true);
                         // 75% ATK dmg 
                         if(shieldAmount != 0){
@@ -221,8 +221,9 @@ public class NormalStages3 extends World
                         } else {
                             mcHP.loseHP(15); // WizardATK = 20
                         }
-                        // 75% chance add DOT effect
+
                         DOTAction = Greenfoot.getRandomNumber(4);
+                        // Roll 1, 2, 3 [75% chance] = add DOT effect 2 turns
                         if(DOTAction != 0){
                             DOTTurns = 2;
                             addObject(m, 250, 250);
