@@ -87,7 +87,7 @@ public class Wizard extends Actor
     }
     
     public void attack1Animation(){
-        if(attack1Timer.millisElapsed() < 100){
+        if(attack1Timer.millisElapsed() < 150){
             return;
         }
         
@@ -103,7 +103,7 @@ public class Wizard extends Actor
     }
     
     public void attack2Animation(){
-        if(attack2Timer.millisElapsed() < 100){
+        if(attack2Timer.millisElapsed() < 150){
             return;
         }
         

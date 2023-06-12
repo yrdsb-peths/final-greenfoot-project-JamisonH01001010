@@ -138,7 +138,9 @@ public class MainCharacter extends Actor
         } else {
             setImage(swordIdle[0]);
             attackIndex = 0;
+            setAttackControl(false);
         }
+        
         
         attackIndex++;
     }

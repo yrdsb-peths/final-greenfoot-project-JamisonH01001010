@@ -8,12 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TestWorld extends World
 {
-    Wizard w = new Wizard
+    Wizard w = new Wizard();
+    boolean a = true;
     public TestWorld(){
         super(800, 600, 1);
+        
+        addObject(w, 500, 300);
     }
     
     public void act(){
-        Wizard.setAttack1(true);
+        if(a){
+            Wizard.setAttack1Control(true);
+        }
+        a = false;
     }
 }
