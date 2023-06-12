@@ -162,7 +162,6 @@ public class MainCharacter extends Actor
         if(stunIndex <= 9){
             setImage(stun[stunIndex]);
         } else {
-            setImage(swordIdle[0]);
             stunIndex = 0;
         }
         

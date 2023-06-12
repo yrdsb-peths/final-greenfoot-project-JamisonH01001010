@@ -43,6 +43,7 @@ public class StageSelect extends World
         addObject(h, 35, 40);
         
         // Add Levels
+        addObject(l1, 110, 510); 
         addObject(l1, 110, 510);
         addObject(l2, 175, 115);
         addObject(l3, 675, 125);
@@ -61,7 +62,7 @@ public class StageSelect extends World
         if(Greenfoot.mouseClicked(l2) && NormalStages1.getS1Passed()){
             Greenfoot.setWorld(ns2);
         }
-        if(Greenfoot.mouseClicked(l3)){
+        if(Greenfoot.mouseClicked(l3) && NormalStages2.getS2Passed()){
             Greenfoot.setWorld(ns3);
         }
         if(Greenfoot.mouseClicked(l4)){

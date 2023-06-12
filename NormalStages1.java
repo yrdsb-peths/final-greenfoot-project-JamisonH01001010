@@ -112,6 +112,7 @@ public class NormalStages1 extends World
             }
             if(pause == 0){
                 s1Passed = true;
+                Level1.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
