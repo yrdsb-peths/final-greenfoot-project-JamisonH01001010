@@ -22,8 +22,9 @@ public class NormalStages1 extends World
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
     Menu m1 = new Menu(580, 580);
-    Menu m2 = new Menu(100, 100);
-    Pause p = new Pause();
+    Menu m2 = new Menu(300, 300);
+    Pause p1 = new Pause();
+    Pause p2 = new Pause();
     HomeButton h = new HomeButton();
     
     // Text
@@ -67,7 +68,7 @@ public class NormalStages1 extends World
         addObject(a, 120, 250);
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
-        addObject(p, 400, 100);
+        addObject(p1, 400, 100);
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -91,9 +92,19 @@ public class NormalStages1 extends World
     public void act(){
         if(!s1Over){
             s1();
-            if(Greenfoot.mouseClicked(p)){
+            if(Greenfoot.mouseClicked(p1)){
                 addObject(m2, 400, 300);
-                addObject(h, 350,
+                addObject(h, 350, 300);
+                addObject(p2, 450, 300);
+            }
+            if(Greenfoot.mouseClicked(p2)){
+                removeObject(m2);
+                removeObject(h);
+                removeObject(p2);
+            }
+            if(Greenfoot.mouseClicked(h)){
+                TitleScreen t = new TitleScreen();
+                Greenfoot.setWorld(t);
             }
         } else { // Level Finished
             if(pause > 0){
