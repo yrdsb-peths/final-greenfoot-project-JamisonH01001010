@@ -21,7 +21,7 @@ public class NormalStages3 extends World
     StunSmash ss2 = new StunSmash(); // stun indicator
     Magic m = new Magic(); // DOT indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar wizardHP = new HealthBar(80); // WizardHP = 80
+    HealthBar wizardHP = new HealthBar(70); // WizardHP = 70
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
@@ -161,15 +161,10 @@ public class NormalStages3 extends World
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
-                    if(DOTTurns != 0){
-                        mcHP.loseHP(8);
-                        DOTTurns--;
-                    } else {
-                        removeObject(m);
-                    }
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
+                        applyDOT();
                         wizardHP.loseHP(Attack.getAtkCount());
                         switchTurn();
                         pause = 100;
@@ -177,6 +172,7 @@ public class NormalStages3 extends World
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
                         addObject(b2, 250, 430);
+                        applyDOT();
                         shieldAmount = mc.shield();
                         Integer shieldAmountv2 = shieldAmount;
                         SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
@@ -187,6 +183,7 @@ public class NormalStages3 extends World
                     if(Greenfoot.mouseClicked(ss1)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
+                        applyDOT();
                         wizardHP.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
@@ -266,6 +263,15 @@ public class NormalStages3 extends World
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
+    }
+    
+    public void applyDOT(){
+        if(DOTTurns != 0){
+            mcHP.loseHP(8);
+            DOTTurns--;
+        } else {
+            removeObject(m);
+        }
     }
     
     public void returnHome(){
