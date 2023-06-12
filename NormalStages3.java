@@ -17,6 +17,6 @@ public class NormalStages3 extends World
     }
     
     public void act(){
-        Wizard.setIdleControl(true);
+        Wizard.setDeathControl(true);
     }
 }

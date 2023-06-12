@@ -44,7 +44,7 @@ public class Wizard extends Actor
             attack2[i].scale(300, 300);
         }
         for(int i = 0; i < death.length; i++){
-            death[i] = new GreenfootImage("wizard/wizard_death" + i + ".png");
+            death[i] = new GreenfootImage("wizard/wizard_death_" + i + ".png");
             death[i].mirrorHorizontally();
             death[i].scale(300, 300);
         }
