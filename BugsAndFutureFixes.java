@@ -7,7 +7,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * ALL OF THE CURRENT BUGS/FIXES TO BE FIXED LATER
  * 
  * adding ways to complete achievements (all)
- * change 1 in 100 achievement to something else
  * options menu - SFX option on to the setMUSICANDSFX method (fix when doing gameplay)
  * intro - sfx and music
  * BGM.stop not working (options & title screen)

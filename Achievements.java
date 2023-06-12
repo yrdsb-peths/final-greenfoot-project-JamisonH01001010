@@ -11,7 +11,7 @@ public class Achievements extends World
     // Setting Achievement completion
     private boolean finalBoss1 = false; // Hidden: Defeat Final Boss
     private boolean hoarder2 = false; // Hidden: Store 100 tokens at once
-    private boolean luckySlime3 = false; // Hidden: Encounter a golden slime
+    private boolean luckySlime3 = false; // Hidden: 1/100 chance to get by opening achievements
     private boolean bully4 = false; // Hidden: Defeat Stage 1-1 10 times
     private boolean chest5 = false; // Hidden: Click on the background chest in the Achievements page
     // Achievement Background

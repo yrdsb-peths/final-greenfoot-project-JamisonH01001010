@@ -151,7 +151,7 @@ public class NormalStages2 extends World
                 if(pause == 0){
                     Goblin.setIdleControl(true);
                     Goblin.setAttackControl(false);
-                    // Repeat setting if there is stun and () can't act
+                    // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
                     MainCharacter.setAttackControl(false);
                     MainCharacter.setStunControl(false);
