@@ -127,7 +127,7 @@ public class MainCharacter extends Actor
     }
     
     public void attackAnimation(){
-        if(attackTimer.millisElapsed() < 150){
+        if(attackTimer.millisElapsed() < 250){
             return;
         }
         

@@ -72,13 +72,7 @@ public class NormalStages1 extends World
         
         // Animations
         MainCharacter.setIdleControl(true);
-        MainCharacter.setAttackControl(false);
-        MainCharacter.setShieldControl(false);
-        MainCharacter.setStunControl(false);
-        MainCharacter.setDeathControl(false);
         Skeleton.setIdleControl(true);
-        Skeleton.setAttackControl(false);
-        Skeleton.setDeathControl(false);
         
         // Stage Variables
         turn = true;
@@ -149,11 +143,8 @@ public class NormalStages1 extends World
                 }
                 if(pause == 0){
                     Skeleton.setIdleControl(true);
-                    Skeleton.setAttackControl(false);
                     // Repeat setting if there is stun and skeleton can't act
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
@@ -197,8 +188,6 @@ public class NormalStages1 extends World
                 }
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
-                    MainCharacter.setAttackControl(false);
-                    MainCharacter.setStunControl(false);
                     Skeleton.setIdleControl(false);
                     Skeleton.setAttackControl(true);
                     removeObject(ss2);
