@@ -8,14 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NormalStages3 extends World
 {
-
-    /**
-     * Constructor for objects of class NormalStages3.
-     * 
-     */
+    FireKnight f = new FireKnight();
     public NormalStages3()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
+        addObject(f, 400, 300);
+    }
+    
+    public void act(){
+        FireKnight.setDeathControl(true);
     }
 }

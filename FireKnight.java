@@ -1,49 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Skeleton here.
+ * Write a description of class FireKnight here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Skeleton extends Actor
+public class FireKnight extends Actor
 {
-    // Stats: HP = 20, ATK = 4 (Normal)
-    
-    GreenfootImage[] idle = new GreenfootImage[4];
-    GreenfootImage[] attack = new GreenfootImage[15];
+    GreenfootImage[] idle = new GreenfootImage[8];
+    GreenfootImage[] attack1 = new GreenfootImage[11];
     GreenfootImage[] death = new GreenfootImage[4];
     
     SimpleTimer idleTimer = new SimpleTimer();
-    SimpleTimer attackTimer = new SimpleTimer();
+    SimpleTimer attack1Timer = new SimpleTimer();
     SimpleTimer deathTimer = new SimpleTimer();
     
     private int idleIndex = 0;
-    private int attackIndex = 0;
+    private int attack1Index = 0;
     private int deathIndex = 0;
     
     static boolean idleControl = false;
-    static boolean attackControl = false;
+    static boolean attack1Control = false;
     static boolean deathControl = false;
-    public Skeleton(){
+    public FireKnight(){
         for(int i = 0; i < idle.length; i++){
-            idle[i] = new GreenfootImage("skeleton/skeleton_idle_" + i + ".png");
+            idle[i] = new GreenfootImage("fire-knight/idle_" + (i + 1) + ".png");
             idle[i].mirrorHorizontally();
-            idle[i].scale(300, 300);
+            idle[i].scale(500, 300);
         }
-        for(int i = 0; i < attack.length; i++){
-            attack[i] = new GreenfootImage("skeleton/skeleton_attack_" + i + ".png");
-            attack[i].mirrorHorizontally();
-            attack[i].scale(300, 300);
+        for(int i = 0; i < attack1.length; i++){
+            attack1[i] = new GreenfootImage("fire-knight/1_atk_" + (i + 1) + ".png");
+            attack1[i].mirrorHorizontally();
+            attack1[i].scale(500, 300);
         }
         for(int i = 0; i < death.length; i++){
-            death[i] = new GreenfootImage("skeleton/skeleton_death" + i + ".png");
+            death[i] = new GreenfootImage("fire-knight/death_" + (i + 1) + ".png");
             death[i].mirrorHorizontally();
-            death[i].scale(300, 300);
+            death[i].scale(500, 300);
         }
         
         idleTimer.mark();
-        attackTimer.mark();
+        attack1Timer.mark();
         deathTimer.mark();
         
         setImage(idle[0]);
@@ -53,8 +51,8 @@ public class Skeleton extends Actor
         if(idleControl){
             idleAnimation(); 
         }
-        if(attackControl){
-            attackAnimation();
+        if(attack1Control){
+            attack1Animation();
         }
         if(deathControl){
             deathAnimation();
@@ -73,20 +71,20 @@ public class Skeleton extends Actor
         idleIndex = (idleIndex + 1) % idle.length;
     }
     
-    public void attackAnimation(){
-        if(attackTimer.millisElapsed() < 100){
+    public void attack1Animation(){
+        if(attack1Timer.millisElapsed() < 150){
             return;
         }
         
-        attackTimer.mark();
+        attack1Timer.mark();
         
-        if(attackIndex <= 14){
-            setImage(attack[attackIndex]);
+        if(attack1Index <= 10){
+            setImage(attack1[attack1Index]);
         } else { // once full animation is over
-            attackIndex = 0;
+            attack1Index = 0;
         }
         
-        attackIndex++;
+        attack1Index++;
     }
     
     public void deathAnimation(){
@@ -109,8 +107,8 @@ public class Skeleton extends Actor
         idleControl = a;
     }
     
-    public static void setAttackControl(boolean a){
-        attackControl = a;
+    public static void setAttack1Control(boolean a){
+        attack1Control = a;
     }
     
     public static void setDeathControl(boolean a){

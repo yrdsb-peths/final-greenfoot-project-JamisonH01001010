@@ -22,7 +22,7 @@ public class Goblin extends Actor
     private int attackIndex = 0;
     private int deathIndex = 0;
     
-    static boolean idleControl = true;
+    static boolean idleControl = false;
     static boolean attackControl = false;
     static boolean deathControl = false;
     
