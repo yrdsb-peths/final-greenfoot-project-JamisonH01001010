@@ -19,6 +19,7 @@ public class NormalStages3 extends World
     Barrier b2 = new Barrier(); // shield indicator
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    Magic m = new Magic(); // DOT indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar wizardHP = new HealthBar(80); // WizardHP = 80
     Menu m1 = new Menu(580, 580);
@@ -72,6 +73,7 @@ public class NormalStages3 extends World
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
         addObject(p1, 400, 100);
+        addObject(m,
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -232,6 +234,7 @@ public class NormalStages3 extends World
                         DOTAction = Greenfoot.getRandomNumber(4);
                         if(DOTAction != 0){
                             DOTTurns = 2;
+                            
                         }
                         
                     }
