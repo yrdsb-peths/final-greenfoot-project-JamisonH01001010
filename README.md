@@ -31,6 +31,8 @@ Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-tr
 Skill - Blade Slash - https://lionildio.itch.io/wood-sword
 Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi
 Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game
+NormalStages Background - https://twitter.com/BloomtownGame/status/1445764502591467530
+Final Stage Background - https://mekhollandt.artstation.com/projects/N5EQ0d
 
 
 Ideas:
