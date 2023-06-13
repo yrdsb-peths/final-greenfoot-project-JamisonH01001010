@@ -134,7 +134,7 @@ public class Boss extends Actor
     }
     
     public void dodgeAnimation(){
-        if(dodgeTimer.millisElapsed() < 150){
+        if(dodgeTimer.millisElapsed() < 100){
             return;
         }
         
@@ -163,7 +163,7 @@ public class Boss extends Actor
     }
     
     public void deathAnimation(){
-        if(deathTimer.millisElapsed() < 150){
+        if(deathTimer.millisElapsed() < 100){
             return;
         }
         
