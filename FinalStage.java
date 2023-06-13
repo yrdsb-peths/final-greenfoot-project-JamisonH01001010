@@ -57,17 +57,17 @@ public class FinalStage extends World
         setBackground(finalBG);
         
         // Characters
-        addObject(mc, 250, 350);
-        addObject(boss, 600, 350);
+        addObject(mc, 250, 400);
+        addObject(boss, 600, 380);
         
         // HealthBar
-        addObject(mcHP, 250, 300);
-        addObject(bossHP, 590, 280);
+        addObject(mcHP, 250, 350);
+        addObject(bossHP, 610, 310);
         
         // Icons
-        addObject(a, 120, 250);
-        addObject(b, 120, 350);
-        addObject(ss1, 120, 450);
+        addObject(a, 120, 300);
+        addObject(b, 120, 400);
+        addObject(ss1, 120, 500);
         addObject(p1, 400, 100);
         
         // Animations
@@ -154,11 +154,11 @@ public class FinalStage extends World
                     }
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
-                        addObject(b2, 250, 430);
+                        addObject(b2, 250, 480);
                         shieldAmount = mc.shield();
                         Integer shieldAmountv2 = shieldAmount;
                         SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
-                        addObject(SA, 230, 490);
+                        addObject(SA, 230, 540);
                         switchTurn();
                         pause = 100;
                     }
@@ -224,7 +224,7 @@ public class FinalStage extends World
 
     public void applyStun() {
         stunTurns = 1;
-        addObject(ss2, 590, 430);
+        addObject(ss2, 610, 460);
     }
     
     public void returnHome(){
