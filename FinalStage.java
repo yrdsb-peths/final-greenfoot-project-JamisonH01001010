@@ -39,12 +39,14 @@ public class FinalStage extends World
     GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
     
     // Game Variables
+    int bossATK = 50; // bossATK = 50
     int shieldAmount = 0;
     int pause = 100;
     boolean turn = true;
     boolean stun = false;
     int stunTurns = 0;
     int randomStun = 0;
+    int bossAction = 0;
     boolean phase1 = false;
     boolean phase2 = false;
     boolean phase3 = false;
@@ -75,9 +77,9 @@ public class FinalStage extends World
         addObject(b, 120, 400);
         addObject(ss1, 120, 500);
         addObject(p1, 400, 100);
-        addObject(BS1, 500, 300);
-        addObject(BS2, 500, 350);
-        addObject(BS3, 500, 400);
+        addObject(BS1, 675, 330);
+        addObject(BS2, 675, 380);
+        addObject(BS3, 675, 430);
         
         // Animations
         MainCharacter.setIdleControl(true);
@@ -88,6 +90,9 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
+        phase1 = false;
+        phase2 = false;
+        phase3 = false;
         s5Over = false;
         s5Clear = false;
         s5Fail = false;
@@ -185,7 +190,7 @@ public class FinalStage extends World
                     }
                     if(bossHP.getCurrentHP() == 0){
                         Boss.setIdle(false);
-                        Skeleton.setDeathControl(true); //create boss death anim
+                        Boss.setDeath(true); 
                         s5Over = true;
                         s5Clear = true;
                         CoinTracker.addCoinCount(50);
@@ -202,14 +207,18 @@ public class FinalStage extends World
                     
                     
                     // Randomize
-                    Skeleton.setAttackControl(true);
+                    bossAction = Greenfoot.getRandomNumber(100);
+                    // Roll 0-24 [25% chance] = attack 1: Deal 100% of ATK dmg
+                    // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK
+                    // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
+                    // Roll 50-99 [50% chance] = dodge: 70% chance to dodge next attack for 2 turns
                     removeObject(ss2);
                     if(shieldAmount != 0){
-                        mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
+                        mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
                         removeObject(SA);
                         removeObject(b2);
                     } else {
-                        mcHP.loseHP(4); // SkeletonATK = 4
+                        mcHP.loseHP(50); // BossATK = 50
                     }
                     
                     

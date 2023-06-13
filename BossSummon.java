@@ -28,17 +28,17 @@ public class BossSummon extends Actor
         for(int i = 0; i < summonAppear.length; i++){
             summonAppear[i] = new GreenfootImage("boss/boss_summon_" + i + ".png");
             summonAppear[i].mirrorHorizontally();
-            summonAppear[i].scale(200, 200);
+            summonAppear[i].scale(100, 100);
         }
         for(int i = 0; i < summonIdle.length; i++){
             summonIdle[i] = new GreenfootImage("boss/boss_summon_idle" + i + ".png");
             summonIdle[i].mirrorHorizontally();
-            summonAppear[i].scale(200, 200);
+            summonIdle[i].scale(100, 100);
         }
         for(int i = 0; i < summonDeath.length; i++){
             summonDeath[i] = new GreenfootImage("boss/boss_summon_death_" + i + ".png");
             summonDeath[i].mirrorHorizontally();
-            summonDeath[i].scale(200, 200);
+            summonDeath[i].scale(100, 100);
         }
         
         appearTimer.mark();

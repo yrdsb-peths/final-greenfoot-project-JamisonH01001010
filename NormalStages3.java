@@ -148,7 +148,6 @@ public class NormalStages3 extends World
                 }
                 if(pause == 0){
                     Wizard.setIdleControl(true);
-                    // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
