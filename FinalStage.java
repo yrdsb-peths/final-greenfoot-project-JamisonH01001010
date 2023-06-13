@@ -47,9 +47,10 @@ public class FinalStage extends World
     int stunTurns = 0;
     int randomStun = 0;
     int bossAction = 0;
-    boolean phase1 = false;
+    boolean phase1 = true;
     boolean phase2 = false;
     boolean phase3 = false;
+    boolean dodge = false;
     
     // Stage Variables
     static boolean s5Passed = false;
@@ -90,9 +91,11 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
-        phase1 = false;
+        phase1 = true;
         phase2 = false;
         phase3 = false;
+        dodge = false;
+        bossATK = 50;
         s5Over = false;
         s5Clear = false;
         s5Fail = false;
@@ -204,15 +207,54 @@ public class FinalStage extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Boss.setIdle(false);
-                    
-                    
-                    // Randomize
+                    if(bossHP.getCurrentHP() <= 200){
+                        removeObject(BS1);
+                        phase1 = false;
+                        phase2 = true;
+                        bossATK = 75;
+                    }
+                
                     bossAction = Greenfoot.getRandomNumber(100);
                     // Roll 0-24 [25% chance] = attack 1: Deal 100% of ATK dmg
                     // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK
                     // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
                     // Roll 50-99 [50% chance] = dodge: 70% chance to dodge next attack for 2 turns
                     removeObject(ss2);
+                    if(bossAction <= 24){
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+                    } else if (bossAction <= 39){ // DOT
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+                    } else if (bossAction <= 49){ // STUN
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+                        addObject(ss2, 500, 500);
+                        stunTurns = 1;
+                    } else {
+                        Boss.setDodge(true);
+                        dodge = true;
+                    }
+                    
+                    
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
                         removeObject(SA);
