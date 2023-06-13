@@ -7,9 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class BossSummon extends Actor
-{
-    // Stats: Buff bosses's ATK by 25%, unkillable
-    
+{   
     GreenfootImage[] summonAppear = new GreenfootImage[6];
     GreenfootImage[] summonIdle = new GreenfootImage[4];
     GreenfootImage[] summonDeath = new GreenfootImage[5];
@@ -30,17 +28,17 @@ public class BossSummon extends Actor
         for(int i = 0; i < summonAppear.length; i++){
             summonAppear[i] = new GreenfootImage("boss/boss_summon_" + i + ".png");
             summonAppear[i].mirrorHorizontally();
-            summonAppear[i].scale(50, 50);
+            summonAppear[i].scale(200, 200);
         }
         for(int i = 0; i < summonIdle.length; i++){
             summonIdle[i] = new GreenfootImage("boss/boss_summon_idle" + i + ".png");
             summonIdle[i].mirrorHorizontally();
-            summonAppear[i].scale(50, 50);
+            summonAppear[i].scale(200, 200);
         }
         for(int i = 0; i < summonDeath.length; i++){
             summonDeath[i] = new GreenfootImage("boss/boss_summon_death_" + i + ".png");
             summonDeath[i].mirrorHorizontally();
-            summonDeath[i].scale(50, 50);
+            summonDeath[i].scale(200, 200);
         }
         
         appearTimer.mark();
@@ -73,7 +71,7 @@ public class BossSummon extends Actor
         if(appearIndex <= 5){
             setImage(summonAppear[appearIndex]);
         } else {
-            appear = false;
+            setAppear(false);
             appearIndex = 0;
         }
         

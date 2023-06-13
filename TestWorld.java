@@ -11,7 +11,7 @@ public class TestWorld extends World
     BossSummon b = new BossSummon();
     FireKnight f = new FireKnight();
     public TestWorld(){
-        super(800, 600, 1);
+        super(800, 600, 1, false);
         
         addObject(b, 500, 300);
         addObject(f, 500, 100);

@@ -14,6 +14,9 @@ public class FinalStage extends World
     // Object instantiations  
     MainCharacter mc = new MainCharacter();
     Boss boss = new Boss();
+    BossSummon BS1 = new BossSummon();
+    BossSummon BS2 = new BossSummon();
+    BossSummon BS3 = new BossSummon();
     Attack a = new Attack();
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
@@ -42,6 +45,9 @@ public class FinalStage extends World
     boolean stun = false;
     int stunTurns = 0;
     int randomStun = 0;
+    boolean phase1 = false;
+    boolean phase2 = false;
+    boolean phase3 = false;
     
     // Stage Variables
     static boolean s5Passed = false;
@@ -69,10 +75,14 @@ public class FinalStage extends World
         addObject(b, 120, 400);
         addObject(ss1, 120, 500);
         addObject(p1, 400, 100);
+        addObject(BS1, 500, 300);
+        addObject(BS2, 500, 350);
+        addObject(BS3, 500, 400);
         
         // Animations
         MainCharacter.setIdleControl(true);
         Boss.setIdle(true);
+        BossSummon.setIdle(true);
         
         // Stage Variables
         turn = true;
