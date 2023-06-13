@@ -147,43 +147,90 @@ public class NormalStages4 extends World
                 }
                 if(pause == 0){
                     FireKnight.setIdleControl(true);
-                    // Repeat setting if there is stun and skeleton can't act
+                    // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
-                    if(Greenfoot.mouseClicked(a)){
-                        MainCharacter.setIdleControl(false);
-                        MainCharacter.setAttackControl(true);
-                        fireKnightHP.loseHP(Attack.getAtkCount());
-                        switchTurn();
-                        pause = 100;
-                    }
-                    if(Greenfoot.mouseClicked(b)){
-                        MainCharacter.setIdleControl(false);
-                        addObject(b2, 250, 430);
-                        shieldAmount = mc.shield();
-                        Integer shieldAmountv2 = shieldAmount;
-                        SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
-                        addObject(SA, 230, 490);
-                        switchTurn();
-                        pause = 100;
-                    }
-                    if(Greenfoot.mouseClicked(ss1)){
-                        MainCharacter.setIdleControl(false);
-                        MainCharacter.setStunControl(true);
-                        fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.2));
-                        randomStun = Greenfoot.getRandomNumber(2);
-                        if(randomStun == 1){
-                            applyStun();
+                    if(fireKnightDefend){
+                        if(Greenfoot.mouseClicked(a)){
+                            MainCharacter.setIdleControl(false);
+                            MainCharacter.setAttackControl(true);
+                            fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.5));
+                            mcHP.loseHP((int) (Attack.getAtkCount() * 2));
+                            fireKnightDefend = false;
+                            removeObject(fs);
+                            switchTurn();
+                            pause = 100;
                         }
-                        switchTurn();
-                        pause = 100;
-                    }
-                    if(fireKnightHP.getCurrentHP() == 0){
-                        FireKnight.setIdleControl(false);
-                        FireKnight.setDeathControl(true);
-                        s4Over = true;
-                        s4Clear = true;
-                        CoinTracker.addCoinCount(10);
-                        pause = 100;
+                        if(Greenfoot.mouseClicked(b)){
+                            MainCharacter.setIdleControl(false);
+                            addObject(b2, 250, 430);
+                            shieldAmount = mc.shield();
+                            Integer shieldAmountv2 = shieldAmount;
+                            SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
+                            addObject(SA, 230, 490);
+                            fireKnightDefend = false;
+                            removeObject(fs);
+                            switchTurn();
+                            pause = 100;
+                        }
+                        if(Greenfoot.mouseClicked(ss1)){
+                            MainCharacter.setIdleControl(false);
+                            MainCharacter.setStunControl(true);
+                            fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.2 * 0.5));
+                            mcHP.loseHP((int) (Attack.getAtkCount() * 0.2 * 2));
+                            randomStun = Greenfoot.getRandomNumber(2);
+                            if(randomStun == 1){
+                                applyStun();
+                            }
+                            fireKnightDefend = false;
+                            removeObject(fs);
+                            switchTurn();
+                            pause = 100;
+                        }
+                        if(fireKnightHP.getCurrentHP() == 0){
+                            FireKnight.setIdleControl(false);
+                            FireKnight.setDeathControl(true);
+                            s4Over = true;
+                            s4Clear = true;
+                            CoinTracker.addCoinCount(25);
+                            pause = 100;
+                        }
+                    } else {
+                        if(Greenfoot.mouseClicked(a)){
+                            MainCharacter.setIdleControl(false);
+                            MainCharacter.setAttackControl(true);
+                            fireKnightHP.loseHP(Attack.getAtkCount());
+                            switchTurn();
+                            pause = 100;
+                        }
+                        if(Greenfoot.mouseClicked(b)){
+                            MainCharacter.setIdleControl(false);
+                            addObject(b2, 250, 430);
+                            shieldAmount = mc.shield();
+                            Integer shieldAmountv2 = shieldAmount;
+                            SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
+                            addObject(SA, 230, 490);
+                            switchTurn();
+                            pause = 100;
+                        }
+                        if(Greenfoot.mouseClicked(ss1)){
+                            MainCharacter.setIdleControl(false);
+                            MainCharacter.setStunControl(true);
+                            fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.2));
+                            randomStun = Greenfoot.getRandomNumber(2);
+                            if(randomStun == 1){
+                                applyStun();
+                            }
+                            switchTurn();
+                            pause = 100;
+                        }
+                        if(fireKnightHP.getCurrentHP() == 0){
+                            FireKnight.setIdleControl(false);
+                            FireKnight.setDeathControl(true);
+                            s4Over = true;
+                            s4Clear = true;
+                            CoinTracker.addCoinCount(25);
+                            pause = 100;
+                        }
                     }
                 }
             } else if(!turn) {
@@ -197,7 +244,7 @@ public class NormalStages4 extends World
                     fireKnightAction = Greenfoot.getRandomNumber(100);
                     // Roll 0-49 [50% chance] = attack 1: Deal 100% ATK dmg
                     // Roll 50-74 [25% chance] = attack 2: Deal 166.66...% ATK dmg
-                    // Roll 75-99 [25% chance] = defend: Take 50% of incoming dmg, Reflect 50% of incoming dmg
+                    // Roll 75-99 [25% chance] = defend: Take 50% of incoming dmg, Reflect 200% of incoming dmg
                     if(fireKnightAction <= 49){
                         FireKnight.setAttack1Control(true);
                         if(shieldAmount != 0){
@@ -218,14 +265,8 @@ public class NormalStages4 extends World
                         }
                     } else {
                         FireKnight.setDefendControl(true);
-                        fireKnight
-                    }
-                    if(shieldAmount != 0){
-                        mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));
-                        removeObject(SA);
-                        removeObject(b2);
-                    } else {
-                        mcHP.loseHP(4); // FireKnightATK = 30
+                        fireKnightDefend = true;
+                        addObject(fs, 600, 430);
                     }
                     shieldAmount = 0;
                     switchTurn();
