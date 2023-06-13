@@ -8,14 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TestWorld extends World
 {
-    Boss b = new Boss();
+    BossSummon b = new BossSummon();
+    FireKnight f = new FireKnight();
     public TestWorld(){
         super(800, 600, 1);
         
         addObject(b, 500, 300);
+        addObject(f, 500, 100);
     }
     
     public void act(){
-        Boss.setDeath(true);
+        BossSummon.setDeath(true);
+        FireKnight.setDeathControl(true);
     }
 }

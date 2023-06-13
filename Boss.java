@@ -12,24 +12,29 @@ public class Boss extends Actor
     
     GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animaations of death
     GreenfootImage[] bossAttack = new GreenfootImage[13];
+    GreenfootImage[] bossDodge = new GreenfootImage[12];
     GreenfootImage[] bossIdle = new GreenfootImage[8];
     
     SimpleTimer appearTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
+    SimpleTimer dodgeTimer = new SimpleTimer();
     SimpleTimer idleTimer = new SimpleTimer();
     SimpleTimer deathTimer = new SimpleTimer();
     
     private int appearIndex = 17; // animation needs to be done in reverse (death in reverse = appear)
     private int attackIndex = 0;
+    private int dodgeIndex = 0;
     private int idleIndex = 0;
     private int deathIndex = 0;
     
-    public static boolean appear = false;
-    public static boolean attack = false;
-    public static boolean idle = false;
-    public static boolean death = false;
+    static boolean appear = false;
+    static boolean attack = false;
+    static boolean dodge = false;
+    static boolean idle = false;
+    static boolean death = false;
     
     public Boss(){
+        // bossAppear array will multipurpose as appear and death animation
         for(int i = 0; i < bossAppear.length; i++){
             if(i >= 10){
                 bossAppear[i] = new GreenfootImage("boss/boss_death_" + i + ".png");
@@ -50,6 +55,16 @@ public class Boss extends Actor
             bossAttack[i].scale(200, 200);
         }
         
+        for(int i = 0; i < bossDodge.length; i++){
+            if(i >= 10){
+                bossDodge[i] = new GreenfootImage("boss/boss_dodge_" + i + ".png");
+            } else {
+                bossDodge[i] = new GreenfootImage("boss/boss_dodge_0" + i + ".png");
+            }
+            bossDodge[i].mirrorHorizontally();
+            bossDodge[i].scale(200, 200);
+        }
+        
         for(int i = 0; i < bossIdle.length; i++){
             bossIdle[i] = new GreenfootImage("boss/boss_idle_" + i + ".png");
             bossIdle[i].mirrorHorizontally();
@@ -58,10 +73,13 @@ public class Boss extends Actor
         
         appearTimer.mark();
         attackTimer.mark();
+        dodgeTimer.mark();
         idleTimer.mark();
+        deathTimer.mark();
             
         setImage(bossAppear[0]);
     }
+    
     public void act()
     {
         if(appear){
@@ -69,6 +87,9 @@ public class Boss extends Actor
         }
         if(attack){
             attackAnimation();
+        }
+        if(dodge){
+            dodgeAnimation();
         }
         if(idle){
             idleAnimation();
@@ -112,6 +133,23 @@ public class Boss extends Actor
         attackIndex++;
     }
     
+    public void dodgeAnimation(){
+        if(dodgeTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        dodgeTimer.mark();
+        
+        if(dodgeIndex <= 11){
+            setImage(bossDodge[dodgeIndex]);
+        } else {
+            dodgeIndex = 0;
+            setDodge(false);
+        }
+        
+        dodgeIndex++;
+    }
+    
     public void idleAnimation(){
         if(idleTimer.millisElapsed() < 200){
             return;
@@ -148,6 +186,10 @@ public class Boss extends Actor
     
     public static void setAttack(boolean a){
         attack = a;
+    }
+    
+    public static void setDodge(boolean a ){
+        dodge = a;
     }
     
     public static void setIdle(boolean a){
