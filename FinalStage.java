@@ -90,6 +90,7 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
+        bossATK = 50; // will change after consuming the summons
         phase1 = false;
         phase2 = false;
         phase3 = false;
@@ -212,6 +213,27 @@ public class FinalStage extends World
                     // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK
                     // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
                     // Roll 50-99 [50% chance] = dodge: 70% chance to dodge next attack for 2 turns
+                    if(bossAction <= 24){
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK); 
+                        }
+                    } else if(bossAction <= 39){
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK); 
+                        }
+                    }
+                    
+                    
                     removeObject(ss2);
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
