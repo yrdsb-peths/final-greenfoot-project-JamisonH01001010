@@ -13,14 +13,14 @@ public class FinalStage extends World
     
     // Object instantiations  
     MainCharacter mc = new MainCharacter();
-    Skeleton s = new Skeleton();
+    Boss boss = new Boss();
     Attack a = new Attack();
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
+    HealthBar bossHP = new HealthBar(300); // bossHP = 300
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
@@ -29,10 +29,10 @@ public class FinalStage extends World
     
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
-    GameFont s1Clear1 = new GameFont("Stage 1 CLEAR!", 1000, 500);
-    GameFont s1Clear2 = new GameFont("Tokens + 10", 500, 500);
-    GameFont s1Fail1 = new GameFont("Stage 1 Fail | Try Again", 1000, 700);
-    GameFont s1Fail2 = new GameFont("Tokens + 0", 500, 500);
+    GameFont s5Clear1 = new GameFont("Stage 5 CLEAR!", 1000, 500);
+    GameFont s5Clear2 = new GameFont("Tokens + 50", 500, 500);
+    GameFont s5Fail1 = new GameFont("Stage 5 Fail | Try Again", 1000, 700);
+    GameFont s5Fail2 = new GameFont("Tokens + 0", 500, 500);
     GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
     
     // Game Variables
@@ -44,10 +44,10 @@ public class FinalStage extends World
     int randomStun = 0;
     
     // Stage Variables
-    static boolean s1Passed = false;
-    boolean s1Over = false;
-    boolean s1Clear = false;
-    boolean s1Fail = false;
+    static boolean s5Passed = false;
+    boolean s5Over = false;
+    boolean s5Clear = false;
+    boolean s5Fail = false;
     public FinalStage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -58,11 +58,11 @@ public class FinalStage extends World
         
         // Characters
         addObject(mc, 250, 350);
-        addObject(s, 600, 350);
+        addObject(boss, 600, 350);
         
         // HealthBar
         addObject(mcHP, 250, 300);
-        addObject(skeletonHP, 590, 280);
+        addObject(bossHP, 590, 280);
         
         // Icons
         addObject(a, 120, 250);
@@ -72,20 +72,20 @@ public class FinalStage extends World
         
         // Animations
         MainCharacter.setIdleControl(true);
-        Skeleton.setIdleControl(true);
+        Boss.setIdle(true);
         
         // Stage Variables
         turn = true;
         stun = false;
         stunTurns = 0;
-        s1Over = false;
-        s1Clear = false;
-        s1Fail = false;
+        s5Over = false;
+        s5Clear = false;
+        s5Fail = false;
     }
     
     public void act(){
-        if(!s1Over){
-            s1();
+        if(!s5Over){
+            s5();
             if(Greenfoot.mouseClicked(p1)){
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
@@ -105,22 +105,22 @@ public class FinalStage extends World
                 pause--;
             }
             if(pause == 0){
-                s1Passed = true;
-                Level1.setPassed(true);
+                s5Passed = true;
+                Level5.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
-                if(s1Clear){
+                if(s5Clear){
                     addObject(m1, 400, 300);
-                    addObject(s1Clear1, 610, 580);
-                    addObject(s1Clear2, 530, 650);
+                    addObject(s5Clear1, 610, 580);
+                    addObject(s5Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
                     returnHome();
                 }
-                if(s1Fail){
+                if(s5Fail){
                     addObject(m1, 400, 300);
-                    addObject(s1Fail1, 622, 580);
-                    addObject(s1Fail2, 540, 650);
+                    addObject(s5Fail1, 622, 580);
+                    addObject(s5Fail2, 540, 650);
                     addObject(returnHome, 565, 680);   
                     returnHome();
                 }
@@ -129,7 +129,7 @@ public class FinalStage extends World
         
     }
     
-    public void s1(){
+    public void s5(){
         if(stunTurns > 0) {
             stunTurns--;
             if(stunTurns == 0) {
@@ -142,13 +142,13 @@ public class FinalStage extends World
                     pause--;
                 }
                 if(pause == 0){
-                    Skeleton.setIdleControl(true);
+                    Boss.setIdle(true);
                     // Repeat setting if there is stun and skeleton can't act
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
-                        skeletonHP.loseHP(Attack.getAtkCount());
+                        bossHP.loseHP(Attack.getAtkCount());
                         switchTurn();
                         pause = 100;
                     }
@@ -165,7 +165,7 @@ public class FinalStage extends World
                     if(Greenfoot.mouseClicked(ss1)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
-                        skeletonHP.loseHP((int) (Attack.getAtkCount() * 0.2));
+                        bossHP.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
                             applyStun();
@@ -173,12 +173,12 @@ public class FinalStage extends World
                         switchTurn();
                         pause = 100;
                     }
-                    if(skeletonHP.getCurrentHP() == 0){
-                        Skeleton.setIdleControl(false);
-                        Skeleton.setDeathControl(true);
-                        s1Over = true;
-                        s1Clear = true;
-                        CoinTracker.addCoinCount(10);
+                    if(bossHP.getCurrentHP() == 0){
+                        Boss.setIdle(false);
+                        Skeleton.setDeathControl(true); //create boss death anim
+                        s5Over = true;
+                        s5Clear = true;
+                        CoinTracker.addCoinCount(50);
                         pause = 100;
                     }
                 }
@@ -188,7 +188,10 @@ public class FinalStage extends World
                 }
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
-                    Skeleton.setIdleControl(false);
+                    Boss.setIdle(false);
+                    
+                    
+                    // Randomize
                     Skeleton.setAttackControl(true);
                     removeObject(ss2);
                     if(shieldAmount != 0){
@@ -198,6 +201,8 @@ public class FinalStage extends World
                     } else {
                         mcHP.loseHP(4); // SkeletonATK = 4
                     }
+                    
+                    
                     shieldAmount = 0;
                     switchTurn();
                     pause = 100;
@@ -205,8 +210,8 @@ public class FinalStage extends World
                 if(mcHP.getCurrentHP() == 0){
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setDeathControl(true);
-                    s1Over = true;
-                    s1Fail = true;
+                    s5Over = true;
+                    s5Fail = true;
                     pause = 100;
                 }
             }
@@ -229,7 +234,7 @@ public class FinalStage extends World
         }
     }
     
-    public static boolean getS1Passed(){
-        return s1Passed;
+    public static boolean getS5Passed(){
+        return s5Passed;
     }
 }

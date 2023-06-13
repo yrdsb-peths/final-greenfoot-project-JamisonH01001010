@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boss extends Actor
 {
+    // Stats: HP = 300, ATK = 50
+    
     GreenfootImage[] bossAppear = new GreenfootImage[18];
     GreenfootImage[] bossAttack = new GreenfootImage[13];
     GreenfootImage[] bossIdle = new GreenfootImage[8];
@@ -79,6 +81,8 @@ public class Boss extends Actor
         
         if(appearIndex >= 0){
             setImage(bossAppear[appearIndex]);
+        } else {
+            appearIndex = 0;
         }
         
         appearIndex--; 
