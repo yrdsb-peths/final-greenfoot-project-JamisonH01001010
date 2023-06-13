@@ -23,6 +23,7 @@ public class FinalStage extends World
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
     Magic m = new Magic();
+    Dodge d = new Dodge();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar bossHP = new HealthBar(300); // bossHP = 300
     Menu m1 = new Menu(580, 580);
