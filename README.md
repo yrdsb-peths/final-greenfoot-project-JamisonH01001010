@@ -13,6 +13,7 @@ Fire Knight Shield - https://www.flaticon.com/free-icon/shield_3144909
 Wizard - https://luizmelo.itch.io/evil-wizard-2
 DOT icon - https://foozlecc.itch.io/pixel-magic-sprite-effects
 Boss - https://darkpixel-kronovi.itch.io/undead-executioner
+Dodge - https://www.pixilart.com/art/cloak-of-levitation-94ae456bde8ff70
 Explosion - https://codemanu.itch.io/vfx-free-pack
 Font - https://vrtxrry.itch.io/dungeonfont
 Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
