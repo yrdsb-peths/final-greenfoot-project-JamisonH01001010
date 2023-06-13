@@ -22,6 +22,7 @@ public class FinalStage extends World
     Barrier b2 = new Barrier(); // shield indicator
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    Magic m = new Magic();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar bossHP = new HealthBar(300); // bossHP = 300
     Menu m1 = new Menu(580, 580);
@@ -47,10 +48,11 @@ public class FinalStage extends World
     int stunTurns = 0;
     int randomStun = 0;
     int bossAction = 0;
-    boolean phase1 = true;
-    boolean phase2 = false;
-    boolean phase3 = false;
     boolean dodge = false;
+    int dodgeAction = 0;
+    int dodgeTurns = 0;
+    int DOTTurns = 0;
+    
     
     // Stage Variables
     static boolean s5Passed = false;
@@ -91,11 +93,10 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
-        phase1 = true;
-        phase2 = false;
-        phase3 = false;
         dodge = false;
         bossATK = 50;
+        DOTTurns = 0;
+        dodgeTurns = 0;
         s5Over = false;
         s5Clear = false;
         s5Fail = false;
@@ -166,12 +167,14 @@ public class FinalStage extends World
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
+                        applyDOT();
                         bossHP.loseHP(Attack.getAtkCount());
                         switchTurn();
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
+                        applyDOT();
                         addObject(b2, 250, 480);
                         shieldAmount = mc.shield();
                         Integer shieldAmountv2 = shieldAmount;
@@ -183,6 +186,7 @@ public class FinalStage extends World
                     if(Greenfoot.mouseClicked(ss1)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
+                        applyDOT();
                         bossHP.loseHP((int) (Attack.getAtkCount() * 0.2));
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
@@ -209,14 +213,19 @@ public class FinalStage extends World
                     Boss.setIdle(false);
                     if(bossHP.getCurrentHP() <= 200){
                         removeObject(BS1);
-                        phase1 = false;
-                        phase2 = true;
                         bossATK = 75;
                     }
-                
+                    if(bossHP.getCurrentHP() <= 100){
+                        removeObject(BS2);
+                        bossATK = 100;
+                    }
+                    if(bossHP.getCurrentHP() <= 50){
+                        removeObject(BS3);
+                        bossATK = 125;
+                    }
                     bossAction = Greenfoot.getRandomNumber(100);
                     // Roll 0-24 [25% chance] = attack 1: Deal 100% of ATK dmg
-                    // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK
+                    // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK 2 turns
                     // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
                     // Roll 50-99 [50% chance] = dodge: 70% chance to dodge next attack for 2 turns
                     removeObject(ss2);
@@ -238,6 +247,7 @@ public class FinalStage extends World
                         } else {
                             mcHP.loseHP(bossATK);
                         }
+                        addObject(m, 500, 500);
                     } else if (bossAction <= 49){ // STUN
                         Boss.setAttack(true);
                         if(shieldAmount != 0){
@@ -251,19 +261,12 @@ public class FinalStage extends World
                         stunTurns = 1;
                     } else {
                         Boss.setDodge(true);
-                        dodge = true;
+                        dodgeAction = Greenfoot.getRandomNumber(9);
+                        // Roll 0-6 [70% chance] : dodge is true
+                        if(dodgeAction <= 6){
+                            dodge = true;
+                        }
                     }
-                    
-                    
-                    if(shieldAmount != 0){
-                        mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
-                        removeObject(SA);
-                        removeObject(b2);
-                    } else {
-                        mcHP.loseHP(50); // BossATK = 50
-                    }
-                    
-                    
                     shieldAmount = 0;
                     switchTurn();
                     pause = 100;
@@ -286,6 +289,23 @@ public class FinalStage extends World
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 610, 460);
+    }
+    
+    public void applyDOT(){
+        if(DOTTurns != 0){
+            mcHP.loseHP((int) (bossATK*0.25));
+            DOTTurns--;
+        } else {
+            removeObject(m);
+        }
+    }
+    
+    public void applyDodge(){
+        if(dodgeTurns != 0){
+            dodgeTurns--;
+        } else {
+            // add dodge object
+        }
     }
     
     public void returnHome(){
