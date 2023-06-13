@@ -109,15 +109,15 @@ public class Boss extends Actor
         if(appearIndex >= 0){
             setImage(bossAppear[appearIndex]);
         } else {
-            appear = false;
             appearIndex = 0;
+            setAppear(false);
         }
         
         appearIndex--; 
     }
     
     public void attackAnimation(){
-        if(attackTimer.millisElapsed() < 150){
+        if(attackTimer.millisElapsed() < 100){
             return;
         }
         

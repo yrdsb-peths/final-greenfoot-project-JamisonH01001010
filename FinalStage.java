@@ -223,7 +223,8 @@ public class FinalStage extends World
                         removeObject(BS3);
                         bossATK = 125;
                     }
-                    bossAction = Greenfoot.getRandomNumber(100);
+                    bossAction = 47;
+                    //bossAction = Greenfoot.getRandomNumber(100);
                     // Roll 0-24 [25% chance] = attack 1: Deal 100% of ATK dmg
                     // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK 2 turns
                     // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
@@ -247,7 +248,8 @@ public class FinalStage extends World
                         } else {
                             mcHP.loseHP(bossATK);
                         }
-                        addObject(m, 500, 500);
+                        addObject(m, 215, 285);
+                        DOTTurns = 2;
                     } else if (bossAction <= 49){ // STUN
                         Boss.setAttack(true);
                         if(shieldAmount != 0){
@@ -257,7 +259,7 @@ public class FinalStage extends World
                         } else {
                             mcHP.loseHP(bossATK);
                         }
-                        addObject(ss2, 500, 500);
+                        addObject(m, 215, 290);
                         stunTurns = 1;
                     } else {
                         Boss.setDodge(true);
