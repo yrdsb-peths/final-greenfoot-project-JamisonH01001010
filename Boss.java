@@ -22,6 +22,7 @@ public class Boss extends Actor
     private int attackIndex = 0;
     private int idleIndex = 0;
     
+    public static boolean appear = false;
     public static boolean attack = false;
     public static boolean idle = false;
     
@@ -61,7 +62,7 @@ public class Boss extends Actor
     public void act()
     {
         // Always appear animation when summoned
-        if(true){
+        if(appear){
             appearAnimation();
         }
         if(attack){
@@ -82,6 +83,7 @@ public class Boss extends Actor
         if(appearIndex >= 0){
             setImage(bossAppear[appearIndex]);
         } else {
+            appear = false;
             appearIndex = 0;
         }
         
@@ -115,6 +117,10 @@ public class Boss extends Actor
         setImage(bossIdle[idleIndex]);
         
         idleIndex = (idleIndex + 1) % bossIdle.length;
+    }
+    
+    public static void setAppear(boolean a){
+        appear = a;
     }
     
     public static void setAttack(boolean a){
