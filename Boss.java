@@ -10,21 +10,24 @@ public class Boss extends Actor
 {
     // Stats: HP = 300, ATK = 50
     
-    GreenfootImage[] bossAppear = new GreenfootImage[18];
+    GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animaations of death
     GreenfootImage[] bossAttack = new GreenfootImage[13];
     GreenfootImage[] bossIdle = new GreenfootImage[8];
     
     SimpleTimer appearTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
     SimpleTimer idleTimer = new SimpleTimer();
+    SimpleTimer deathTimer = new SimpleTimer();
     
     private int appearIndex = 17; // animation needs to be done in reverse (death in reverse = appear)
     private int attackIndex = 0;
     private int idleIndex = 0;
+    private int deathIndex = 0;
     
     public static boolean appear = false;
     public static boolean attack = false;
     public static boolean idle = false;
+    public static boolean death = false;
     
     public Boss(){
         for(int i = 0; i < bossAppear.length; i++){
@@ -61,7 +64,6 @@ public class Boss extends Actor
     }
     public void act()
     {
-        // Always appear animation when summoned
         if(appear){
             appearAnimation();
         }
@@ -70,6 +72,9 @@ public class Boss extends Actor
         }
         if(idle){
             idleAnimation();
+        }
+        if(death){
+            deathAnimation();
         }
     }
     
@@ -119,6 +124,24 @@ public class Boss extends Actor
         idleIndex = (idleIndex + 1) % bossIdle.length;
     }
     
+    public void deathAnimation(){
+        if(deathTimer.millisElapsed() < 150){
+            return;
+        }
+        
+        deathTimer.mark();
+        
+        if(deathIndex <= 17){
+            setImage(bossAppear[deathIndex]);
+        } else {
+            deathIndex = 0;
+            setDeath(false);
+        }
+        
+        deathIndex++;
+    }
+    
+    
     public static void setAppear(boolean a){
         appear = a;
     }
@@ -129,5 +152,9 @@ public class Boss extends Actor
     
     public static void setIdle(boolean a){
         idle = a;
+    }
+    
+    public static void setDeath(boolean a){
+        death = a;
     }
 }
