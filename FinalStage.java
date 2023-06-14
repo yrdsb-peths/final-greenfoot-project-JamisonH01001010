@@ -56,7 +56,7 @@ public class FinalStage extends World
 
     // Stage Variables
     static boolean s5Passed = false;
-    int s5ClearTimes = 0; 
+    static int s5ClearTimes = 0; 
     boolean s5Over = false;
     boolean s5Clear = false;
     boolean s5Fail = false;
