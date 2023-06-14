@@ -13,8 +13,8 @@ public class MCLostSword extends Actor
     GreenfootImage ls = new GreenfootImage("mc-lost-sword.png");
     
     SimpleTimer animTimer = new SimpleTimer();
-    public MCLostSword(){
-        ls.scale(100, 100);
+    public MCLostSword(int scale){
+        ls.scale(scale, scale);
         
         animTimer.mark();
         

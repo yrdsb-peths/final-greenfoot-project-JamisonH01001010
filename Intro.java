@@ -12,7 +12,7 @@ public class Intro extends World
     GreenfootImage introBG = new GreenfootImage("intro.png");
     // Object instantiations
     // MCLostSword 
-    MCLostSword ls = new MCLostSword();
+    MCLostSword ls = new MCLostSword(100);
     // MainCharacter
     MainCharacter m = new MainCharacter();
     // Boss
