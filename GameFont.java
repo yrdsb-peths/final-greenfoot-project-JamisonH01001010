@@ -6,16 +6,22 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 /**
- * Write a description of class GameFont here.
+ * The font used in the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author 
+ * Link: https://www.greenfoot.org/topics/65058/0
  */
 public class GameFont extends Actor
 {
+    // Text variables
     private String text;
     private int scale;
-    
+    /**
+     * Constructor: Create a GameFont from a .ttf file, then draw text according to input
+     * @param1 The text to be shown
+     * @param2 The size of the text
+     * @version Initial version pre-optimization of drawing text
+     */
     public GameFont(String text, int scale)
     {
         // Copied Code - https://www.greenfoot.org/topics/65058/0
@@ -47,6 +53,13 @@ public class GameFont extends Actor
         }
     }
     // For more specific text problems
+    /**
+     * Constructor: Create a GameFont from a .ttf file, then draw text according to input
+     * @param1 The text to be shown
+     * @param2 The size of the text
+     * @param3 The size of the blank image the text is drawn on
+     * @version Version 2, optimized drawing text for more specfic text problems
+     */
     public GameFont(String text, int scale, int imageNum){
         // Copied Code - https://www.greenfoot.org/topics/65058/0
         File f = new File("DungeonFont.ttf");

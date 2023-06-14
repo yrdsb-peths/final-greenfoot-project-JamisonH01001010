@@ -8,7 +8,7 @@ public class FireShield extends Actor
     // Image
     GreenfootImage fs = new GreenfootImage("fire-shield.png");
     /**
-     * 
+     * Constructor: Set image fire shield icon
      */
     public FireShield(){
         fs.scale(50, 50);
