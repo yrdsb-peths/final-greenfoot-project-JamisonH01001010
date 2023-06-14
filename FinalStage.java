@@ -53,14 +53,14 @@ public class FinalStage extends World
     int dodgeAction = 0;
     int dodgeTurns = 0;
     int DOTTurns = 0;
-    
-    
+
     // Stage Variables
     static boolean s5Passed = false;
-    int s5ClearTimes = 0;
+    int s5ClearTimes = 1; /////
     boolean s5Over = false;
     boolean s5Clear = false;
     boolean s5Fail = false;
+    
     public FinalStage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -136,6 +136,7 @@ public class FinalStage extends World
                     if(s5ClearTimes == 1){
                         addObject(s5Clear2, 530, 680);
                         addObject(s5Clear3, 410, 520);
+                        Achievements.completeAch1();
                         endingScreen();
                     } else {
                         addObject(s5Clear2, 530, 650);

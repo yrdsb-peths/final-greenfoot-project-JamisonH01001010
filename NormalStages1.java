@@ -184,9 +184,7 @@ public class NormalStages1 extends World
                         Skeleton.setDeathControl(true);
                         s1Over = true;
                         s1Clear = true;
-                        timesCleared = timesCleared + 1;
-                        Integer t = timesCleared;
-                        System.out.println(t.toString());
+                        timesCleared++;
                         CoinTracker.addCoinCount(10);
                         pause = 100;
                     }
