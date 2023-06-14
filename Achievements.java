@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Achievements here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Records and completes achievements when achieved
  */
 public class Achievements extends World
 {
@@ -43,6 +40,10 @@ public class Achievements extends World
     // Achievements
     GameFont chestText = new GameFont(" ", 500, 200); // blank text, if clicked gives ach5
     static int luckyNum = 0; // will be randomized every entry of achievements screen
+    /**
+     * Constructor: Gets called when the achievements screen is called
+     * Sets the background and icons of the achievements screen
+     */
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -73,9 +74,12 @@ public class Achievements extends World
         
         // Add HomeButton
         addObject(h, 620, 120);
-        
     }
-    
+    /**
+     * Act Method: Continously check if user has pressed certain icons and completes achievements
+     * h: HomeButton that returns user home
+     * chestText: Rewards user achievement 5
+     */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
             TitleScreen achWorld = new TitleScreen();
@@ -86,7 +90,10 @@ public class Achievements extends World
         }
         completeAchievements();
     }
-    
+    /**
+     * Changes achievements icons from a blank medal to a gold medal if achievements
+     * are completed
+     */
     private void completeAchievements(){
         if(finalBoss1){
             removeObject(bm1);
@@ -109,28 +116,43 @@ public class Achievements extends World
             addObject(gm5, 190, 470);
         }
     }
-    
+    /**
+     * Randomizer for achievement 3
+     * With every opening of achievement screen, 1 in 100 chance to get achievement 3
+     */
     public static void lucky(){
-        // Ach3
-        // With every opening of achievement screen, 1 in 100 chance to get ach3
         luckyNum = Greenfoot.getRandomNumber(99);
         if(luckyNum == 14){
             completeAch3();
         }
     }
-    
+    /**
+     * Completes achievement 1
+     */
     public static void completeAch1(){
         finalBoss1 = true;
     }
+    /**
+     * Completes achievement 2
+     */
     public static void completeAch2(){
         hoarder2 = true;
     }
+    /**
+     * Completes achievement 3
+     */
     public static void completeAch3(){
         lucky3 = true;
     }
+    /**
+     * Completes achievement 4
+     */
     public static void completeAch4(){
         bully4 = true;
     }
+    /**
+     * Completes achievement 5
+     */
     public static void completeAch5(){
         chest5 = true;
     }
