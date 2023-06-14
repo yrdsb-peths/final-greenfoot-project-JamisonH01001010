@@ -88,25 +88,24 @@ public class Achievements extends World
     }
     
     private void completeAchievements(){
-        Achievements achWorld = new Achievements();
         if(finalBoss1){
-            achWorld.removeObject(bm1);
+            removeObject(bm1);
             addObject(gm1, 190, 190);
         }
         if(hoarder2){
-            achWorld.removeObject(bm2);
+            removeObject(bm2);
             addObject(gm2, 190, 260);
         }
         if(lucky3){
-            achWorld.removeObject(bm3);
+            removeObject(bm3);
             addObject(gm3, 190, 330);
         }
         if(bully4){
-            achWorld.removeObject(bm4);
+            removeObject(bm4);
             addObject(gm4, 190, 400);
         }
         if(chest5){
-            achWorld.removeObject(bm5);
+            removeObject(bm5);
             addObject(gm5, 190, 470);
         }
     }
