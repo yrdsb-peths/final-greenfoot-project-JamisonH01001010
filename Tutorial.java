@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tutorial here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The tutorial teaching the user the basics of the game
  */
 public class Tutorial extends World
 {
@@ -13,10 +10,8 @@ public class Tutorial extends World
     // Object instantiations
     // Menu
     Menu m = new Menu(900, 700);
-    
     // Continue
     Continue c = new Continue(100);
-    
     // HomeButton
     HomeButton h = new HomeButton();
     
@@ -30,9 +25,9 @@ public class Tutorial extends World
     GameFont description6 = new GameFont("All achievements are hidden, decipher the requirements through their name.", 650, 1000); 
     GameFont description7 = new GameFont("Note: Enemy skills have no description, adapt accordingly.", 870, 1000);
     GameFont description8 = new GameFont("(This Tutorial will be accessable later from the Title Screen)", 350, 800);
-    // description 8 will be removed after inital look
-    // continue button will be removed and replaced with the home button after initial look
-    
+    /**
+     * Constructor: Set the texts for the tutorial screen
+     */
     public Tutorial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -56,6 +51,10 @@ public class Tutorial extends World
         addObject(c, 410, 493);
     }
     
+    /**
+     * Continously check when user is done tutorial and wants to return home
+     * Also change up the text if the user has opened the tutorial before
+     */
     public void act(){
         if(Greenfoot.mouseClicked(c) || Greenfoot.mouseClicked(h)){
             TitleScreen t = new TitleScreen();

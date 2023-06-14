@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Explosion here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A special effect for the boss attack
  */
 public class Explosion extends Actor
 {
+    // Images
     GreenfootImage[] boom = new GreenfootImage[30];
-    
+    // Animation timer
     SimpleTimer s = new SimpleTimer();
-    
+    // Animation index
     private int imageIndex = 0;
-    
+    /**
+     * Constructor: Fill the array with corresponding images, mark animation index, set inital image
+     */
     public Explosion(){
         for(int i = 0; i < boom.length; i++){
             if(i >= 10){
@@ -28,11 +28,16 @@ public class Explosion extends Actor
             
         setImage(boom[0]);
     }
+    /**
+     * Play the explosion animation on repeat
+     */
     public void act()
     {
         animation();  
     }
-    
+    /**
+     * The explosion animation
+     */
     public void animation(){
         if(s.millisElapsed() < 100){
             return;

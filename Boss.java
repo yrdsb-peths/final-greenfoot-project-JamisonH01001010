@@ -1,38 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Boss here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The final boss of the game
+ * Contains relating animations
  */
 public class Boss extends Actor
 {
     // Stats: HP = 800, ATK = 50
     
-    GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animaations of death
+    // Images
+    GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animations of death
     GreenfootImage[] bossAttack = new GreenfootImage[13];
     GreenfootImage[] bossDodge = new GreenfootImage[12];
     GreenfootImage[] bossIdle = new GreenfootImage[8];
     
+    // Animation Timers
     SimpleTimer appearTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
     SimpleTimer dodgeTimer = new SimpleTimer();
     SimpleTimer idleTimer = new SimpleTimer();
     SimpleTimer deathTimer = new SimpleTimer();
     
+    // Animation Indexes
     private int appearIndex = 17; // animation needs to be done in reverse (death in reverse = appear)
     private int attackIndex = 0;
     private int dodgeIndex = 0;
     private int idleIndex = 0;
     private int deathIndex = 0;
     
+    // Animation variables
     static boolean appear = false;
     static boolean attack = false;
     static boolean dodge = false;
     static boolean idle = false;
     static boolean death = false;
-    
+    /**
+     * Constructor: Fill arrays with corresponding images, mark animation timers, and set an inital image
+     */
     public Boss(){
         // bossAppear array will multipurpose as appear and death animation
         for(int i = 0; i < bossAppear.length; i++){
@@ -79,7 +83,9 @@ public class Boss extends Actor
             
         setImage(bossAppear[0]);
     }
-    
+    /**
+     * Continously check which animation to play
+     */
     public void act()
     {
         if(appear){
@@ -98,7 +104,9 @@ public class Boss extends Actor
             deathAnimation();
         }
     }
-    
+    /**
+     * The boss appearing animation
+     */
     public void appearAnimation(){
         if(appearTimer.millisElapsed() < 150){
             return;
@@ -115,7 +123,9 @@ public class Boss extends Actor
         
         appearIndex--; 
     }
-    
+    /**
+     * The boss attacking animation
+     */
     public void attackAnimation(){
         if(attackTimer.millisElapsed() < 100){
             return;
@@ -132,7 +142,9 @@ public class Boss extends Actor
         
         attackIndex++;
     }
-    
+    /**
+     * The boss dodging animation
+     */
     public void dodgeAnimation(){
         if(dodgeTimer.millisElapsed() < 100){
             return;
@@ -149,7 +161,9 @@ public class Boss extends Actor
         
         dodgeIndex++;
     }
-    
+    /**
+     * The boss idle animation
+     */
     public void idleAnimation(){
         if(idleTimer.millisElapsed() < 200){
             return;
@@ -161,7 +175,9 @@ public class Boss extends Actor
         
         idleIndex = (idleIndex + 1) % bossIdle.length;
     }
-    
+    /**
+     * The boss death animation
+     */
     public void deathAnimation(){
         if(deathTimer.millisElapsed() < 100){
             return;
@@ -179,23 +195,38 @@ public class Boss extends Actor
         deathIndex++;
     }
     
-    
+    /**
+     * Set the value of animation variable appear
+     * @param1 value of appear
+     */
     public static void setAppear(boolean a){
         appear = a;
     }
-    
+    /**
+     * Set the value of animation variable attack
+     * @param1 value of attack
+     */
     public static void setAttack(boolean a){
         attack = a;
     }
-    
+    /**
+     * Set the value of animation variable dodge
+     * @param1 value of dodge
+     */
     public static void setDodge(boolean a ){
         dodge = a;
     }
-    
+    /**
+     * Set the value of animation variable idle
+     * @param1 value of idle
+     */
     public static void setIdle(boolean a){
         idle = a;
     }
-    
+    /**
+     * Set the value of animation variable death
+     * @param1 value of death
+     */
     public static void setDeath(boolean a){
         death = a;
     }

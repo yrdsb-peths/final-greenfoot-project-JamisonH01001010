@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * A menu to selecta stage, out of 5 total
+ * A menu to select a stage, out of 5 total
  */
 public class StageSelect extends World
 {

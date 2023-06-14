@@ -1,9 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
-
 /**
- * Write a description of class TitleScreen here.
+ * The home screen of the game, includes pathways to all other sections besides actual levels
  */
 public class TitleScreen extends World
 {
@@ -28,6 +26,9 @@ public class TitleScreen extends World
     MiniIcon mini = new MiniIcon();
     // Help
     Help h = new Help();
+    /**
+     * Constructor: Set icons of the title screen
+     */
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -58,9 +59,10 @@ public class TitleScreen extends World
         
         // Add Help
         addObject(h, 748, 50);
-        
     }
-    
+    /**
+     * Continously check if user wants to go to another world (ex. stages)
+     */
     public void act(){
         if(Greenfoot.mouseClicked(achievements)){
             Achievements.lucky(); // // Chance of completing achievement 3

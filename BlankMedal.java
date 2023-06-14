@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BlankMedal here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The icon if an achievement is not completed
  */
 public class BlankMedal extends Actor
 {
+    // Blank medal icon
     GreenfootImage blankM = new GreenfootImage("blank-medal.png");
+    /**
+     * Constructor: Sets the blank medal image
+     */
     public BlankMedal(){
         blankM.scale(40, 40);
         setImage(blankM);
