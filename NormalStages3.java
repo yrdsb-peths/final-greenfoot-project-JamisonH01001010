@@ -258,16 +258,22 @@ public class NormalStages3 extends World
             }
         }
     }
-    
+    /**
+     * Change the current turn to the opposite
+     */
     public void switchTurn() {
         turn = !turn;
     }
-
+    /**
+     * Apply a 1 turn stun and add a stun icon 
+     */
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
     }
-    
+    /**
+     * Apply the damage from the DOT and remove the DOT icon when the DOT is over
+     */
     public void applyDOT(){
         if(DOTTurns != 0){
             mcHP.loseHP(8); // WizardATK = 20 * 40%
@@ -276,14 +282,19 @@ public class NormalStages3 extends World
             removeObject(m);
         }
     }
-    
+    /**
+     * Return the user to the title screen
+     */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
     }
-    
+    /**
+     * Return the whether the user has passed stage 3 before
+     * @return if user has passed stage
+     */
     public static boolean getS3Passed(){
         return s3Passed;
     }

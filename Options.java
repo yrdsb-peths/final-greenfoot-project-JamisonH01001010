@@ -2,10 +2,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Options here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A menu to control the music of the game
  */
 public class Options extends World
 {
@@ -29,6 +26,9 @@ public class Options extends World
     GameFont options = new GameFont("Options", 500, 250);
     GameFont music = new GameFont("Music", 300, 250);
     GameFont soundEffects = new GameFont("Sound Effects", 300, 250);
+    /**
+     * Constructor: Set the inital state of the options menu
+     */
     public Options()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -49,7 +49,9 @@ public class Options extends World
         // Add HomeButtion
         addObject(h1, 545, 155);
     }
-    
+    /**
+     * Continously check if user wants to turn off music or return home
+     */
     public void act(){
         if(Greenfoot.mouseClicked(h1)){
             TitleScreen t = new TitleScreen();
@@ -64,7 +66,10 @@ public class Options extends World
             removeObject(c1);
         }
     }
-    
+    /**
+     * Get the value of the current tracker for music
+     * @return the value of the current music count
+     */
     public static int getMusicCount(){
         return musicCount;
     }

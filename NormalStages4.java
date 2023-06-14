@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class NormalStages4 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The fourth stage of the game battling a fire knight
  */
 public class NormalStages4 extends World
 {
@@ -12,20 +9,30 @@ public class NormalStages4 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
+    // MainCharacter
     MainCharacter mc = new MainCharacter();
+    // FireKnight
     FireKnight f = new FireKnight();
+    // FireShield
     FireShield fs = new FireShield();
+    // Attack
     Attack a = new Attack();
+    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
+    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar fireKnightHP = new HealthBar(150); // FireKnightHP = 150
+    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
+    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
+    // HomeButton
     HomeButton h = new HomeButton();
     
     // Text
@@ -51,11 +58,15 @@ public class NormalStages4 extends World
     boolean s4Over = false;
     boolean s4Clear = false;
     boolean s4Fail = false;
+    /**
+     * Constructor: Set inital state for stage 4
+     */
     public NormalStages4()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Set Stage 4 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
@@ -86,7 +97,10 @@ public class NormalStages4 extends World
         s4Clear = false;
         s4Fail = false;
     }
-    
+    /**
+     * The main game loop of the final stage, along with detecting whether the user
+     * has passed or failed the stage
+     */
     public void act(){
         if(!s4Over){
             s4();
@@ -132,7 +146,9 @@ public class NormalStages4 extends World
         }
         
     }
-    
+    /**
+     * The main logic of stage 4, tracking turns, skills, various effects etc.
+     */
     public void s4(){
         if(stunTurns > 0) {
             stunTurns--;
@@ -282,23 +298,32 @@ public class NormalStages4 extends World
             }
         }
     }
-    
+    /**
+     * Change the current turn to the opposite
+     */
     public void switchTurn() {
         turn = !turn;
     }
-
+    /**
+     * Apply a 1 turn stun and add a stun icon 
+     */
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
     }
-    
+    /**
+     * Return the user to the title screen
+     */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
     }
-    
+    /**
+     * Return the whether the user has passed stage 4 before
+     * @return if user has passed stage
+     */
     public static boolean getS4Passed(){
         return s4Passed;
     }

@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StageSelect here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A menu to selecta stage, out of 5 total
  */
 public class StageSelect extends World
 {
@@ -27,6 +24,9 @@ public class StageSelect extends World
     NormalStages3 ns3 = new NormalStages3();
     NormalStages4 ns4 = new NormalStages4();
     FinalStage fs = new FinalStage();
+    /**
+     * Constructor: Set the inital state of StageSelect screen
+     */
     public StageSelect()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -50,7 +50,9 @@ public class StageSelect extends World
         addObject(l4, 685, 510);
         addObject(l5, 395, 340);
     }
-    
+    /**
+     * Continously check if user wants to enter a certain level or return home
+     */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
             TitleScreen achWorld = new TitleScreen();

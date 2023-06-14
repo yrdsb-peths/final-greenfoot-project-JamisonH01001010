@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * ALL OF THE CURRENT BUGS/FIXES TO BE FIXED LATER
  * 
- * adding ways to complete achievements (all)
+ * remove sfx option
  * options menu - SFX option on to the setMUSICANDSFX method (fix when doing gameplay)
  * intro - sfx and music
  * sfx & music to everything..

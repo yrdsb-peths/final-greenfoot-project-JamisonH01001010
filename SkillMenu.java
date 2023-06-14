@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tutorial here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A Menu for the user to upgrade stats and see their 3 skill descriptions
  */
 public class SkillMenu extends World
 {
@@ -45,6 +42,9 @@ public class SkillMenu extends World
     GameFont s1 = new GameFont("Stun Smash", 300, 250);
     GameFont s2 = new GameFont("Deal 20% of ATK with 50%", 300, 400);
     GameFont s3 = new GameFont("chance to stun for one turn", 300, 400);
+    /**
+     * Constructor: Set the inital values for the Skill Menu
+     */
     public SkillMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -84,7 +84,9 @@ public class SkillMenu extends World
         // Add HomeButton
         addObject(h, 120, 85);
     }
-    
+    /**
+     * Continously check if user wants to upgrade stats or return home
+     */
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
             Health.increaseHealth();
@@ -110,7 +112,9 @@ public class SkillMenu extends World
         }
         ach2Completion();
     }
-    
+    /**
+     * Check if user has enough coins/tokens to unlock achievement 2 (500 coins/tokens)
+     */
     public void ach2Completion(){
         if(CoinTracker.getCoinCount() >= 500){
             Achievements.completeAch2();
