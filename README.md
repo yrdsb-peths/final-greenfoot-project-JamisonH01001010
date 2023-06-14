@@ -4,7 +4,7 @@ This is the README.md file.
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
 Sources:
-Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon
+<p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon </p>
 Main Character - https://rvros.itch.io/animated-pixel-hero
 Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx
 Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy
