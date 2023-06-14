@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Stage1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The second stage of the game battling a goblin
  */
 public class NormalStages2 extends World
 {
@@ -12,19 +9,28 @@ public class NormalStages2 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
+    // MainCharacter
     MainCharacter mc = new MainCharacter();
+    // Goblin
     Goblin g = new Goblin();
+    // Attack
     Attack a = new Attack();
+    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier();
+    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash();
+    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar goblinHP = new HealthBar(50); // GoblinHP = 50;
+    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
+    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
+    // HomeButton
     HomeButton h = new HomeButton();
     
     // Text
@@ -48,11 +54,15 @@ public class NormalStages2 extends World
     boolean s2Over = false;
     boolean s2Clear = false;
     boolean s2Fail = false;
+    /**
+     * Constructor: Set the inital conditions of stage 2
+     */
     public NormalStages2()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Set Stage 2 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
@@ -82,7 +92,10 @@ public class NormalStages2 extends World
         s2Clear = false;
         s2Fail = false;
     }
-    
+    /**
+     * The main game loop of stage 2, along with detecting whether the user
+     * has passed or failed the stage
+     */
     public void act(){
         if(!s2Over){
             s2();
@@ -128,7 +141,9 @@ public class NormalStages2 extends World
         }
         
     }
-    
+    /**
+     * The main logic of stage 2, tracking turns, skills, various effects etc.
+     */
     public void s2(){
         if(stunTurns > 0) {
             stunTurns--;
@@ -212,23 +227,32 @@ public class NormalStages2 extends World
             }
         }
     }
-    
+    /**
+     * Change the current turn to the opposite
+     */
     public void switchTurn() {
         turn = !turn;
     }
-
+    /**
+     * Apply a 1 turn stun and add a stun icon 
+     */ 
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
     }
-    
+    /**
+     * Return the user to the title screen
+     */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
     }
-    
+    /**
+     * Return the whether the user has passed stage 2 before
+     * @return if user has passed stage
+     */
     public static boolean getS2Passed(){
         return s2Passed;
     }

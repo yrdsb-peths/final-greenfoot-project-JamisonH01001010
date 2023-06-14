@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class NormalStages3 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The third stage of the game battling a wizard
  */
 public class NormalStages3 extends World
 {
@@ -12,20 +9,30 @@ public class NormalStages3 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
+    // MainCharacter
     MainCharacter mc = new MainCharacter();
+    // Wizard
     Wizard w = new Wizard();
+    // Attack
     Attack a = new Attack();
+    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
+    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    // Magic
     Magic m = new Magic(); // DOT indicator
+    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar wizardHP = new HealthBar(80); // WizardHP = 80
+    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
+    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
+    // HomeButton
     HomeButton h = new HomeButton();
     
     // Text
@@ -52,11 +59,15 @@ public class NormalStages3 extends World
     boolean s3Over = false;
     boolean s3Clear = false;
     boolean s3Fail = false;
+    /**
+     * Constructor: Set inital state for stage 3
+     */
     public NormalStages3()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Set Stage 3 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
@@ -87,7 +98,10 @@ public class NormalStages3 extends World
         s3Clear = false;
         s3Fail = false;
     }
-    
+    /**
+     * The main game loop of stage 3, along with detecting whether the user
+     * has passed or failed the stage
+     */
     public void act(){
         if(!s3Over){
             s3();
@@ -133,7 +147,9 @@ public class NormalStages3 extends World
         }
         
     }
-    
+    /**
+     * The main logic of stage 3, tracking turns, skills, various effects etc.
+     */
     public void s3(){
         if(stunTurns > 0) {
             stunTurns--;

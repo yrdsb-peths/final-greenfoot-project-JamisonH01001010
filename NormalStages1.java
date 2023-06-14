@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Stage1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The first stage of the game battling a skeleton
  */
 public class NormalStages1 extends World
 {
@@ -65,7 +62,7 @@ public class NormalStages1 extends World
      */
     public NormalStages1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
         // Set Stage 1 Background
