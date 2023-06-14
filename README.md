@@ -3,7 +3,13 @@ This is the README.md file.
 
 Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
-Sources:
+<h2>Project Description:</h2>
+<p>This is a project about a turn based game called Lost Sword with a mini storyline, hidden achievements, upgradeable stats, and 5 stages in total. </p>
+<h3>Gameplay:</h3>
+<p>Turn Based: User will always go first, doing either an attack, shield, or stun action. After one of those actions are completed, the enemy will get to do an action. This will vary depending on the enemy and will be unknown to the user until encountering it. Enemy skill descriptions and stats are not provided.</p>
+<p>A stage will end when either the user or enemy reaches an HP of 0, indicated by the healthbar above them</p>
+
+<h3>Sources:</h3>
 <p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon </p>
 <p>Main Character - https://rvros.itch.io/animated-pixel-hero</p>
 <p>Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx</p>
