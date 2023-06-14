@@ -109,8 +109,6 @@ public class NormalStages4 extends World
                 pause--;
             }
             if(pause == 0){
-                s4Passed = true;
-                Level4.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
@@ -119,6 +117,8 @@ public class NormalStages4 extends World
                     addObject(s4Clear1, 610, 580);
                     addObject(s4Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
+                    s4Passed = true;
+                    Level4.setPassed(true);
                     returnHome();
                 }
                 if(s4Fail){

@@ -65,10 +65,10 @@ public class StageSelect extends World
         if(Greenfoot.mouseClicked(l3) && NormalStages2.getS2Passed()){
             Greenfoot.setWorld(ns3);
         }
-        if(Greenfoot.mouseClicked(l4)){
+        if(Greenfoot.mouseClicked(l4) && NormalStages3.getS3Passed()){
             Greenfoot.setWorld(ns4);
         }
-        if(Greenfoot.mouseClicked(l5)){
+        if(Greenfoot.mouseClicked(l5) && NormalStages4.getS4Passed()){
             Greenfoot.setWorld(fs);
         }
     }

@@ -105,8 +105,6 @@ public class NormalStages1 extends World
                 pause--;
             }
             if(pause == 0){
-                s1Passed = true;
-                Level1.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
@@ -115,6 +113,8 @@ public class NormalStages1 extends World
                     addObject(s1Clear1, 610, 580);
                     addObject(s1Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
+                    s1Passed = true;
+                    Level1.setPassed(true);
                     returnHome();
                 }
                 if(s1Fail){

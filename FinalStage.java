@@ -125,16 +125,14 @@ public class FinalStage extends World
                 pause--;
             }
             if(pause == 0){
-                s5Passed = true;
-                Level5.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
                 if(s5Clear){
                     addObject(m1, 400, 300);
                     addObject(s5Clear1, 610, 580);
-                    Integer s = s5ClearTimes;
-                    System.out.println(s.toString());
+                    s5Passed = true;
+                    Level5.setPassed(true);
                     if(s5ClearTimes == 1){
                         addObject(s5Clear2, 530, 680);
                         addObject(s5Clear3, 410, 520);
