@@ -56,7 +56,7 @@ public class FinalStage extends World
 
     // Stage Variables
     static boolean s5Passed = false;
-    int s5ClearTimes = 1; /////
+    int s5ClearTimes = 0; 
     boolean s5Over = false;
     boolean s5Clear = false;
     boolean s5Fail = false;
@@ -95,20 +95,11 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
-<<<<<<< HEAD
         bossATK = 50; // will change after consuming the summons
-        phase1 = false;
-        phase2 = false;
-        phase3 = false;
-        s5Over = false;
-        s5Clear = false;
-=======
-        bossATK = 50;
         DOTTurns = 0;
         dodgeTurns = 0;
         s5Over = false; 
         s5Clear = false; 
->>>>>>> 74fd672aec704e7881ae1948993b8057e9659301
         s5Fail = false;
     }
     
@@ -240,44 +231,6 @@ public class FinalStage extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Boss.setIdle(false);
-<<<<<<< HEAD
-                    
-                    
-                    // Randomize
-                    bossAction = Greenfoot.getRandomNumber(100);
-                    // Roll 0-24 [25% chance] = attack 1: Deal 100% of ATK dmg
-                    // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK
-                    // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
-                    // Roll 50-99 [50% chance] = dodge: 70% chance to dodge next attack for 2 turns
-                    if(bossAction <= 24){
-                        Boss.setAttack(true);
-                        if(shieldAmount != 0){
-                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
-                            removeObject(SA);
-                            removeObject(b2);
-                        } else {
-                            mcHP.loseHP(bossATK); 
-                        }
-                    } else if(bossAction <= 39){
-                        Boss.setAttack(true);
-                        if(shieldAmount != 0){
-                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
-                            removeObject(SA);
-                            removeObject(b2);
-                        } else {
-                            mcHP.loseHP(bossATK); 
-                        }
-                    }
-                    
-                    
-                    removeObject(ss2);
-                    if(shieldAmount != 0){
-                        mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
-                        removeObject(SA);
-                        removeObject(b2);
-                    } else {
-                        mcHP.loseHP(50); // BossATK = 50
-=======
                     if(bossHP.getCurrentHP() <= 400){
                         removeObject(BS1);
                         bossATK = 70;
@@ -335,7 +288,6 @@ public class FinalStage extends World
                         } else {
                             mcHP.loseHP(bossATK);
                         }
->>>>>>> 74fd672aec704e7881ae1948993b8057e9659301
                     }
                     shieldAmount = 0;
                     switchTurn();
