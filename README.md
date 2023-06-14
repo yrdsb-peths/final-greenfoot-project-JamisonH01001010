@@ -1,16 +1,13 @@
 # Final Greenfoot Project
-This is the README.md file.
-
-Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
 
 <h2>Project Description:</h2>
 <p>This is a project about a turn based game called Lost Sword with a mini storyline, hidden achievements, upgradeable stats, and 5 stages in total. </p>
 <h3>Story:</h3>
 <p>Your sword has been stolen by a boss executioner and now you need to retrieve it by going to the monster's dungeon.</p>
-<p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, and the boss: Undead Executioner
+<p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, Undead Executioner.
 <h3>Gameplay:</h3>
 <p>Turn Based: User will always go first, doing either an attack, shield, or stun action. After one of those actions are completed, the enemy will get to do an action. This will vary depending on the enemy and will be unknown to the user until encountering it. Enemy skill descriptions and stats are not provided.</p>
-<p>A stage will end when either the user or enemy reaches an HP of 0, indicated by the healthbar above them</p>
+<p>A stage will end when either the user or enemy reaches an HP of 0, indicated by the healthbar above them.</p>
 <p>User can grind for higher stats by repeating stages for tokens, and this is how the game should be played as every stage the enemy's stats (HP and ATK) will increase.</p>
 
 <h3>Sources:</h3>
@@ -44,7 +41,3 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 <p>Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game</p>
 <p>NormalStages Background - https://twitter.com/BloomtownGame/status/1445764502591467530</p>
 <p>Final Stage Background - https://mekhollandt.artstation.com/projects/N5EQ0d</p>
-
-
-
-
