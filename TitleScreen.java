@@ -63,6 +63,7 @@ public class TitleScreen extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(achievements)){
+            Achievements.lucky(); // // Chance of completing achievement 3
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
         }

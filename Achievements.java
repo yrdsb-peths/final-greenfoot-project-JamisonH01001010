@@ -42,7 +42,7 @@ public class Achievements extends World
     GameFont achText = new GameFont("Achievements", 700);
     // Achievements
     GameFont chestText = new GameFont(" ", 500, 200); // blank text, if clicked gives ach5
-    int lucky = 0;
+    static int luckyNum = 0; // will be randomized every entry of achievements screen
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -74,12 +74,6 @@ public class Achievements extends World
         // Add HomeButton
         addObject(h, 620, 120);
         
-        // Ach3
-        // With every opening of achievement screen, 1 in 100 chance to get ach3
-        lucky = Greenfoot.getRandomNumber(99);
-        if(lucky == 14){
-            completeAch3();
-        }
     }
     
     public void act(){
@@ -114,6 +108,15 @@ public class Achievements extends World
         if(chest5){
             achWorld.removeObject(bm5);
             addObject(gm5, 190, 470);
+        }
+    }
+    
+    public static void lucky(){
+        // Ach3
+        // With every opening of achievement screen, 1 in 100 chance to get ach3
+        luckyNum = Greenfoot.getRandomNumber(99);
+        if(luckyNum == 14){
+            completeAch3();
         }
     }
     
