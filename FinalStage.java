@@ -49,7 +49,6 @@ public class FinalStage extends World
     int stunTurns = 0;
     int randomStun = 0;
     int bossAction = 0;
-    boolean dodge = false;
     int dodgeAction = 0;
     int dodgeTurns = 0;
     int DOTTurns = 0;
@@ -94,7 +93,6 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
-        dodge = false;
         bossATK = 50;
         DOTTurns = 0;
         dodgeTurns = 0;
@@ -164,73 +162,48 @@ public class FinalStage extends World
                 if(pause == 0){
                     Boss.setIdle(true);
                     MainCharacter.setIdleControl(true);
-                    if(dodge){
-                        if(Greenfoot.mouseClicked(a)){
-                            MainCharacter.setIdleControl(false);
-                            MainCharacter.setAttackControl(true);
-                            applyDOT();
-                            applyDodge();
-                            switchTurn();
-                            pause = 100;
-                        }
-                        if(Greenfoot.mouseClicked(b)){
-                            MainCharacter.setIdleControl(false);
-                            applyDOT();
-                            applyDodge();
-                            addObject(b2, 250, 480);
-                            shieldAmount = mc.shield();
-                            Integer shieldAmountv2 = shieldAmount;
-                            SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
-                            addObject(SA, 230, 540);
-                            switchTurn();
-                            pause = 100;
-                        }
-                        if(Greenfoot.mouseClicked(ss1)){
-                            MainCharacter.setIdleControl(false);
-                            MainCharacter.setStunControl(true);
-                            applyDOT();
-                            applyDodge();
-                            randomStun = Greenfoot.getRandomNumber(2);
-                            if(randomStun == 1){
-                                applyStun();
-                            }
-                            switchTurn();
-                            pause = 100;
-                        }
-                    } else { // no dodge
-                        if(Greenfoot.mouseClicked(a)){
-                            MainCharacter.setIdleControl(false);
-                            MainCharacter.setAttackControl(true);
-                            applyDOT();
-                            applyDodge();
+                    if(Greenfoot.mouseClicked(a)){
+                        MainCharacter.setIdleControl(false);
+                        MainCharacter.setAttackControl(true);
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
                             bossHP.loseHP(Attack.getAtkCount());
-                            switchTurn();
-                            pause = 100;
                         }
-                        if(Greenfoot.mouseClicked(b)){
-                            MainCharacter.setIdleControl(false);
-                            applyDOT();
-                            applyDodge();
-                            addObject(b2, 250, 480);
-                            shieldAmount = mc.shield();
-                            Integer shieldAmountv2 = shieldAmount;
-                            SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
-                            addObject(SA, 230, 540);
-                            switchTurn();
-                            pause = 100;
+                        applyDodge();
+                        switchTurn();
+                        pause = 100;
+                    }
+                    if(Greenfoot.mouseClicked(b)){
+                        MainCharacter.setIdleControl(false);
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
                         }
-                        if(Greenfoot.mouseClicked(ss1)){
-                            MainCharacter.setIdleControl(false);
-                            MainCharacter.setStunControl(true);
-                            applyDOT();
+                        applyDodge();
+                        addObject(b2, 250, 480);
+                        shieldAmount = mc.shield();
+                        Integer shieldAmountv2 = shieldAmount;
+                        SA = new GameFont(Integer.toString(shieldAmountv2) + "%", 100, 100);
+                        addObject(SA, 230, 540);
+                        switchTurn();
+                        pause = 100;
+                    }
+                    if(Greenfoot.mouseClicked(ss1)){
+                        MainCharacter.setIdleControl(false);
+                        MainCharacter.setStunControl(true);
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
                             bossHP.loseHP((int) (Attack.getAtkCount() * 0.2));
-                            randomStun = Greenfoot.getRandomNumber(2);
-                            if(randomStun == 1){
-                                applyStun();
-                            }
-                            switchTurn();
-                            pause = 100;
                         }
+                        applyDodge();
+                        randomStun = Greenfoot.getRandomNumber(2);
+                        if(randomStun == 1){
+                            applyStun();
+                        }
+                        switchTurn();
+                        pause = 100;
                     }
                     if(bossHP.getCurrentHP() == 0){
                         Boss.setIdle(false);
@@ -250,11 +223,11 @@ public class FinalStage extends World
                     Boss.setIdle(false);
                     if(bossHP.getCurrentHP() <= 200){
                         removeObject(BS1);
-                        bossATK = 75;
+                        bossATK = 70;
                     }
                     if(bossHP.getCurrentHP() <= 100){
                         removeObject(BS2);
-                        bossATK = 100;
+                        bossATK = 90;
                     }
                     if(bossHP.getCurrentHP() <= 50){
                         removeObject(BS3);
@@ -273,7 +246,6 @@ public class FinalStage extends World
                         dodgeAction = Greenfoot.getRandomNumber(9);
                         // Roll 0-6 [70% chance] : dodge is true
                         if(dodgeAction <= 6){
-                            dodge = true;
                             dodgeTurns = 2;
                             addObject(d, 610, 260);
                         }
@@ -343,9 +315,7 @@ public class FinalStage extends World
     public void applyDodge(){
         if(dodgeTurns != 0){
             dodgeTurns--;
-        } else {
-            removeObject(d);
-        }
+        } 
     }
     
     public void returnHome(){
