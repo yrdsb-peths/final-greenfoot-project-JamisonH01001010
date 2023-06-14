@@ -5,35 +5,36 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 Sources:
 <p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon </p>
-Main Character - https://rvros.itch.io/animated-pixel-hero
-Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx
-Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy
-Fire Knight - https://chierit.itch.io/elementals-fire-knight
-Fire Knight Shield - https://www.flaticon.com/free-icon/shield_3144909
-Wizard - https://luizmelo.itch.io/evil-wizard-2
-DOT icon - https://foozlecc.itch.io/pixel-magic-sprite-effects
-Boss - https://darkpixel-kronovi.itch.io/undead-executioner
-Dodge - https://www.pixilart.com/art/cloak-of-levitation-94ae456bde8ff70
-Explosion - https://codemanu.itch.io/vfx-free-pack
-Font - https://vrtxrry.itch.io/dungeonfont
-Intro Background - https://edermunizz.itch.io/free-pixel-art-forest
-Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]
-Achievements Background - https://wall.alphacoders.com/big.php?i=621708
-Achievements Blank Medal Icon - https://www.pngitem.com/middle/bmmxxT_achievement-icon-transparent-hd-png-download/
-Achievements Gold Medal Icon - https://icon-icons.com/icon/champion-army-reward-achievement-badge-winner-gold-medal/225520
-Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais
-Stage Select Background - Self made using https://app.dungeonscrawl.com/
-Stage Select Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets (To be Added)
-Options Background - https://www.freepik.com/free-vector/medieval-castle-dungeon-wall-game-cartoon-vector_44156844.htm#query=dungeon%20background&position=3&from_view=keyword&track=ais
-Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394
-Options Checkmark - https://www.pngarts.com/explore/221110
-Skill Menu Health - https://www.pngwing.com/en/free-png-invqg
-Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/
-Skill - Blade Slash - https://lionildio.itch.io/wood-sword
-Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi
-Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game
-NormalStages Background - https://twitter.com/BloomtownGame/status/1445764502591467530
-Final Stage Background - https://mekhollandt.artstation.com/projects/N5EQ0d
+<p>Main Character - https://rvros.itch.io/animated-pixel-hero</p>
+<p>Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx</p>
+<p>Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy</p>
+<p>Fire Knight - https://chierit.itch.io/elementals-fire-knight</p>
+<p>Fire Knight Shield - https://www.flaticon.com/free-icon/shield_3144909</p>
+<p>Wizard - https://luizmelo.itch.io/evil-wizard-2</p>
+<p>DOT icon - https://foozlecc.itch.io/pixel-magic-sprite-effects</p>
+<p>Boss - https://darkpixel-kronovi.itch.io/undead-executioner</p>
+<p>Dodge - https://www.pixilart.com/art/cloak-of-levitation-94ae456bde8ff70</p>
+<p>Explosion - https://codemanu.itch.io/vfx-free-pack</p>
+<p>Font - https://vrtxrry.itch.io/dungeonfont</p>
+<p>Intro Background - https://edermunizz.itch.io/free-pixel-art-forest</p>
+<p>Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]</p>
+<p>Achievements Background - https://wall.alphacoders.com/big.php?i=621708</p>
+<p>Achievements Blank Medal Icon - https://www.pngitem.com/middle/bmmxxT_achievement-icon-transparent-hd-png-download/</p>
+<p>Achievements Gold Medal Icon - https://icon-icons.com/icon/champion-army-reward-achievement-badge-winner-gold-medal/225520</p>
+<p>Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais</p>
+<p>Stage Select Background - Self made using https://app.dungeonscrawl.com/</p>
+<p>Stage Select Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets </p>
+<p>Options Background - https://www.freepik.com/free-vector/medieval-castle-dungeon-wall-game-cartoon-vector_44156844.htm#query=dungeon%20background&position=3&from_view=keyword&track=ais</p>
+<p>Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394</p>
+<p>Options Checkmark - https://www.pngarts.com/explore/221110</p>
+<p>Skill Menu Health - https://www.pngwing.com/en/free-png-invqg</p>
+<p>Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/</p>
+<p>Skill - Blade Slash - https://lionildio.itch.io/wood-sword</p>
+<p>Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi</p>
+<p>Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game</p>
+<p>NormalStages Background - https://twitter.com/BloomtownGame/status/1445764502591467530</p>
+<p>Final Stage Background - https://mekhollandt.artstation.com/projects/N5EQ0d</p>
+
 
 
 Ideas:
