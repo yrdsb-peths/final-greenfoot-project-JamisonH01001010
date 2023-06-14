@@ -12,6 +12,7 @@
 
 <h3>Sources:</h3>
 <p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon </p>
+<p>Attack Icon - https://icons8.com/icon/16672/sword
 <p>Main Character - https://rvros.itch.io/animated-pixel-hero</p>
 <p>Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx</p>
 <p>Skeleton, Goblin - https://luizmelo.itch.io/monsters-creatures-fantasy</p>
