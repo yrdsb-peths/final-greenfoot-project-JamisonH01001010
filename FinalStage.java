@@ -25,7 +25,7 @@ public class FinalStage extends World
     Magic m = new Magic();
     Dodge d = new Dodge();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar bossHP = new HealthBar(300); // bossHP = 300
+    HealthBar bossHP = new HealthBar(800); // bossHP = 800
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
@@ -230,15 +230,15 @@ public class FinalStage extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Boss.setIdle(false);
-                    if(bossHP.getCurrentHP() <= 200){
+                    if(bossHP.getCurrentHP() <= 400){
                         removeObject(BS1);
                         bossATK = 70;
                     }
-                    if(bossHP.getCurrentHP() <= 100){
+                    if(bossHP.getCurrentHP() <= 200){
                         removeObject(BS2);
                         bossATK = 90;
                     }
-                    if(bossHP.getCurrentHP() <= 50){
+                    if(bossHP.getCurrentHP() <= 100){
                         removeObject(BS3);
                         bossATK = 125;
                     }

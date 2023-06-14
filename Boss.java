@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boss extends Actor
 {
-    // Stats: HP = 300, ATK = 50
+    // Stats: HP = 800, ATK = 50
     
     GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animaations of death
     GreenfootImage[] bossAttack = new GreenfootImage[13];

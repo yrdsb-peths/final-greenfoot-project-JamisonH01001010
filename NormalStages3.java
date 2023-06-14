@@ -21,7 +21,7 @@ public class NormalStages3 extends World
     StunSmash ss2 = new StunSmash(); // stun indicator
     Magic m = new Magic(); // DOT indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar wizardHP = new HealthBar(70); // WizardHP = 70
+    HealthBar wizardHP = new HealthBar(80); // WizardHP = 80
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
