@@ -105,8 +105,6 @@ public class NormalStages2 extends World
                 pause--;
             }
             if(pause == 0){
-                s2Passed = true;
-                Level2.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
@@ -115,6 +113,8 @@ public class NormalStages2 extends World
                     addObject(s2Clear1, 610, 580);
                     addObject(s2Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
+                    s2Passed = true;
+                    Level2.setPassed(true);
                     returnHome();
                 }
                 if(s2Fail){
@@ -173,7 +173,7 @@ public class NormalStages2 extends World
                         switchTurn();
                         pause = 100;
                     }
-                    if(goblinHP.getCurrentHP() == 0){ // change
+                    if(goblinHP.getCurrentHP() == 0){ 
                         Goblin.setIdleControl(false);
                         Goblin.setDeathControl(true);
                         s2Over = true;
@@ -189,6 +189,7 @@ public class NormalStages2 extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Goblin.setIdleControl(false);
+                    Goblin.setAttackControl(true);
                     removeObject(ss2);
                     if(shieldAmount != 0){
                         mcHP.loseHP((int)(4 * ((100 - shieldAmount) / (double) 100)));

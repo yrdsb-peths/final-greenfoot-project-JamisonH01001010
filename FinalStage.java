@@ -22,8 +22,10 @@ public class FinalStage extends World
     Barrier b2 = new Barrier(); // shield indicator
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    Magic m = new Magic();
+    Dodge d = new Dodge();
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar bossHP = new HealthBar(300); // bossHP = 300
+    HealthBar bossHP = new HealthBar(800); // bossHP = 800
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
@@ -34,9 +36,10 @@ public class FinalStage extends World
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
     GameFont s5Clear1 = new GameFont("Stage 5 CLEAR!", 1000, 500);
     GameFont s5Clear2 = new GameFont("Tokens + 50", 500, 500);
+    GameFont s5Clear3 = new GameFont("[Congratulatory Screen]", 500 , 400);
     GameFont s5Fail1 = new GameFont("Stage 5 Fail | Try Again", 1000, 700);
     GameFont s5Fail2 = new GameFont("Tokens + 0", 500, 500);
-    GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
+    GameFont returnHome = new GameFont("RETURN HOME", 500, 270);
     
     // Game Variables
     int bossATK = 50; // bossATK = 50
@@ -47,15 +50,17 @@ public class FinalStage extends World
     int stunTurns = 0;
     int randomStun = 0;
     int bossAction = 0;
-    boolean phase1 = false;
-    boolean phase2 = false;
-    boolean phase3 = false;
-    
+    int dodgeAction = 0;
+    int dodgeTurns = 0;
+    int DOTTurns = 0;
+
     // Stage Variables
     static boolean s5Passed = false;
+    int s5ClearTimes = 1; /////
     boolean s5Over = false;
     boolean s5Clear = false;
     boolean s5Fail = false;
+    
     public FinalStage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -80,7 +85,7 @@ public class FinalStage extends World
         addObject(BS1, 675, 330);
         addObject(BS2, 675, 380);
         addObject(BS3, 675, 430);
-        
+
         // Animations
         MainCharacter.setIdleControl(true);
         Boss.setIdle(true);
@@ -90,12 +95,20 @@ public class FinalStage extends World
         turn = true;
         stun = false;
         stunTurns = 0;
+<<<<<<< HEAD
         bossATK = 50; // will change after consuming the summons
         phase1 = false;
         phase2 = false;
         phase3 = false;
         s5Over = false;
         s5Clear = false;
+=======
+        bossATK = 50;
+        DOTTurns = 0;
+        dodgeTurns = 0;
+        s5Over = false; 
+        s5Clear = false; 
+>>>>>>> 74fd672aec704e7881ae1948993b8057e9659301
         s5Fail = false;
     }
     
@@ -121,17 +134,24 @@ public class FinalStage extends World
                 pause--;
             }
             if(pause == 0){
-                s5Passed = true;
-                Level5.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
                 if(s5Clear){
                     addObject(m1, 400, 300);
                     addObject(s5Clear1, 610, 580);
-                    addObject(s5Clear2, 530, 650);
-                    addObject(returnHome, 565, 680);
-                    returnHome();
+                    s5Passed = true;
+                    Level5.setPassed(true);
+                    if(s5ClearTimes == 1){
+                        addObject(s5Clear2, 530, 680);
+                        addObject(s5Clear3, 410, 520);
+                        Achievements.completeAch1();
+                        endingScreen();
+                    } else {
+                        addObject(s5Clear2, 530, 650);
+                        addObject(returnHome, 360, 480);
+                        returnHome();
+                    }
                 }
                 if(s5Fail){
                     addObject(m1, 400, 300);
@@ -159,17 +179,26 @@ public class FinalStage extends World
                 }
                 if(pause == 0){
                     Boss.setIdle(true);
-                    // Repeat setting if there is stun and skeleton can't act
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
-                        bossHP.loseHP(Attack.getAtkCount());
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
+                            bossHP.loseHP(Attack.getAtkCount());
+                        }
+                        applyDodge();
                         switchTurn();
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(b)){
                         MainCharacter.setIdleControl(false);
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
+                        }
+                        applyDodge();
                         addObject(b2, 250, 480);
                         shieldAmount = mc.shield();
                         Integer shieldAmountv2 = shieldAmount;
@@ -181,7 +210,12 @@ public class FinalStage extends World
                     if(Greenfoot.mouseClicked(ss1)){
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
-                        bossHP.loseHP((int) (Attack.getAtkCount() * 0.2));
+                        applyDOT();
+                        if(dodgeTurns == 0){
+                            removeObject(d);
+                            bossHP.loseHP((int) (Attack.getAtkCount() * 0.2));
+                        }
+                        applyDodge();
                         randomStun = Greenfoot.getRandomNumber(2);
                         if(randomStun == 1){
                             applyStun();
@@ -194,6 +228,7 @@ public class FinalStage extends World
                         Boss.setDeath(true); 
                         s5Over = true;
                         s5Clear = true;
+                        s5ClearTimes++;
                         CoinTracker.addCoinCount(50);
                         pause = 100;
                     }
@@ -205,6 +240,7 @@ public class FinalStage extends World
                 if(pause == 0){
                     MainCharacter.setIdleControl(true);
                     Boss.setIdle(false);
+<<<<<<< HEAD
                     
                     
                     // Randomize
@@ -241,9 +277,66 @@ public class FinalStage extends World
                         removeObject(b2);
                     } else {
                         mcHP.loseHP(50); // BossATK = 50
+=======
+                    if(bossHP.getCurrentHP() <= 400){
+                        removeObject(BS1);
+                        bossATK = 70;
                     }
-                    
-                    
+                    if(bossHP.getCurrentHP() <= 200){
+                        removeObject(BS2);
+                        bossATK = 90;
+                    }
+                    if(bossHP.getCurrentHP() <= 100){
+                        removeObject(BS3);
+                        bossATK = 125;
+                    }
+                    bossAction = Greenfoot.getRandomNumber(100);
+                    // Roll 0-24 [25% chance] = dodge: 70% chance to dodge next attack for 2 turns
+                    // Roll 25-39 [15% chance] = attack 1: Deal 100% of ATK dmg + DOT of 25% ATK 2 turns
+                    // Roll 40-49 [10% chance] = attack 1: Deal 100% of ATK dmg + stun
+                    // Roll 50-99 [50% chance] = attack 1: Deal 100% of ATK dmg
+                    removeObject(ss2);
+                    removeObject(SA);
+                    removeObject(b2);
+                    if(bossAction <= 24){
+                        Boss.setDodge(true);
+                        dodgeAction = Greenfoot.getRandomNumber(9);
+                        // Roll 0-6 [70% chance] : dodge is true
+                        if(dodgeAction <= 6){
+                            dodgeTurns = 2;
+                            addObject(d, 610, 260);
+                        }
+                    } else if (bossAction <= 39){ // DOT
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+                        addObject(m, 215, 285);
+                        DOTTurns = 2;
+                    } else if (bossAction <= 49){ // STUN
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+                        addObject(m, 215, 290);
+                        stunTurns = 1;
+                    } else {
+                        Boss.setAttack(true);
+                        if(shieldAmount != 0){
+                            mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
+                            removeObject(SA);
+                            removeObject(b2);
+                        } else {
+                            mcHP.loseHP(bossATK);
+                        }
+>>>>>>> 74fd672aec704e7881ae1948993b8057e9659301
+                    }
                     shieldAmount = 0;
                     switchTurn();
                     pause = 100;
@@ -268,10 +361,32 @@ public class FinalStage extends World
         addObject(ss2, 610, 460);
     }
     
+    public void applyDOT(){
+        if(DOTTurns != 0){
+            mcHP.loseHP((int) (bossATK*0.25));
+            DOTTurns--;
+        } else {
+            removeObject(m);
+        }
+    }
+    
+    public void applyDodge(){
+        if(dodgeTurns != 0){
+            dodgeTurns--;
+        } 
+    }
+    
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
+        }
+    }
+    
+    public void endingScreen(){
+        if(Greenfoot.mouseClicked(s5Clear3)){
+            Ending e = new Ending();
+            Greenfoot.setWorld(e);
         }
     }
     

@@ -108,5 +108,12 @@ public class SkillMenu extends World
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
+        ach2Completion();
+    }
+    
+    public void ach2Completion(){
+        if(CoinTracker.getCoinCount() >= 500){
+            Achievements.completeAch2();
+        }
     }
 }

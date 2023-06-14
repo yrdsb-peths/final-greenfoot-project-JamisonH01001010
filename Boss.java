@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boss extends Actor
 {
-    // Stats: HP = 300, ATK = 50
+    // Stats: HP = 800, ATK = 50
     
     GreenfootImage[] bossAppear = new GreenfootImage[18]; // the reverse animaations of death
     GreenfootImage[] bossAttack = new GreenfootImage[13];
@@ -109,15 +109,15 @@ public class Boss extends Actor
         if(appearIndex >= 0){
             setImage(bossAppear[appearIndex]);
         } else {
-            appear = false;
             appearIndex = 0;
+            setAppear(false);
         }
         
         appearIndex--; 
     }
     
     public void attackAnimation(){
-        if(attackTimer.millisElapsed() < 150){
+        if(attackTimer.millisElapsed() < 100){
             return;
         }
         
@@ -134,7 +134,7 @@ public class Boss extends Actor
     }
     
     public void dodgeAnimation(){
-        if(dodgeTimer.millisElapsed() < 150){
+        if(dodgeTimer.millisElapsed() < 100){
             return;
         }
         
@@ -163,7 +163,7 @@ public class Boss extends Actor
     }
     
     public void deathAnimation(){
-        if(deathTimer.millisElapsed() < 150){
+        if(deathTimer.millisElapsed() < 100){
             return;
         }
         

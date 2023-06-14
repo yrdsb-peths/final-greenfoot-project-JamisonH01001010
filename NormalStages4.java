@@ -21,7 +21,7 @@ public class NormalStages4 extends World
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
-    HealthBar fireKnightHP = new HealthBar(120); // FireKnightHP = 120
+    HealthBar fireKnightHP = new HealthBar(150); // FireKnightHP = 150
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
     Pause p1 = new Pause();
@@ -109,8 +109,6 @@ public class NormalStages4 extends World
                 pause--;
             }
             if(pause == 0){
-                s4Passed = true;
-                Level4.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
@@ -119,6 +117,8 @@ public class NormalStages4 extends World
                     addObject(s4Clear1, 610, 580);
                     addObject(s4Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
+                    s4Passed = true;
+                    Level4.setPassed(true);
                     returnHome();
                 }
                 if(s4Fail){

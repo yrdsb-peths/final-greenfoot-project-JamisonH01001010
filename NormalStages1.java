@@ -48,6 +48,9 @@ public class NormalStages1 extends World
     boolean s1Over = false;
     boolean s1Clear = false;
     boolean s1Fail = false;
+    
+    // Achievement Variable
+    static int timesCleared = 0; // reward ach4 for beating stage 1 10 times
     public NormalStages1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -105,16 +108,19 @@ public class NormalStages1 extends World
                 pause--;
             }
             if(pause == 0){
-                s1Passed = true;
-                Level1.setPassed(true);
                 removeObject(a);
                 removeObject(b);
                 removeObject(ss1);
+                if(timesCleared >= 10){
+                    Achievements.completeAch4();
+                }
                 if(s1Clear){
                     addObject(m1, 400, 300);
                     addObject(s1Clear1, 610, 580);
                     addObject(s1Clear2, 530, 650);
                     addObject(returnHome, 565, 680);
+                    s1Passed = true;
+                    Level1.setPassed(true);
                     returnHome();
                 }
                 if(s1Fail){
@@ -178,6 +184,7 @@ public class NormalStages1 extends World
                         Skeleton.setDeathControl(true);
                         s1Over = true;
                         s1Clear = true;
+                        timesCleared++;
                         CoinTracker.addCoinCount(10);
                         pause = 100;
                     }

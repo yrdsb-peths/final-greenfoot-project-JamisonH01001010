@@ -9,11 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Achievements extends World
 {
     // Setting Achievement completion
-    private boolean finalBoss1 = false; // Hidden: Defeat Final Boss
-    private boolean hoarder2 = false; // Hidden: Store 100 tokens at once
-    private boolean luckySlime3 = false; // Hidden: 1/100 chance to get by opening achievements
-    private boolean bully4 = false; // Hidden: Defeat Stage 1-1 10 times
-    private boolean chest5 = false; // Hidden: Click on the background chest in the Achievements page
+    private static boolean finalBoss1 = false; // Hidden: Defeat Final Boss
+    private static boolean hoarder2 = false; // Hidden: Store 100 tokens at once
+    private static boolean lucky3 = false; // Hidden: 1/100 chance to get by opening achievements
+    private static boolean bully4 = false; // Hidden: Defeat Stage 1-1 10 times
+    private static boolean chest5 = false; // Hidden: Click on the background chest in the Achievements page
     // Achievement Background
     GreenfootImage achBG = new GreenfootImage("621708.jpg");
     // Object instantiations
@@ -40,6 +40,9 @@ public class Achievements extends World
     GameFont ach4 = new GameFont("Bullying the Weak", 450);
     GameFont ach5 = new GameFont("???", 450);
     GameFont achText = new GameFont("Achievements", 700);
+    // Achievements
+    GameFont chestText = new GameFont(" ", 500, 200); // blank text, if clicked gives ach5
+    static int luckyNum = 0; // will be randomized every entry of achievements screen
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -58,6 +61,7 @@ public class Achievements extends World
         addObject(bm3, 190, 330);
         addObject(bm4, 190, 400);
         addObject(bm5, 190, 470);
+        addObject(chestText, 180, 620);
         
         // Text
         addObject(ach1, 390, 370); 
@@ -69,6 +73,7 @@ public class Achievements extends World
         
         // Add HomeButton
         addObject(h, 620, 120);
+        
     }
     
     public void act(){
@@ -76,47 +81,57 @@ public class Achievements extends World
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
-        h.isClicked();
+        if(Greenfoot.mouseClicked(chestText)){
+            completeAch5();
+        }
         completeAchievements();
     }
     
     private void completeAchievements(){
-        Achievements achWorld = new Achievements();
         if(finalBoss1){
-            achWorld.removeObject(bm1);
+            removeObject(bm1);
             addObject(gm1, 190, 190);
         }
         if(hoarder2){
-            achWorld.removeObject(bm2);
+            removeObject(bm2);
             addObject(gm2, 190, 260);
         }
-        if(luckySlime3){
-            achWorld.removeObject(bm3);
+        if(lucky3){
+            removeObject(bm3);
             addObject(gm3, 190, 330);
         }
         if(bully4){
-            achWorld.removeObject(bm4);
+            removeObject(bm4);
             addObject(gm4, 190, 400);
         }
         if(chest5){
-            achWorld.removeObject(bm5);
+            removeObject(bm5);
             addObject(gm5, 190, 470);
         }
     }
     
-    public void completeAch1(){
+    public static void lucky(){
+        // Ach3
+        // With every opening of achievement screen, 1 in 100 chance to get ach3
+        luckyNum = Greenfoot.getRandomNumber(99);
+        if(luckyNum == 14){
+            completeAch3();
+        }
+    }
+    
+    public static void completeAch1(){
         finalBoss1 = true;
     }
-    public void completeAch2(){
+    public static void completeAch2(){
         hoarder2 = true;
     }
-    public void completeAch3(){
-        luckySlime3 = true;
+    public static void completeAch3(){
+        lucky3 = true;
     }
-    public void completeAch4(){
+    public static void completeAch4(){
         bully4 = true;
     }
-    public void completeAch5(){
+    public static void completeAch5(){
         chest5 = true;
     }
 }
