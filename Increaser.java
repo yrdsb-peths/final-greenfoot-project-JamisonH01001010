@@ -1,18 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Increaser here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The plus icon to increase HP or ATK in the skill Menu
  */
 public class Increaser extends Actor
 {
+    // Increaser icon
     GreenfootImage plus = new GreenfootImage("increase.png");
-    GameFont a = new GameFont("test", 500);
+    /**
+     * Constructor: Set the image of the increaser icon
+     */
     public Increaser(){
         plus.scale(30, 30);
         setImage(plus);
-        
     }
 }

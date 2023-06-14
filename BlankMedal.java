@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The icon if an achievement is not completed
+ * The medal icon if an achievement is not completed
  */
 public class BlankMedal extends Actor
 {

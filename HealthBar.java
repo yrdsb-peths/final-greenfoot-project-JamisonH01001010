@@ -1,19 +1,23 @@
 import greenfoot.*;
 
 /**
- * Write a description of class HealthBar here.
+ * The healthbar for the user and enemy, scaling off maxHP
  * 
- * @author https://www.youtube.com/watch?v=oJHP18bhLT0 (Inspired from Jim Stewart)
- * @version (a version number or a date)
+ * @author Inspired from Jim Stewart
+ * Link: https://www.youtube.com/watch?v=oJHP18bhLT0
  */
 
 public class HealthBar extends Actor {
+    // Health variables
     private int maxHP;
     private int currentHP;
     private int barWidth;
     private int barHeight;
     private GreenfootImage img;
-
+    /**
+     * Constructor: Create a healthbar scaling off inputed maxHP and set dimensions
+     * @param1 The maxHP of the actor the HealthBar is for 
+     */
     public HealthBar(int maxHP) {
         this.maxHP = maxHP;
         currentHP = maxHP;
@@ -23,7 +27,9 @@ public class HealthBar extends Actor {
 
         updateHealthBar();
     }
-
+    /**
+     * Update the health bar off the currentHP vs. maxHP
+     */
     public void updateHealthBar() {
         img.clear();
 
@@ -40,7 +46,10 @@ public class HealthBar extends Actor {
 
         setImage(img);
     }
-
+    /**
+     * Make the healthbar lose a specified HP and update it to show the new HP
+     * @param1 the amount of HP to be lost
+     */
     public void loseHP(int a) {
         currentHP -= a;
         if (currentHP < 0) {
@@ -48,7 +57,10 @@ public class HealthBar extends Actor {
         }
         updateHealthBar();
     }
-    
+    /**
+     * Get the currentHP of the actor
+     * @return currentHP of the actor
+     */
     public int getCurrentHP(){
         return currentHP;
     }

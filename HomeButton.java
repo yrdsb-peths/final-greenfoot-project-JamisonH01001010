@@ -1,24 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HomeButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The home button icon to link back to the title screen
  */
 public class HomeButton extends Actor
 {
+    // HomeButton icon
     GreenfootImage homeButton = new GreenfootImage("home-button.png");
-    
+    /**
+     * Constructor: Set the image of the home button icon
+     */
     public HomeButton(){
         homeButton.scale(80, 80);
         setImage(homeButton);
-    }
-    
-    public void isClicked(){
-        if(Greenfoot.mouseClicked(this)){
-            TitleScreen t = new TitleScreen();
-            Greenfoot.setWorld(t);
-        }
     }
 }
