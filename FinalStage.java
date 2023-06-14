@@ -36,9 +36,10 @@ public class FinalStage extends World
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
     GameFont s5Clear1 = new GameFont("Stage 5 CLEAR!", 1000, 500);
     GameFont s5Clear2 = new GameFont("Tokens + 50", 500, 500);
+    GameFont s5Clear3 = new GameFont("[Congratulatory Screen]", 500 , 400);
     GameFont s5Fail1 = new GameFont("Stage 5 Fail | Try Again", 1000, 700);
     GameFont s5Fail2 = new GameFont("Tokens + 0", 500, 500);
-    GameFont returnHome = new GameFont("RETURN HOME", 900, 500);
+    GameFont returnHome = new GameFont("RETURN HOME", 500, 270);
     
     // Game Variables
     int bossATK = 50; // bossATK = 50
@@ -56,6 +57,7 @@ public class FinalStage extends World
     
     // Stage Variables
     static boolean s5Passed = false;
+    int s5ClearTimes = 0;
     boolean s5Over = false;
     boolean s5Clear = false;
     boolean s5Fail = false;
@@ -83,7 +85,7 @@ public class FinalStage extends World
         addObject(BS1, 675, 330);
         addObject(BS2, 675, 380);
         addObject(BS3, 675, 430);
-        
+
         // Animations
         MainCharacter.setIdleControl(true);
         Boss.setIdle(true);
@@ -96,8 +98,8 @@ public class FinalStage extends World
         bossATK = 50;
         DOTTurns = 0;
         dodgeTurns = 0;
-        s5Over = false;
-        s5Clear = false;
+        s5Over = false; 
+        s5Clear = false; 
         s5Fail = false;
     }
     
@@ -131,9 +133,17 @@ public class FinalStage extends World
                 if(s5Clear){
                     addObject(m1, 400, 300);
                     addObject(s5Clear1, 610, 580);
-                    addObject(s5Clear2, 530, 650);
-                    addObject(returnHome, 565, 680);
-                    returnHome();
+                    Integer s = s5ClearTimes;
+                    System.out.println(s.toString());
+                    if(s5ClearTimes == 1){
+                        addObject(s5Clear2, 530, 680);
+                        addObject(s5Clear3, 410, 520);
+                        endingScreen();
+                    } else {
+                        addObject(s5Clear2, 530, 650);
+                        addObject(returnHome, 360, 480);
+                        returnHome();
+                    }
                 }
                 if(s5Fail){
                     addObject(m1, 400, 300);
@@ -210,6 +220,7 @@ public class FinalStage extends World
                         Boss.setDeath(true); 
                         s5Over = true;
                         s5Clear = true;
+                        s5ClearTimes++;
                         CoinTracker.addCoinCount(50);
                         pause = 100;
                     }
@@ -322,6 +333,13 @@ public class FinalStage extends World
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
+        }
+    }
+    
+    public void endingScreen(){
+        if(Greenfoot.mouseClicked(s5Clear3)){
+            Ending e = new Ending();
+            Greenfoot.setWorld(e);
         }
     }
     
