@@ -11,7 +11,7 @@
 <p>User can grind for higher stats by repeating stages for tokens, and this is how the game should be played as every stage the enemy's stats (HP and ATK) will increase.</p>
 
 <h3>Sources:</h3>
-<p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - Menu, MenuIcons, MenuIcons2, CoinTracker, HomeButton, Help, MiniIcon </p>
+<p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - CoinTracker, Continue, HomeButton, Help, MiniIcon, Menu, MenuIcons, MenuIcons2, Pause </p>
 <p>Attack Icon - https://icons8.com/icon/16672/sword
 <p>Main Character - https://rvros.itch.io/animated-pixel-hero</p>
 <p>Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx</p>
@@ -20,7 +20,7 @@
 <p>Fire Knight Shield - https://www.flaticon.com/free-icon/shield_3144909</p>
 <p>Wizard - https://luizmelo.itch.io/evil-wizard-2</p>
 <p>DOT icon - https://foozlecc.itch.io/pixel-magic-sprite-effects</p>
-<p>Boss - https://darkpixel-kronovi.itch.io/undead-executioner</p>
+<p>Boss & Boss Summon - https://darkpixel-kronovi.itch.io/undead-executioner</p>
 <p>Dodge - https://www.pixilart.com/art/cloak-of-levitation-94ae456bde8ff70</p>
 <p>Explosion - https://codemanu.itch.io/vfx-free-pack</p>
 <p>Font - https://vrtxrry.itch.io/dungeonfont</p>
@@ -31,10 +31,10 @@
 <p>Achievements Gold Medal Icon - https://icon-icons.com/icon/champion-army-reward-achievement-badge-winner-gold-medal/225520</p>
 <p>Title Screen Background - https://www.freepik.com/premium-vector/dungeon-long-medieval-castle-corridor-with-torches-interior-ancient-palace-with-stone-arch_23061396.htm#query=dungeon%20background&position=6&from_view=keyword&track=ais</p>
 <p>Stage Select Background - Self made using https://app.dungeonscrawl.com/</p>
-<p>Stage Select Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets </p>
+<p>Level Icons - https://phobos.itch.io/mini-select-stage-gui-assets </p>
 <p>Options Background - https://www.freepik.com/free-vector/medieval-castle-dungeon-wall-game-cartoon-vector_44156844.htm#query=dungeon%20background&position=3&from_view=keyword&track=ais</p>
-<p>Options Checkmark Square - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394</p>
-<p>Options Checkmark - https://www.pngarts.com/explore/221110</p>
+<p>BlankSquare (for checkmark) - https://www.flaticon.com/free-icon/rounded-black-square-shape_25394</p>
+<p>Checkmark - https://www.pngarts.com/explore/221110</p>
 <p>Skill Menu Health - https://www.pngwing.com/en/free-png-invqg</p>
 <p>Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/</p>
 <p>Skill - Blade Slash - https://lionildio.itch.io/wood-sword</p>
