@@ -40,6 +40,9 @@ public class Achievements extends World
     GameFont ach4 = new GameFont("Bullying the Weak", 450);
     GameFont ach5 = new GameFont("???", 450);
     GameFont achText = new GameFont("Achievements", 700);
+    // Achievements
+    GameFont chestText = new GameFont(" ", 500, 200); // blank text, if clicked gives ach5
+    int lucky = 0;
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -58,6 +61,7 @@ public class Achievements extends World
         addObject(bm3, 190, 330);
         addObject(bm4, 190, 400);
         addObject(bm5, 190, 470);
+        addObject(chestText, 180, 620);
         
         // Text
         addObject(ach1, 390, 370); 
@@ -69,6 +73,13 @@ public class Achievements extends World
         
         // Add HomeButton
         addObject(h, 620, 120);
+        
+        // Ach3
+        // With every opening of achievement screen, 1 in 100 chance to get ach3
+        lucky = Greenfoot.getRandomNumber(99);
+        if(lucky == 14){
+            completeAch3();
+        }
     }
     
     public void act(){
@@ -76,7 +87,9 @@ public class Achievements extends World
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
-        h.isClicked();
+        if(Greenfoot.mouseClicked(chestText)){
+            completeAch5();
+        }
         completeAchievements();
     }
     
