@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Stage4 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The final boss battle of the game
  */
 public class FinalStage extends World
 {
@@ -12,24 +9,36 @@ public class FinalStage extends World
     GreenfootImage finalBG = new GreenfootImage("final-stageBG.jpg");
     
     // Object instantiations  
+    // MainCharacter
     MainCharacter mc = new MainCharacter();
+    // Boss
     Boss boss = new Boss();
+    // BossSummon
     BossSummon BS1 = new BossSummon();
     BossSummon BS2 = new BossSummon();
     BossSummon BS3 = new BossSummon();
+    // Attack
     Attack a = new Attack();
+    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
+    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    // Magic
     Magic m = new Magic();
+    // Dodge
     Dodge d = new Dodge();
+    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar bossHP = new HealthBar(800); // bossHP = 800
+    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
+    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
+    // HomeButton
     HomeButton h = new HomeButton();
     
     // Text
@@ -61,11 +70,15 @@ public class FinalStage extends World
     boolean s5Clear = false;
     boolean s5Fail = false;
     
+    /**
+     * Constructor: Set inital state for the final stage
+     */
     public FinalStage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Set FinalStage background
         finalBG.scale(800, 600);
         setBackground(finalBG);
         
@@ -102,7 +115,10 @@ public class FinalStage extends World
         s5Clear = false; 
         s5Fail = false;
     }
-    
+    /**
+     * The main game loop of the final stage, along with detecting whether the user
+     * has passed or failed the stage
+     */
     public void act(){
         if(!s5Over){
             s5();
@@ -155,7 +171,9 @@ public class FinalStage extends World
         }
         
     }
-    
+    /**
+     * The main logic of stage 5, tracking turns, skills, various effects etc.
+     */
     public void s5(){
         if(stunTurns > 0) {
             stunTurns--;
@@ -303,16 +321,22 @@ public class FinalStage extends World
             }
         }
     }
-    
+    /**
+     * Change the current turn to the opposite
+     */
     public void switchTurn() {
         turn = !turn;
     }
-
+    /**
+     * Apply a 1 turn stun and add a stun icon 
+     */
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 610, 460);
     }
-    
+    /**
+     * Apply the damage from the DOT and remove the DOT icon when the DOT is over
+     */
     public void applyDOT(){
         if(DOTTurns != 0){
             mcHP.loseHP((int) (bossATK*0.25));
@@ -321,27 +345,36 @@ public class FinalStage extends World
             removeObject(m);
         }
     }
-    
+    /**
+     * Reduce the number of dodge turns by 1
+     */
     public void applyDodge(){
         if(dodgeTurns != 0){
             dodgeTurns--;
         } 
     }
-    
+    /**
+     * Return the user to the title screen
+     */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
     }
-    
+    /**
+     * Send the user to the ending screen
+     */
     public void endingScreen(){
         if(Greenfoot.mouseClicked(s5Clear3)){
             Ending e = new Ending();
             Greenfoot.setWorld(e);
         }
     }
-    
+    /**
+     * Return the whether the user has passed stage 5 before
+     * @return if user has passed stage
+     */
     public static boolean getS5Passed(){
         return s5Passed;
     }

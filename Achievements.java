@@ -41,8 +41,7 @@ public class Achievements extends World
     GameFont chestText = new GameFont(" ", 500, 200); // blank text, if clicked gives ach5
     static int luckyNum = 0; // will be randomized every entry of achievements screen
     /**
-     * Constructor: Gets called when the achievements screen is called
-     * Sets the background and icons of the achievements screen
+     * Constructor: Sets the background, text, and icons of the achievements screen
      */
     public Achievements()
     {    
@@ -76,7 +75,7 @@ public class Achievements extends World
         addObject(h, 620, 120);
     }
     /**
-     * Act Method: Continously check if user has pressed certain icons and completes achievements
+     * Continously check if user has pressed certain icons and completes achievements
      * h: HomeButton that returns user home
      * chestText: Rewards user achievement 5
      */

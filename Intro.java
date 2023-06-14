@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Intro here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The intro screen when the user first starts the game
  */
 public class Intro extends World
 {
@@ -34,6 +31,9 @@ public class Intro extends World
     Continue c5 = new Continue(50);
     Continue c6 = new Continue(50);
     Continue c7 = new Continue(50);
+    /**
+     * Constructor: Set the inital state of the intro screen 
+     */
     public Intro()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -48,6 +48,8 @@ public class Intro extends World
         
         // Add MainCharacter
         addObject(m, 200, 500);
+        
+        // Animations
         MainCharacter.setIdleControl(false);
         MainCharacter.setNoSwordControl(true);
         
@@ -56,9 +58,10 @@ public class Intro extends World
         
         // Continue 
         addObject(c1, 760, 190);
-    
     }
-    
+    /**
+     * The storyline of the game that advances upon user pressing the continue button
+     */
     public void act(){
         // After each press of the continue button a new "part" of the intro starts
         // Boss.set methods are for setting the bosses multiple animations

@@ -12,19 +12,28 @@ public class NormalStages1 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
+    // MainCharacter
     MainCharacter mc = new MainCharacter();
+    // Skeleton
     Skeleton s = new Skeleton();
+    // Attack
     Attack a = new Attack();
+    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
+    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
+    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar skeletonHP = new HealthBar(20); // SkeletonHP = 20
+    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
+    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
+    // HomeButton
     HomeButton h = new HomeButton();
     
     // Text
@@ -51,11 +60,15 @@ public class NormalStages1 extends World
     
     // Achievement Variable
     static int timesCleared = 0; // reward ach4 for beating stage 1 10 times
+    /**
+     * Constructor: Set the inital conditions of stage 1
+     */
     public NormalStages1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Set Stage 1 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
@@ -85,7 +98,10 @@ public class NormalStages1 extends World
         s1Clear = false;
         s1Fail = false;
     }
-    
+    /**
+     * The main game loop of stage 1, along with detecting whether the user
+     * has passed or failed the stage
+     */
     public void act(){
         if(!s1Over){
             s1();
@@ -134,7 +150,9 @@ public class NormalStages1 extends World
         }
         
     }
-    
+    /**
+     * The main logic of stage 1, tracking turns, skills, various effects etc.
+     */
     public void s1(){
         if(stunTurns > 0) {
             stunTurns--;
@@ -219,23 +237,32 @@ public class NormalStages1 extends World
             }
         }
     }
-    
+    /**
+     * Change the current turn to the opposite
+     */
     public void switchTurn() {
         turn = !turn;
     }
-
+    /**
+     * Apply a 1 turn stun and add a stun icon 
+     */
     public void applyStun() {
         stunTurns = 1;
         addObject(ss2, 590, 430);
     }
-    
+    /**
+     * Return the user to the title screen
+     */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
     }
-    
+    /**
+     * Return the whether the user has passed stage 1 before
+     * @return if user has passed stage
+     */
     public static boolean getS1Passed(){
         return s1Passed;
     }
