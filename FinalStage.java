@@ -82,6 +82,7 @@ public class FinalStage extends World
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGMFinalStage().playLoop();
         }
+        TitleScreen.getBGMFinalStage().setVolume(50);
         
         // Set FinalStage background
         finalBG.scale(800, 600);
@@ -128,12 +129,14 @@ public class FinalStage extends World
         if(!s5Over){
             s5();
             if(Greenfoot.mouseClicked(p1)){
+                SFX.getClick().play();
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
                 TitleScreen.getBGMFinalStage().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
+                SFX.getClick().play();
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
@@ -142,6 +145,7 @@ public class FinalStage extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
+                SFX.getClick().play();
                 TitleScreen.getBGMFinalStage().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -200,6 +204,7 @@ public class FinalStage extends World
                     Boss.setIdle(true);
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
+                        SFX.getNormalAttack().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
                         applyDOT();
@@ -212,6 +217,7 @@ public class FinalStage extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(b)){
+                        SFX.getMCBarrier().play();
                         MainCharacter.setIdleControl(false);
                         applyDOT();
                         if(dodgeTurns == 0){
@@ -227,6 +233,7 @@ public class FinalStage extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(ss1)){
+                        SFX.getMCStunSmash().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
                         applyDOT();
@@ -243,6 +250,7 @@ public class FinalStage extends World
                         pause = 100;
                     }
                     if(bossHP.getCurrentHP() == 0){
+                        SFX.getBossDeath().play();
                         Boss.setIdle(false);
                         Boss.setDeath(true); 
                         s5Over = true;
@@ -260,14 +268,17 @@ public class FinalStage extends World
                     MainCharacter.setIdleControl(true);
                     Boss.setIdle(false);
                     if(bossHP.getCurrentHP() <= 400){
+                        SFX.getBossConsumeSummon().play();
                         removeObject(BS1);
                         bossATK = 70;
                     }
                     if(bossHP.getCurrentHP() <= 200){
+                        SFX.getBossConsumeSummon().play();
                         removeObject(BS2);
                         bossATK = 90;
                     }
                     if(bossHP.getCurrentHP() <= 100){
+                        SFX.getBossConsumeSummon().play();
                         removeObject(BS3);
                         bossATK = 125;
                     }
@@ -280,6 +291,7 @@ public class FinalStage extends World
                     removeObject(SA);
                     removeObject(b2);
                     if(bossAction <= 24){
+                        SFX.getBossDodge().play();
                         Boss.setDodge(true);
                         dodgeAction = Greenfoot.getRandomNumber(9);
                         // Roll 0-6 [70% chance] : dodge is true
@@ -288,6 +300,7 @@ public class FinalStage extends World
                             addObject(d, 610, 260);
                         }
                     } else if (bossAction <= 39){ // DOT
+                        SFX.getBossAttack().play();
                         Boss.setAttack(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
@@ -299,6 +312,7 @@ public class FinalStage extends World
                         addObject(m, 215, 285);
                         DOTTurns = 2;
                     } else if (bossAction <= 49){ // STUN
+                        SFX.getBossAttack().play();
                         Boss.setAttack(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
@@ -307,7 +321,8 @@ public class FinalStage extends World
                         }
                         addObject(m, 215, 290);
                         stunTurns = 1;
-                    } else {
+                    } else { // normal boss attack
+                        SFX.getBossAttack().play();
                         Boss.setAttack(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(bossATK * ((100 - shieldAmount) / (double) 100)));
@@ -322,6 +337,7 @@ public class FinalStage extends World
                     pause = 100;
                 }
                 if(mcHP.getCurrentHP() == 0){
+                    SFX.getMCDeath().play();
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setDeathControl(true);
                     s5Over = true;
@@ -368,6 +384,7 @@ public class FinalStage extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            SFX.getClick().play();
             TitleScreen.getBGMFinalStage().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
@@ -378,6 +395,7 @@ public class FinalStage extends World
      */
     public void endingScreen(){
         if(Greenfoot.mouseClicked(s5Clear3)){
+            SFX.getClick().play();
             TitleScreen.getBGMFinalStage().stop();
             Ending e = new Ending();
             Greenfoot.setWorld(e);
