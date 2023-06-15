@@ -107,12 +107,14 @@ public class NormalStages1 extends World
         if(!s1Over){
             s1();
             if(Greenfoot.mouseClicked(p1)){
+                SFX.getClick().play();
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
                 TitleScreen.getBGMNormalStages().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
+                SFX.getClick().play();
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
@@ -121,6 +123,7 @@ public class NormalStages1 extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
+                SFX.getClick().play();
                 TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -176,6 +179,7 @@ public class NormalStages1 extends World
                     // Repeat setting if there is stun and skeleton can't act
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
+                        SFX.getNormalAttack().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
                         skeletonHP.loseHP(Attack.getAtkCount());
@@ -183,6 +187,7 @@ public class NormalStages1 extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(b)){
+                        SFX.getMCBarrier().play();
                         MainCharacter.setIdleControl(false);
                         addObject(b2, 250, 430);
                         shieldAmount = mc.shield();
@@ -193,6 +198,7 @@ public class NormalStages1 extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(ss1)){
+                        SFX.getMCStunSmash().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
                         skeletonHP.loseHP((int) (Attack.getAtkCount() * 0.2));
@@ -204,6 +210,7 @@ public class NormalStages1 extends World
                         pause = 100;
                     }
                     if(skeletonHP.getCurrentHP() == 0){
+                        SFX.getSGDeath().play();
                         Skeleton.setIdleControl(false);
                         Skeleton.setDeathControl(true);
                         s1Over = true;
@@ -218,6 +225,7 @@ public class NormalStages1 extends World
                     pause--;
                 }
                 if(pause == 0){
+                    SFX.getNormalAttack().play();
                     MainCharacter.setIdleControl(true);
                     Skeleton.setIdleControl(false);
                     Skeleton.setAttackControl(true);
@@ -234,6 +242,7 @@ public class NormalStages1 extends World
                     pause = 100;
                 }
                 if(mcHP.getCurrentHP() == 0){
+                    SFX.getMCDeath().play();
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setDeathControl(true);
                     s1Over = true;
@@ -261,6 +270,7 @@ public class NormalStages1 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            SFX.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);

@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Options extends World
 {
     // Count to determine "button" state of options
-    public static int musicCount = 1; // 0 = music on, 1 = music off
+    public static int musicCount = 0; // 0 = music on, 1 = music off
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
     // Object instantiations

@@ -7,7 +7,8 @@ public class SFX extends Actor
 {
     // Sound effects
     static GreenfootSound click = new GreenfootSound("button-124476.mp3");
-    static GreenfootSound normalAttack = new GreenfootSound("clean-fast-swooshaiff-14784.mp3");
+    // Attack for MC, skeleton, goblin, fireknight atk1
+    static GreenfootSound normalAttack = new GreenfootSound("clean-fast-swooshaiff-14784.mp3"); 
     static GreenfootSound mcBarrier = new GreenfootSound("shield-guard-6963.mp3");
     static GreenfootSound mcStunSmash = new GreenfootSound("bing1-91919.mp3");
     static GreenfootSound mcDeath = new GreenfootSound("videogame-death-sound-43894.mp3");
