@@ -5,7 +5,7 @@
 <h3>Story:</h3>
 <p>Your sword has been stolen by a boss executioner and now you need to retrieve it by going to the monster's dungeon.</p>
 <p>Note: There are music and sound effects, be careful of your volume [Music can be turned off, but not sound effects]</p>
-<p>Note 2: Resetting the game is not recommended because the sounds will bug and keep resetting, causing the game to freeze and throw an error | If this happens, hop into any of the worlds/actor subclasses and delete a character and add it back, making the game reset the sounds fully and the game will reset properly </p>
+<p>Note 2: Resetting the game is not recommended because the sounds will bug and keep resetting, causing the game to freeze and throw an error | If this happens, hop into any of the worlds/actor subclasses and delete a letter/number/symbol and add it back, making the game reset the sounds fully and the game will reset properly </p>
 
 <p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, Undead Executioner.
 <h3>Gameplay:</h3>
@@ -15,6 +15,22 @@
 
 <h3>Sources:</h3>
 <p>Largest Source: https://mounirtohami.itch.io/pixel-art-gui-elements - CoinTracker, Continue, HomeButton, Help, MiniIcon, Menu, MenuIcons, MenuIcons2, Pause </p>
+<p>Clicking icons SFX - https://pixabay.com/sound-effects/search/clicks/ [Button]</p>
+<p>MainCharacter Death SFX - https://pixabay.com/sound-effects/search/death/ [Videogame Death Sound]</p>
+<p>MainCharacter, Skeleton, Goblin, FireKnight Attack SFX - https://pixabay.com/sound-effects/search/sword/ [Clean fast Swoosh.aiff] </p>
+<p>MainCharacter Barrier SFX - https://pixabay.com/sound-effects/search/shield/ [shield guard] </p>
+<p>MainCharacter StunSmash SFX - https://pixabay.com/sound-effects/search/hammer/ [Bing1] </p>
+<p>Skeleton + Goblin Death SFX - https://pixabay.com/sound-effects/search/death/?pagi=2 [monster death grunt] </p>
+<p>Wizard Attack1 SFX - https://pixabay.com/sound-effects/search/magic/?pagi=2 [Wind Blow] </p>
+<p>Wizard Attack2 SFX - https://pixabay.com/sound-effects/search/magic/ [Magic Spell] </p>
+<p>Wizard Death SFX - https://pixabay.com/sound-effects/search/magic/?pagi=2 [Magic Strike] </p>
+<p>FireKnight Attack2 SFX - https://pixabay.com/sound-effects/search/flame/ [Fire Magic] </p>
+<p>FireKnight Defend SFX - https://pixabay.com/sound-effects/search/flame/?pagi=2 [Basic Fire whoosh 3] </p>
+<p>FireKnight Death SFX - https://pixabay.com/sound-effects/search/death/?pagi=3 [Spade hacking sound, with gore effects] </p>
+<p>Boss Attack SFX - https://pixabay.com/sound-effects/search/sword/?pagi=2 [Slash1] </p>
+<p>Boss Dodge SFX - https://pixabay.com/sound-effects/search/swipe/ [whip01] </p>
+<p>Boss ConsumeSummon SFX - https://pixabay.com/sound-effects/search/sizzle/?pagi=2 [cig_extinguish] </p>
+<p>Boss Death SFX - https://pixabay.com/sound-effects/search/pain/ [Umph!] </p>
 <p>Attack Icon - https://icons8.com/icon/16672/sword
 <p>Main Character - https://rvros.itch.io/animated-pixel-hero</p>
 <p>Main Character Lost Sword - https://www.artstation.com/artwork/6bkkLx</p>
