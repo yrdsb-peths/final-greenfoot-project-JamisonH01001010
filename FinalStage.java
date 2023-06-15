@@ -142,6 +142,7 @@ public class FinalStage extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
+                removeObjects();
                 TitleScreen.getBGMFinalStage().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -331,6 +332,35 @@ public class FinalStage extends World
             }
         }
     }
+    
+    public void removeObjects(){
+        removeObject(mc);
+        removeObject(boss);
+        removeObject(BS1);
+        removeObject(BS2);
+        removeObject(BS3);
+        removeObject(a);
+        removeObject(b);
+        removeObject(b2);
+        removeObject(ss1);
+        removeObject(ss2);
+        removeObject(m);
+        removeObject(d);
+        removeObject(mcHP);
+        removeObject(bossHP);
+        removeObject(m1);
+        removeObject(m2);
+        removeObject(p1);
+        removeObject(p2);
+        removeObject(h);
+        removeObject(SA);
+        removeObject(s5Clear1);
+        removeObject(s5Clear2);
+        removeObject(s5Clear3);
+        removeObject(s5Fail1);
+        removeObject(s5Fail2);
+        removeObject(returnHome);
+    }
     /**
      * Change the current turn to the opposite
      */
@@ -368,6 +398,7 @@ public class FinalStage extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            removeObjects();
             TitleScreen.getBGMFinalStage().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
@@ -378,6 +409,7 @@ public class FinalStage extends World
      */
     public void endingScreen(){
         if(Greenfoot.mouseClicked(s5Clear3)){
+            removeObjects();
             TitleScreen.getBGMFinalStage().stop();
             Ending e = new Ending();
             Greenfoot.setWorld(e);

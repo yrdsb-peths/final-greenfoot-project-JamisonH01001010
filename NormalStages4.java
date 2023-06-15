@@ -123,6 +123,7 @@ public class NormalStages4 extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
+                removeObjects();
                 TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -307,6 +308,29 @@ public class NormalStages4 extends World
             }
         }
     }
+    public void removeObjects(){
+        removeObject(mc);
+        removeObject(f);
+        removeObject(a);
+        removeObject(b);
+        removeObject(b2);
+        removeObject(ss1);
+        removeObject(ss2);
+        removeObject(mcHP);
+        removeObject(fireKnightHP);
+        removeObject(fs);
+        removeObject(m1);
+        removeObject(m2);
+        removeObject(p1);
+        removeObject(p2);
+        removeObject(h);
+        removeObject(SA);
+        removeObject(s4Clear1);
+        removeObject(s4Clear2);
+        removeObject(s4Fail1);
+        removeObject(s4Fail2);
+        removeObject(returnHome);
+    }
     /**
      * Change the current turn to the opposite
      */
@@ -325,6 +349,7 @@ public class NormalStages4 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            removeObjects();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);

@@ -92,6 +92,14 @@ public class Intro extends World
             Boss.setIdle(false);
             Boss.setAttack(true);
         }
+        if(Greenfoot.mouseClicked(c4)){
+            removeObject(g4);
+            removeObject(c4);
+            addObject(g5, 590, 515);
+            addObject(c5, 760, 190);
+            Boss.setAttack(false);
+            Boss.setIdle(true);
+        }
         if(Greenfoot.mouseClicked(c5)){
             removeObject(g5);
             removeObject(c5);

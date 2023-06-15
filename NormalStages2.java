@@ -118,6 +118,7 @@ public class NormalStages2 extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
+                removeObjects();
                 TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -148,7 +149,6 @@ public class NormalStages2 extends World
                 }
             }
         }
-        
     }
     /**
      * The main logic of stage 2, tracking turns, skills, various effects etc.
@@ -236,6 +236,28 @@ public class NormalStages2 extends World
             }
         }
     }
+    public void removeObjects(){
+        removeObject(mc);
+        removeObject(g);
+        removeObject(a);
+        removeObject(b);
+        removeObject(b2);
+        removeObject(ss1);
+        removeObject(ss2);
+        removeObject(mcHP);
+        removeObject(goblinHP);
+        removeObject(m1);
+        removeObject(m2);
+        removeObject(p1);
+        removeObject(p2);
+        removeObject(h);
+        removeObject(SA);
+        removeObject(s2Clear1);
+        removeObject(s2Clear2);
+        removeObject(s2Fail1);
+        removeObject(s2Fail2);
+        removeObject(returnHome);
+    }
     /**
      * Change the current turn to the opposite
      */
@@ -254,6 +276,7 @@ public class NormalStages2 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            removeObjects();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
