@@ -64,5 +64,35 @@ public class SFX extends Actor
         if(setSGDeath){
             
         }
+        if(setWizardATK1){
+            
+        }
+        if(setWizardATK2){
+            
+        }
+        if(setWizardDeath){
+            
+        }
+        if(setFKATK2){
+            
+        }
+        if(setFKDefend){
+            
+        }
+        if(setFKDeath){
+            
+        }
+        if(setBossATK){
+            
+        }
+        if(setBossConsumeSummon){
+            
+        }
+        if(setBossDodge){
+            
+        }
+        if(setBossDeath){
+            
+        }
     }
 }
