@@ -23,7 +23,6 @@ public class StageSelect extends World
     NormalStages2 ns2 = new NormalStages2();
     NormalStages3 ns3 = new NormalStages3();
     NormalStages4 ns4 = new NormalStages4();
-    FinalStage fs = new FinalStage();
     /**
      * Constructor: Set the inital state of StageSelect screen
      */
@@ -77,6 +76,8 @@ public class StageSelect extends World
             Greenfoot.setWorld(ns4);
         }
         if(Greenfoot.mouseClicked(l5) && NormalStages4.getS4Passed()){
+            TitleScreen.getBGMNormalStages().stop();
+            FinalStage fs = new FinalStage();
             Greenfoot.setWorld(fs);
         }
     }

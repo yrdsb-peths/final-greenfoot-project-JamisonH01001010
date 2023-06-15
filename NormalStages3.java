@@ -67,6 +67,10 @@ public class NormalStages3 extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        if(Options.getMusicCount() % 2 == 0){
+            TitleScreen.getBGMNormalStages().playLoop();
+        }
+        
         // Set Stage 3 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
@@ -109,13 +113,18 @@ public class NormalStages3 extends World
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
+                TitleScreen.getBGMNormalStages().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
+                if(Options.getMusicCount() % 2 == 0){
+                    TitleScreen.getBGMNormalStages().play();
+                }
             }
             if(Greenfoot.mouseClicked(h)){
+                TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
             }
@@ -287,6 +296,7 @@ public class NormalStages3 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

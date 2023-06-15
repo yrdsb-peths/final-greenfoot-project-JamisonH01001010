@@ -78,6 +78,11 @@ public class FinalStage extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
         
+        // Play final stage BGM
+        if(Options.getMusicCount() % 2 == 0){
+            TitleScreen.getBGMFinalStage().playLoop();
+        }
+        
         // Set FinalStage background
         finalBG.scale(800, 600);
         setBackground(finalBG);
@@ -126,13 +131,18 @@ public class FinalStage extends World
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
+                TitleScreen.getBGMFinalStage().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
+                if(Options.getMusicCount() % 2 == 0){
+                    TitleScreen.getBGMFinalStage().play();
+                }
             }
             if(Greenfoot.mouseClicked(h)){
+                TitleScreen.getBGMFinalStage().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
             }
@@ -358,6 +368,7 @@ public class FinalStage extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
+            TitleScreen.getBGMFinalStage().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
@@ -367,6 +378,7 @@ public class FinalStage extends World
      */
     public void endingScreen(){
         if(Greenfoot.mouseClicked(s5Clear3)){
+            TitleScreen.getBGMFinalStage().stop();
             Ending e = new Ending();
             Greenfoot.setWorld(e);
         }
