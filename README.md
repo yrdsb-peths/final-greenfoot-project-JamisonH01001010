@@ -4,8 +4,9 @@
 <p>This is a project about a turn based game called Lost Sword with a mini storyline, hidden achievements, upgradeable stats, and 5 stages in total. </p>
 <h3>Story:</h3>
 <p>Your sword has been stolen by a boss executioner and now you need to retrieve it by going to the monster's dungeon.</p>
-<p>Note: There are music and sound effects, be careful of your volume [Music can be turned off, but not sound effects]</p>
+<p>Note: There are music and sound effects, be careful of the volume [Music can be turned off, but not sound effects]</p>
 <p>Note 2: Resetting the game is not recommended because the sounds will bug and keep resetting, causing the game to freeze and throw an error | If this happens, hop into any of the worlds/actor subclasses and delete a letter/number/symbol and add it back, making the game reset the sounds fully and the game will reset properly </p>
+<p>Note 3: Please take  time when clicking icons, as the sound effects might not register if clicking too fast
 
 <p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, Undead Executioner.
 <h3>Gameplay:</h3>
