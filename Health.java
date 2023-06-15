@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Health extends Actor
 {
-    private static int healthCount = 10000; // mcHP starts at 20
+    private static int healthCount = 20; // mcHP starts at 20
     // Health icon
     GreenfootImage hp = new GreenfootImage("health.png");
     /**

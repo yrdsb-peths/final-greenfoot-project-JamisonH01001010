@@ -82,7 +82,7 @@ public class FinalStage extends World
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGMFinalStage().playLoop();
         }
-        TitleScreen.getBGMFinalStage().setVolume(50);
+        TitleScreen.getBGMFinalStage().setVolume(60);
         
         // Set FinalStage background
         finalBG.scale(800, 600);

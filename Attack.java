@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Attack extends Actor
 {
-    private static int atkCount = 100; // mcATK starts at 5
+    private static int atkCount = 5; // mcATK starts at 5
     // Attack icon
     GreenfootImage atk = new GreenfootImage("attack.png");
     /**
