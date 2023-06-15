@@ -67,6 +67,7 @@ public class Intro extends World
         // Boss.set methods are for setting the bosses multiple animations
         // Continue objects must be readded due to new text overlapping its "clickbox"
         if(Greenfoot.mouseClicked(c1)){
+            
             removeObject(g1);
             removeObject(c1);
             addObject(g2, 170, 90);

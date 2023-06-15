@@ -95,4 +95,116 @@ public class SFX extends Actor
             bossDeath.play();
         }
     }
+    /**
+     * Set the boolean controlling SFX of clicking
+     * @param1 the new boolean value
+     */
+    public void setClick(boolean a){
+        setClick = a;
+    }
+    /**
+     * Set the boolean controlling SFX of a normal attack
+     * @param1 the new boolean value
+     */
+    public void setNormalAttack(boolean a){
+        setNormalAttack = a;
+    }
+    /**
+     * Set the boolean controlling SFX of mc's barrier
+     * @param1 the new boolean value
+     */
+    public void setMCBarrier(boolean a){
+        setMCBarrier = a;
+    }
+    /**
+     * Set the boolean controlling SFX of mc's stun smash
+     * @param1 the new boolean value
+     */
+    public void setMCStunSmash(boolean a){
+        setMCStunSmash = a;
+    }
+    /**
+     * Set the boolean controlling SFX of mc's death
+     * @param1 the new boolean value
+     */
+    public void setMCDeath(boolean a){
+        setMCDeath = a;
+    }
+    /**
+     * Set the boolean controlling SFX of skeleton/goblin death
+     * @param1 the new boolean value
+     */
+    public void setSGDeath(boolean a){
+        setSGDeath = a;
+    }
+    /**
+     * Set the boolean controlling SFX of wizard atk1
+     * @param1 the new boolean value
+     */
+    public void setWizardATK1(boolean a){
+        setWizardATK1 = a;
+    }
+    /**
+     * Set the boolean controlling SFX of wizard atk2
+     * @param1 the new boolean value
+     */
+    public void setWizardATK2(boolean a){
+        setWizardATK2 = a;
+    }
+    /**
+     * Set the boolean controlling SFX of wizard death
+     * @param1 the new boolean value
+     */
+    public void setWizardDeath(boolean a){
+        setWizardDeath = a;
+    }
+    /**
+     * Set the boolean controlling SFX of fire knight atk2
+     * @param1 the new boolean value
+     */
+    public void setFKATK2(boolean a){
+        setFKATK2 = a;
+    }
+    /**
+     * Set the boolean controlling SFX of fire knight defend
+     * @param1 the new boolean value
+     */
+    public void setFKDefend(boolean a){
+        setFKDefend = a;
+    }
+    /**
+     * Set the boolean controlling SFX of fire knight death
+     * @param1 the new boolean value
+     */
+    public void setFKDeath(boolean a){
+        setFKDeath = a;
+    }
+    /**
+     * Set the boolean controlling SFX of boss atk
+     * @param1 the new boolean value
+     */
+    public void setBossATK(boolean a){
+        setBossATK = a;
+    }
+    /**
+     * Set the boolean controlling SFX of boss consuming summons
+     * @param1 the new boolean value
+     */
+    public void setBossConsumeSummon(boolean a){
+        setBossConsumeSummon = a;
+    }
+    /**
+     * Set the boolean controlling SFX of boss dodge
+     * @param1 the new boolean value
+     */
+    public void setBossDodge(boolean a){
+        setBossDodge = a;
+    }
+    /**
+     * Set the boolean controlling SFX of boss death
+     * @param1 the new boolean value
+     */
+    public void setBossDeath(boolean a){
+        setBossDeath = a;
+    }
 }
