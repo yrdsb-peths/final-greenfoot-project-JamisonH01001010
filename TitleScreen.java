@@ -8,7 +8,7 @@ public class TitleScreen extends World
     // Dungeon Background
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
     // Background Music
-    GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
+    static GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
     // Object instantiations
     // Menu 
     Menu m = new Menu(300, 300);
@@ -33,6 +33,10 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
+        
+        if(Options.getMusicCount() % 2 == 0){
+            BGM.playLoop();
+        }
         
         // Set TitleScreen background
         dungeonBG.scale(800, 600);
@@ -83,20 +87,15 @@ public class TitleScreen extends World
         }
         if(Greenfoot.mouseClicked(h)){
             Tutorial t = new Tutorial();
-            Greenfoot.setWorld(t);
-        }
-
-        //setMusicAndSFX();
-    }
-    
-    public void setMusicAndSFX(){
-        if(Options.getMusicCount() % 2 == 0){
-            BGM.playLoop();
-        } else {
-            BGM.stop();
+            Greenfoot.setWorld(t);        
         }
     }
     
-    
-    
+    /**
+     * Gets the BGM greenfoot sound object 
+     * @return GreenfootSound BGM
+     */
+    public static GreenfootSound getBGM(){
+        return BGM;
+    }
 }

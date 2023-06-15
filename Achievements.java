@@ -48,6 +48,11 @@ public class Achievements extends World
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); // if true then unable to place text > dimensions
         
+        // Play BGM
+        if(Options.getMusicCount() % 2 == 0){
+            TitleScreen.getBGM().play();
+        }
+        
         // Set Achievement background
         achBG.scale(800, 600);
         setBackground(achBG);

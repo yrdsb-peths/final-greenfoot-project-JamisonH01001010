@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Options extends World
 {
     // Count to determine "button" state of options
-    public static int musicCount = 0;
+    public static int musicCount = 1;
     public static int SFXCount = 0;
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
@@ -33,10 +33,13 @@ public class Options extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
+        
+        
+        
+        
         // Set Options Background
         optionsBG.scale(800, 600);
         setBackground(optionsBG);
-        
         // Add Menu
         addObject(m, 400, 300);
         // Text
@@ -60,9 +63,9 @@ public class Options extends World
         if(Greenfoot.mouseClicked(b1) || Greenfoot.mouseClicked(c1)){
             musicCount++;
         }
-        if(musicCount % 2 == 0){
+        if(musicCount % 2 == 0){ // music on
             addObject(c1, 270, 250);
-        } else {
+        } else { // music off
             removeObject(c1);
         }
     }
