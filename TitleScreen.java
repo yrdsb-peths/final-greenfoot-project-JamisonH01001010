@@ -12,22 +12,19 @@ public class TitleScreen extends World
     static GreenfootSound BGMNormalStages = new GreenfootSound("battle-of-the-dragons-8037.mp3");
     static GreenfootSound BGMFinalStage = new GreenfootSound("epic-dramatic-action-trailer-99525.mp3");
     // Object instantiations
-    // Menu 
+    SFX sfx = new SFX();
     Menu m = new Menu(300, 300);
-    // MenuIcons
     MenuIcons MI = new MenuIcons();
-    // MenuIconsTwo
     MenuIconsTwo MI2 = new MenuIconsTwo();
+    MiniIcon mini = new MiniIcon();
+    Help h = new Help();
     // Text
     GameFont title = new GameFont("Lost Sword", 1000);
     GameFont stages = new GameFont("Stages", 300);
     GameFont options = new GameFont("Options", 300);
     GameFont achievements = new GameFont("Achievements", 300);
     GameFont skillMenu = new GameFont("Skill Menu", 500);
-    // MiniIcon
-    MiniIcon mini = new MiniIcon();
-    // Help
-    Help h = new Help();
+    
     /**
      * Constructor: Set icons of the title screen
      */
@@ -43,14 +40,9 @@ public class TitleScreen extends World
         // Set TitleScreen background
         dungeonBG.scale(800, 600);
         setBackground(dungeonBG);
-        
-        // Add Menu
+
         addObject(m, 400, 300);
-        
-        // Add MenuIcons
         addObject(MI, 400, 300);
-        
-        // Add MenuIconsTwo
         addObject(MI2, 400, 500);
         
         // Text
@@ -59,11 +51,8 @@ public class TitleScreen extends World
         addObject(options, 470, 420);
         addObject(achievements, 433, 485);
         addObject(skillMenu, 483, 700);
-        
-        // Add MiniIcon
+
         addObject(mini, 750, 50);
-        
-        // Add Help
         addObject(h, 748, 50);
     }
     /**
@@ -71,29 +60,29 @@ public class TitleScreen extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(achievements)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Achievements.lucky(); // // Chance of completing achievement 3
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(stages)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             BGM.stop();
             StageSelect stageWorld = new StageSelect();
             Greenfoot.setWorld(stageWorld);
         }
         if(Greenfoot.mouseClicked(options)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Options optionWorld = new Options();
             Greenfoot.setWorld(optionWorld);
         }
         if(Greenfoot.mouseClicked(skillMenu)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             SkillMenu SMworld = new SkillMenu();
             Greenfoot.setWorld(SMworld);
         }
         if(Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);        
         }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Tutorial extends World
 {
     // Check whether user has opened tutorial before
-    private static boolean firstTutorial = true;
+    boolean firstTutorial = true;
     // Object instantiations
     SFX sfx = new SFX();
     Menu m = new Menu(900, 700);

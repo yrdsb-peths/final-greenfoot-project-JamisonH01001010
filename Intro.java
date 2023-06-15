@@ -8,22 +8,11 @@ public class Intro extends World
     // Intro Background
     GreenfootImage introBG = new GreenfootImage("intro.png");
     // Object instantiations
-    // MCLostSword 
+    SFX sfx = new SFX(); 
     MCLostSword ls = new MCLostSword(100);
-    // MainCharacter
     MainCharacter m = new MainCharacter();
-    // Boss
     Boss b = new Boss();
-    // Explosion
     Explosion e = new Explosion();
-    // Text
-    GameFont g1 = new GameFont("What a great day today!", 500, 500);
-    GameFont g2 = new GameFont(". . .", 170, 100); 
-    GameFont g3 = new GameFont("Nice sword you have there. . .", 500, 500);
-    GameFont g4 = new GameFont("Ugh. . .", 200, 200);
-    GameFont g5 = new GameFont("Come visit my dungeon if you want your sword back.", 950, 1000);
-    GameFont g6 = new GameFont("Time to get revenge with my spare sword. . .", 950, 1000);
-    // Continue 
     Continue c1 = new Continue(50);
     Continue c2 = new Continue(50);
     Continue c3 = new Continue(50);
@@ -31,6 +20,13 @@ public class Intro extends World
     Continue c5 = new Continue(50);
     Continue c6 = new Continue(50);
     Continue c7 = new Continue(50);
+    // Text
+    GameFont g1 = new GameFont("What a great day today!", 500, 500);
+    GameFont g2 = new GameFont(". . .", 170, 100); 
+    GameFont g3 = new GameFont("Nice sword you have there. . .", 500, 500);
+    GameFont g4 = new GameFont("Ugh. . .", 200, 200);
+    GameFont g5 = new GameFont("Come visit my dungeon if you want your sword back.", 950, 1000);
+    GameFont g6 = new GameFont("Time to get revenge with my spare sword. . .", 950, 1000);
     /**
      * Constructor: Set the inital state of the intro screen 
      */
@@ -43,20 +39,14 @@ public class Intro extends World
         introBG.scale(800, 600);
         setBackground(introBG);
         
-        // Add MCLostSword
         addObject(ls, 250, 485);
-        
-        // Add MainCharacter
         addObject(m, 200, 500);
         
-        // Animations
         MainCharacter.setIdleControl(false);
         MainCharacter.setNoSwordControl(true);
-        
-        // Text
+
         addObject(g1, 250, 290);
-        
-        // Continue 
+
         addObject(c1, 760, 190);
     }
     /**
@@ -67,7 +57,7 @@ public class Intro extends World
         // Boss.set methods are for setting the bosses multiple animations
         // Continue objects must be readded due to new text overlapping its "clickbox"
         if(Greenfoot.mouseClicked(c1)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             removeObject(g1);
             removeObject(c1);
             addObject(g2, 170, 90);
@@ -75,10 +65,10 @@ public class Intro extends World
             addObject(c2, 760, 190);
             Boss.setIdle(false);
             Boss.setAppear(true);
-            SFX.getBossAppear().play();
+            sfx.getBossAppear().play();
         }
         if(Greenfoot.mouseClicked(c2)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             removeObject(g2);
             removeObject(c2);
             addObject(g3, 600, 290);
@@ -87,7 +77,7 @@ public class Intro extends World
             Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c3)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             removeObject(g3);
             removeObject(c3);
             removeObject(ls);
@@ -96,10 +86,10 @@ public class Intro extends World
             addObject(c4, 760, 190);
             Boss.setIdle(false);
             Boss.setAttack(true);
-            SFX.getBossAttack().play();
+            sfx.getBossAttack().play();
         }
         if(Greenfoot.mouseClicked(c4)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             removeObject(g4);
             removeObject(c4);
             addObject(g5, 590, 515);
@@ -108,7 +98,7 @@ public class Intro extends World
             Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c5)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             removeObject(g5);
             removeObject(c5);
             addObject(g6, 470, 515);
@@ -117,7 +107,7 @@ public class Intro extends World
             MainCharacter.setNoSwordControl(false);
         }
         if(Greenfoot.mouseClicked(c6)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Boss.setIdle(false);
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);

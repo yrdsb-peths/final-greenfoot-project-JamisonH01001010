@@ -8,21 +8,19 @@ public class StageSelect extends World
     // StageSelect Background
     GreenfootImage stagesBG = new GreenfootImage("map_54x53.png");
     // Object instantiations
-    // Text
-    GameFont stageSelect = new GameFont("Stage Select", 500);
-    // Home Button
+    SFX sfx = new SFX();
     HomeButton h = new HomeButton();
-    // Levels
     Level1 l1 = new Level1();
     Level2 l2 = new Level2();
     Level3 l3 = new Level3();
     Level4 l4 = new Level4();
     Level5 l5 = new Level5();
-    // Stages
     NormalStages1 ns1 = new NormalStages1();
     NormalStages2 ns2 = new NormalStages2();
     NormalStages3 ns3 = new NormalStages3();
     NormalStages4 ns4 = new NormalStages4();
+    // Text
+    GameFont stageSelect = new GameFont("Stage Select", 500);
     /**
      * Constructor: Set the inital state of StageSelect screen
      */
@@ -30,23 +28,18 @@ public class StageSelect extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
-        // Play BGM
+
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGMNormalStages().playLoop();
         }
-        
-        // Set StageSelect Background
+
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
         
         // Text
         addObject(stageSelect, 485, 380);
         
-        // Add HomeButton
         addObject(h, 35, 40);
-        
-        // Add Levels
         addObject(l1, 110, 510); 
         addObject(l1, 110, 510);
         addObject(l2, 175, 115);
@@ -59,29 +52,29 @@ public class StageSelect extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
-            TitleScreen achWorld = new TitleScreen();
-            Greenfoot.setWorld(achWorld);
+            TitleScreen t = new TitleScreen();
+            Greenfoot.setWorld(t);
         }
         if(Greenfoot.mouseClicked(l1)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Greenfoot.setWorld(ns1);
         }
         if(Greenfoot.mouseClicked(l2) && NormalStages1.getS1Passed()){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Greenfoot.setWorld(ns2);
         }
         if(Greenfoot.mouseClicked(l3) && NormalStages2.getS2Passed()){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Greenfoot.setWorld(ns3);
         }
         if(Greenfoot.mouseClicked(l4) && NormalStages3.getS3Passed()){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Greenfoot.setWorld(ns4);
         }
         if(Greenfoot.mouseClicked(l5) && NormalStages4.getS4Passed()){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             FinalStage fs = new FinalStage();
             Greenfoot.setWorld(fs);

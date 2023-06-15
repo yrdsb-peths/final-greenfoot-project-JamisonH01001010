@@ -6,15 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ending extends World
 {
     // Object instantiations  
-    // Menu
+    SFX sfx = new SFX();
     Menu m = new Menu(800, 600);
-    // MCLostSword
     MCLostSword ls = new MCLostSword(200);
+    HomeButton h = new HomeButton();
     // Text
     GameFont ending1 = new GameFont("Congratulations on beating the game!", 600, 520);
     GameFont ending2 = new GameFont("Now try to complete the hidden achievements!", 650, 700);
-    // HomeButton
-    HomeButton h = new HomeButton();
     /**
      * Constructor: Sets the background, text, and icons of Ending screen
      */
@@ -22,18 +20,13 @@ public class Ending extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); 
-        
-        // Menu
         addObject(m, 400, 300);
         
         // Text
         addObject(ending1, 385, 380);
         addObject(ending2, 415, 680);
-        
-        //MCLostSword
+
         addObject(ls, 410, 270);
-        
-        // HomeButton
         addObject(h, 400, 470);
     }
     /**
@@ -41,7 +34,7 @@ public class Ending extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

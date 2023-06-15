@@ -6,26 +6,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SkillMenu extends World
 {
     // Object instantiations
-    // Menu
+    SFX sfx = new SFX();
     Menu m = new Menu(900, 700);
-    // CoinTracker
     CoinTracker c = new CoinTracker();
     Integer cCount = CoinTracker.getCoinCount();
-    // Health
     Health health = new Health();
     Integer hCount = Health.getHealthCount();
-    // Attack
     Attack attack = new Attack();
-    // BladeSlash
     BladeSlash bs = new BladeSlash();
-    // Barrier
     Barrier b = new Barrier();
-    // StunSmash
     StunSmash s = new StunSmash();
-    // Increaser
     Increaser i1 = new Increaser();
     Increaser i2 = new Increaser();
-    // HomeButton
     HomeButton h = new HomeButton();
     // Text
     GameFont skillMenu = new GameFont("Skills", 300, 120);
@@ -49,27 +41,19 @@ public class SkillMenu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false);
-        
-        // Play BGM
+
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGM().play();
         }
-        
-        // Add Menu
+
         addObject(m, 400, 300); 
-        // Add CoinTracker
         addObject(c, 650, 88);
-        // Add Health
         addObject(health, 300, 318); 
-        // Add Attack
         addObject(attack, 300, 400);
-        // Add BladeSlash
         addObject(bs, 440, 200);
-        // Add Barrier
         addObject(b, 440, 330);
-        // Add StunSmash
         addObject(s, 440, 460);
-        // Text
+        
         addObject(skillMenu, 350, 146);
         addObject(numCoins, 608, 105);
         addObject(stats, 200, 310);
@@ -84,10 +68,9 @@ public class SkillMenu extends World
         addObject(s1, 565, 545);
         addObject(s2, 590, 620);
         addObject(s3, 590, 640);
-        // Add Increasers
+        
         addObject(i1, 350, 318); 
         addObject(i2, 350, 400);
-        // Add HomeButton
         addObject(h, 120, 85);
     }
     /**
@@ -95,7 +78,7 @@ public class SkillMenu extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Health.increaseHealth();
             removeObject(HP);
             HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
@@ -105,7 +88,7 @@ public class SkillMenu extends World
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(i2)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             Attack.increaseAtk();
             removeObject(ATK);
             ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
@@ -115,7 +98,7 @@ public class SkillMenu extends World
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
