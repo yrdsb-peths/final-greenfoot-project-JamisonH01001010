@@ -4,6 +4,9 @@
 <p>This is a project about a turn based game called Lost Sword with a mini storyline, hidden achievements, upgradeable stats, and 5 stages in total. </p>
 <h3>Story:</h3>
 <p>Your sword has been stolen by a boss executioner and now you need to retrieve it by going to the monster's dungeon.</p>
+<p>Note: There are music and sound effects, be careful of your volume [Music can be turned off, but not sound effects]</p>
+<p>Note 2: Resetting the game is not recommended because the sounds will bug and keep resetting, causing the game to freeze and throw an error | If this happens, hop into any of the worlds/actor subclasses and delete a character and add it back, making the game reset the sounds fully and the game will reset properly </p>
+
 <p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, Undead Executioner.
 <h3>Gameplay:</h3>
 <p>Turn Based: User will always go first, doing either an attack, shield, or stun action. After one of those actions are completed, the enemy will get to do an action. This will vary depending on the enemy and will be unknown to the user until encountering it. Enemy skill descriptions and stats are not provided.</p>
@@ -25,7 +28,9 @@
 <p>Explosion - https://codemanu.itch.io/vfx-free-pack</p>
 <p>Font - https://vrtxrry.itch.io/dungeonfont</p>
 <p>Intro Background - https://edermunizz.itch.io/free-pixel-art-forest</p>
-<p>Title Screen Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]</p>
+<p>Pre-Stages Music - https://pixabay.com/sound-effects/search/game/?pagi=4 [October Rose]</p>
+<p>Normal Stages Music - https://pixabay.com/music/search/battle/ [Battle Of The Dragons]</p>
+<p>Final Stage Music - https://pixabay.com/music/search/battle/ [Epic Dramatic Action Trailer]</p>
 <p>Achievements Background - https://wall.alphacoders.com/big.php?i=621708</p>
 <p>Achievements Blank Medal Icon - https://www.pngitem.com/middle/bmmxxT_achievement-icon-transparent-hd-png-download/</p>
 <p>Achievements Gold Medal Icon - https://icon-icons.com/icon/champion-army-reward-achievement-badge-winner-gold-medal/225520</p>
