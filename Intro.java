@@ -75,8 +75,10 @@ public class Intro extends World
             addObject(c2, 760, 190);
             Boss.setIdle(false);
             Boss.setAppear(true);
+            SFX.getBossAppear().play();
         }
         if(Greenfoot.mouseClicked(c2)){
+            SFX.getClick().play();
             removeObject(g2);
             removeObject(c2);
             addObject(g3, 600, 290);
@@ -85,6 +87,7 @@ public class Intro extends World
             Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c3)){
+            SFX.getClick().play();
             removeObject(g3);
             removeObject(c3);
             removeObject(ls);
@@ -93,8 +96,10 @@ public class Intro extends World
             addObject(c4, 760, 190);
             Boss.setIdle(false);
             Boss.setAttack(true);
+            SFX.getBossAttack().play();
         }
         if(Greenfoot.mouseClicked(c4)){
+            SFX.getClick().play();
             removeObject(g4);
             removeObject(c4);
             addObject(g5, 590, 515);
@@ -103,6 +108,7 @@ public class Intro extends World
             Boss.setIdle(true);
         }
         if(Greenfoot.mouseClicked(c5)){
+            SFX.getClick().play();
             removeObject(g5);
             removeObject(c5);
             addObject(g6, 470, 515);
@@ -111,6 +117,7 @@ public class Intro extends World
             MainCharacter.setNoSwordControl(false);
         }
         if(Greenfoot.mouseClicked(c6)){
+            SFX.getClick().play();
             Boss.setIdle(false);
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);
