@@ -274,8 +274,6 @@ public class NormalStages4 extends World
                         FireKnight.setAttack1Control(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(30 * ((100 - shieldAmount) / (double) 100)));
-                            removeObject(SA);
-                            removeObject(b2);
                         } else {
                             mcHP.loseHP(30); // FireKnightATK = 30
                         }
@@ -283,8 +281,6 @@ public class NormalStages4 extends World
                         FireKnight.setAttack2Control(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
-                            removeObject(SA);
-                            removeObject(b2);
                         } else {
                             mcHP.loseHP(50); // FireKnightATK = 30 * 166.66%
                         }
@@ -293,6 +289,8 @@ public class NormalStages4 extends World
                         fireKnightDefend = true;
                         addObject(fs, 600, 430);
                     }
+                    removeObject(SA);
+                    removeObject(b2);
                     shieldAmount = 0;
                     switchTurn();
                     pause = 100;
