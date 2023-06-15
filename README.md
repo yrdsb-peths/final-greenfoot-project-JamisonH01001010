@@ -38,7 +38,7 @@
 <p>Skill Menu Health - https://www.pngwing.com/en/free-png-invqg</p>
 <p>Skill Menu Increaser - https://www.vhv.rs/viewpic/howbTwR_plus-icon-white-png-transparent-png/</p>
 <p>Skill - Blade Slash - https://lionildio.itch.io/wood-sword</p>
-<p>Skill - Barrier - https://www.pngwing.com/en/free-png-aoxqi</p>
+<p>Skill - Barrier - https://icons-for-free.com/safety+security+shield+icon-1320190905947076373/</p>
 <p>Skill - Stun Smash - https://t-plus-lk.itch.io/free-hammer-for-2d-game</p>
 <p>NormalStages Background - https://twitter.com/BloomtownGame/status/1445764502591467530</p>
 <p>Final Stage Background - https://mekhollandt.artstation.com/projects/N5EQ0d</p>
