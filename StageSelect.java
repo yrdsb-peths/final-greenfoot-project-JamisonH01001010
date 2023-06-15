@@ -34,7 +34,7 @@ public class StageSelect extends World
         
         // Play BGM
         if(Options.getMusicCount() % 2 == 0){
-            TitleScreen.getBGM().play();
+            TitleScreen.getBGMNormalStages().playLoop();
         }
         
         // Set StageSelect Background
@@ -60,6 +60,7 @@ public class StageSelect extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            TitleScreen.getBGMNormalStages().stop();
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }

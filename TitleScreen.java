@@ -76,6 +76,7 @@ public class TitleScreen extends World
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(stages)){
+            BGM.stop();
             StageSelect stageWorld = new StageSelect();
             Greenfoot.setWorld(stageWorld);
         }
