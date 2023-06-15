@@ -73,12 +73,20 @@ public class SFX extends Actor
      */
     public static GreenfootSound getWizardATK1(){
         return wizardATK1;
-    }/**
+    }
+    /**
      * Get the GreenfootSound variable for wizard attack2
      * @return wizard attack2 SFX
      */
     public static GreenfootSound getWizardATK2(){
         return wizardATK2;
+    }
+    /**
+     * Get the GreenfootSound variable for wizard death
+     * @return wizard death SFX
+     */
+    public static GreenfootSound getWizardDeath(){
+        return wizardDeath;
     }
     /**
      * Get the GreenfootSound variable for fire knight attack2
