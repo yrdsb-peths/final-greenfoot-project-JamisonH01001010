@@ -8,7 +8,7 @@ public class TitleScreen extends World
     // Dungeon Background
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
     // Background Music
-    static GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
+    static GreenfootSound BGM = new GreenfootSound("october-rose-27659.mp3");
     static GreenfootSound BGMNormalStages = new GreenfootSound("battle-of-the-dragons-8037.mp3");
     static GreenfootSound BGMFinalStage = new GreenfootSound("epic-dramatic-action-trailer-99525.mp3");
     // Object instantiations
