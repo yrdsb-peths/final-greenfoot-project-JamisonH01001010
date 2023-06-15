@@ -1,45 +1,45 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MainCharacter here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The main character of the game
+ * Contains relating animations
  */
 public class MainCharacter extends Actor
 {
     // Shield
     int shieldAmount = 0;
     
-    // Animation Control
+    // Animation Variables
     static boolean noSwordControl = false;
-    static boolean idleControl = true;
+    static boolean idleControl = false;
     static boolean attackControl = false;
     static boolean shieldControl = false;
     static boolean stunControl = false;
     static boolean deathControl = false;
     
-    // Idle animation
+    // Images
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] swordIdle = new GreenfootImage[4];
     GreenfootImage[] attack = new GreenfootImage[5];
     GreenfootImage[] stun = new GreenfootImage[10];
     GreenfootImage[] death = new GreenfootImage[7];
     
-    // Idle Animation Timer
+    // Animation timer
     SimpleTimer idleTimer = new SimpleTimer();
     SimpleTimer swordIdleTimer = new SimpleTimer();
     SimpleTimer attackTimer = new SimpleTimer();
     SimpleTimer stunTimer = new SimpleTimer();
     SimpleTimer deathTimer = new SimpleTimer();
     
-    // Track idle image index
+    // Animation index
     private int idleIndex = 0;
     private int swordIdleIndex = 0;
     private int attackIndex = 0;
     private int stunIndex = 0;
     private int deathIndex = 0;
-    
+    /**
+     * Constructor: Fill arrays with corresponding images, mark animation timers, and set an inital image
+     */
     public MainCharacter(){
         // Loop through idle images
         for(int i = 0; i < idle.length; i++){
@@ -81,6 +81,9 @@ public class MainCharacter extends Actor
         // Set inital MC image
         setImage(idle[0]);
     }
+    /**
+     * Continously check which animation to play
+     */
     public void act()
     {
         if(noSwordControl){
@@ -99,7 +102,9 @@ public class MainCharacter extends Actor
             deathAnimation();
         }
     }
-    
+    /**
+     * The main character idle animation (no sword)
+     */
     public void idleAnimation(){
         // 0.15s delay
         if(idleTimer.millisElapsed() < 150){
@@ -113,7 +118,9 @@ public class MainCharacter extends Actor
         // Go to the next image
         idleIndex = (idleIndex + 1) % idle.length; // To not cause array out of bounds error
     }
-    
+    /**
+     * The main character idle animation (yes sword)
+     */
     public void swordIdleAnimation(){
         if(swordIdleTimer.millisElapsed() < 150){
             return;
@@ -125,7 +132,9 @@ public class MainCharacter extends Actor
         
         swordIdleIndex = (swordIdleIndex + 1) % swordIdle.length;
     }
-    
+    /**
+     * The main character attack animation
+     */
     public void attackAnimation(){
         if(attackTimer.millisElapsed() < 250){
             return;
@@ -144,7 +153,10 @@ public class MainCharacter extends Actor
         
         attackIndex++;
     }
-    
+    /**
+     * The randomizers for the main character's shield, 25% or 50%
+     * @return the percentage of shield randomized
+     */
     public int shield(){
         shieldAmount = Greenfoot.getRandomNumber(2);
         if(shieldAmount == 0){
@@ -153,7 +165,9 @@ public class MainCharacter extends Actor
             return 50; // 50% blocked, 50% damage
         }
     }
-    
+    /**
+     * The main character stun animation
+     */
     public void stunAnimation(){
         if(stunTimer.millisElapsed() < 150){
             return;
@@ -170,7 +184,9 @@ public class MainCharacter extends Actor
         
         stunIndex++;
     }
-    
+    /**
+     * The main character death animation
+     */
     public void deathAnimation(){
         if(deathTimer.millisElapsed() < 150){
             return;
@@ -187,27 +203,45 @@ public class MainCharacter extends Actor
         
         deathIndex++;
     }
-    
+    /**
+     * Set the value of animation variable noSwordControl
+     * @param1 value of noSwordControl
+     */
     public static void setNoSwordControl(boolean a){
         noSwordControl = a;
     }
-    
+    /**
+     * Set the value of animation variable idleControl
+     * @param1 value of idleControl
+     */
     public static void setIdleControl(boolean a){
         idleControl = a;
     }
-    
+    /**
+     * Set the value of animation variable attackControl
+     * @param1 value of attackControl
+     */
     public static void setAttackControl(boolean a){
         attackControl = a;
     }
-    
+    /**
+     * Set the value of animation variable shieldControl
+     * @param1 value of shieldControl
+     */
     public static void setShieldControl(boolean a){
         shieldControl = a;
     }
-    
+    /**
+     * Set the value of animation variable stunControl
+     * @param1 value of stunControl
+     */
     public static void setStunControl(boolean a){
         stunControl = a;
     }
-    
+    /**
+     * Set the value of animation variable deathControl
+     * @param1 value of deathControl
+     */
     public static void setDeathControl(boolean a){
         deathControl = a;
     }

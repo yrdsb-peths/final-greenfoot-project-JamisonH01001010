@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Magic here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The icon for the magic DOT dealt by wizard, boss
  */
 public class Magic extends Actor
 {
+    // Magic icon
     GreenfootImage magic = new GreenfootImage("magic.png");
+    /**
+     * Constructor: Set the image of the magic icon
+     */
     public Magic(){
         magic.scale(50, 50);
         setImage(magic);

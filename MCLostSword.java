@@ -1,30 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MCLostSword here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The icon of the main character's lost sword
  */
 public class MCLostSword extends Actor
 {
+    // Animation count
     private boolean count = true;
-    
+    // MCLostSword icon
     GreenfootImage ls = new GreenfootImage("mc-lost-sword.png");
-    
+    // Animation Timer
     SimpleTimer animTimer = new SimpleTimer();
+    /**
+     * Constructor: Mark animation timers and set an inital image
+     */
     public MCLostSword(int scale){
         ls.scale(scale, scale);
+        setImage(ls);
         
         animTimer.mark();
-        
-        setImage(ls);
     }
-    
+    /**
+     * Animate the sword on repeat
+     */
     public void act(){
         animation();
     }
-    
+    /**
+     * Cycle between moving up and down (just a simple animation)
+     */
     public void animation(){
         if(animTimer.millisElapsed() < 300){
             return;

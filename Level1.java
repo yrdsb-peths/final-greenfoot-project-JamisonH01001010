@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The stage 1 icon
+ * The stage 1 icons
  * Either completed (green) or incomplete (yellow)
  */
 public class Level1 extends Actor
@@ -37,8 +37,8 @@ public class Level1 extends Actor
         return passed;
     }
     /**
-     * Set if user has passed stage 1
-     * 
+     * Set the variable controlling if user has passed stage 1
+     * @param1 The value set to the pass variable
      */
     public static void setPassed(boolean a){
         passed = a;

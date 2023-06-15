@@ -1,15 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MenuIcons here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The icons that hold the achievement, options, stages, text in title screen
  */
 public class MenuIcons extends Actor
 {
+    // MenuIcons image
+    GreenfootImage menuI = new GreenfootImage("menu-icons.png");
+    /**
+     * Constructor: Set the image for the menuicons
+     */
     public MenuIcons(){
-        GreenfootImage menuI = new GreenfootImage("menu-icons.png");
         menuI.scale(200, 200);
         setImage(menuI);
     }
