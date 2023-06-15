@@ -2,6 +2,7 @@
 
 <h2>Project Description:</h2>
 <p>This is a project about a turn based game called Lost Sword with a mini storyline, hidden achievements, upgradeable stats, and 5 stages in total. </p>
+<p>NOTE: During running the game greenfoot might throw a java out of memory error
 <h3>Story:</h3>
 <p>Your sword has been stolen by a boss executioner and now you need to retrieve it by going to the monster's dungeon.</p>
 <p>Enemies include: Skeleton, Goblin, Wizard, Fire Knight, Undead Executioner.
