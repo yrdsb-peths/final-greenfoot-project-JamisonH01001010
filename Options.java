@@ -11,13 +11,10 @@ public class Options extends World
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
     // Object instantiations
-    // Menu 
+    SFX sfx = new SFX();
     Menu m = new Menu(500, 500);
-    // HomeButton
     HomeButton h1 = new HomeButton();
-    // BlackSquare
     BlackSquare b1 = new BlackSquare();
-    // Checkmark
     Checkmark c1 = new Checkmark();
     // Text
     GameFont options = new GameFont("Options", 500, 250);
@@ -33,14 +30,13 @@ public class Options extends World
         // Set Options Background
         optionsBG.scale(800, 600);
         setBackground(optionsBG);
-        // Add Menu
+        
         addObject(m, 400, 300);
-        // Text
+        
         addObject(options, 460, 330);
         addObject(music, 400, 410);
-        // Add BlackSquare
+
         addObject(b1, 270, 300);
-        // Add HomeButtion
         addObject(h1, 545, 155);
     }
     /**
@@ -48,12 +44,12 @@ public class Options extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h1)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
         if(Greenfoot.mouseClicked(b1) || Greenfoot.mouseClicked(c1)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             musicCount++;
         }
         if(musicCount % 2 == 0){ // music on

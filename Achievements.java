@@ -14,17 +14,14 @@ public class Achievements extends World
     // Achievement Background
     GreenfootImage achBG = new GreenfootImage("621708.jpg");
     // Object instantiations
-    // Menu
+    SFX sfx = new SFX();
     Menu m = new Menu(700, 600);
-    // HomeButton
     HomeButton h = new HomeButton();
-    // BlankMedal
     BlankMedal bm1 = new BlankMedal();
     BlankMedal bm2 = new BlankMedal();
     BlankMedal bm3 = new BlankMedal();
     BlankMedal bm4 = new BlankMedal();
     BlankMedal bm5 = new BlankMedal();
-    // GoldMedal
     GoldMedal gm1 = new GoldMedal();
     GoldMedal gm2 = new GoldMedal();
     GoldMedal gm3 = new GoldMedal();
@@ -47,36 +44,29 @@ public class Achievements extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
         super(800, 600, 1, false); // if true then unable to place text > dimensions
-        
-        // Play BGM
+
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGM().play();
         }
         
-        // Set Achievement background
         achBG.scale(800, 600);
         setBackground(achBG);
         
-        // Add Menu
         addObject(m, 400, 300);
-        
-        // Add BlankMedals
         addObject(bm1, 190, 190);
         addObject(bm2, 190, 260);
         addObject(bm3, 190, 330);
         addObject(bm4, 190, 400);
         addObject(bm5, 190, 470);
         addObject(chestText, 180, 620);
-        
-        // Text
+
         addObject(ach1, 390, 370); 
         addObject(ach2, 390, 440);
         addObject(ach3, 390, 510);
         addObject(ach4, 390, 580);
         addObject(ach5, 390, 650);
         addObject(achText, 470, 400);
-        
-        // Add HomeButton
+
         addObject(h, 620, 120);
     }
     /**
@@ -86,12 +76,12 @@ public class Achievements extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(chestText)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             completeAch5();
         }
         completeAchievements();

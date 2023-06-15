@@ -8,13 +8,10 @@ public class Tutorial extends World
     // Check whether user has opened tutorial before
     private static boolean firstTutorial = true;
     // Object instantiations
-    // Menu
+    SFX sfx = new SFX();
     Menu m = new Menu(900, 700);
-    // Continue
     Continue c = new Continue(100);
-    // HomeButton
     HomeButton h = new HomeButton();
-    
     // Text
     GameFont tutorial = new GameFont("Tutorial", 300, 160);
     GameFont description1 = new GameFont("Lost Sword is a turn-based RPG: You go first, then the enemy.", 600, 800);
@@ -37,11 +34,9 @@ public class Tutorial extends World
         if(Options.getMusicCount() % 2 == 0){
             TitleScreen.getBGM().play();
         }
-        
-        // Add Menu
+
         addObject(m, 400, 300); 
-        
-        // Text
+
         addObject(tutorial, 370, 170);
         addObject(description1, 385, 430);
         addObject(description2, 390, 500);
@@ -51,8 +46,7 @@ public class Tutorial extends World
         addObject(description6, 395, 675);
         addObject(description7, 485, 835);
         addObject(description8, 395, 720);
-        
-        // Add Continue
+
         addObject(c, 410, 493);
     }
     
@@ -62,7 +56,7 @@ public class Tutorial extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(c) || Greenfoot.mouseClicked(h)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
             firstTutorial = false;
