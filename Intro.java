@@ -55,6 +55,7 @@ public class Intro extends World
         
         // Text
         addObject(g1, 250, 290);
+        SFX.setClick(true);
         
         // Continue 
         addObject(c1, 760, 190);
@@ -67,7 +68,7 @@ public class Intro extends World
         // Boss.set methods are for setting the bosses multiple animations
         // Continue objects must be readded due to new text overlapping its "clickbox"
         if(Greenfoot.mouseClicked(c1)){
-            
+            SFX.setClick(true);
             removeObject(g1);
             removeObject(c1);
             addObject(g2, 170, 90);
