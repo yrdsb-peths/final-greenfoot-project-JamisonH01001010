@@ -9,32 +9,22 @@ public class NormalStages4 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
-    // MainCharacter
+    SFX sfx = new SFX();
     MainCharacter mc = new MainCharacter();
-    // FireKnight
     FireKnight f = new FireKnight();
-    // FireShield
     FireShield fs = new FireShield();
-    // Attack
     Attack a = new Attack();
-    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier(); // shield indicator
-    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash(); // stun indicator
-    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar fireKnightHP = new HealthBar(150); // FireKnightHP = 150
-    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
-    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
-    // HomeButton
     HomeButton h = new HomeButton();
-    
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to shield value
     GameFont s4Clear1 = new GameFont("Stage 4 CLEAR!", 1000, 500);
@@ -73,22 +63,16 @@ public class NormalStages4 extends World
         // Set Stage 4 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
-        
-        // Characters
+
         addObject(mc, 250, 350);
         addObject(f, 600, 250);
-        
-        // HealthBar
         addObject(mcHP, 250, 300);
         addObject(fireKnightHP, 600, 275);
-        
-        // Icons
         addObject(a, 120, 250);
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
         addObject(p1, 400, 100);
-        
-        // Animations
+
         MainCharacter.setIdleControl(true);
         Skeleton.setIdleControl(true);
         
@@ -109,14 +93,14 @@ public class NormalStages4 extends World
         if(!s4Over){
             s4();
             if(Greenfoot.mouseClicked(p1)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
                 TitleScreen.getBGMNormalStages().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
@@ -125,7 +109,7 @@ public class NormalStages4 extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -179,7 +163,7 @@ public class NormalStages4 extends World
                     MainCharacter.setIdleControl(true);
                     if(fireKnightDefend){
                         if(Greenfoot.mouseClicked(a)){
-                            SFX.getNormalAttack().play();
+                            sfx.getNormalAttack().play();
                             MainCharacter.setIdleControl(false);
                             MainCharacter.setAttackControl(true);
                             fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.5));
@@ -190,7 +174,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(Greenfoot.mouseClicked(b)){
-                            SFX.getMCBarrier().play();
+                            sfx.getMCBarrier().play();
                             MainCharacter.setIdleControl(false);
                             addObject(b2, 250, 430);
                             shieldAmount = mc.shield();
@@ -203,7 +187,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(Greenfoot.mouseClicked(ss1)){
-                            SFX.getMCStunSmash().play();
+                            sfx.getMCStunSmash().play();
                             MainCharacter.setIdleControl(false);
                             MainCharacter.setStunControl(true);
                             fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.2 * 0.5));
@@ -218,7 +202,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(fireKnightHP.getCurrentHP() == 0){
-                            SFX.getFireKnightDeath().play();
+                            sfx.getFireKnightDeath().play();
                             FireKnight.setIdleControl(false);
                             FireKnight.setDeathControl(true);
                             s4Over = true;
@@ -228,7 +212,7 @@ public class NormalStages4 extends World
                         }
                     } else {
                         if(Greenfoot.mouseClicked(a)){
-                            SFX.getNormalAttack().play();
+                            sfx.getNormalAttack().play();
                             MainCharacter.setIdleControl(false);
                             MainCharacter.setAttackControl(true);
                             fireKnightHP.loseHP(Attack.getAtkCount());
@@ -236,7 +220,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(Greenfoot.mouseClicked(b)){
-                            SFX.getMCBarrier().play();
+                            sfx.getMCBarrier().play();
                             MainCharacter.setIdleControl(false);
                             addObject(b2, 250, 430);
                             shieldAmount = mc.shield();
@@ -247,7 +231,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(Greenfoot.mouseClicked(ss1)){
-                            SFX.getMCStunSmash().play();
+                            sfx.getMCStunSmash().play();
                             MainCharacter.setIdleControl(false);
                             MainCharacter.setStunControl(true);
                             fireKnightHP.loseHP((int) (Attack.getAtkCount() * 0.2));
@@ -259,7 +243,7 @@ public class NormalStages4 extends World
                             pause = 100;
                         }
                         if(fireKnightHP.getCurrentHP() == 0){
-                            SFX.getFireKnightDeath().play();
+                            sfx.getFireKnightDeath().play();
                             FireKnight.setIdleControl(false);
                             FireKnight.setDeathControl(true);
                             s4Over = true;
@@ -282,7 +266,7 @@ public class NormalStages4 extends World
                     // Roll 50-74 [25% chance] = attack 2: Deal 166.66...% ATK dmg
                     // Roll 75-99 [25% chance] = defend: Take 50% of incoming dmg, Reflect 200% of incoming dmg
                     if(fireKnightAction <= 49){
-                        SFX.getNormalAttack().play();
+                        sfx.getNormalAttack().play();
                         FireKnight.setAttack1Control(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(30 * ((100 - shieldAmount) / (double) 100)));
@@ -290,7 +274,7 @@ public class NormalStages4 extends World
                             mcHP.loseHP(30); // FireKnightATK = 30
                         }
                     } else if (fireKnightAction <= 74){
-                        SFX.getFireKnightAttack2().play();
+                        sfx.getFireKnightAttack2().play();
                         FireKnight.setAttack2Control(true);
                         if(shieldAmount != 0){
                             mcHP.loseHP((int)(50 * ((100 - shieldAmount) / (double) 100)));
@@ -298,7 +282,7 @@ public class NormalStages4 extends World
                             mcHP.loseHP(50); // FireKnightATK = 30 * 166.66%
                         }
                     } else {
-                        SFX.getFireKnightDefend().play();
+                        sfx.getFireKnightDefend().play();
                         FireKnight.setDefendControl(true);
                         fireKnightDefend = true;
                         addObject(fs, 600, 430);
@@ -310,7 +294,7 @@ public class NormalStages4 extends World
                     pause = 100;
                 }
                 if(mcHP.getCurrentHP() == 0){
-                    SFX.getMCDeath().play();
+                    sfx.getMCDeath().play();
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setDeathControl(true);
                     s4Over = true;
@@ -338,7 +322,7 @@ public class NormalStages4 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);

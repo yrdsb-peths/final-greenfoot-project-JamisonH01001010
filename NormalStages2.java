@@ -9,30 +9,21 @@ public class NormalStages2 extends World
     GreenfootImage stagesBG = new GreenfootImage("normal-stage.png");
     
     // Object instantiations
-    // MainCharacter
+    SFX sfx = new SFX();
     MainCharacter mc = new MainCharacter();
-    // Goblin
     Goblin g = new Goblin();
-    // Attack
     Attack a = new Attack();
-    // Barrier
     Barrier b = new Barrier();
     Barrier b2 = new Barrier();
-    // StunSmash
     StunSmash ss1 = new StunSmash();
     StunSmash ss2 = new StunSmash();
-    // HealthBar
     HealthBar mcHP = new HealthBar(Health.getHealthCount());
     HealthBar goblinHP = new HealthBar(50); // GoblinHP = 50;
-    // Menu
     Menu m1 = new Menu(580, 580);
     Menu m2 = new Menu(300, 300);
-    // Pause
     Pause p1 = new Pause();
     Pause p2 = new Pause();
-    // HomeButton
     HomeButton h = new HomeButton();
-    
     // Text
     GameFont SA = new GameFont("temp", 100, 100); // "temp" will change to mc.shield value
     GameFont s2Clear1 = new GameFont("Stage 2 CLEAR!", 1000, 500);
@@ -69,22 +60,16 @@ public class NormalStages2 extends World
         // Set Stage 2 Background
         stagesBG.scale(800, 600);
         setBackground(stagesBG);
-        
-        // Characters
+
         addObject(mc, 250, 350);
         addObject(g, 600, 350);
-        
-        // HealthBar
         addObject(mcHP, 250, 300);
         addObject(goblinHP, 590, 300);
-        
-        // Icons
         addObject(a, 120, 250);
         addObject(b, 120, 350);
         addObject(ss1, 120, 450);
         addObject(p1, 400, 100);
-        
-        // Animations
+
         MainCharacter.setIdleControl(true);
         Goblin.setIdleControl(true);
         
@@ -104,14 +89,14 @@ public class NormalStages2 extends World
         if(!s2Over){
             s2();
             if(Greenfoot.mouseClicked(p1)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 addObject(m2, 400, 300);
                 addObject(h, 350, 300);
                 addObject(p2, 450, 300);
                 TitleScreen.getBGMNormalStages().pause();
             }
             if(Greenfoot.mouseClicked(p2)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 removeObject(m2);
                 removeObject(h);
                 removeObject(p2);
@@ -120,7 +105,7 @@ public class NormalStages2 extends World
                 }
             }
             if(Greenfoot.mouseClicked(h)){
-                SFX.getClick().play();
+                sfx.getClick().play();
                 TitleScreen.getBGMNormalStages().stop();
                 TitleScreen t = new TitleScreen();
                 Greenfoot.setWorld(t);
@@ -173,7 +158,7 @@ public class NormalStages2 extends World
                     // Repeat setting if there is stun and enemy can't act
                     MainCharacter.setIdleControl(true);
                     if(Greenfoot.mouseClicked(a)){
-                        SFX.getNormalAttack().play();
+                        sfx.getNormalAttack().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setAttackControl(true);
                         goblinHP.loseHP(Attack.getAtkCount());
@@ -181,7 +166,7 @@ public class NormalStages2 extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(b)){
-                        SFX.getMCBarrier().play();
+                        sfx.getMCBarrier().play();
                         MainCharacter.setIdleControl(false);
                         addObject(b2, 250, 430);
                         shieldAmount = mc.shield();
@@ -192,7 +177,7 @@ public class NormalStages2 extends World
                         pause = 100;
                     }
                     if(Greenfoot.mouseClicked(ss1)){
-                        SFX.getMCStunSmash().play();
+                        sfx.getMCStunSmash().play();
                         MainCharacter.setIdleControl(false);
                         MainCharacter.setStunControl(true);
                         goblinHP.loseHP((int) (Attack.getAtkCount() * 0.2));
@@ -204,7 +189,7 @@ public class NormalStages2 extends World
                         pause = 100;
                     }
                     if(goblinHP.getCurrentHP() == 0){ 
-                        SFX.getSGDeath().play();
+                        sfx.getSGDeath().play();
                         Goblin.setIdleControl(false);
                         Goblin.setDeathControl(true);
                         s2Over = true;
@@ -218,7 +203,7 @@ public class NormalStages2 extends World
                     pause--;
                 }
                 if(pause == 0){
-                    SFX.getNormalAttack().play();
+                    sfx.getNormalAttack().play();
                     MainCharacter.setIdleControl(true);
                     Goblin.setIdleControl(false);
                     Goblin.setAttackControl(true);
@@ -235,7 +220,7 @@ public class NormalStages2 extends World
                     pause = 100;
                 }
                 if(mcHP.getCurrentHP() == 0){
-                    SFX.getMCDeath().play();
+                    sfx.getMCDeath().play();
                     MainCharacter.setIdleControl(false);
                     MainCharacter.setDeathControl(true);
                     s2Over = true;
@@ -263,7 +248,7 @@ public class NormalStages2 extends World
      */
     public void returnHome(){
         if(Greenfoot.mouseClicked(returnHome)){
-            SFX.getClick().play();
+            sfx.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
