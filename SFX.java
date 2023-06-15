@@ -12,6 +12,7 @@ public class SFX extends Actor
     static GreenfootSound mcBarrier = new GreenfootSound("shield-guard-6963.mp3");
     static GreenfootSound mcStunSmash = new GreenfootSound("bing1-91919.mp3");
     static GreenfootSound mcDeath = new GreenfootSound("videogame-death-sound-43894.mp3");
+    // Death for skeleton and goblin
     static GreenfootSound SGDeath = new GreenfootSound("monster-death-grunt-131480.mp3");
     static GreenfootSound wizardATK1 = new GreenfootSound("wind-blow-141288.mp3");
     static GreenfootSound wizardATK2 = new GreenfootSound("magic-spell-6005.mp3");
