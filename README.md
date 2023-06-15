@@ -27,6 +27,7 @@
 <p>FireKnight Attack2 SFX - https://pixabay.com/sound-effects/search/flame/ [Fire Magic] </p>
 <p>FireKnight Defend SFX - https://pixabay.com/sound-effects/search/flame/?pagi=2 [Basic Fire whoosh 3] </p>
 <p>FireKnight Death SFX - https://pixabay.com/sound-effects/search/death/?pagi=3 [Spade hacking sound, with gore effects] </p>
+<p>Boss Appear SFX - https://pixabay.com/sound-effects/search/fast/ [Swoosh] </p>
 <p>Boss Attack SFX - https://pixabay.com/sound-effects/search/sword/?pagi=2 [Slash1] </p>
 <p>Boss Dodge SFX - https://pixabay.com/sound-effects/search/swipe/ [whip01] </p>
 <p>Boss ConsumeSummon SFX - https://pixabay.com/sound-effects/search/sizzle/?pagi=2 [cig_extinguish] </p>
