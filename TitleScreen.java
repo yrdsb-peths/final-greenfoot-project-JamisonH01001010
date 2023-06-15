@@ -9,6 +9,8 @@ public class TitleScreen extends World
     GreenfootImage dungeonBG = new GreenfootImage("dungeon.jpg"); 
     // Background Music
     static GreenfootSound BGM = new GreenfootSound("sounds/october-rose-27659.mp3");
+    static GreenfootSound BGMNormalStages = new GreenfootSound("battle-of-the-dragons-8037.mp3");
+    static GreenfootSound BGMFinalStage = new GreenfootSound("epic-dramatic-action-trailer-99525.mp3");
     // Object instantiations
     // Menu 
     Menu m = new Menu(300, 300);
@@ -93,9 +95,25 @@ public class TitleScreen extends World
     
     /**
      * Gets the BGM greenfoot sound object 
-     * @return GreenfootSound BGM
+     * @return BGM of pre-stages
      */
     public static GreenfootSound getBGM(){
         return BGM;
+    }
+    
+    /**
+     * Gets the normal stages BGM greenfoot sound object 
+     * @return BGM of normal stages
+     */
+    public static GreenfootSound getBGMNormalStages(){
+        return BGMNormalStages;
+    }
+    
+    /**
+     * Gets the final stage BGM greenfoot sound object 
+     * @return BGM of final stage
+     */
+    public static GreenfootSound getBGMFinalStage(){
+        return BGMFinalStage;
     }
 }
