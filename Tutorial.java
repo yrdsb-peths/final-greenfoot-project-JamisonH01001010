@@ -62,6 +62,19 @@ public class Tutorial extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(c) || Greenfoot.mouseClicked(h)){
+            // remove objects for memory
+            removeObject(c);
+            removeObject(m);
+            removeObject(tutorial);
+            removeObject(h);
+            removeObject(description1);
+            removeObject(description2);
+            removeObject(description3);
+            removeObject(description4);
+            removeObject(description5);
+            removeObject(description6);
+            removeObject(description7);
+            removeObject(description8);
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
             firstTutorial = false;

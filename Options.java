@@ -8,7 +8,6 @@ public class Options extends World
 {
     // Count to determine "button" state of options
     public static int musicCount = 0;
-    public static int SFXCount = 0;
     // Options Background
     GreenfootImage optionsBG = new GreenfootImage("dungeon2.jpg");
     // Object instantiations
@@ -18,14 +17,11 @@ public class Options extends World
     HomeButton h1 = new HomeButton();
     // BlackSquare
     BlackSquare b1 = new BlackSquare();
-    BlackSquare b2 = new BlackSquare();
     // Checkmark
     Checkmark c1 = new Checkmark();
-    Checkmark c2 = new Checkmark();
     // Text
     GameFont options = new GameFont("Options", 500, 250);
     GameFont music = new GameFont("Music", 300, 250);
-    GameFont soundEffects = new GameFont("Sound Effects", 300, 250);
     /**
      * Constructor: Set the inital state of the options menu
      */
@@ -52,6 +48,12 @@ public class Options extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h1)){
+            // remove objects for memory
+            removeObject(m);
+            removeObject(options);
+            removeObject(music);
+            removeObject(b1);
+            removeObject(h1);
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

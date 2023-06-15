@@ -48,7 +48,6 @@ public class StageSelect extends World
         
         // Add Levels
         addObject(l1, 110, 510); 
-        addObject(l1, 110, 510);
         addObject(l2, 175, 115);
         addObject(l3, 675, 125);
         addObject(l4, 685, 510);
@@ -59,26 +58,42 @@ public class StageSelect extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            removeObjects();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(l1)){
+            removeObjects();
             Greenfoot.setWorld(ns1);
         }
         if(Greenfoot.mouseClicked(l2) && NormalStages1.getS1Passed()){
+            removeObjects();
             Greenfoot.setWorld(ns2);
         }
         if(Greenfoot.mouseClicked(l3) && NormalStages2.getS2Passed()){
+            removeObjects();
             Greenfoot.setWorld(ns3);
         }
         if(Greenfoot.mouseClicked(l4) && NormalStages3.getS3Passed()){
+            removeObjects();
             Greenfoot.setWorld(ns4);
         }
         if(Greenfoot.mouseClicked(l5) && NormalStages4.getS4Passed()){
+            removeObjects();
             TitleScreen.getBGMNormalStages().stop();
             FinalStage fs = new FinalStage();
             Greenfoot.setWorld(fs);
         }
+    }
+    
+    public void removeObjects(){
+        removeObject(stageSelect);
+        removeObject(h);
+        removeObject(l1);
+        removeObject(l2);
+        removeObject(l3);
+        removeObject(l4);
+        removeObject(l5);
     }
 }

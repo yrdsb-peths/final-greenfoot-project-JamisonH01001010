@@ -30,7 +30,6 @@ public class Intro extends World
     Continue c4 = new Continue(50);
     Continue c5 = new Continue(50);
     Continue c6 = new Continue(50);
-    Continue c7 = new Continue(50);
     /**
      * Constructor: Set the inital state of the intro screen 
      */
@@ -93,14 +92,6 @@ public class Intro extends World
             Boss.setIdle(false);
             Boss.setAttack(true);
         }
-        if(Greenfoot.mouseClicked(c4)){
-            removeObject(g4);
-            removeObject(c4);
-            addObject(g5, 590, 515);
-            addObject(c5, 760, 190);
-            Boss.setAttack(false);
-            Boss.setIdle(true);
-        }
         if(Greenfoot.mouseClicked(c5)){
             removeObject(g5);
             removeObject(c5);
@@ -110,6 +101,12 @@ public class Intro extends World
             MainCharacter.setNoSwordControl(false);
         }
         if(Greenfoot.mouseClicked(c6)){
+            // remove objects for memory
+            removeObject(g6);
+            removeObject(c6);
+            removeObject(b);
+            removeObject(m);
+            removeObject(ls);
             Boss.setIdle(false);
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);

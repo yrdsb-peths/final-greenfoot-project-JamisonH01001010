@@ -113,6 +113,31 @@ public class SkillMenu extends World
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(h)){
+            // remove objects for memory
+            removeObject(m);
+            removeObject(c);
+            removeObject(health);
+            removeObject(attack);
+            removeObject(bs);
+            removeObject(b);
+            removeObject(s);
+            removeObject(skillMenu);
+            removeObject(numCoins);
+            removeObject(stats);
+            removeObject(price);
+            removeObject(HP);
+            removeObject(ATK);
+            removeObject(bs1);
+            removeObject(bs2);
+            removeObject(s1);
+            removeObject(s2);
+            removeObject(s3);
+            removeObject(b1);
+            removeObject(b2);
+            removeObject(b3);
+            removeObject(i1);
+            removeObject(i2);
+            removeObject(h);
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

@@ -41,6 +41,12 @@ public class Ending extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            // remove objects for memory
+            removeObject(m);
+            removeObject(h);
+            removeObject(ending1);
+            removeObject(ending2);
+            removeObject(ls);
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

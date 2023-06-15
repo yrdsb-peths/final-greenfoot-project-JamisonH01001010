@@ -86,6 +86,26 @@ public class Achievements extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            // remove objects for memory
+            removeObject(m);
+            removeObject(h);
+            removeObject(bm1);
+            removeObject(bm2);
+            removeObject(bm3);
+            removeObject(bm4);
+            removeObject(bm5);
+            removeObject(gm1);
+            removeObject(gm2);
+            removeObject(gm3);
+            removeObject(gm4);
+            removeObject(gm5);
+            removeObject(ach1);
+            removeObject(ach2);
+            removeObject(ach3);
+            removeObject(ach4);
+            removeObject(ach5);
+            removeObject(achText);
+            removeObject(chestText);
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
