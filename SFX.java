@@ -18,6 +18,7 @@ public class SFX extends Actor
     static GreenfootSound fireKnightAttack2 = new GreenfootSound("fire-magic-6947.mp3");
     static GreenfootSound fireKnightDefend = new GreenfootSound("basic-fire-whoosh-3-104223.mp3");
     static GreenfootSound fireKnightDeath = new GreenfootSound("spade-hacking-sound-with-gore-effects-96909.mp3");
+    static GreenfootSound bossAppear = new GreenfootSound("swoosh-142322.mp3");
     static GreenfootSound bossAttack = new GreenfootSound("slash1-94367.mp3");
     static GreenfootSound bossConsumeSummon = new GreenfootSound("cig_extinguish-89851.mp3");
     static GreenfootSound bossDodge = new GreenfootSound("whip01-6952.mp3");
@@ -97,6 +98,13 @@ public class SFX extends Actor
      */
     public static GreenfootSound getFireKnightDeath(){
         return fireKnightDeath;
+    }
+    /**
+     * Get the GreenfootSound variable for boss appear
+     * @return boss appear SFX
+     */
+    public static GreenfootSound getBossAppear(){
+        return bossAppear;
     }
     /**
      * Get the GreenfootSound variable for boss attack
