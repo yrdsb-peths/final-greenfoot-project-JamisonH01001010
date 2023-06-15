@@ -23,188 +23,49 @@ public class SFX extends Actor
     static GreenfootSound bossDodge = new GreenfootSound("whip01-6952.mp3");
     static GreenfootSound bossDeath = new GreenfootSound("umph-47201.mp3");
     
-    // Sound effects variables
-    static boolean setClick = false;
-    static boolean setNormalAttack = false;
-    static boolean setMCBarrier = false;
-    static boolean setMCStunSmash = false;
-    static boolean setMCDeath = false;
-    static boolean setSGDeath = false;
-    static boolean setWizardATK1 = false;
-    static boolean setWizardATK2 = false;
-    static boolean setWizardDeath = false;
-    static boolean setFKATK2 = false;
-    static boolean setFKDefend = false;
-    static boolean setFKDeath = false;
-    static boolean setBossATK = false;
-    static boolean setBossConsumeSummon = false;
-    static boolean setBossDodge = false;
-    static boolean setBossDeath = false;
-
-    /**
-     * Play corresponding SFX
-     */
-    public void act()
-    {
-        if(setClick){
-            click.play();
-        }
-        if(setNormalAttack){
-            normalAttack.play();
-        }
-        if(setMCBarrier){
-            mcBarrier.play();
-        }
-        if(setMCStunSmash){
-            mcStunSmash.play();
-        }
-        if(setMCDeath){
-            mcDeath.play();
-        }
-        if(setSGDeath){
-            SGDeath.play();
-        }
-        if(setWizardATK1){
-            wizardATK1.play();
-        }
-        if(setWizardATK2){
-            wizardATK2.play();
-        }
-        if(setWizardDeath){
-            wizardDeath.play();
-        }
-        if(setFKATK2){
-            fireKnightAttack2.play();
-        }
-        if(setFKDefend){
-            fireKnightDefend.play();
-        }
-        if(setFKDeath){
-            fireKnightDeath.play();
-        }
-        if(setBossATK){
-            bossAttack.play();
-        }
-        if(setBossConsumeSummon){
-            bossConsumeSummon.play();
-        }
-        if(setBossDodge){
-            bossDodge.play();
-        }
-        if(setBossDeath){
-            bossDeath.play();
-        }
+    public static GreenfootSound getClick(){
+        return click;
     }
-    /**
-     * Set the boolean controlling SFX of clicking
-     * @param1 the new boolean value
-     */
-    public static void setClick(boolean a){
-        setClick = a;
+    public static GreenfootSound getNormalAttack(){
+        return normalAttack;
     }
-    /**
-     * Set the boolean controlling SFX of a normal attack
-     * @param1 the new boolean value
-     */
-    public static void setNormalAttack(boolean a){
-        setNormalAttack = a;
+    public static GreenfootSound getMCBarrier(){
+        return mcBarrier;
     }
-    /**
-     * Set the boolean controlling SFX of mc's barrier
-     * @param1 the new boolean value
-     */
-    public static void setMCBarrier(boolean a){
-        setMCBarrier = a;
+    public static GreenfootSound getMCStunSmash(){
+        return mcStunSmash;
     }
-    /**
-     * Set the boolean controlling SFX of mc's stun smash
-     * @param1 the new boolean value
-     */
-    public static void setMCStunSmash(boolean a){
-        setMCStunSmash = a;
+    public static GreenfootSound getMCDeath(){
+        return mcDeath;
     }
-    /**
-     * Set the boolean controlling SFX of mc's death
-     * @param1 the new boolean value
-     */
-    public static void setMCDeath(boolean a){
-        setMCDeath = a;
+    public static GreenfootSound getSGDeath(){
+        return SGDeath;
     }
-    /**
-     * Set the boolean controlling SFX of skeleton/goblin death
-     * @param1 the new boolean value
-     */
-    public static void setSGDeath(boolean a){
-        setSGDeath = a;
+    public static GreenfootSound getWizardATK1(){
+        return wizardATK1;
     }
-    /**
-     * Set the boolean controlling SFX of wizard atk1
-     * @param1 the new boolean value
-     */
-    public static void setWizardATK1(boolean a){
-        setWizardATK1 = a;
+    public static GreenfootSound getWizardATK2(){
+        return wizardATK2;
     }
-    /**
-     * Set the boolean controlling SFX of wizard atk2
-     * @param1 the new boolean value
-     */
-    public static void setWizardATK2(boolean a){
-        setWizardATK2 = a;
+    public static GreenfootSound getFireKnightAttack2(){
+        return fireKnightAttack2;
     }
-    /**
-     * Set the boolean controlling SFX of wizard death
-     * @param1 the new boolean value
-     */
-    public static void setWizardDeath(boolean a){
-        setWizardDeath = a;
+    public static GreenfootSound getFireKnightDefend(){
+        return fireKnightDefend;
     }
-    /**
-     * Set the boolean controlling SFX of fire knight atk2
-     * @param1 the new boolean value
-     */
-    public static void setFKATK2(boolean a){
-        setFKATK2 = a;
+    public static GreenfootSound getFireKnightDeath(){
+        return fireKnightDeath;
     }
-    /**
-     * Set the boolean controlling SFX of fire knight defend
-     * @param1 the new boolean value
-     */
-    public static void setFKDefend(boolean a){
-        setFKDefend = a;
+    public static GreenfootSound getBossAttack(){
+        return bossAttack;
     }
-    /**
-     * Set the boolean controlling SFX of fire knight death
-     * @param1 the new boolean value
-     */
-    public static void setFKDeath(boolean a){
-        setFKDeath = a;
+    public static GreenfootSound getBossConsumeSummon(){
+        return bossConsumeSummon;
     }
-    /**
-     * Set the boolean controlling SFX of boss atk
-     * @param1 the new boolean value
-     */
-    public static void setBossATK(boolean a){
-        setBossATK = a;
+    public static GreenfootSound getBossDodge(){
+        return bossDodge;
     }
-    /**
-     * Set the boolean controlling SFX of boss consuming summons
-     * @param1 the new boolean value
-     */
-    public static void setBossConsumeSummon(boolean a){
-        setBossConsumeSummon = a;
-    }
-    /**
-     * Set the boolean controlling SFX of boss dodge
-     * @param1 the new boolean value
-     */
-    public static void setBossDodge(boolean a){
-        setBossDodge = a;
-    }
-    /**
-     * Set the boolean controlling SFX of boss death
-     * @param1 the new boolean value
-     */
-    public static void setBossDeath(boolean a){
-        setBossDeath = a;
+    public static GreenfootSound getBossDeath(){
+        return bossDeath;
     }
 }
