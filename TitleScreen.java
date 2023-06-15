@@ -71,24 +71,29 @@ public class TitleScreen extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(achievements)){
+            SFX.getClick().play();
             Achievements.lucky(); // // Chance of completing achievement 3
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(stages)){
+            SFX.getClick().play();
             BGM.stop();
             StageSelect stageWorld = new StageSelect();
             Greenfoot.setWorld(stageWorld);
         }
         if(Greenfoot.mouseClicked(options)){
+            SFX.getClick().play();
             Options optionWorld = new Options();
             Greenfoot.setWorld(optionWorld);
         }
         if(Greenfoot.mouseClicked(skillMenu)){
+            SFX.getClick().play();
             SkillMenu SMworld = new SkillMenu();
             Greenfoot.setWorld(SMworld);
         }
         if(Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             Tutorial t = new Tutorial();
             Greenfoot.setWorld(t);        
         }

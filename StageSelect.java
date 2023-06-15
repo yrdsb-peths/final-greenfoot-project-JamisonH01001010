@@ -59,23 +59,29 @@ public class StageSelect extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(l1)){
+            SFX.getClick().play();
             Greenfoot.setWorld(ns1);
         }
         if(Greenfoot.mouseClicked(l2) && NormalStages1.getS1Passed()){
+            SFX.getClick().play();
             Greenfoot.setWorld(ns2);
         }
         if(Greenfoot.mouseClicked(l3) && NormalStages2.getS2Passed()){
+            SFX.getClick().play();
             Greenfoot.setWorld(ns3);
         }
         if(Greenfoot.mouseClicked(l4) && NormalStages3.getS3Passed()){
+            SFX.getClick().play();
             Greenfoot.setWorld(ns4);
         }
         if(Greenfoot.mouseClicked(l5) && NormalStages4.getS4Passed()){
+            SFX.getClick().play();
             TitleScreen.getBGMNormalStages().stop();
             FinalStage fs = new FinalStage();
             Greenfoot.setWorld(fs);

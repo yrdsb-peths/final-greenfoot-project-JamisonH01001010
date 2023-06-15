@@ -48,10 +48,12 @@ public class Options extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h1)){
+            SFX.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }
         if(Greenfoot.mouseClicked(b1) || Greenfoot.mouseClicked(c1)){
+            SFX.getClick().play();
             musicCount++;
         }
         if(musicCount % 2 == 0){ // music on

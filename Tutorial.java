@@ -62,6 +62,7 @@ public class Tutorial extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(c) || Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
             firstTutorial = false;

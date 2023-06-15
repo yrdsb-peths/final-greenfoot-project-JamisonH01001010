@@ -95,6 +95,7 @@ public class SkillMenu extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(i1)){
+            SFX.getClick().play();
             Health.increaseHealth();
             removeObject(HP);
             HP = new GameFont("HP:    " + Health.getHealthCount(), 300, 200);
@@ -104,6 +105,7 @@ public class SkillMenu extends World
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(i2)){
+            SFX.getClick().play();
             Attack.increaseAtk();
             removeObject(ATK);
             ATK = new GameFont("ATK: " + Attack.getAtkCount(), 300, 200);
@@ -113,6 +115,7 @@ public class SkillMenu extends World
             addObject(numCoins, 608, 105);
         }
         if(Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

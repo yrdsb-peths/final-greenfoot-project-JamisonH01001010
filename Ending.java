@@ -41,6 +41,7 @@ public class Ending extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             TitleScreen t = new TitleScreen();
             Greenfoot.setWorld(t);
         }

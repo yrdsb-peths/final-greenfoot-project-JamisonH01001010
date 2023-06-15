@@ -86,10 +86,12 @@ public class Achievements extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(h)){
+            SFX.getClick().play();
             TitleScreen achWorld = new TitleScreen();
             Greenfoot.setWorld(achWorld);
         }
         if(Greenfoot.mouseClicked(chestText)){
+            SFX.getClick().play();
             completeAch5();
         }
         completeAchievements();
