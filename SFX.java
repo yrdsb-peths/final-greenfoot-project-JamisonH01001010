@@ -22,49 +22,107 @@ public class SFX extends Actor
     static GreenfootSound bossConsumeSummon = new GreenfootSound("cig_extinguish-89851.mp3");
     static GreenfootSound bossDodge = new GreenfootSound("whip01-6952.mp3");
     static GreenfootSound bossDeath = new GreenfootSound("umph-47201.mp3");
-    
+    /**
+     * Get the GreenfootSound variable for click
+     * @return click SFX
+     */
     public static GreenfootSound getClick(){
         return click;
     }
+    /**
+     * Get the GreenfootSound variable for normal attack
+     * @return normal attack SFX
+     */
     public static GreenfootSound getNormalAttack(){
         return normalAttack;
     }
+    /**
+     * Get the GreenfootSound variable for mc barrier
+     * @return mc barrier SFX
+     */
     public static GreenfootSound getMCBarrier(){
         return mcBarrier;
     }
+    /**
+     * Get the GreenfootSound variable for mc stun smash
+     * @return mc stun smash SFX
+     */
     public static GreenfootSound getMCStunSmash(){
         return mcStunSmash;
     }
+    /**
+     * Get the GreenfootSound variable for mc death
+     * @return mc death SFX
+     */
     public static GreenfootSound getMCDeath(){
         return mcDeath;
     }
+    /**
+     * Get the GreenfootSound variable for skeleton/goblin death
+     * @return skeleton/goblin SFX
+     */
     public static GreenfootSound getSGDeath(){
         return SGDeath;
     }
+    /**
+     * Get the GreenfootSound variable for wizard attack1
+     * @return wizard attack1 SFX
+     */
     public static GreenfootSound getWizardATK1(){
         return wizardATK1;
-    }
+    }/**
+     * Get the GreenfootSound variable for wizard attack2
+     * @return wizard attack2 SFX
+     */
     public static GreenfootSound getWizardATK2(){
         return wizardATK2;
     }
+    /**
+     * Get the GreenfootSound variable for fire knight attack2
+     * @return fire knight attack2 SFX
+     */
     public static GreenfootSound getFireKnightAttack2(){
         return fireKnightAttack2;
     }
+    /**
+     * Get the GreenfootSound variable for fire knight defend
+     * @return fire knight defend SFX
+     */
     public static GreenfootSound getFireKnightDefend(){
         return fireKnightDefend;
     }
+    /**
+     * Get the GreenfootSound variable for fire knight death
+     * @return fire knight death SFX
+     */
     public static GreenfootSound getFireKnightDeath(){
         return fireKnightDeath;
     }
+    /**
+     * Get the GreenfootSound variable for boss attack
+     * @return boss attack SFX
+     */
     public static GreenfootSound getBossAttack(){
         return bossAttack;
     }
+    /**
+     * Get the GreenfootSound variable for boss consume summon
+     * @return boss consume summon SFX
+     */
     public static GreenfootSound getBossConsumeSummon(){
         return bossConsumeSummon;
     }
+    /**
+     * Get the GreenfootSound variable for boss dodge
+     * @return boss dodge SFX
+     */
     public static GreenfootSound getBossDodge(){
         return bossDodge;
     }
+    /**
+     * Get the GreenfootSound variable for boss death
+     * @return boss death SFX
+     */
     public static GreenfootSound getBossDeath(){
         return bossDeath;
     }
