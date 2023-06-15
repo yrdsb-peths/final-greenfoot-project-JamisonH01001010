@@ -48,7 +48,7 @@ public class Intro extends World
         // Add MainCharacter
         addObject(m, 200, 500);
         
-        // Animations
+        // Animation
         MainCharacter.setIdleControl(false);
         MainCharacter.setNoSwordControl(true);
         
